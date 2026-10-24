@@ -1,0 +1,13 @@
+# 原始数据集不进仓库（体积 2.5GB+，GitHub 限制），保留在本地共享盘
+data/raw/
+
+# P2 划分产物由 P2 自己提交
+# （如需上传时取消注释：data/split/）
+
+# 临时与缓存文件
+*.tmp
+*.log.txt
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store

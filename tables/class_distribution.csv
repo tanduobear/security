@@ -1,0 +1,45 @@
+﻿version,label,count,pct
+original,benign,2095057,83.1109
+original,dos hulk,172846,6.8568
+original,ddos,128014,5.0783
+original,portscan,90694,3.5978
+original,dos goldeneye,10286,0.408
+original,ftp-patator,5931,0.2353
+original,dos slowloris,5385,0.2136
+original,dos slowhttptest,5228,0.2074
+original,ssh-patator,3219,0.1277
+original,bot,1948,0.0773
+original,web attack - brute force,1470,0.0583
+original,web attack - xss,652,0.0259
+original,infiltration,36,0.0014
+original,web attack - sql injection,21,0.0008
+original,heartbleed,11,0.0004
+original,__TOTAL__,2520798,100.0
+corrected,benign,1582561,75.3611
+corrected,portscan,159066,7.5747
+corrected,dos hulk,158468,7.5462
+corrected,ddos,95144,4.5307
+corrected,infiltration - portscan,71767,3.4175
+corrected,dos goldeneye,7567,0.3603
+corrected,botnet - attempted,4067,0.1937
+corrected,ftp-patator,3972,0.1891
+corrected,dos slowloris,3859,0.1838
+corrected,dos slowhttptest - attempted,3368,0.1604
+corrected,ssh-patator,2961,0.141
+corrected,dos slowloris - attempted,1847,0.088
+corrected,dos slowhttptest,1740,0.0829
+corrected,web attack - brute force - attempted,1292,0.0615
+corrected,botnet,736,0.035
+corrected,web attack - xss - attempted,655,0.0312
+corrected,dos hulk - attempted,581,0.0277
+corrected,dos goldeneye - attempted,80,0.0038
+corrected,web attack - brute force,73,0.0035
+corrected,infiltration - attempted,45,0.0021
+corrected,infiltration,36,0.0017
+corrected,ssh-patator - attempted,27,0.0013
+corrected,web attack - xss,18,0.0009
+corrected,web attack - sql injection,13,0.0006
+corrected,ftp-patator - attempted,12,0.0006
+corrected,heartbleed,11,0.0005
+corrected,web attack - sql injection - attempted,5,0.0002
+corrected,__TOTAL__,2099971,100.0

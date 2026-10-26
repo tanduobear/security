@@ -33,3 +33,17 @@
 - 已保存：C:\Users\HUAWEI\Desktop\tyl\大学\大三上\网络安全\data\clean\corrected.parquet（行数 2,099,971，耗时 47s）
 - 类别分布表已保存：C:\Users\HUAWEI\Desktop\tyl\大学\大三上\网络安全\tables\class_distribution.csv
 - 字段差异表已保存：C:\Users\HUAWEI\Desktop\tyl\大学\大三上\网络安全\docs\schema_diff.md
+
+---
+
+## 补充（2026-10-26，按 P2 要求）：original 新增 Day 列
+
+原版 CIC-IDS2017 原始数据无 Timestamp 列，日期信息按文件名拆分（周一至周五 8 个 CSV）。P1 合并时将来源文件的日期信息丢失，现重新合并清洗流程，在合并阶段从文件名解析 `Day` 列后追加：
+
+- Day 取值：`Monday` / `Tuesday` / `Wednesday` / `Thursday` / `Friday`
+- 合并顺序：Monday → Tuesday → Wednesday → Thursday-AM(WebAttacks) → Thursday-PM(Infiltration) → Friday-AM(Morning) → Friday-PM(PortScan) → Friday-PM(DDos)
+- 去重逻辑：按原 79 列去重（`Day` 不参与去重判断），跨天重复行保留第一次出现的日期
+- 中间步骤数字完全复现：合并 2,830,743 → 删 inf 2,867 → 删重复 307,078 → 最终 2,520,798 行（与原日志一致）
+- Day 分布：Wednesday 602,278 | Friday 595,860 | Monday 502,650 | Tuesday 421,576 | Thursday 398,434
+- 验证：无 NaN、无 inf、抽样 1000 行无重复；Label 分布与原数据完全一致（benign 2,095,057 等）
+- corrected.parquet 无需改动（修正版自带 Timestamp 列）

@@ -1,0 +1,52 @@
+test_fixed_seed_is_reproducible (test_metrics.BootstrapTests.test_fixed_seed_is_reproducible) ... ok
+test_identical_models_have_zero_difference (test_metrics.BootstrapTests.test_identical_models_have_zero_difference) ... ok
+test_invalid_settings_rejected (test_metrics.BootstrapTests.test_invalid_settings_rejected) ... ok
+test_misaligned_or_duplicate_ids_rejected (test_metrics.BootstrapTests.test_misaligned_or_duplicate_ids_rejected) ... ok
+test_attempted_subgroup (test_metrics.ClassificationTests.test_attempted_subgroup) ... ok
+test_invalid_inputs_rejected (test_metrics.ClassificationTests.test_invalid_inputs_rejected) ... ok
+test_known_confusion_matrix (test_metrics.ClassificationTests.test_known_confusion_matrix) ... ok
+test_zero_denominators (test_metrics.ClassificationTests.test_zero_denominators) ... ok
+test_constant_scores (test_metrics.CurveTests.test_constant_scores) ... ok
+test_invalid_inputs (test_metrics.CurveTests.test_invalid_inputs) ... ok
+test_known_example (test_metrics.CurveTests.test_known_example) ... ok
+test_perfect_ranking (test_metrics.CurveTests.test_perfect_ranking) ... ok
+test_single_class (test_metrics.CurveTests.test_single_class) ... ok
+test_standard_json_serialization (test_metrics.CurveTests.test_standard_json_serialization) ... ok
+test_invalid_settings_rejected (test_metrics.InferenceTests.test_invalid_settings_rejected) ... ok
+test_known_timing_and_call_count (test_metrics.InferenceTests.test_known_timing_and_call_count) ... ok
+test_nonfinite_input_rejected (test_metrics.InferenceTests.test_nonfinite_input_rejected) ... ok
+test_wrong_prediction_shape_rejected (test_metrics.InferenceTests.test_wrong_prediction_shape_rejected) ... ok
+test_invalid_targets (test_metrics.OperatingPointTests.test_invalid_targets) ... ok
+test_known_operating_points (test_metrics.OperatingPointTests.test_known_operating_points) ... ok
+test_single_class (test_metrics.OperatingPointTests.test_single_class) ... ok
+test_tied_scores_are_not_split (test_metrics.OperatingPointTests.test_tied_scores_are_not_split) ... ok
+test_absent_family_has_null_recall (test_metrics.PerClassTests.test_absent_family_has_null_recall) ... ok
+test_inconsistent_family_metadata_rejected (test_metrics.PerClassTests.test_inconsistent_family_metadata_rejected) ... ok
+test_invalid_inputs_rejected (test_metrics.PerClassTests.test_invalid_inputs_rejected) ... ok
+test_known_family_recalls (test_metrics.PerClassTests.test_known_family_recalls) ... ok
+test_normal_only_sample (test_metrics.PerClassTests.test_normal_only_sample) ... ok
+test_corrupted_model_file_rejected (test_model_loader.VerifiedLoaderTests.test_corrupted_model_file_rejected) ... ok
+test_matching_bundle_exposes_correct_schema_and_weights (test_model_loader.VerifiedLoaderTests.test_matching_bundle_exposes_correct_schema_and_weights) ... ok
+test_unverified_or_unguarded_data_rejected (test_model_loader.VerifiedLoaderTests.test_unverified_or_unguarded_data_rejected) ... ok
+test_wrong_processor_scope_rejected_even_with_matching_hash (test_model_loader.VerifiedLoaderTests.test_wrong_processor_scope_rejected_even_with_matching_hash) ... ok
+test_duplicate_training_rows_and_bad_ports_rejected (test_preprocess.PreprocessIsolationTests.test_duplicate_training_rows_and_bad_ports_rejected) ... ok
+test_fit_on_heldout_and_refitting_are_rejected (test_preprocess.PreprocessIsolationTests.test_fit_on_heldout_and_refitting_are_rejected) ... ok
+test_heldout_extreme_values_and_new_port_do_not_change_fit (test_preprocess.PreprocessIsolationTests.test_heldout_extreme_values_and_new_port_do_not_change_fit) ... ok
+test_metadata_cannot_become_a_numeric_feature (test_preprocess.PreprocessIsolationTests.test_metadata_cannot_become_a_numeric_feature) ... ok
+test_saved_state_round_trip_and_noport_needs_no_port_column (test_preprocess.PreprocessIsolationTests.test_saved_state_round_trip_and_noport_needs_no_port_column) ... ok
+test_train_only_weights_constant_column_and_ablation (test_preprocess.PreprocessIsolationTests.test_train_only_weights_constant_column_and_ablation) ... ok
+test_missing_or_inconsistent_curve_summary_rejected (test_schema.CurveIntegrityTests.test_missing_or_inconsistent_curve_summary_rejected) ... ok
+test_wrong_operating_threshold_rejected (test_schema.CurveIntegrityTests.test_wrong_operating_threshold_rejected) ... ok
+test_inconsistent_sample_count_rejected (test_schema.ResultConsistencyTests.test_inconsistent_sample_count_rejected) ... ok
+test_inconsistent_totals_and_costs_rejected (test_schema.ResultConsistencyTests.test_inconsistent_totals_and_costs_rejected) ... ok
+test_incorrect_family_recall_rejected (test_schema.ResultConsistencyTests.test_incorrect_family_recall_rejected) ... ok
+test_valid_result_passes (test_schema.ResultConsistencyTests.test_valid_result_passes) ... ok
+test_generated_demo_is_valid (test_schema.ResultSchemaTests.test_generated_demo_is_valid) ... ok
+test_missing_required_field_rejected (test_schema.ResultSchemaTests.test_missing_required_field_rejected) ... ok
+test_out_of_range_metric_rejected (test_schema.ResultSchemaTests.test_out_of_range_metric_rejected) ... ok
+test_synthetic_record_cannot_be_relabelled_as_real (test_schema.ResultSchemaTests.test_synthetic_record_cannot_be_relabelled_as_real) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 0.966s
+
+OK

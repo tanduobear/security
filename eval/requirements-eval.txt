@@ -1,0 +1,3 @@
+-r ../src/requirements-preprocess.txt
+jsonschema==4.26.0
+threadpoolctl==3.7.0

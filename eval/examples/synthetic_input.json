@@ -1,0 +1,62 @@
+{
+  "row_ids": [
+    "demo:0",
+    "demo:1",
+    "demo:2",
+    "demo:3",
+    "demo:4",
+    "demo:5",
+    "demo:6",
+    "demo:7"
+  ],
+  "y_true": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1
+  ],
+  "scores_a": [
+    0.1,
+    0.4,
+    0.2,
+    0.6,
+    0.35,
+    0.8,
+    0.7,
+    0.9
+  ],
+  "scores_b": [
+    0.2,
+    0.3,
+    0.1,
+    0.4,
+    0.6,
+    0.9,
+    0.7,
+    0.8
+  ],
+  "attack_family": [
+    "benign",
+    "benign",
+    "benign",
+    "benign",
+    "ddos",
+    "ddos",
+    "botnet",
+    "botnet"
+  ],
+  "is_attempted": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ]
+}

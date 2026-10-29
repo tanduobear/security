@@ -1,0 +1,848 @@
+{
+  "purpose": "interface_check_only_not_experimental_findings",
+  "scope": "first_batch_of_each_delivered_model_file",
+  "dummy_scorer": "constant_zero",
+  "passed": true,
+  "records": [
+    {
+      "version": "original",
+      "protocol": "stratified",
+      "variant": "main",
+      "split": "train",
+      "batch_rows": 16384,
+      "features": 140,
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "stratified",
+      "variant": "main",
+      "split": "val",
+      "batch_rows": 16384,
+      "features": 140,
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "stratified",
+      "variant": "main",
+      "split": "test",
+      "batch_rows": 16384,
+      "features": 140,
+      "passed": true,
+      "dummy_checks": {
+        "curve_status": "single_class",
+        "operating_points": {
+          "status": "single_class",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            }
+          ]
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 16384,
+          "n_negative": 16384,
+          "n_positive": 0,
+          "accuracy": 1.0,
+          "macro_f1": 0.5,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": false,
+          "confusion_matrix": {
+            "tn": 16384,
+            "fp": 0,
+            "fn": 0,
+            "tp": 0
+          },
+          "tpr": null,
+          "fpr": 0.0,
+          "precision": null,
+          "attempted": {
+            "status": "no_samples",
+            "support": 0,
+            "false_positives": 0,
+            "fpr": null
+          }
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": []
+        },
+        "inference": {
+          "status": "ok",
+          "device": "cpu",
+          "scope": "prepared_batch_to_numpy_scores",
+          "batch_size": 512,
+          "warmup": 1,
+          "repeats": 3,
+          "threadpool_limit": 1,
+          "median_batch_ms": 0.002,
+          "amortized_ms_per_flow": 3.90625e-06,
+          "throughput_flows_per_second": 256000000.0,
+          "batch_times_ms": [
+            0.0026,
+            0.002,
+            0.0012
+          ]
+        },
+        "paired_bootstrap": null,
+        "bootstrap_note": "Skipped: first batch contains one class."
+      }
+    },
+    {
+      "version": "original",
+      "protocol": "stratified",
+      "variant": "no_destination_port",
+      "split": "train",
+      "batch_rows": 16384,
+      "features": 75,
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "stratified",
+      "variant": "no_destination_port",
+      "split": "val",
+      "batch_rows": 16384,
+      "features": 75,
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "stratified",
+      "variant": "no_destination_port",
+      "split": "test",
+      "batch_rows": 16384,
+      "features": 75,
+      "passed": true,
+      "dummy_checks": {
+        "curve_status": "single_class",
+        "operating_points": {
+          "status": "single_class",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            }
+          ]
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 16384,
+          "n_negative": 16384,
+          "n_positive": 0,
+          "accuracy": 1.0,
+          "macro_f1": 0.5,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": false,
+          "confusion_matrix": {
+            "tn": 16384,
+            "fp": 0,
+            "fn": 0,
+            "tp": 0
+          },
+          "tpr": null,
+          "fpr": 0.0,
+          "precision": null,
+          "attempted": {
+            "status": "no_samples",
+            "support": 0,
+            "false_positives": 0,
+            "fpr": null
+          }
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": []
+        },
+        "inference": {
+          "status": "ok",
+          "device": "cpu",
+          "scope": "prepared_batch_to_numpy_scores",
+          "batch_size": 512,
+          "warmup": 1,
+          "repeats": 3,
+          "threadpool_limit": 1,
+          "median_batch_ms": 0.001,
+          "amortized_ms_per_flow": 1.953125e-06,
+          "throughput_flows_per_second": 512000000.0,
+          "batch_times_ms": [
+            0.0015,
+            0.001,
+            0.0006
+          ]
+        },
+        "paired_bootstrap": null,
+        "bootstrap_note": "Skipped: first batch contains one class."
+      }
+    },
+    {
+      "version": "original",
+      "protocol": "temporal",
+      "variant": "main",
+      "split": "train",
+      "batch_rows": 16384,
+      "features": 140,
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "temporal",
+      "variant": "main",
+      "split": "val",
+      "batch_rows": 16384,
+      "features": 140,
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "temporal",
+      "variant": "main",
+      "split": "test",
+      "batch_rows": 16384,
+      "features": 140,
+      "passed": true,
+      "dummy_checks": {
+        "curve_status": "single_class",
+        "operating_points": {
+          "status": "single_class",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            }
+          ]
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 16384,
+          "n_negative": 16384,
+          "n_positive": 0,
+          "accuracy": 1.0,
+          "macro_f1": 0.5,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": false,
+          "confusion_matrix": {
+            "tn": 16384,
+            "fp": 0,
+            "fn": 0,
+            "tp": 0
+          },
+          "tpr": null,
+          "fpr": 0.0,
+          "precision": null,
+          "attempted": {
+            "status": "no_samples",
+            "support": 0,
+            "false_positives": 0,
+            "fpr": null
+          }
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": []
+        },
+        "inference": {
+          "status": "ok",
+          "device": "cpu",
+          "scope": "prepared_batch_to_numpy_scores",
+          "batch_size": 512,
+          "warmup": 1,
+          "repeats": 3,
+          "threadpool_limit": 1,
+          "median_batch_ms": 0.0013,
+          "amortized_ms_per_flow": 2.5390625e-06,
+          "throughput_flows_per_second": 393846153.84615386,
+          "batch_times_ms": [
+            0.0017,
+            0.0013,
+            0.0012
+          ]
+        },
+        "paired_bootstrap": null,
+        "bootstrap_note": "Skipped: first batch contains one class."
+      }
+    },
+    {
+      "version": "original",
+      "protocol": "temporal",
+      "variant": "no_destination_port",
+      "split": "train",
+      "batch_rows": 16384,
+      "features": 75,
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "temporal",
+      "variant": "no_destination_port",
+      "split": "val",
+      "batch_rows": 16384,
+      "features": 75,
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "temporal",
+      "variant": "no_destination_port",
+      "split": "test",
+      "batch_rows": 16384,
+      "features": 75,
+      "passed": true,
+      "dummy_checks": {
+        "curve_status": "single_class",
+        "operating_points": {
+          "status": "single_class",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            }
+          ]
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 16384,
+          "n_negative": 16384,
+          "n_positive": 0,
+          "accuracy": 1.0,
+          "macro_f1": 0.5,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": false,
+          "confusion_matrix": {
+            "tn": 16384,
+            "fp": 0,
+            "fn": 0,
+            "tp": 0
+          },
+          "tpr": null,
+          "fpr": 0.0,
+          "precision": null,
+          "attempted": {
+            "status": "no_samples",
+            "support": 0,
+            "false_positives": 0,
+            "fpr": null
+          }
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": []
+        },
+        "inference": {
+          "status": "ok",
+          "device": "cpu",
+          "scope": "prepared_batch_to_numpy_scores",
+          "batch_size": 512,
+          "warmup": 1,
+          "repeats": 3,
+          "threadpool_limit": 1,
+          "median_batch_ms": 0.0013,
+          "amortized_ms_per_flow": 2.5390625e-06,
+          "throughput_flows_per_second": 393846153.84615386,
+          "batch_times_ms": [
+            0.0015,
+            0.0013,
+            0.001
+          ]
+        },
+        "paired_bootstrap": null,
+        "bootstrap_note": "Skipped: first batch contains one class."
+      }
+    },
+    {
+      "version": "corrected",
+      "protocol": "stratified",
+      "variant": "main",
+      "split": "train",
+      "batch_rows": 16384,
+      "features": 140,
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "stratified",
+      "variant": "main",
+      "split": "val",
+      "batch_rows": 16384,
+      "features": 140,
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "stratified",
+      "variant": "main",
+      "split": "test",
+      "batch_rows": 16384,
+      "features": 140,
+      "passed": true,
+      "dummy_checks": {
+        "curve_status": "single_class",
+        "operating_points": {
+          "status": "single_class",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            }
+          ]
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 16384,
+          "n_negative": 16384,
+          "n_positive": 0,
+          "accuracy": 1.0,
+          "macro_f1": 0.5,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": false,
+          "confusion_matrix": {
+            "tn": 16384,
+            "fp": 0,
+            "fn": 0,
+            "tp": 0
+          },
+          "tpr": null,
+          "fpr": 0.0,
+          "precision": null,
+          "attempted": {
+            "status": "no_samples",
+            "support": 0,
+            "false_positives": 0,
+            "fpr": null
+          }
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": []
+        },
+        "inference": {
+          "status": "ok",
+          "device": "cpu",
+          "scope": "prepared_batch_to_numpy_scores",
+          "batch_size": 512,
+          "warmup": 1,
+          "repeats": 3,
+          "threadpool_limit": 1,
+          "median_batch_ms": 0.0011,
+          "amortized_ms_per_flow": 2.1484375e-06,
+          "throughput_flows_per_second": 465454545.45454544,
+          "batch_times_ms": [
+            0.0014,
+            0.0011,
+            0.0007
+          ]
+        },
+        "paired_bootstrap": null,
+        "bootstrap_note": "Skipped: first batch contains one class."
+      }
+    },
+    {
+      "version": "corrected",
+      "protocol": "stratified",
+      "variant": "no_destination_port",
+      "split": "train",
+      "batch_rows": 16384,
+      "features": 75,
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "stratified",
+      "variant": "no_destination_port",
+      "split": "val",
+      "batch_rows": 16384,
+      "features": 75,
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "stratified",
+      "variant": "no_destination_port",
+      "split": "test",
+      "batch_rows": 16384,
+      "features": 75,
+      "passed": true,
+      "dummy_checks": {
+        "curve_status": "single_class",
+        "operating_points": {
+          "status": "single_class",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            }
+          ]
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 16384,
+          "n_negative": 16384,
+          "n_positive": 0,
+          "accuracy": 1.0,
+          "macro_f1": 0.5,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": false,
+          "confusion_matrix": {
+            "tn": 16384,
+            "fp": 0,
+            "fn": 0,
+            "tp": 0
+          },
+          "tpr": null,
+          "fpr": 0.0,
+          "precision": null,
+          "attempted": {
+            "status": "no_samples",
+            "support": 0,
+            "false_positives": 0,
+            "fpr": null
+          }
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": []
+        },
+        "inference": {
+          "status": "ok",
+          "device": "cpu",
+          "scope": "prepared_batch_to_numpy_scores",
+          "batch_size": 512,
+          "warmup": 1,
+          "repeats": 3,
+          "threadpool_limit": 1,
+          "median_batch_ms": 0.0012,
+          "amortized_ms_per_flow": 2.34375e-06,
+          "throughput_flows_per_second": 426666666.6666667,
+          "batch_times_ms": [
+            0.0013,
+            0.0012,
+            0.001
+          ]
+        },
+        "paired_bootstrap": null,
+        "bootstrap_note": "Skipped: first batch contains one class."
+      }
+    },
+    {
+      "version": "corrected",
+      "protocol": "temporal",
+      "variant": "main",
+      "split": "train",
+      "batch_rows": 16384,
+      "features": 140,
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "temporal",
+      "variant": "main",
+      "split": "val",
+      "batch_rows": 16384,
+      "features": 140,
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "temporal",
+      "variant": "main",
+      "split": "test",
+      "batch_rows": 16384,
+      "features": 140,
+      "passed": true,
+      "dummy_checks": {
+        "curve_status": "single_class",
+        "operating_points": {
+          "status": "single_class",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            }
+          ]
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 16384,
+          "n_negative": 16384,
+          "n_positive": 0,
+          "accuracy": 1.0,
+          "macro_f1": 0.5,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": false,
+          "confusion_matrix": {
+            "tn": 16384,
+            "fp": 0,
+            "fn": 0,
+            "tp": 0
+          },
+          "tpr": null,
+          "fpr": 0.0,
+          "precision": null,
+          "attempted": {
+            "status": "no_samples",
+            "support": 0,
+            "false_positives": 0,
+            "fpr": null
+          }
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": []
+        },
+        "inference": {
+          "status": "ok",
+          "device": "cpu",
+          "scope": "prepared_batch_to_numpy_scores",
+          "batch_size": 512,
+          "warmup": 1,
+          "repeats": 3,
+          "threadpool_limit": 1,
+          "median_batch_ms": 0.0023,
+          "amortized_ms_per_flow": 4.4921875e-06,
+          "throughput_flows_per_second": 222608695.6521739,
+          "batch_times_ms": [
+            0.0023,
+            0.0027,
+            0.001
+          ]
+        },
+        "paired_bootstrap": null,
+        "bootstrap_note": "Skipped: first batch contains one class."
+      }
+    },
+    {
+      "version": "corrected",
+      "protocol": "temporal",
+      "variant": "no_destination_port",
+      "split": "train",
+      "batch_rows": 16384,
+      "features": 75,
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "temporal",
+      "variant": "no_destination_port",
+      "split": "val",
+      "batch_rows": 16384,
+      "features": 75,
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "temporal",
+      "variant": "no_destination_port",
+      "split": "test",
+      "batch_rows": 16384,
+      "features": 75,
+      "passed": true,
+      "dummy_checks": {
+        "curve_status": "single_class",
+        "operating_points": {
+          "status": "single_class",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": null,
+              "tpr": null,
+              "threshold": null,
+              "threshold_kind": "undefined"
+            }
+          ]
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 16384,
+          "n_negative": 16384,
+          "n_positive": 0,
+          "accuracy": 1.0,
+          "macro_f1": 0.5,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": false,
+          "confusion_matrix": {
+            "tn": 16384,
+            "fp": 0,
+            "fn": 0,
+            "tp": 0
+          },
+          "tpr": null,
+          "fpr": 0.0,
+          "precision": null,
+          "attempted": {
+            "status": "no_samples",
+            "support": 0,
+            "false_positives": 0,
+            "fpr": null
+          }
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": []
+        },
+        "inference": {
+          "status": "ok",
+          "device": "cpu",
+          "scope": "prepared_batch_to_numpy_scores",
+          "batch_size": 512,
+          "warmup": 1,
+          "repeats": 3,
+          "threadpool_limit": 1,
+          "median_batch_ms": 0.0017,
+          "amortized_ms_per_flow": 3.3203125e-06,
+          "throughput_flows_per_second": 301176470.5882353,
+          "batch_times_ms": [
+            0.0017,
+            0.0027,
+            0.0011
+          ]
+        },
+        "paired_bootstrap": null,
+        "bootstrap_note": "Skipped: first batch contains one class."
+      }
+    }
+  ]
+}

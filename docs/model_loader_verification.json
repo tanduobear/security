@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "version": "original",
+      "protocol": "stratified",
+      "variant": "main",
+      "shape": [
+        16384,
+        140
+      ],
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "stratified",
+      "variant": "no_destination_port",
+      "shape": [
+        16384,
+        75
+      ],
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "temporal",
+      "variant": "main",
+      "shape": [
+        16384,
+        140
+      ],
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "temporal",
+      "variant": "no_destination_port",
+      "shape": [
+        16384,
+        75
+      ],
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "stratified",
+      "variant": "main",
+      "shape": [
+        16384,
+        140
+      ],
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "stratified",
+      "variant": "no_destination_port",
+      "shape": [
+        16384,
+        75
+      ],
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "temporal",
+      "variant": "main",
+      "shape": [
+        16384,
+        140
+      ],
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "temporal",
+      "variant": "no_destination_port",
+      "shape": [
+        16384,
+        75
+      ],
+      "passed": true
+    }
+  ]
+}

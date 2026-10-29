@@ -1,0 +1,109 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "version": "original",
+      "protocol": "stratified",
+      "checks": {
+        "source_hash": true,
+        "feature_policy_hash": true,
+        "label_policy_hash": true,
+        "builder_script_hash": true,
+        "train_file_hash": true,
+        "train_row_count": true,
+        "val_file_hash": true,
+        "val_row_count": true,
+        "test_file_hash": true,
+        "test_row_count": true,
+        "purged_file_hash": true,
+        "purged_row_count": true,
+        "every_source_row_exactly_once": true,
+        "no_row_overlap": true,
+        "no_group_overlap": true,
+        "source_labels_and_days": true,
+        "exported_label_mapping_and_row_ids": true,
+        "all_families_in_all_splits": true,
+        "ratio_within_one_percentage_point": true
+      },
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "temporal",
+      "checks": {
+        "source_hash": true,
+        "feature_policy_hash": true,
+        "label_policy_hash": true,
+        "builder_script_hash": true,
+        "train_file_hash": true,
+        "train_row_count": true,
+        "val_file_hash": true,
+        "val_row_count": true,
+        "test_file_hash": true,
+        "test_row_count": true,
+        "purged_file_hash": true,
+        "purged_row_count": true,
+        "every_source_row_exactly_once": true,
+        "no_row_overlap": true,
+        "no_group_overlap": true,
+        "source_labels_and_days": true,
+        "exported_label_mapping_and_row_ids": true,
+        "temporal_boundaries": true,
+        "purged_group_has_earlier_kept_group": true
+      },
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "stratified",
+      "checks": {
+        "source_hash": true,
+        "feature_policy_hash": true,
+        "label_policy_hash": true,
+        "builder_script_hash": true,
+        "train_file_hash": true,
+        "train_row_count": true,
+        "val_file_hash": true,
+        "val_row_count": true,
+        "test_file_hash": true,
+        "test_row_count": true,
+        "purged_file_hash": true,
+        "purged_row_count": true,
+        "every_source_row_exactly_once": true,
+        "no_row_overlap": true,
+        "no_group_overlap": true,
+        "source_labels_and_days": true,
+        "exported_label_mapping_and_row_ids": true,
+        "all_families_in_all_splits": true,
+        "ratio_within_one_percentage_point": true
+      },
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "temporal",
+      "checks": {
+        "source_hash": true,
+        "feature_policy_hash": true,
+        "label_policy_hash": true,
+        "builder_script_hash": true,
+        "train_file_hash": true,
+        "train_row_count": true,
+        "val_file_hash": true,
+        "val_row_count": true,
+        "test_file_hash": true,
+        "test_row_count": true,
+        "purged_file_hash": true,
+        "purged_row_count": true,
+        "every_source_row_exactly_once": true,
+        "no_row_overlap": true,
+        "no_group_overlap": true,
+        "source_labels_and_days": true,
+        "exported_label_mapping_and_row_ids": true,
+        "temporal_boundaries": true,
+        "purged_group_has_earlier_kept_group": true
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,1107 @@
+{
+  "version": "corrected",
+  "protocol": "stratified",
+  "status": "verified_train_only_and_model_data_complete",
+  "input_sha256": "a9e1df46df7234be6fe90fed7101be3a083feab05ca466f2ec35f97e3f43a329",
+  "index_manifest_sha256": "291d49283e3117eca9ecae8f6f21b248c71c3a1b16aa2acce0dee947c09da921",
+  "preprocessor_sha256": "e8c04e5759c9969cefd66c79689e166c21e81b7d18cea8147c003781198cffa5",
+  "preprocessor_path": "data/split/corrected/stratified/preprocessor.json",
+  "fit_rows": 1467942,
+  "fit_split": "train",
+  "class_counts": {
+    "0": 1117353,
+    "1": 350589
+  },
+  "class_weights": {
+    "0": 0.6568837243019887,
+    "1": 2.0935368765135243
+  },
+  "scale_pos_weight": 3.187073753027049,
+  "features": [
+    "Flow Duration",
+    "Total Fwd Packets",
+    "Total Backward Packets",
+    "Total Length of Fwd Packets",
+    "Total Length of Bwd Packets",
+    "Fwd Packet Length Max",
+    "Fwd Packet Length Min",
+    "Fwd Packet Length Mean",
+    "Fwd Packet Length Std",
+    "Bwd Packet Length Max",
+    "Bwd Packet Length Min",
+    "Bwd Packet Length Mean",
+    "Bwd Packet Length Std",
+    "Flow Bytes/s",
+    "Flow Packets/s",
+    "Flow IAT Mean",
+    "Flow IAT Std",
+    "Flow IAT Max",
+    "Flow IAT Min",
+    "Fwd IAT Total",
+    "Fwd IAT Mean",
+    "Fwd IAT Std",
+    "Fwd IAT Max",
+    "Fwd IAT Min",
+    "Bwd IAT Total",
+    "Bwd IAT Mean",
+    "Bwd IAT Std",
+    "Bwd IAT Max",
+    "Bwd IAT Min",
+    "Fwd PSH Flags",
+    "Bwd PSH Flags",
+    "Fwd URG Flags",
+    "Bwd URG Flags",
+    "Fwd Header Length",
+    "Bwd Header Length",
+    "Fwd Packets/s",
+    "Bwd Packets/s",
+    "Min Packet Length",
+    "Max Packet Length",
+    "Packet Length Mean",
+    "Packet Length Std",
+    "Packet Length Variance",
+    "FIN Flag Count",
+    "SYN Flag Count",
+    "RST Flag Count",
+    "PSH Flag Count",
+    "ACK Flag Count",
+    "URG Flag Count",
+    "ECE Flag Count",
+    "Down/Up Ratio",
+    "Average Packet Size",
+    "Avg Fwd Segment Size",
+    "Avg Bwd Segment Size",
+    "Fwd Avg Bytes/Bulk",
+    "Fwd Avg Packets/Bulk",
+    "Fwd Avg Bulk Rate",
+    "Bwd Avg Bytes/Bulk",
+    "Bwd Avg Packets/Bulk",
+    "Bwd Avg Bulk Rate",
+    "Subflow Fwd Packets",
+    "Subflow Fwd Bytes",
+    "Subflow Bwd Packets",
+    "Subflow Bwd Bytes",
+    "Init_Win_bytes_forward",
+    "Init_Win_bytes_backward",
+    "act_data_pkt_fwd",
+    "min_seg_size_forward",
+    "Active Mean",
+    "Active Std",
+    "Active Max",
+    "Active Min",
+    "Idle Mean",
+    "Idle Std",
+    "Idle Max",
+    "Idle Min",
+    "DestinationPort__53",
+    "DestinationPort__80",
+    "DestinationPort__443",
+    "DestinationPort__123",
+    "DestinationPort__22",
+    "DestinationPort__21",
+    "DestinationPort__389",
+    "DestinationPort__88",
+    "DestinationPort__137",
+    "DestinationPort__3268",
+    "DestinationPort__465",
+    "DestinationPort__0",
+    "DestinationPort__445",
+    "DestinationPort__139",
+    "DestinationPort__8080",
+    "DestinationPort__135",
+    "DestinationPort__138",
+    "DestinationPort__49666",
+    "DestinationPort__5355",
+    "DestinationPort__5353",
+    "DestinationPort__1900",
+    "DestinationPort__444",
+    "DestinationPort__1",
+    "DestinationPort__1041",
+    "DestinationPort__1037",
+    "DestinationPort__1042",
+    "DestinationPort__1026",
+    "DestinationPort__8081",
+    "DestinationPort__1124",
+    "DestinationPort__199",
+    "DestinationPort__1434",
+    "DestinationPort__1025",
+    "DestinationPort__9101",
+    "DestinationPort__49152",
+    "DestinationPort__5963",
+    "DestinationPort__65389",
+    "DestinationPort__143",
+    "DestinationPort__587",
+    "DestinationPort__1761",
+    "DestinationPort__1947",
+    "DestinationPort__4003",
+    "DestinationPort__5811",
+    "DestinationPort__8000",
+    "DestinationPort__11111",
+    "DestinationPort__2040",
+    "DestinationPort__3000",
+    "DestinationPort__5009",
+    "DestinationPort__49163",
+    "DestinationPort__1047",
+    "DestinationPort__2030",
+    "DestinationPort__6788",
+    "DestinationPort__44443",
+    "DestinationPort__993",
+    "DestinationPort__1058",
+    "DestinationPort__1199",
+    "DestinationPort__2604",
+    "DestinationPort__3300",
+    "DestinationPort__5004",
+    "DestinationPort__5051",
+    "DestinationPort__8443",
+    "DestinationPort__14441",
+    "DestinationPort__15002",
+    "DestinationPort__1085",
+    "DestinationPort__1164",
+    "DestinationPort__OTHER"
+  ],
+  "ablation_features": [
+    "Flow Duration",
+    "Total Fwd Packets",
+    "Total Backward Packets",
+    "Total Length of Fwd Packets",
+    "Total Length of Bwd Packets",
+    "Fwd Packet Length Max",
+    "Fwd Packet Length Min",
+    "Fwd Packet Length Mean",
+    "Fwd Packet Length Std",
+    "Bwd Packet Length Max",
+    "Bwd Packet Length Min",
+    "Bwd Packet Length Mean",
+    "Bwd Packet Length Std",
+    "Flow Bytes/s",
+    "Flow Packets/s",
+    "Flow IAT Mean",
+    "Flow IAT Std",
+    "Flow IAT Max",
+    "Flow IAT Min",
+    "Fwd IAT Total",
+    "Fwd IAT Mean",
+    "Fwd IAT Std",
+    "Fwd IAT Max",
+    "Fwd IAT Min",
+    "Bwd IAT Total",
+    "Bwd IAT Mean",
+    "Bwd IAT Std",
+    "Bwd IAT Max",
+    "Bwd IAT Min",
+    "Fwd PSH Flags",
+    "Bwd PSH Flags",
+    "Fwd URG Flags",
+    "Bwd URG Flags",
+    "Fwd Header Length",
+    "Bwd Header Length",
+    "Fwd Packets/s",
+    "Bwd Packets/s",
+    "Min Packet Length",
+    "Max Packet Length",
+    "Packet Length Mean",
+    "Packet Length Std",
+    "Packet Length Variance",
+    "FIN Flag Count",
+    "SYN Flag Count",
+    "RST Flag Count",
+    "PSH Flag Count",
+    "ACK Flag Count",
+    "URG Flag Count",
+    "ECE Flag Count",
+    "Down/Up Ratio",
+    "Average Packet Size",
+    "Avg Fwd Segment Size",
+    "Avg Bwd Segment Size",
+    "Fwd Avg Bytes/Bulk",
+    "Fwd Avg Packets/Bulk",
+    "Fwd Avg Bulk Rate",
+    "Bwd Avg Bytes/Bulk",
+    "Bwd Avg Packets/Bulk",
+    "Bwd Avg Bulk Rate",
+    "Subflow Fwd Packets",
+    "Subflow Fwd Bytes",
+    "Subflow Bwd Packets",
+    "Subflow Bwd Bytes",
+    "Init_Win_bytes_forward",
+    "Init_Win_bytes_backward",
+    "act_data_pkt_fwd",
+    "min_seg_size_forward",
+    "Active Mean",
+    "Active Std",
+    "Active Max",
+    "Active Min",
+    "Idle Mean",
+    "Idle Std",
+    "Idle Max",
+    "Idle Min"
+  ],
+  "metadata_columns": [
+    "row_index",
+    "row_id",
+    "group_id",
+    "label_raw",
+    "y_binary",
+    "attack_family",
+    "family_id",
+    "is_attempted",
+    "capture_date"
+  ],
+  "port_top_k": 64,
+  "port_vocabulary": [
+    53,
+    80,
+    443,
+    123,
+    22,
+    21,
+    389,
+    88,
+    137,
+    3268,
+    465,
+    0,
+    445,
+    139,
+    8080,
+    135,
+    138,
+    49666,
+    5355,
+    5353,
+    1900,
+    444,
+    1,
+    1041,
+    1037,
+    1042,
+    1026,
+    8081,
+    1124,
+    199,
+    1434,
+    1025,
+    9101,
+    49152,
+    5963,
+    65389,
+    143,
+    587,
+    1761,
+    1947,
+    4003,
+    5811,
+    8000,
+    11111,
+    2040,
+    3000,
+    5009,
+    49163,
+    1047,
+    2030,
+    6788,
+    44443,
+    993,
+    1058,
+    1199,
+    2604,
+    3300,
+    5004,
+    5051,
+    8443,
+    14441,
+    15002,
+    1085,
+    1164
+  ],
+  "output": {
+    "train": {
+      "rows": 1467942,
+      "main": {
+        "path": "data/split/corrected/stratified/train.parquet",
+        "sha256": "6bb81f7fb5cc9fd31cd419b4b3f65ca84a5495dfccc10c1228033b269cfc6061",
+        "bytes": 194479299
+      },
+      "no_destination_port": {
+        "path": "data/split/corrected/stratified/no_destination_port/train.parquet",
+        "sha256": "186aec28c60ec0a5a3e4f59aa2f03865d627ff8bbee9c78de980bb6f9b4830d1",
+        "bytes": 193720978
+      },
+      "port_diagnostics": {
+        "other_rows": 150246,
+        "unseen_in_train_rows": 0
+      },
+      "base_rows_before_precision_guard": 1467942,
+      "effective_index": {
+        "path": "data/split/corrected/stratified/model_train_indices.parquet",
+        "rows": 1467942,
+        "sha256": "e87000c50069788069af7f069867cc0e963735199423559d24620da8743323ac"
+      },
+      "precision_purged_rows": 0,
+      "base_port_diagnostics": {
+        "other_rows": 150246,
+        "unseen_in_train_rows": 0
+      }
+    },
+    "val": {
+      "rows": 315344,
+      "main": {
+        "path": "data/split/corrected/stratified/val.parquet",
+        "sha256": "2141e3a1a34851b14687e0f8f9b338faf77e3e7295f675a5600e3d12ebaf302c",
+        "bytes": 36645382
+      },
+      "no_destination_port": {
+        "path": "data/split/corrected/stratified/no_destination_port/val.parquet",
+        "sha256": "78657516a6631e2569149efa6b1887353427c901c19fa8917572613d7c0543a8",
+        "bytes": 36477742
+      },
+      "port_diagnostics": {
+        "other_rows": 36450,
+        "unseen_in_train_rows": 928
+      },
+      "base_rows_before_precision_guard": 316014,
+      "effective_index": {
+        "path": "data/split/corrected/stratified/model_val_indices.parquet",
+        "rows": 315344,
+        "sha256": "81962d224b0f8dca18175e96f9649fc8a254bc71496249dd88ce4e96c5590f1d"
+      },
+      "precision_purged_rows": 670,
+      "base_port_diagnostics": {
+        "other_rows": 36482,
+        "unseen_in_train_rows": 929
+      }
+    },
+    "test": {
+      "rows": 314577,
+      "main": {
+        "path": "data/split/corrected/stratified/test.parquet",
+        "sha256": "2f98a16e00d8b48c6a3b469f8d137d26af99beefb7f48aac45d9a6057f9ddde3",
+        "bytes": 36649973
+      },
+      "no_destination_port": {
+        "path": "data/split/corrected/stratified/no_destination_port/test.parquet",
+        "sha256": "9af70a0f240f2f320b551a9e0ac9bc108f87a19b259d54070bd97bd8d48cc7a0",
+        "bytes": 36482651
+      },
+      "port_diagnostics": {
+        "other_rows": 36498,
+        "unseen_in_train_rows": 1014
+      },
+      "base_rows_before_precision_guard": 316015,
+      "effective_index": {
+        "path": "data/split/corrected/stratified/model_test_indices.parquet",
+        "rows": 314577,
+        "sha256": "c9fe98e9e5b0e91fd10d439fdff64c39a33df9ccf8d9a2c5945635b8bc7c817b"
+      },
+      "precision_purged_rows": 1438,
+      "base_port_diagnostics": {
+        "other_rows": 36559,
+        "unseen_in_train_rows": 1017
+      }
+    }
+  },
+  "preprocess_module_sha256": "bc78b2da12d40e9edbf194ed4d1c80aa1e805121b65a84a14da75c016c851f7a",
+  "builder_sha256": "85209a92a4ef3d83e51dbe9319feb65dd1c411cdd411ab59bda75f159a8dfac1",
+  "runtime": {
+    "python": "3.12.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "duckdb": "2.0.0",
+    "sklearn": "1.8.0"
+  },
+  "precision_guard": {
+    "rule_version": "1.0",
+    "features": "75 standardized float32 numeric fields; signed zero normalized",
+    "priority": [
+      "train",
+      "val",
+      "test"
+    ],
+    "cross_split_groups_before": 199,
+    "cross_split_groups_after": 0,
+    "removed_rows": {
+      "train": 0,
+      "val": 670,
+      "test": 1438
+    },
+    "indices": {
+      "train": {
+        "path": "data/split/corrected/stratified/model_train_indices.parquet",
+        "rows": 1467942,
+        "sha256": "e87000c50069788069af7f069867cc0e963735199423559d24620da8743323ac"
+      },
+      "val": {
+        "path": "data/split/corrected/stratified/model_val_indices.parquet",
+        "rows": 315344,
+        "sha256": "81962d224b0f8dca18175e96f9649fc8a254bc71496249dd88ce4e96c5590f1d"
+      },
+      "test": {
+        "path": "data/split/corrected/stratified/model_test_indices.parquet",
+        "rows": 314577,
+        "sha256": "c9fe98e9e5b0e91fd10d439fdff64c39a33df9ccf8d9a2c5945635b8bc7c817b"
+      }
+    },
+    "purged_path": "data/split/corrected/stratified/precision_purged_indices.parquet",
+    "purged_sha256": "ffc990a5ba2610ddcd2a0bb1ee7e8eb47d0d323d58f758d268679210bd28a3e7",
+    "checks": {
+      "no_transformed_group_overlap": true,
+      "all_base_rows_accounted_for": true,
+      "train_unchanged": true,
+      "processor_unchanged": true,
+      "no_hash_collisions": true
+    },
+    "class_distribution": [
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "benign",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 1110594
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "botnet",
+        "y_binary": 1,
+        "attack_family": "botnet",
+        "count": 516
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "botnet - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 361
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "ddos",
+        "y_binary": 1,
+        "attack_family": "ddos",
+        "count": 66605
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "dos goldeneye",
+        "y_binary": 1,
+        "attack_family": "dos goldeneye",
+        "count": 5297
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "dos goldeneye - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 56
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "dos hulk",
+        "y_binary": 1,
+        "attack_family": "dos hulk",
+        "count": 110940
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "dos hulk - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 455
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "dos slowhttptest",
+        "y_binary": 1,
+        "attack_family": "dos slowhttptest",
+        "count": 1218
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "dos slowhttptest - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 2728
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "dos slowloris",
+        "y_binary": 1,
+        "attack_family": "dos slowloris",
+        "count": 2701
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "dos slowloris - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 1482
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "ftp-patator",
+        "y_binary": 1,
+        "attack_family": "ftp-patator",
+        "count": 2780
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "ftp-patator - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 10
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "heartbleed",
+        "y_binary": 1,
+        "attack_family": "heartbleed",
+        "count": 7
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "infiltration",
+        "y_binary": 1,
+        "attack_family": "infiltration",
+        "count": 26
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "infiltration - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 24
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "infiltration - portscan",
+        "y_binary": 1,
+        "attack_family": "portscan",
+        "count": 44485
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "portscan",
+        "y_binary": 1,
+        "attack_family": "portscan",
+        "count": 113869
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "ssh-patator",
+        "y_binary": 1,
+        "attack_family": "ssh-patator",
+        "count": 2073
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "ssh-patator - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 22
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "web attack - brute force",
+        "y_binary": 1,
+        "attack_family": "web attack - brute force",
+        "count": 51
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "web attack - brute force - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 1088
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "web attack - sql injection",
+        "y_binary": 1,
+        "attack_family": "web attack - sql injection",
+        "count": 9
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "web attack - sql injection - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 5
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "web attack - xss",
+        "y_binary": 1,
+        "attack_family": "web attack - xss",
+        "count": 12
+      },
+      {
+        "split": "train",
+        "precision_purged": false,
+        "label_raw": "web attack - xss - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 528
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "benign",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 235216
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "botnet",
+        "y_binary": 1,
+        "attack_family": "botnet",
+        "count": 110
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "botnet - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 1931
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "ddos",
+        "y_binary": 1,
+        "attack_family": "ddos",
+        "count": 14270
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "dos goldeneye",
+        "y_binary": 1,
+        "attack_family": "dos goldeneye",
+        "count": 1135
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "dos goldeneye - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 11
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "dos hulk",
+        "y_binary": 1,
+        "attack_family": "dos hulk",
+        "count": 23764
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "dos hulk - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 61
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "dos slowhttptest",
+        "y_binary": 1,
+        "attack_family": "dos slowhttptest",
+        "count": 261
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "dos slowhttptest - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 338
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "dos slowloris",
+        "y_binary": 1,
+        "attack_family": "dos slowloris",
+        "count": 579
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "dos slowloris - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 186
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "ftp-patator",
+        "y_binary": 1,
+        "attack_family": "ftp-patator",
+        "count": 596
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "ftp-patator - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 1
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "heartbleed",
+        "y_binary": 1,
+        "attack_family": "heartbleed",
+        "count": 2
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "infiltration",
+        "y_binary": 1,
+        "attack_family": "infiltration",
+        "count": 5
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "infiltration - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 8
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "infiltration - portscan",
+        "y_binary": 1,
+        "attack_family": "portscan",
+        "count": 10834
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "portscan",
+        "y_binary": 1,
+        "attack_family": "portscan",
+        "count": 25404
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "ssh-patator",
+        "y_binary": 1,
+        "attack_family": "ssh-patator",
+        "count": 444
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "ssh-patator - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 2
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "web attack - brute force",
+        "y_binary": 1,
+        "attack_family": "web attack - brute force",
+        "count": 11
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "web attack - brute force - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 104
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "web attack - sql injection",
+        "y_binary": 1,
+        "attack_family": "web attack - sql injection",
+        "count": 2
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "web attack - xss",
+        "y_binary": 1,
+        "attack_family": "web attack - xss",
+        "count": 3
+      },
+      {
+        "split": "val",
+        "precision_purged": false,
+        "label_raw": "web attack - xss - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 66
+      },
+      {
+        "split": "val",
+        "precision_purged": true,
+        "label_raw": "benign",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 670
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "benign",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 234643
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "botnet",
+        "y_binary": 1,
+        "attack_family": "botnet",
+        "count": 110
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "botnet - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 1775
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "ddos",
+        "y_binary": 1,
+        "attack_family": "ddos",
+        "count": 14269
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "dos goldeneye",
+        "y_binary": 1,
+        "attack_family": "dos goldeneye",
+        "count": 1135
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "dos goldeneye - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 13
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "dos hulk",
+        "y_binary": 1,
+        "attack_family": "dos hulk",
+        "count": 23764
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "dos hulk - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 65
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "dos slowhttptest",
+        "y_binary": 1,
+        "attack_family": "dos slowhttptest",
+        "count": 261
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "dos slowhttptest - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 302
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "dos slowloris",
+        "y_binary": 1,
+        "attack_family": "dos slowloris",
+        "count": 579
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "dos slowloris - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 179
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "ftp-patator",
+        "y_binary": 1,
+        "attack_family": "ftp-patator",
+        "count": 596
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "ftp-patator - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 1
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "heartbleed",
+        "y_binary": 1,
+        "attack_family": "heartbleed",
+        "count": 2
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "infiltration",
+        "y_binary": 1,
+        "attack_family": "infiltration",
+        "count": 5
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "infiltration - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 13
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "infiltration - portscan",
+        "y_binary": 1,
+        "attack_family": "portscan",
+        "count": 16448
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "portscan",
+        "y_binary": 1,
+        "attack_family": "portscan",
+        "count": 19793
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "ssh-patator",
+        "y_binary": 1,
+        "attack_family": "ssh-patator",
+        "count": 444
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "ssh-patator - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 3
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "web attack - brute force",
+        "y_binary": 1,
+        "attack_family": "web attack - brute force",
+        "count": 11
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "web attack - brute force - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 100
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "web attack - sql injection",
+        "y_binary": 1,
+        "attack_family": "web attack - sql injection",
+        "count": 2
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "web attack - xss",
+        "y_binary": 1,
+        "attack_family": "web attack - xss",
+        "count": 3
+      },
+      {
+        "split": "test",
+        "precision_purged": false,
+        "label_raw": "web attack - xss - attempted",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 61
+      },
+      {
+        "split": "test",
+        "precision_purged": true,
+        "label_raw": "benign",
+        "y_binary": 0,
+        "attack_family": "benign",
+        "count": 1438
+      }
+    ],
+    "postprocessor_sha256": "1d436497b0fb8dba9b357222a85b8acf7eaaf68b90b5647254644650bb5dec57"
+  },
+  "verification_report_sha256": "b2837e67e9f77f4ebf534b55bed4e053c724100dc54df13a2ac89778888fc658",
+  "runtime_loader_sha256": "2d5b84e4f5df180ea70f85260451b455c8b81372da196899f027773bf79a567d"
+}

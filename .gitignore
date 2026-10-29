@@ -11,3 +11,7 @@ __pycache__/
 *.pyc
 Thumbs.db
 .DS_Store
+
+# 工作目录和 Office 临时锁文件
+.tmp/
+~$*

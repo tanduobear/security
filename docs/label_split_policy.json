@@ -1,0 +1,838 @@
+{
+  "policy_version": "1.0",
+  "date": "2026-10-26",
+  "status": "方案确定；尚未生成split数据或索引",
+  "positive_class": "attack=1; benign=0",
+  "attempted_policy": "map_to_benign_keep_raw_label_and_flag_as_metadata",
+  "family_names": [
+    "benign",
+    "botnet",
+    "ddos",
+    "dos goldeneye",
+    "dos hulk",
+    "dos slowhttptest",
+    "dos slowloris",
+    "ftp-patator",
+    "heartbleed",
+    "infiltration",
+    "portscan",
+    "ssh-patator",
+    "web attack - brute force",
+    "web attack - sql injection",
+    "web attack - xss"
+  ],
+  "label_mapping": [
+    {
+      "version": "original",
+      "label_raw": "benign",
+      "count": 2095057,
+      "is_attempted": false,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    },
+    {
+      "version": "original",
+      "label_raw": "bot",
+      "count": 1948,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "botnet",
+      "family_id": 1
+    },
+    {
+      "version": "original",
+      "label_raw": "ddos",
+      "count": 128014,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "ddos",
+      "family_id": 2
+    },
+    {
+      "version": "original",
+      "label_raw": "dos goldeneye",
+      "count": 10286,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "dos goldeneye",
+      "family_id": 3
+    },
+    {
+      "version": "original",
+      "label_raw": "dos hulk",
+      "count": 172846,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "dos hulk",
+      "family_id": 4
+    },
+    {
+      "version": "original",
+      "label_raw": "dos slowhttptest",
+      "count": 5228,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "dos slowhttptest",
+      "family_id": 5
+    },
+    {
+      "version": "original",
+      "label_raw": "dos slowloris",
+      "count": 5385,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "dos slowloris",
+      "family_id": 6
+    },
+    {
+      "version": "original",
+      "label_raw": "ftp-patator",
+      "count": 5931,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "ftp-patator",
+      "family_id": 7
+    },
+    {
+      "version": "original",
+      "label_raw": "heartbleed",
+      "count": 11,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "heartbleed",
+      "family_id": 8
+    },
+    {
+      "version": "original",
+      "label_raw": "infiltration",
+      "count": 36,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "infiltration",
+      "family_id": 9
+    },
+    {
+      "version": "original",
+      "label_raw": "portscan",
+      "count": 90694,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "portscan",
+      "family_id": 10
+    },
+    {
+      "version": "original",
+      "label_raw": "ssh-patator",
+      "count": 3219,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "ssh-patator",
+      "family_id": 11
+    },
+    {
+      "version": "original",
+      "label_raw": "web attack  brute force",
+      "count": 1470,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "web attack - brute force",
+      "family_id": 12
+    },
+    {
+      "version": "original",
+      "label_raw": "web attack  sql injection",
+      "count": 21,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "web attack - sql injection",
+      "family_id": 13
+    },
+    {
+      "version": "original",
+      "label_raw": "web attack  xss",
+      "count": 652,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "web attack - xss",
+      "family_id": 14
+    },
+    {
+      "version": "corrected",
+      "label_raw": "benign",
+      "count": 1582561,
+      "is_attempted": false,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    },
+    {
+      "version": "corrected",
+      "label_raw": "botnet",
+      "count": 736,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "botnet",
+      "family_id": 1
+    },
+    {
+      "version": "corrected",
+      "label_raw": "botnet - attempted",
+      "count": 4067,
+      "is_attempted": true,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    },
+    {
+      "version": "corrected",
+      "label_raw": "ddos",
+      "count": 95144,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "ddos",
+      "family_id": 2
+    },
+    {
+      "version": "corrected",
+      "label_raw": "dos goldeneye",
+      "count": 7567,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "dos goldeneye",
+      "family_id": 3
+    },
+    {
+      "version": "corrected",
+      "label_raw": "dos goldeneye - attempted",
+      "count": 80,
+      "is_attempted": true,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    },
+    {
+      "version": "corrected",
+      "label_raw": "dos hulk",
+      "count": 158468,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "dos hulk",
+      "family_id": 4
+    },
+    {
+      "version": "corrected",
+      "label_raw": "dos hulk - attempted",
+      "count": 581,
+      "is_attempted": true,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    },
+    {
+      "version": "corrected",
+      "label_raw": "dos slowhttptest",
+      "count": 1740,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "dos slowhttptest",
+      "family_id": 5
+    },
+    {
+      "version": "corrected",
+      "label_raw": "dos slowhttptest - attempted",
+      "count": 3368,
+      "is_attempted": true,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    },
+    {
+      "version": "corrected",
+      "label_raw": "dos slowloris",
+      "count": 3859,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "dos slowloris",
+      "family_id": 6
+    },
+    {
+      "version": "corrected",
+      "label_raw": "dos slowloris - attempted",
+      "count": 1847,
+      "is_attempted": true,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    },
+    {
+      "version": "corrected",
+      "label_raw": "ftp-patator",
+      "count": 3972,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "ftp-patator",
+      "family_id": 7
+    },
+    {
+      "version": "corrected",
+      "label_raw": "ftp-patator - attempted",
+      "count": 12,
+      "is_attempted": true,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    },
+    {
+      "version": "corrected",
+      "label_raw": "heartbleed",
+      "count": 11,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "heartbleed",
+      "family_id": 8
+    },
+    {
+      "version": "corrected",
+      "label_raw": "infiltration",
+      "count": 36,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "infiltration",
+      "family_id": 9
+    },
+    {
+      "version": "corrected",
+      "label_raw": "infiltration - attempted",
+      "count": 45,
+      "is_attempted": true,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    },
+    {
+      "version": "corrected",
+      "label_raw": "infiltration - portscan",
+      "count": 71767,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "portscan",
+      "family_id": 10
+    },
+    {
+      "version": "corrected",
+      "label_raw": "portscan",
+      "count": 159066,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "portscan",
+      "family_id": 10
+    },
+    {
+      "version": "corrected",
+      "label_raw": "ssh-patator",
+      "count": 2961,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "ssh-patator",
+      "family_id": 11
+    },
+    {
+      "version": "corrected",
+      "label_raw": "ssh-patator - attempted",
+      "count": 27,
+      "is_attempted": true,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    },
+    {
+      "version": "corrected",
+      "label_raw": "web attack - brute force",
+      "count": 73,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "web attack - brute force",
+      "family_id": 12
+    },
+    {
+      "version": "corrected",
+      "label_raw": "web attack - brute force - attempted",
+      "count": 1292,
+      "is_attempted": true,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    },
+    {
+      "version": "corrected",
+      "label_raw": "web attack - sql injection",
+      "count": 13,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "web attack - sql injection",
+      "family_id": 13
+    },
+    {
+      "version": "corrected",
+      "label_raw": "web attack - sql injection - attempted",
+      "count": 5,
+      "is_attempted": true,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    },
+    {
+      "version": "corrected",
+      "label_raw": "web attack - xss",
+      "count": 18,
+      "is_attempted": false,
+      "y_binary": 1,
+      "attack_family": "web attack - xss",
+      "family_id": 14
+    },
+    {
+      "version": "corrected",
+      "label_raw": "web attack - xss - attempted",
+      "count": 655,
+      "is_attempted": true,
+      "y_binary": 0,
+      "attack_family": "benign",
+      "family_id": 0
+    }
+  ],
+  "seed": 42,
+  "random_split": {
+    "target_ratios": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    },
+    "stratification_target": "normalized attack_family",
+    "duplicate_group_columns": "75个共同原始特征（从76字段中排除Destination Port）",
+    "algorithm": "largest-group-first seeded deterministic greedy allocation minimizing squared normalized deficits across family counts and total rows",
+    "priority": "group_disjointness > target_proportions",
+    "note": "近似分层70/15/15；按重复组分配，不能承诺逐行精确比例。小类尽量覆盖三折，若不足3个独立组则报告缺类，不复制样本。"
+  },
+  "temporal_split": {
+    "train_dates": [
+      "2017-07-03",
+      "2017-07-04",
+      "2017-07-05"
+    ],
+    "val_dates": [
+      "2017-07-06"
+    ],
+    "test_dates": [
+      "2017-07-07"
+    ],
+    "purge": "按train、val、test优先级，若75字段特征组已出现于更早折，保留早折并剔除后折的该组行；每折内部保留原始重复，不跨天移动行。",
+    "require_70_15_15": false
+  },
+  "path_template": "data/split/{original|corrected}/{stratified|temporal}/{train|val|test}.parquet",
+  "summaries": {
+    "original": {
+      "total": 2520798,
+      "families": {
+        "benign": 2095057,
+        "botnet": 1948,
+        "ddos": 128014,
+        "dos goldeneye": 10286,
+        "dos hulk": 172846,
+        "dos slowhttptest": 5228,
+        "dos slowloris": 5385,
+        "ftp-patator": 5931,
+        "heartbleed": 11,
+        "infiltration": 36,
+        "portscan": 90694,
+        "ssh-patator": 3219,
+        "web attack - brute force": 1470,
+        "web attack - sql injection": 21,
+        "web attack - xss": 652
+      },
+      "days": {
+        "2017-07-03": 502650,
+        "2017-07-04": 421576,
+        "2017-07-05": 602278,
+        "2017-07-06": 398434,
+        "2017-07-07": 595860
+      },
+      "temporal_before_purge": {
+        "train": {
+          "benign": 1323598,
+          "ftp-patator": 5931,
+          "ssh-patator": 3219,
+          "dos goldeneye": 10286,
+          "dos hulk": 172846,
+          "dos slowhttptest": 5228,
+          "dos slowloris": 5385,
+          "heartbleed": 11
+        },
+        "val": {
+          "benign": 396255,
+          "infiltration": 36,
+          "web attack - brute force": 1470,
+          "web attack - sql injection": 21,
+          "web attack - xss": 652
+        },
+        "test": {
+          "benign": 375204,
+          "botnet": 1948,
+          "ddos": 128014,
+          "portscan": 90694
+        }
+      },
+      "temporal_unseen_in_test": [
+        "botnet",
+        "ddos",
+        "portscan"
+      ],
+      "temporal_unseen_in_val": [
+        "infiltration",
+        "web attack - brute force",
+        "web attack - sql injection",
+        "web attack - xss"
+      ]
+    },
+    "corrected": {
+      "total": 2099971,
+      "families": {
+        "benign": 1594540,
+        "botnet": 736,
+        "ddos": 95144,
+        "dos goldeneye": 7567,
+        "dos hulk": 158468,
+        "dos slowhttptest": 1740,
+        "dos slowloris": 3859,
+        "ftp-patator": 3972,
+        "heartbleed": 11,
+        "infiltration": 36,
+        "portscan": 230833,
+        "ssh-patator": 2961,
+        "web attack - brute force": 73,
+        "web attack - sql injection": 13,
+        "web attack - xss": 18
+      },
+      "days": {
+        "2017-07-03": 371621,
+        "2017-07-04": 322078,
+        "2017-07-05": 496640,
+        "2017-07-06": 362075,
+        "2017-07-07": 547557
+      },
+      "temporal_before_purge": {
+        "train": {
+          "benign": 1011761,
+          "ftp-patator": 3972,
+          "ssh-patator": 2961,
+          "dos goldeneye": 7567,
+          "dos hulk": 158468,
+          "dos slowhttptest": 1740,
+          "dos slowloris": 3859,
+          "heartbleed": 11
+        },
+        "val": {
+          "benign": 290168,
+          "infiltration": 36,
+          "portscan": 71767,
+          "web attack - brute force": 73,
+          "web attack - sql injection": 13,
+          "web attack - xss": 18
+        },
+        "test": {
+          "benign": 292611,
+          "botnet": 736,
+          "ddos": 95144,
+          "portscan": 159066
+        }
+      },
+      "temporal_unseen_in_test": [
+        "botnet",
+        "ddos",
+        "portscan"
+      ],
+      "temporal_unseen_in_val": [
+        "infiltration",
+        "portscan",
+        "web attack - brute force",
+        "web attack - sql injection",
+        "web attack - xss"
+      ]
+    }
+  },
+  "daily_family_counts": [
+    {
+      "version": "original",
+      "date": "2017-07-03",
+      "family": "benign",
+      "count": 502650,
+      "split": "train"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-04",
+      "family": "benign",
+      "count": 412426,
+      "split": "train"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-04",
+      "family": "ftp-patator",
+      "count": 5931,
+      "split": "train"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-04",
+      "family": "ssh-patator",
+      "count": 3219,
+      "split": "train"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-05",
+      "family": "benign",
+      "count": 408522,
+      "split": "train"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-05",
+      "family": "dos goldeneye",
+      "count": 10286,
+      "split": "train"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-05",
+      "family": "dos hulk",
+      "count": 172846,
+      "split": "train"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-05",
+      "family": "dos slowhttptest",
+      "count": 5228,
+      "split": "train"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-05",
+      "family": "dos slowloris",
+      "count": 5385,
+      "split": "train"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-05",
+      "family": "heartbleed",
+      "count": 11,
+      "split": "train"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-06",
+      "family": "benign",
+      "count": 396255,
+      "split": "val"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-06",
+      "family": "infiltration",
+      "count": 36,
+      "split": "val"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-06",
+      "family": "web attack - brute force",
+      "count": 1470,
+      "split": "val"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-06",
+      "family": "web attack - sql injection",
+      "count": 21,
+      "split": "val"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-06",
+      "family": "web attack - xss",
+      "count": 652,
+      "split": "val"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-07",
+      "family": "benign",
+      "count": 375204,
+      "split": "test"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-07",
+      "family": "botnet",
+      "count": 1948,
+      "split": "test"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-07",
+      "family": "ddos",
+      "count": 128014,
+      "split": "test"
+    },
+    {
+      "version": "original",
+      "date": "2017-07-07",
+      "family": "portscan",
+      "count": 90694,
+      "split": "test"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-03",
+      "family": "benign",
+      "count": 371621,
+      "split": "train"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-04",
+      "family": "benign",
+      "count": 315145,
+      "split": "train"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-04",
+      "family": "ftp-patator",
+      "count": 3972,
+      "split": "train"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-04",
+      "family": "ssh-patator",
+      "count": 2961,
+      "split": "train"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-05",
+      "family": "benign",
+      "count": 324995,
+      "split": "train"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-05",
+      "family": "dos goldeneye",
+      "count": 7567,
+      "split": "train"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-05",
+      "family": "dos hulk",
+      "count": 158468,
+      "split": "train"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-05",
+      "family": "dos slowhttptest",
+      "count": 1740,
+      "split": "train"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-05",
+      "family": "dos slowloris",
+      "count": 3859,
+      "split": "train"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-05",
+      "family": "heartbleed",
+      "count": 11,
+      "split": "train"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-06",
+      "family": "benign",
+      "count": 290168,
+      "split": "val"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-06",
+      "family": "infiltration",
+      "count": 36,
+      "split": "val"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-06",
+      "family": "portscan",
+      "count": 71767,
+      "split": "val"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-06",
+      "family": "web attack - brute force",
+      "count": 73,
+      "split": "val"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-06",
+      "family": "web attack - sql injection",
+      "count": 13,
+      "split": "val"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-06",
+      "family": "web attack - xss",
+      "count": 18,
+      "split": "val"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-07",
+      "family": "benign",
+      "count": 292611,
+      "split": "test"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-07",
+      "family": "botnet",
+      "count": 736,
+      "split": "test"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-07",
+      "family": "ddos",
+      "count": 95144,
+      "split": "test"
+    },
+    {
+      "version": "corrected",
+      "date": "2017-07-07",
+      "family": "portscan",
+      "count": 159066,
+      "split": "test"
+    }
+  ]
+}

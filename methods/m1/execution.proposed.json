@@ -1,0 +1,171 @@
+{
+  "schema_version": "1",
+  "approval": {
+    "status": "pending",
+    "source": null,
+    "approved_at": null,
+    "execution_sha256": null
+  },
+  "unified_protocol_sha256": "e6e6d8880a5540419f56dbea5b5270b7fd0bf9392b1114b8b56ebf943ef92360",
+  "description": "Recommended execution details only. Not covered by the collective approval of the general protocol.",
+  "gbdt_candidates": [
+    {
+      "id": "G01",
+      "params": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G02",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G03",
+      "params": {
+        "max_iter": 200,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G04",
+      "params": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G05",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G06",
+      "params": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 5,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G07",
+      "params": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 50,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G08",
+      "params": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 20,
+        "l2_regularization": 10.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    }
+  ],
+  "rf_auxiliary": {
+    "id": "RF_FIXED",
+    "seed_policy": "same_five",
+    "eligible_for_main_selection": false,
+    "params": {
+      "n_estimators": 200,
+      "max_depth": 20,
+      "max_leaf_nodes": 4096,
+      "min_samples_leaf": 2,
+      "max_features": "sqrt",
+      "bootstrap": true,
+      "n_jobs": 4,
+      "class_weight": null
+    }
+  },
+  "stopping": {
+    "mode": "fixed_rounds",
+    "monitor": null,
+    "patience": null,
+    "description": "No early stopping; max_iter and n_estimators explicitly bound each configuration."
+  },
+  "tie_break": {
+    "ap_tolerance": 1e-06,
+    "rule": "lowest_candidate_id"
+  },
+  "threshold_boundary_rule": "strict_nextafter_benign_boundary",
+  "bootstrap": {
+    "repetitions": 2000,
+    "confidence": 0.95,
+    "seed": 2026,
+    "metrics": [
+      "ap",
+      "tpr_at_fpr"
+    ],
+    "fpr_targets": [
+      0.001,
+      0.01,
+      0.05
+    ],
+    "comparison": "selected_gbdt_minus_fixed_rf_same_seed"
+  },
+  "timing": {
+    "source_split": "val",
+    "selection": "sha256_row_id_rank",
+    "seed": 2026,
+    "handover": "Publish the generated validation row IDs and population hash for P5/P6/P7 to reuse; do not independently choose different rows."
+  },
+  "resources": {
+    "outer_parallel_jobs": 1,
+    "fit_threads": 4,
+    "inference_threads": 1,
+    "prediction_batch_rows": 8192,
+    "duckdb_memory_limit_mb": 512
+  }
+}

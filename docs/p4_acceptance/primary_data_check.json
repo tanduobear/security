@@ -1,0 +1,39 @@
+{
+  "version": "original",
+  "protocol": "stratified",
+  "variant": "main",
+  "splits": {
+    "train": {
+      "rows": 1764265,
+      "benign": 1466743,
+      "attack": 297522,
+      "features": 140,
+      "hashes": {
+        "train.parquet": "a300844eadac44f3d2f4a43084871e96033a60440ff3a43878b9c674def1a77c",
+        "model_train_indices.parquet": "6b9b859972d115a18b62a2b2a0d0591116e2748a4aee3af0f75744caea57b12e"
+      }
+    },
+    "val": {
+      "rows": 367036,
+      "benign": 302963,
+      "attack": 64073,
+      "features": 140,
+      "hashes": {
+        "val.parquet": "1e1159b80cbd147c9ce16d60953394300c1c518b69afbb704c9b075b0293d560",
+        "model_val_indices.parquet": "9b37a8276c00bf9fac64aafb3b3615090167b1aed03b8f0eb887c61090beb9a8"
+      }
+    },
+    "test": {
+      "rows": 346544,
+      "benign": 282506,
+      "attack": 64038,
+      "features": 140,
+      "hashes": {
+        "test.parquet": "f29b51ccd3daf8bc799804100a0dda0454573750eb3e60b7beef0f3d3b0b59d0",
+        "model_test_indices.parquet": "647bdf3effe0c5d5a74358ecba8f4fc2421445287e4469f66af66119e662dee0"
+      }
+    }
+  },
+  "status": "passed",
+  "scope": "Hash, full streaming load, feature finiteness, labels, effective indices and row ID disjointness; no model training."
+}

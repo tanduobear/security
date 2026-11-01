@@ -1,0 +1,17 @@
+A	eval/README.md
+A	eval/demo.py
+A	eval/examples/result_demo.json
+A	eval/examples/synthetic_input.json
+A	eval/metrics.py
+A	eval/p2_acceptance/interface_smoke.json
+A	eval/p2_acceptance/p2_before_preprocess_verification.json
+A	eval/p2_acceptance/p2_before_split_index_verification.json
+A	eval/p2_acceptance/p3_preprocess_verification.json
+A	eval/p2_acceptance/p3_split_index_verification.json
+A	eval/requirements-eval.txt
+A	eval/schema.json
+A	eval/smoke_real_data.py
+A	eval/test_run.txt
+A	eval/validate.py
+A	tests/test_metrics.py
+A	tests/test_schema.py

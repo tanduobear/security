@@ -1,0 +1,2 @@
+-r ../../eval/requirements-eval.txt
+matplotlib==3.10.7

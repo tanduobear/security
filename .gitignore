@@ -15,3 +15,7 @@ Thumbs.db
 # 工作目录和 Office 临时锁文件
 .tmp/
 ~$*
+
+# Derived resource-trial arrays and private DuckDB/Matplotlib scratch files.
+results/m1_resource_trials/**/cache/
+results/m1_resource_trials/**/worker/

@@ -1,25 +1,6 @@
-# 网络安全课程项目 — 数据、评测与 P4 模型交付
+# 网络安全课程项目 — P1 数据交付
 
-**仓库用途**：8 人线性流水线协作的共享仓库，包含P1数据获取与清洗、P2划分与预处理、P3统一评测，以及P4树模型实验与交付。下文保留P1/P2原始交接说明；当前P4结果只属于Validation阶段，不是最终Test评估。
-
-## P4 交付导航
-
-GBDT八配置×五种子共40次正式搜索已完成，选优配置为G05；固定参数RF辅助对照五种子、独立Validation验收和归档封存也已完成。RF不参与GBDT主模型选优。尚未读取真实Test、开展实验Bootstrap或阈值标定。
-
-| 交付项 | 位置 |
-|---|---|
-| 模型代码、正式执行配置及使用说明 | [methods/m1/](methods/m1/README.md) |
-| 统一Validation结果（八组GBDT、G05及RF五种子） | [results/m1.json](results/m1.json) |
-| GBDT公开摘要与本地归档清单副本 | [results/m1_gbdt_summary/](results/m1_gbdt_summary/README.md) |
-| RF公开摘要与本地归档清单副本 | [results/m1_rf_summary/](results/m1_rf_summary/README.md) |
-| 正式G05 Validation PR图，Enlarged View | [PNG](figures/fig_m1_pr.png)、[PDF](figures/fig_m1_pr.pdf) |
-| 绘图来源、逐种子AP及SHA256验收 | [PR曲线报告](docs/m1_pr_curve_enlarged_report.md) |
-| 统一汇总来源、Schema和使用方法 | [公开汇总说明](docs/m1_public_aggregation.md) |
-| 全部216项测试的统一命令 | [测试说明](docs/testing.md) |
-
-正式图为单面板局部范围：Recall 0.98–1.00、Precision 0.99–1.00；图注已声明坐标范围。图例AP由每种子的完整真实Validation预测独立复算，不是局部区间积分。绘图脚本为[plot_pr_curve_enlarged.py](methods/m1/plot_pr_curve_enlarged.py)。
-
-完整模型、逐样本预测、缓存和运行日志仅保存在本地被忽略的实验目录中，GitHub公开摘要不是完整归档备份。统一协议保持approved；后续完整评估草案execution.proposed.json仍pending，P4搜索完成不代表获准运行最终Test评估。
+**仓库用途**：8 人线性流水线协作，P1（数据获取→校验→清洗）交付物统一存放在本仓库，供 P2 及后续成员接手。
 
 ## 克隆与 LFS（重要）
 
@@ -44,15 +25,6 @@ security/
 ├── data/clean/            # 清洗后交付数据（Git LFS）
 │   ├── original.parquet   # CIC-IDS2017 原版（2,520,798 行）
 │   └── corrected.parquet  # CIC-IDS2017 修正版（2,099,971 行）
-├── data/split/            # P2划分、处理器与模型数据（Git LFS）
-├── src/                   # P2预处理、划分及加载接口
-├── eval/                  # P3统一指标及最终评估Schema
-├── methods/m1/            # P4代码、协议与配置
-├── tests/                 # 174项核心测试
-├── tools/                 # 公开结果汇总工具及34项测试
-├── schemas/               # M1 Validation汇总专用Schema
-├── results/               # 公开摘要；完整实验归档仅本地保留
-├── figures/               # 正式PR图和历史Smoke图
 ├── logs/
 │   └── clean_log.md       # 清洗日志（含删除行数与处理明细）
 ├── tables/
@@ -100,7 +72,7 @@ security/
 
 分层目标为70/15/15。转换为float32后，按训练、验证、测试的顺序保留样本并清除跨折重复；原版最终比例为71.20%/14.81%/13.99%，不是严格70/15/15。最终样本量和类别支持数以 docs/preprocess_report.md 为准。Methods §3.1 正文及 P3 本人验收尚需另行完成。
 
-以下为P2原始重建流程（Python 3.12，依赖版本见requirements），不是P4交付回归入口。使用已交付数据时无需执行；该流程涉及全部划分。日常验收应使用[全部216项测试命令](docs/testing.md)，不会读取真实Test。
+在仓库根目录运行（Python 3.12，依赖版本见 requirements）：
 
 ```powershell
 python -m pip install -r src/requirements-preprocess.txt
@@ -109,7 +81,26 @@ python src/verify_split_indices.py
 python src/build_model_data.py --work-dir .tmp/preprocess-build
 python src/finalize_model_data.py --work-dir .tmp/precision-guard
 python src/verify_model_data.py
+python -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
 直接使用已交付数据时，无需重新生成。安装 Git LFS 后使用 `git lfs pull` 下载实际 Parquet；data/split 约3.12GB，另需清洗输入数据空间及重建时的临时磁盘空间。Git LFS 是否可下载取决于仓库账户实际存储与带宽额度。
 
+## P4 交付导航
+
+GBDT八配置×五种子共40次正式搜索已完成，选优配置为G05；固定参数RF辅助对照五种子、独立Validation验收和归档封存也已完成。RF不参与GBDT主模型选优。尚未读取真实Test、开展实验Bootstrap或阈值标定。
+
+| 交付项 | 位置 |
+|---|---|
+| 模型代码、正式执行配置及使用说明 | [methods/m1/](methods/m1/README.md) |
+| 统一Validation结果（八组GBDT、G05及RF五种子） | [results/m1.json](results/m1.json) |
+| GBDT公开摘要与本地归档清单副本 | [results/m1_gbdt_summary/](results/m1_gbdt_summary/README.md) |
+| RF公开摘要与本地归档清单副本 | [results/m1_rf_summary/](results/m1_rf_summary/README.md) |
+| 正式G05 Validation PR图，Enlarged View | [PNG](figures/fig_m1_pr.png)、[PDF](figures/fig_m1_pr.pdf) |
+| 绘图来源、逐种子AP及SHA256验收 | [PR曲线报告](docs/m1_pr_curve_enlarged_report.md) |
+| 统一汇总来源、Schema和使用方法 | [公开汇总说明](docs/m1_public_aggregation.md) |
+| 全部216项测试的统一命令 | [测试说明](docs/testing.md) |
+
+正式图为单面板局部范围：Recall 0.98–1.00、Precision 0.99–1.00；图注已声明坐标范围。图例AP由每种子的完整真实Validation预测独立复算，不是局部区间积分。绘图脚本为[plot_pr_curve_enlarged.py](methods/m1/plot_pr_curve_enlarged.py)。
+
+完整模型、逐样本预测、缓存和运行日志仅保存在本地被忽略的实验目录中，GitHub公开摘要不是完整归档备份。统一协议保持approved；后续完整评估草案execution.proposed.json仍pending，P4搜索完成不代表获准运行最终Test评估。

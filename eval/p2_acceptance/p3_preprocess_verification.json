@@ -1,0 +1,323 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "version": "original",
+      "protocol": "stratified",
+      "train_fit_checks": {
+        "source_hash": true,
+        "state_hash": true,
+        "module_hash": true,
+        "builder_hash": true,
+        "index_manifest_hash": true,
+        "fit_scope_train": true,
+        "precision_guard_script_hash": true,
+        "precision_purged_hash": true,
+        "mean_from_train_only": true,
+        "variance_from_train_only": true,
+        "scale_from_train_only": true,
+        "port_vocabulary_from_train_only": true,
+        "port_counts_from_train_only": true,
+        "class_weights_from_train_only": true,
+        "fit_row_digest": true,
+        "provenance_train_index_hash": true,
+        "no_actual_float32_input_overlap": true,
+        "precision_cleanup_accounts_for_every_base_row": true,
+        "precision_cleanup_keeps_training_rows": true,
+        "effective_random_all_families_covered": true
+      },
+      "output_checks": {
+        "train": {
+          "rows": 1764265,
+          "checks": {
+            "main_file_hash": true,
+            "ablation_file_hash": true,
+            "effective_index_hash": true,
+            "exact_feature_and_metadata_schema": true,
+            "float32_features": true,
+            "all_feature_values_finite": true,
+            "one_hot_valid": true,
+            "metadata_matches_indices": true,
+            "ablation_is_exact_numeric_subset": true,
+            "rows_match_indices": true,
+            "sample_transform_matches_source": true
+          },
+          "passed": true
+        },
+        "val": {
+          "rows": 367036,
+          "checks": {
+            "main_file_hash": true,
+            "ablation_file_hash": true,
+            "effective_index_hash": true,
+            "exact_feature_and_metadata_schema": true,
+            "float32_features": true,
+            "all_feature_values_finite": true,
+            "one_hot_valid": true,
+            "metadata_matches_indices": true,
+            "ablation_is_exact_numeric_subset": true,
+            "rows_match_indices": true,
+            "sample_transform_matches_source": true
+          },
+          "passed": true
+        },
+        "test": {
+          "rows": 346544,
+          "checks": {
+            "main_file_hash": true,
+            "ablation_file_hash": true,
+            "effective_index_hash": true,
+            "exact_feature_and_metadata_schema": true,
+            "float32_features": true,
+            "all_feature_values_finite": true,
+            "one_hot_valid": true,
+            "metadata_matches_indices": true,
+            "ablation_is_exact_numeric_subset": true,
+            "rows_match_indices": true,
+            "sample_transform_matches_source": true
+          },
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "version": "original",
+      "protocol": "temporal",
+      "train_fit_checks": {
+        "source_hash": true,
+        "state_hash": true,
+        "module_hash": true,
+        "builder_hash": true,
+        "index_manifest_hash": true,
+        "fit_scope_train": true,
+        "precision_guard_script_hash": true,
+        "precision_purged_hash": true,
+        "mean_from_train_only": true,
+        "variance_from_train_only": true,
+        "scale_from_train_only": true,
+        "port_vocabulary_from_train_only": true,
+        "port_counts_from_train_only": true,
+        "class_weights_from_train_only": true,
+        "fit_row_digest": true,
+        "provenance_train_index_hash": true,
+        "no_actual_float32_input_overlap": true,
+        "precision_cleanup_accounts_for_every_base_row": true,
+        "precision_cleanup_keeps_training_rows": true
+      },
+      "output_checks": {
+        "train": {
+          "rows": 1526504,
+          "checks": {
+            "main_file_hash": true,
+            "ablation_file_hash": true,
+            "effective_index_hash": true,
+            "exact_feature_and_metadata_schema": true,
+            "float32_features": true,
+            "all_feature_values_finite": true,
+            "one_hot_valid": true,
+            "metadata_matches_indices": true,
+            "ablation_is_exact_numeric_subset": true,
+            "rows_match_indices": true,
+            "sample_transform_matches_source": true
+          },
+          "passed": true
+        },
+        "val": {
+          "rows": 366184,
+          "checks": {
+            "main_file_hash": true,
+            "ablation_file_hash": true,
+            "effective_index_hash": true,
+            "exact_feature_and_metadata_schema": true,
+            "float32_features": true,
+            "all_feature_values_finite": true,
+            "one_hot_valid": true,
+            "metadata_matches_indices": true,
+            "ablation_is_exact_numeric_subset": true,
+            "rows_match_indices": true,
+            "sample_transform_matches_source": true
+          },
+          "passed": true
+        },
+        "test": {
+          "rows": 520967,
+          "checks": {
+            "main_file_hash": true,
+            "ablation_file_hash": true,
+            "effective_index_hash": true,
+            "exact_feature_and_metadata_schema": true,
+            "float32_features": true,
+            "all_feature_values_finite": true,
+            "one_hot_valid": true,
+            "metadata_matches_indices": true,
+            "ablation_is_exact_numeric_subset": true,
+            "rows_match_indices": true,
+            "sample_transform_matches_source": true
+          },
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "stratified",
+      "train_fit_checks": {
+        "source_hash": true,
+        "state_hash": true,
+        "module_hash": true,
+        "builder_hash": true,
+        "index_manifest_hash": true,
+        "fit_scope_train": true,
+        "precision_guard_script_hash": true,
+        "precision_purged_hash": true,
+        "mean_from_train_only": true,
+        "variance_from_train_only": true,
+        "scale_from_train_only": true,
+        "port_vocabulary_from_train_only": true,
+        "port_counts_from_train_only": true,
+        "class_weights_from_train_only": true,
+        "fit_row_digest": true,
+        "provenance_train_index_hash": true,
+        "no_actual_float32_input_overlap": true,
+        "precision_cleanup_accounts_for_every_base_row": true,
+        "precision_cleanup_keeps_training_rows": true,
+        "effective_random_all_families_covered": true
+      },
+      "output_checks": {
+        "train": {
+          "rows": 1467942,
+          "checks": {
+            "main_file_hash": true,
+            "ablation_file_hash": true,
+            "effective_index_hash": true,
+            "exact_feature_and_metadata_schema": true,
+            "float32_features": true,
+            "all_feature_values_finite": true,
+            "one_hot_valid": true,
+            "metadata_matches_indices": true,
+            "ablation_is_exact_numeric_subset": true,
+            "rows_match_indices": true,
+            "sample_transform_matches_source": true
+          },
+          "passed": true
+        },
+        "val": {
+          "rows": 315344,
+          "checks": {
+            "main_file_hash": true,
+            "ablation_file_hash": true,
+            "effective_index_hash": true,
+            "exact_feature_and_metadata_schema": true,
+            "float32_features": true,
+            "all_feature_values_finite": true,
+            "one_hot_valid": true,
+            "metadata_matches_indices": true,
+            "ablation_is_exact_numeric_subset": true,
+            "rows_match_indices": true,
+            "sample_transform_matches_source": true
+          },
+          "passed": true
+        },
+        "test": {
+          "rows": 314577,
+          "checks": {
+            "main_file_hash": true,
+            "ablation_file_hash": true,
+            "effective_index_hash": true,
+            "exact_feature_and_metadata_schema": true,
+            "float32_features": true,
+            "all_feature_values_finite": true,
+            "one_hot_valid": true,
+            "metadata_matches_indices": true,
+            "ablation_is_exact_numeric_subset": true,
+            "rows_match_indices": true,
+            "sample_transform_matches_source": true
+          },
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "version": "corrected",
+      "protocol": "temporal",
+      "train_fit_checks": {
+        "source_hash": true,
+        "state_hash": true,
+        "module_hash": true,
+        "builder_hash": true,
+        "index_manifest_hash": true,
+        "fit_scope_train": true,
+        "precision_guard_script_hash": true,
+        "precision_purged_hash": true,
+        "mean_from_train_only": true,
+        "variance_from_train_only": true,
+        "scale_from_train_only": true,
+        "port_vocabulary_from_train_only": true,
+        "port_counts_from_train_only": true,
+        "class_weights_from_train_only": true,
+        "fit_row_digest": true,
+        "provenance_train_index_hash": true,
+        "no_actual_float32_input_overlap": true,
+        "precision_cleanup_accounts_for_every_base_row": true,
+        "precision_cleanup_keeps_training_rows": true
+      },
+      "output_checks": {
+        "train": {
+          "rows": 1190339,
+          "checks": {
+            "main_file_hash": true,
+            "ablation_file_hash": true,
+            "effective_index_hash": true,
+            "exact_feature_and_metadata_schema": true,
+            "float32_features": true,
+            "all_feature_values_finite": true,
+            "one_hot_valid": true,
+            "metadata_matches_indices": true,
+            "ablation_is_exact_numeric_subset": true,
+            "rows_match_indices": true,
+            "sample_transform_matches_source": true
+          },
+          "passed": true
+        },
+        "val": {
+          "rows": 330323,
+          "checks": {
+            "main_file_hash": true,
+            "ablation_file_hash": true,
+            "effective_index_hash": true,
+            "exact_feature_and_metadata_schema": true,
+            "float32_features": true,
+            "all_feature_values_finite": true,
+            "one_hot_valid": true,
+            "metadata_matches_indices": true,
+            "ablation_is_exact_numeric_subset": true,
+            "rows_match_indices": true,
+            "sample_transform_matches_source": true
+          },
+          "passed": true
+        },
+        "test": {
+          "rows": 433642,
+          "checks": {
+            "main_file_hash": true,
+            "ablation_file_hash": true,
+            "effective_index_hash": true,
+            "exact_feature_and_metadata_schema": true,
+            "float32_features": true,
+            "all_feature_values_finite": true,
+            "one_hot_valid": true,
+            "metadata_matches_indices": true,
+            "ablation_is_exact_numeric_subset": true,
+            "rows_match_indices": true,
+            "sample_transform_matches_source": true
+          },
+          "passed": true
+        }
+      },
+      "passed": true
+    }
+  ]
+}

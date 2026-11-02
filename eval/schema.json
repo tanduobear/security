@@ -1,0 +1,345 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NIDS single-model single-seed evaluation record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "is_demo", "method", "dataset", "seed",
+    "config", "decision_rule", "metrics", "cost",
+    "daily_alerts", "comparisons", "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "is_demo": {"type": "boolean"},
+    "method": {"type": "string", "minLength": 1},
+    "seed": {"type": "integer", "minimum": 0},
+    "config": {"type": "object"},
+    "dataset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version", "protocol", "variant", "split",
+        "path", "sha256", "n_samples"
+      ],
+      "properties": {
+        "version": {"enum": ["original", "corrected", "synthetic"]},
+        "protocol": {"enum": ["stratified", "temporal", "synthetic"]},
+        "variant": {"enum": ["main", "no_destination_port", "synthetic"]},
+        "split": {"const": "test"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "n_samples": {"type": "integer", "minimum": 1}
+      }
+    },
+    "decision_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score_direction", "operator", "threshold", "source"],
+      "properties": {
+        "score_direction": {"const": "higher_means_attack"},
+        "operator": {"const": ">="},
+        "threshold": {"type": "number"},
+        "source": {
+          "enum": [
+            "validation_selected",
+            "validation_benign_quantile",
+            "predefined",
+            "synthetic_demo"
+          ]
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["curves", "classification", "operating_points", "per_class"],
+      "properties": {
+        "curves": {
+          "type": "object",
+          "required": [
+            "status", "roc_auc", "average_precision", "roc", "pr"
+          ],
+          "properties": {
+            "status": {"enum": ["ok", "single_class"]},
+            "roc_auc": {"$ref": "#/$defs/rate"},
+            "average_precision": {"$ref": "#/$defs/rate"},
+            "roc": {
+              "type": ["object", "null"],
+              "required": ["fpr", "tpr", "thresholds"],
+              "properties": {
+                "fpr": {"$ref": "#/$defs/rate_array"},
+                "tpr": {"$ref": "#/$defs/rate_array"},
+                "thresholds": {
+                  "type": "array",
+                  "items": {"type": ["number", "null"]}
+                }
+              }
+            },
+            "pr": {
+              "type": ["object", "null"],
+              "required": ["precision", "recall", "thresholds"],
+              "properties": {
+                "precision": {"$ref": "#/$defs/rate_array"},
+                "recall": {"$ref": "#/$defs/rate_array"},
+                "thresholds": {
+                  "type": "array",
+                  "items": {"type": "number"}
+                }
+              }
+            }
+          }
+        },
+        "classification": {
+          "type": "object",
+          "required": [
+            "status", "n_samples", "n_negative", "n_positive",
+            "accuracy", "macro_f1", "macro_f1_convention",
+            "both_true_classes_present", "confusion_matrix",
+            "tpr", "fpr", "precision", "attempted"
+          ],
+          "properties": {
+            "status": {"const": "ok"},
+            "n_samples": {"type": "integer", "minimum": 1},
+            "n_negative": {"$ref": "#/$defs/count"},
+            "n_positive": {"$ref": "#/$defs/count"},
+            "accuracy": {"$ref": "#/$defs/non_null_rate"},
+            "macro_f1": {"$ref": "#/$defs/non_null_rate"},
+            "macro_f1_convention": {
+              "const": "fixed_labels_0_1_zero_division_0"
+            },
+            "both_true_classes_present": {"type": "boolean"},
+            "confusion_matrix": {
+              "type": "object",
+              "required": ["tn", "fp", "fn", "tp"],
+              "properties": {
+                "tn": {"$ref": "#/$defs/count"},
+                "fp": {"$ref": "#/$defs/count"},
+                "fn": {"$ref": "#/$defs/count"},
+                "tp": {"$ref": "#/$defs/count"}
+              }
+            },
+            "tpr": {"$ref": "#/$defs/rate"},
+            "fpr": {"$ref": "#/$defs/rate"},
+            "precision": {"$ref": "#/$defs/rate"},
+            "attempted": {
+              "type": "object",
+              "required": ["status", "support", "false_positives", "fpr"],
+              "properties": {
+                "status": {"enum": ["ok", "no_samples", "not_provided"]},
+                "support": {"type": ["integer", "null"], "minimum": 0},
+                "false_positives": {"type": ["integer", "null"], "minimum": 0},
+                "fpr": {"$ref": "#/$defs/rate"}
+              }
+            }
+          }
+        },
+        "operating_points": {
+          "type": "object",
+          "required": ["status", "protocol", "operating_points"],
+          "properties": {
+            "status": {"enum": ["ok", "single_class"]},
+            "protocol": {"const": "empirical_roc"},
+            "operating_points": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "target_fpr", "actual_fpr", "tpr",
+                  "threshold", "threshold_kind"
+                ],
+                "properties": {
+                  "target_fpr": {"$ref": "#/$defs/non_null_rate"},
+                  "actual_fpr": {"$ref": "#/$defs/rate"},
+                  "tpr": {"$ref": "#/$defs/rate"},
+                  "threshold": {"type": ["number", "null"]},
+                  "threshold_kind": {
+                    "enum": ["finite", "above_max_score", "undefined"]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "per_class": {
+          "type": "object",
+          "required": ["status", "classes"],
+          "properties": {
+            "status": {"const": "ok"},
+            "classes": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["attack_family", "support", "detected", "recall"],
+                "properties": {
+                  "attack_family": {"type": "string", "minLength": 1},
+                  "support": {"$ref": "#/$defs/count"},
+                  "detected": {"$ref": "#/$defs/count"},
+                  "recall": {"$ref": "#/$defs/rate"}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "training_seconds", "training_time_note",
+        "hardware", "thread_settings", "inference"
+      ],
+      "properties": {
+        "training_seconds": {"type": ["number", "null"], "minimum": 0},
+        "training_time_note": {"type": "string", "minLength": 1},
+        "hardware": {"type": "string", "minLength": 1},
+        "thread_settings": {"type": "object"},
+        "inference": {
+          "type": "object",
+          "required": [
+            "status", "device", "scope", "batch_size", "warmup",
+            "repeats", "threadpool_limit", "median_batch_ms",
+            "amortized_ms_per_flow", "throughput_flows_per_second",
+            "batch_times_ms"
+          ],
+          "properties": {
+            "status": {"const": "ok"},
+            "device": {"const": "cpu"},
+            "scope": {"const": "prepared_batch_to_numpy_scores"},
+            "batch_size": {"type": "integer", "minimum": 1},
+            "warmup": {"$ref": "#/$defs/count"},
+            "repeats": {"type": "integer", "minimum": 1},
+            "threadpool_limit": {"type": "integer", "minimum": 1},
+            "median_batch_ms": {"$ref": "#/$defs/positive_number"},
+            "amortized_ms_per_flow": {"$ref": "#/$defs/positive_number"},
+            "throughput_flows_per_second": {"$ref": "#/$defs/positive_number"},
+            "batch_times_ms": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "#/$defs/positive_number"}
+            }
+          }
+        }
+      }
+    },
+    "daily_alerts": {
+      "type": ["object", "null"],
+      "required": [
+        "assumed_benign_flows", "assumed_attack_flows",
+        "fpr", "tpr", "expected_false_alerts",
+        "expected_true_alerts", "expected_total_alerts"
+      ],
+      "properties": {
+        "assumed_benign_flows": {"$ref": "#/$defs/count"},
+        "assumed_attack_flows": {"$ref": "#/$defs/count"},
+        "fpr": {"$ref": "#/$defs/non_null_rate"},
+        "tpr": {"$ref": "#/$defs/non_null_rate"},
+        "expected_false_alerts": {"type": "number", "minimum": 0},
+        "expected_true_alerts": {"type": "number", "minimum": 0},
+        "expected_total_alerts": {"type": "number", "minimum": 0}
+      }
+    },
+    "comparisons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["method_a", "method_b", "seed_a", "seed_b", "result"],
+        "properties": {
+          "method_a": {"type": "string", "minLength": 1},
+          "method_b": {"type": "string", "minLength": 1},
+          "seed_a": {"$ref": "#/$defs/count"},
+          "seed_b": {"$ref": "#/$defs/count"},
+          "result": {
+            "type": "object",
+            "required": [
+              "status", "metric", "target_fpr", "difference_definition",
+              "value_a", "value_b", "difference", "ci_lower", "ci_upper",
+              "confidence", "n_bootstrap", "seed", "resampling",
+              "interval_method", "n_samples", "n_negative", "n_positive"
+            ],
+            "properties": {
+              "status": {"const": "ok"},
+              "metric": {"enum": ["ap", "tpr_at_fpr"]},
+              "target_fpr": {"$ref": "#/$defs/rate"},
+              "difference_definition": {"const": "A_minus_B"},
+              "value_a": {"$ref": "#/$defs/non_null_rate"},
+              "value_b": {"$ref": "#/$defs/non_null_rate"},
+              "difference": {"type": "number", "minimum": -1, "maximum": 1},
+              "ci_lower": {"type": "number", "minimum": -1, "maximum": 1},
+              "ci_upper": {"type": "number", "minimum": -1, "maximum": 1},
+              "confidence": {
+                "type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1
+              },
+              "n_bootstrap": {"type": "integer", "minimum": 2},
+              "seed": {"$ref": "#/$defs/count"},
+              "resampling": {"const": "paired_class_stratified_rows"},
+              "interval_method": {"const": "percentile"},
+              "n_samples": {"type": "integer", "minimum": 2},
+              "n_negative": {"type": "integer", "minimum": 1},
+              "n_positive": {"type": "integer", "minimum": 1}
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code_commit", "created_at", "software", "notes"],
+      "properties": {
+        "code_commit": {"type": "string", "minLength": 1},
+        "created_at": {"type": "string", "minLength": 1},
+        "software": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"type": "string"}
+        },
+        "notes": {"type": "string"}
+      }
+    }
+  },
+  "$defs": {
+    "count": {"type": "integer", "minimum": 0},
+    "non_null_rate": {"type": "number", "minimum": 0, "maximum": 1},
+    "rate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "rate_array": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/non_null_rate"}
+    },
+    "positive_number": {"type": "number", "exclusiveMinimum": 0}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"is_demo": {"const": false}}},
+      "then": {
+        "properties": {
+          "dataset": {
+            "properties": {
+              "version": {"enum": ["original", "corrected"]},
+              "protocol": {"enum": ["stratified", "temporal"]},
+              "variant": {"enum": ["main", "no_destination_port"]}
+            }
+          },
+          "decision_rule": {
+            "properties": {
+              "source": {
+                "enum": [
+                  "validation_selected",
+                  "validation_benign_quantile",
+                  "predefined"
+                ]
+              }
+            }
+          },
+          "cost": {
+            "properties": {
+              "training_seconds": {"type": "number", "minimum": 0}
+            }
+          }
+        }
+      }
+    }
+  ]
+}

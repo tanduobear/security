@@ -1,0 +1,414 @@
+{
+  "summary_kind": "formal_gbdt_validation_search_only",
+  "is_final_test_evaluation": false,
+  "search_tasks": 40,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "selected_candidate_id": "G05",
+  "dataset": {
+    "version": "original",
+    "protocol": "stratified",
+    "variant": "main",
+    "features": 140,
+    "train_rows": 1764265,
+    "validation_rows": 367036,
+    "input_file_sha256": {
+      "train.parquet": "a300844eadac44f3d2f4a43084871e96033a60440ff3a43878b9c674def1a77c",
+      "val.parquet": "1e1159b80cbd147c9ce16d60953394300c1c518b69afbb704c9b075b0293d560",
+      "preprocessor.json": "d629632aca37b210915b7258231de07955509d81aa1a2921a451b52425b123a6",
+      "preprocess_manifest.json": "db1e45a300056e5af0cd56fffdbed3c508dbc41d4660cb11c6daa9fa799fcf0a"
+    }
+  },
+  "selection_rule": {
+    "metric": "mean_full_validation_AP",
+    "ap_tolerance": 1e-06,
+    "tie_rule": "lowest_candidate_id",
+    "std_ddof": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": "G01",
+      "mean_validation_ap": 0.9994333650743112,
+      "sample_std_ap": 9.99582006077397e-05,
+      "parameters": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "mean_fit_seconds_raw": 278.0598302000202,
+      "sample_std_fit_seconds_raw": 4.674557269993624,
+      "tasks": [
+        {
+          "seed": 42,
+          "validation_ap": 0.9993261040779131,
+          "fit_seconds_raw": 274.32126400002744
+        },
+        {
+          "seed": 43,
+          "validation_ap": 0.9994965427558482,
+          "fit_seconds_raw": 284.6467855000519
+        },
+        {
+          "seed": 44,
+          "validation_ap": 0.9993222877211714,
+          "fit_seconds_raw": 272.8596213000128
+        },
+        {
+          "seed": 45,
+          "validation_ap": 0.9995178240656827,
+          "fit_seconds_raw": 278.89413760002935
+        },
+        {
+          "seed": 46,
+          "validation_ap": 0.9995040667509406,
+          "fit_seconds_raw": 279.5773425999796
+        }
+      ],
+      "timing_note": "Model fit wall time; validation scoring and serialization excluded."
+    },
+    {
+      "candidate_id": "G02",
+      "mean_validation_ap": 0.9996984655843588,
+      "sample_std_ap": 3.4308869480034965e-05,
+      "parameters": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "mean_fit_seconds_raw": 725.0806762800087,
+      "sample_std_fit_seconds_raw": 348.62483619101613,
+      "tasks": [
+        {
+          "seed": 42,
+          "validation_ap": 0.9996552913941056,
+          "fit_seconds_raw": 1271.6551383000333
+        },
+        {
+          "seed": 43,
+          "validation_ap": 0.9997241502581804,
+          "fit_seconds_raw": 419.9125060000224
+        },
+        {
+          "seed": 44,
+          "validation_ap": 0.999667137170067,
+          "fit_seconds_raw": 867.9251065999852
+        },
+        {
+          "seed": 45,
+          "validation_ap": 0.9997252845501904,
+          "fit_seconds_raw": 527.6162620999967
+        },
+        {
+          "seed": 46,
+          "validation_ap": 0.9997204645492512,
+          "fit_seconds_raw": 538.2943684000056
+        }
+      ],
+      "timing_note": "Seeds 42 and 44 include confirmed Modern Standby interruptions; retain raw wall times, not pure compute comparisons."
+    },
+    {
+      "candidate_id": "G03",
+      "mean_validation_ap": 0.9996826917340771,
+      "sample_std_ap": 2.651124239238907e-05,
+      "parameters": {
+        "max_iter": 200,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "mean_fit_seconds_raw": 231.61716818000423,
+      "sample_std_fit_seconds_raw": 13.124778781427661,
+      "tasks": [
+        {
+          "seed": 42,
+          "validation_ap": 0.9996658867266718,
+          "fit_seconds_raw": 245.79812579997815
+        },
+        {
+          "seed": 43,
+          "validation_ap": 0.9996819187835263,
+          "fit_seconds_raw": 245.47513109998545
+        },
+        {
+          "seed": 44,
+          "validation_ap": 0.9996659471000668,
+          "fit_seconds_raw": 218.08254910004325
+        },
+        {
+          "seed": 45,
+          "validation_ap": 0.9996710522033492,
+          "fit_seconds_raw": 226.304512600007
+        },
+        {
+          "seed": 46,
+          "validation_ap": 0.9997286538567718,
+          "fit_seconds_raw": 222.4255223000073
+        }
+      ],
+      "timing_note": "Model fit wall time; validation scoring and serialization excluded."
+    },
+    {
+      "candidate_id": "G04",
+      "mean_validation_ap": 0.9996468389153842,
+      "sample_std_ap": 2.1197918581754586e-05,
+      "parameters": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "mean_fit_seconds_raw": 257.19196906000144,
+      "sample_std_fit_seconds_raw": 27.77394270332663,
+      "tasks": [
+        {
+          "seed": 42,
+          "validation_ap": 0.999627669263644,
+          "fit_seconds_raw": 264.0394933000207
+        },
+        {
+          "seed": 43,
+          "validation_ap": 0.9996597875620276,
+          "fit_seconds_raw": 232.8337276999955
+        },
+        {
+          "seed": 44,
+          "validation_ap": 0.9996264453045125,
+          "fit_seconds_raw": 271.00143090001075
+        },
+        {
+          "seed": 45,
+          "validation_ap": 0.9996758337304218,
+          "fit_seconds_raw": 292.56724569998914
+        },
+        {
+          "seed": 46,
+          "validation_ap": 0.999644458716315,
+          "fit_seconds_raw": 225.51794769999105
+        }
+      ],
+      "timing_note": "Model fit wall time; validation scoring and serialization excluded."
+    },
+    {
+      "candidate_id": "G05",
+      "mean_validation_ap": 0.9997917266981542,
+      "sample_std_ap": 1.5763210785395074e-05,
+      "parameters": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "mean_fit_seconds_raw": 500.09699590000093,
+      "sample_std_fit_seconds_raw": 15.019681765565693,
+      "tasks": [
+        {
+          "seed": 42,
+          "validation_ap": 0.9997869026152735,
+          "fit_seconds_raw": 502.128430700046
+        },
+        {
+          "seed": 43,
+          "validation_ap": 0.9998024922803087,
+          "fit_seconds_raw": 479.8656454999582
+        },
+        {
+          "seed": 44,
+          "validation_ap": 0.9997679802089401,
+          "fit_seconds_raw": 514.72159500001
+        },
+        {
+          "seed": 45,
+          "validation_ap": 0.9998087637225794,
+          "fit_seconds_raw": 490.29459909995785
+        },
+        {
+          "seed": 46,
+          "validation_ap": 0.9997924946636689,
+          "fit_seconds_raw": 513.4747092000325
+        }
+      ],
+      "timing_note": "Model fit wall time; validation scoring and serialization excluded."
+    },
+    {
+      "candidate_id": "G06",
+      "mean_validation_ap": 0.9994511163060553,
+      "sample_std_ap": 6.49479066689202e-05,
+      "parameters": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 5,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "mean_fit_seconds_raw": 224.9417806200101,
+      "sample_std_fit_seconds_raw": 10.7088408955848,
+      "tasks": [
+        {
+          "seed": 42,
+          "validation_ap": 0.9993689643543363,
+          "fit_seconds_raw": 241.89889430004405
+        },
+        {
+          "seed": 43,
+          "validation_ap": 0.9995230062313515,
+          "fit_seconds_raw": 217.48665959999198
+        },
+        {
+          "seed": 44,
+          "validation_ap": 0.999404593650643,
+          "fit_seconds_raw": 215.16639690002194
+        },
+        {
+          "seed": 45,
+          "validation_ap": 0.9995037904331531,
+          "fit_seconds_raw": 228.24067959998501
+        },
+        {
+          "seed": 46,
+          "validation_ap": 0.9994552268607927,
+          "fit_seconds_raw": 221.91627270000754
+        }
+      ],
+      "timing_note": "Model fit wall time; validation scoring and serialization excluded."
+    },
+    {
+      "candidate_id": "G07",
+      "mean_validation_ap": 0.9994614212470474,
+      "sample_std_ap": 6.664915744577086e-05,
+      "parameters": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 50,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "mean_fit_seconds_raw": 242.17601291999455,
+      "sample_std_fit_seconds_raw": 19.966904304819142,
+      "tasks": [
+        {
+          "seed": 42,
+          "validation_ap": 0.9993578806912603,
+          "fit_seconds_raw": 262.02706009999383
+        },
+        {
+          "seed": 43,
+          "validation_ap": 0.9994895718812801,
+          "fit_seconds_raw": 239.66918979998445
+        },
+        {
+          "seed": 44,
+          "validation_ap": 0.9994393615076367,
+          "fit_seconds_raw": 216.90109969995683
+        },
+        {
+          "seed": 45,
+          "validation_ap": 0.9995327346314736,
+          "fit_seconds_raw": 262.32918749999953
+        },
+        {
+          "seed": 46,
+          "validation_ap": 0.9994875575235865,
+          "fit_seconds_raw": 229.95352750003804
+        }
+      ],
+      "timing_note": "Model fit wall time; validation scoring and serialization excluded."
+    },
+    {
+      "candidate_id": "G08",
+      "mean_validation_ap": 0.999436374387011,
+      "sample_std_ap": 9.07453106305253e-05,
+      "parameters": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 20,
+        "l2_regularization": 10.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "mean_fit_seconds_raw": 235.39698359998874,
+      "sample_std_fit_seconds_raw": 23.852767356228924,
+      "tasks": [
+        {
+          "seed": 42,
+          "validation_ap": 0.9993469008264906,
+          "fit_seconds_raw": 266.4497747999849
+        },
+        {
+          "seed": 43,
+          "validation_ap": 0.9995100509386542,
+          "fit_seconds_raw": 255.79575669998303
+        },
+        {
+          "seed": 44,
+          "validation_ap": 0.9993436587784128,
+          "fit_seconds_raw": 221.16309990000445
+        },
+        {
+          "seed": 45,
+          "validation_ap": 0.9995407376571317,
+          "fit_seconds_raw": 217.1423586999881
+        },
+        {
+          "seed": 46,
+          "validation_ap": 0.9994405237343656,
+          "fit_seconds_raw": 216.43392789998325
+        }
+      ],
+      "timing_note": "Model fit wall time; validation scoring and serialization excluded."
+    }
+  ],
+  "independent_AP_recheck": {
+    "tasks_passed": 40,
+    "maximum_absolute_difference": 0.0,
+    "evidence": "Completed guarded Formal Selection; strict equality checked for each full Validation prediction file."
+  },
+  "archive": {
+    "run_id": "20261101T115824-90de9307e77448aba412cc9ec08a5cbd",
+    "local_only": true,
+    "github_contains_full_archive": false,
+    "manifest_entries": 302,
+    "verified_entries": 302,
+    "manifest_sha256": "00128ffea5088c939a2375502372be4ba6b95cc13bcdee4f68e6c1638d2b1d6d",
+    "selection_sha256": "859a883fe6ecc12246fb2f08c5ab3e2707530a6906f52c1c2863d9b12ba0d2c9"
+  },
+  "execution_config_sha256": "931d2d6e6639a825b62dd7e21f23f4a63e0e30a6a631b58ffd3469afca81b08b",
+  "test_accessed": false,
+  "RF_fits": 0,
+  "bootstrap_run": false,
+  "thresholds_calibrated": false
+}

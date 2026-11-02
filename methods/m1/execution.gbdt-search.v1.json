@@ -1,0 +1,155 @@
+{
+  "schema_version": "1",
+  "stage": "gbdt_search_only",
+  "unified_protocol_sha256": "e6e6d8880a5540419f56dbea5b5270b7fd0bf9392b1114b8b56ebf943ef92360",
+  "dataset": {
+    "version": "original",
+    "protocol": "stratified",
+    "variant": "main",
+    "features": 140,
+    "allowed_splits": [
+      "train",
+      "val"
+    ]
+  },
+  "candidates": [
+    {
+      "id": "G01",
+      "params": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G02",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G03",
+      "params": {
+        "max_iter": 200,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G04",
+      "params": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G05",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G06",
+      "params": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 5,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G07",
+      "params": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 50,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    {
+      "id": "G08",
+      "params": {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 20,
+        "l2_regularization": 10.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    }
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "selection": {
+    "metric": "mean_full_validation_AP",
+    "ap_tolerance": 1e-06,
+    "tie_rule": "lowest_candidate_id",
+    "std_ddof": 1
+  },
+  "resources": {
+    "outer_parallel_jobs": 1,
+    "fit_threads": 4,
+    "inference_threads": 1,
+    "prediction_batch_rows": 8192,
+    "job_commit_limit_bytes": 8589934592,
+    "logical_cpu_limit": 4,
+    "min_start_free_bytes": 15032385536,
+    "min_running_free_bytes": 6442450944,
+    "rss_abort_bytes": 8589934592
+  },
+  "checkpoint": "manual_after_each_five_seed_group",
+  "automatic_retries": 0,
+  "later_evaluation_details": "pending; execution.proposed.json unchanged",
+  "approval": {
+    "status": "approved",
+    "scope": "gbdt_search_only",
+    "source": "Explicit user approval of GBDT-only search execution details in this conversation; current authorization is implementation and tests only, launch requires another confirmation",
+    "approved_at": "2026-11-01",
+    "sha256": "b1f67db0e2a9dd8fcd0cd29b799cc1082c9f5cc72d40e20448b83eb3963ef1ae"
+  }
+}

@@ -398,7 +398,7 @@ def preflight(config, memory, disk_free):
     return None
 
 
-def monitored_child(run_dir, config, *, probe=False):
+def monitored_child(run_dir, config, *, probe=False, worker_module=None, worker_args=(), reason_function=None):
     api=WindowsAPI();run_dir=Path(run_dir).resolve()
     job=GuardedJob(api,64*MIB if probe else config['job_commit_limit_bytes'])
     child=None;mask=None;samples=[];reason=None;last_stats=None;peak_job=0
@@ -407,7 +407,8 @@ def monitored_child(run_dir, config, *, probe=False):
     try:
         env=dict(os.environ);env['PYTHONPATH']=str(ROOT);env['PYTHONDONTWRITEBYTECODE']='1';env['MPLCONFIGDIR']=str(run_dir/'worker/mplconfig')
         cwd=run_dir/'worker';cwd.mkdir(exist_ok=False)
-        command=[sys.executable,'-B','-m','methods.m1.resource_trial','--guard-probe' if probe else '--worker',str(run_dir)]
+        command=([sys.executable,'-B','-m',worker_module,*map(str,worker_args)] if worker_module else
+                 [sys.executable,'-B','-m','methods.m1.resource_trial','--guard-probe' if probe else '--worker',str(run_dir)])
         with (run_dir/'worker.log').open('xb') as log,(run_dir/'resource_samples.csv').open('x',encoding='utf-8',newline='') as csv_file:
             child=subprocess.Popen(command,cwd=cwd,env=env,stdin=subprocess.PIPE,stdout=log,stderr=subprocess.STDOUT,
                 creationflags=subprocess.CREATE_NO_WINDOW|subprocess.CREATE_NEW_PROCESS_GROUP)
@@ -448,7 +449,7 @@ def monitored_child(run_dir, config, *, probe=False):
                     print(f"{phase}: {elapsed:.0f}s, RSS {stats['rss_bytes']/GIB:.2f} GiB, system free {memory['available_physical_bytes']/GIB:.2f} GiB",flush=True)
                     last_phase=phase
                 previous_cpu,previous_time,previous_system=cpu,now,system
-                reason=None if probe else resource_reason(sample,config)
+                reason=None if probe else (reason_function or resource_reason)(sample,config)
                 if reason:
                     job.terminate();break
                 if probe and elapsed>30:

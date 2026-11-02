@@ -1,0 +1,26 @@
+{
+  "scope": "per_seed_manual_checkpoints_only",
+  "authorization": "Explicit user requires CONTINUE after each RF seed in formal execution; checkpoint orchestration reviewed, no model/data/resource change",
+  "trial_manifest_sha256": "0c36fb469e3f31be0da752ec652da0e732e5cacb0f40ea069b579187745e1494",
+  "files": {
+    "methods/m1/run_rf.py": {
+      "trial_sha256": "19a9d7869b9fbc504c230ea339a506c63f846a4983a6e0193b45f19a1d5934b8",
+      "formal_sha256": "35725fbf00a5345bb74da1f536843baa3957bd21630fea2448d61de49cbe6784"
+    },
+    "tests/test_m1_rf.py": {
+      "trial_sha256": "0b113ff423b96f2d0763e25fd0b97fbbbd2580c1ef2063685610cd06e3bc73df",
+      "formal_sha256": "93d9383781a5c62efc375c9beabbf0779d30112924c78b7fed1bae084476a544"
+    }
+  },
+  "unchanged_core_ast_sha256": {
+    "execute_tasks": "8a4047bff57320c33eae0b51bcc6f1602b6c8cd8616c1e1f64fa8bed0d6c3cae",
+    "reference_identity": "8318545437267798776f574ce9df1be5320dad13d642f95b46e9c5d20d64624d",
+    "compare_population": "58cb5edd0d7681c5aeb23b75c9bc422fffc7b2b665a68ce1c8553e0525061383",
+    "verify_tasks": "32d5c0d40318a35d56521f7681fbe652a9b87e9301584dc708ffb772fae52c4b",
+    "resource_spec": "83d5bbbdb20cd4660240b0a1261ee15d96b06d813e7fa78b5b69e717b5139afe",
+    "atomic_manifest": "08bc28fd673ae61804138dd63a4ad67b073bf5a3949ccd388e46c2e84c209c65",
+    "protected_call": "7654662ab820665fe648aebda8e22d49636c86f58b377735fd7bb768fcaa8974",
+    "summarize": "3d924c4a1196314773008ef8917784292c9b37300297207b8688df6c202db31c"
+  },
+  "normalization": "execute_tasks only: remove target_seed keyword and its exact seed-filter continue; all other fitting/prediction/save/reload statements must be identical"
+}

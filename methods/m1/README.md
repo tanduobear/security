@@ -1,6 +1,8 @@
 # M1 树模型工程准备
 
-当前正式结果（2026-11-02）：GBDT-only 的八配置 × 五种子共40次拟合、完整Validation独立AP复算、选优及总归档封存已完成，获选配置为G05。未读取真实Test、训练RF、运行Bootstrap或标定阈值。公开的 [结果摘要](../../results/m1_gbdt_summary/README.md) 包含小型汇总和原始MANIFEST副本；模型、完整预测和缓存仅保存在本地，GitHub不包含完整归档。封存细节见 [补封存验收](../../docs/m1_manifest_seal_repair.md)。本次完整回归131项通过（59.831秒）。
+RF-only辅助对照的五种子正式训练、完整Validation独立AP验收及归档封存已完成。五次AP复算与训练记录严格一致，均值0.9996364875511452、样本标准差0.0000505703708643；原始归档157/157文件SHA256验证通过。详见 [RF结果摘要](../../results/m1_rf_summary/README.md) 和 [RF验收封存审计](../../docs/m1_rf_validation_seal_audit.md)。资源试运行与正式执行均有分别记录的批准，不将RF用于GBDT主模型选优；未读取真实Test、运行实验Bootstrap或标定阈值。工程准备时166项、逐种子检查点调整后174项均为历史测试记录，本次交付回归结果单独记录在审计报告中。
+
+GBDT阶段记录（2026-11-02）：GBDT-only 的八配置 × 五种子共40次拟合、完整Validation独立AP复算、选优及总归档封存已完成，获选配置为G05。该阶段未读取真实Test、训练RF、运行Bootstrap或标定阈值。公开的 [GBDT结果摘要](../../results/m1_gbdt_summary/README.md) 包含小型汇总和原始MANIFEST副本；模型、完整预测和缓存仅保存在本地，GitHub不包含完整归档。封存细节见 [补封存验收](../../docs/m1_manifest_seal_repair.md)。该次完整回归131项通过（59.831秒）。RF交付未修改已封存GBDT结果。
 
 GBDT-only 入口说明：本阶段获批配置独立保存为 `execution.gbdt-search.v1.json`。`python -m methods.m1.search_gbdt plan` 只展示计划；真实执行需要明确启动开关，不能为复现摘要而自动重跑。入口提供 Job 保护、断点恢复和每组人工检查点，详见 [执行计划](../../docs/m1_gbdt_search_plan.md)。下文涉及 `execution.proposed.json` pending 和旧入口45任务的描述适用于后续完整实验草案；本次不将其一并批准，不使用旧 search 入口启动。
 

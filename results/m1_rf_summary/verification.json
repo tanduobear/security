@@ -1,0 +1,36 @@
+{
+  "date_local": "2026-11-02",
+  "timezone": "Asia/Shanghai",
+  "scope": "RF auxiliary Train/Validation only",
+  "RF_archive_files_verified": 157,
+  "RF_manifest_sha256": "21ac71053cb0142de61d10dbcfa90d86e0f7f51f38bcaceacd0ae4efe75f5690",
+  "summary_sha256": "4ef10efb5de9ed8f4f2bfaa8bd4d24dcfc1a323f5b819b0161c7de79ac9b7d87",
+  "AP_exact_matches": 5,
+  "max_absolute_AP_difference": 0,
+  "GBDT_archive_files_verified_unchanged": 302,
+  "regression": {
+    "tests": 174,
+    "seconds": 82.007,
+    "result": "OK",
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "recovery_synthetic_tests": {
+    "tests": 8,
+    "seconds": 0.45,
+    "result": "OK",
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_total": 182,
+  "unified_protocol": "approved",
+  "original_execution_proposal": "pending",
+  "test_accessed": false,
+  "retraining": false,
+  "bootstrap_experiment": false,
+  "threshold_calibration": false,
+  "public_copy_scope": "Only lightweight summary/audit copies. Full 157-file archive remains local; MANIFEST paths refer to the local archive.",
+  "public_environment_redaction": "Only the executable absolute path is replaced in the public derivative; original sealed record unchanged."
+}

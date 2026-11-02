@@ -1,0 +1,96 @@
+{
+  "schema_version": "1",
+  "stage": "rf_auxiliary_only",
+  "unified_protocol_sha256": "e6e6d8880a5540419f56dbea5b5270b7fd0bf9392b1114b8b56ebf943ef92360",
+  "dataset": {
+    "version": "original",
+    "protocol": "stratified",
+    "variant": "main",
+    "features": 140,
+    "allowed_splits": [
+      "train",
+      "val"
+    ]
+  },
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "algorithm": "RandomForestClassifier",
+  "parameters": {
+    "n_estimators": 200,
+    "max_depth": 20,
+    "max_leaf_nodes": 4096,
+    "min_samples_leaf": 2,
+    "max_features": "sqrt",
+    "bootstrap": true,
+    "n_jobs": 4,
+    "class_weight": null
+  },
+  "eligible_for_gbdt_selection": false,
+  "resources": {
+    "outer_parallel_jobs": 1,
+    "fit_threads": 4,
+    "inference_threads": 1,
+    "prediction_batch_rows": 8192,
+    "job_commit_limit_bytes": 8589934592,
+    "logical_cpu_limit": 4,
+    "min_start_free_bytes": 15032385536,
+    "min_running_free_bytes": 6442450944,
+    "rss_abort_bytes": 8589934592,
+    "duckdb_memory_limit_mb": 512
+  },
+  "reporting": {
+    "metric": "full_validation_AP",
+    "std_ddof": 1,
+    "thresholds": false,
+    "bootstrap": false
+  },
+  "reference": {
+    "run": "results/m1_gbdt_search/20261101T115824-90de9307e77448aba412cc9ec08a5cbd",
+    "selected_candidate_id": "G05",
+    "manifest_sha256": "00128ffea5088c939a2375502372be4ba6b95cc13bcdee4f68e6c1638d2b1d6d",
+    "selection_sha256": "859a883fe6ecc12246fb2f08c5ab3e2707530a6906f52c1c2863d9b12ba0d2c9"
+  },
+  "checkpoint": "manual_after_each_seed",
+  "automatic_retries": 0,
+  "resource_trial": {
+    "required_before_formal": true,
+    "seed": 42,
+    "counts_as_formal": false,
+    "AP_computed": false
+  },
+  "specification_approval": {
+    "status": "approved",
+    "scope": "RF fixed model, seeds, P2 data, hard resource limits; engineering preparation only",
+    "source": "Explicit user instructions for RF-only preparation; real execution not authorized"
+  },
+  "proposed_details": {
+    "outer_parallel_jobs": 1,
+    "inference_threads": 1,
+    "prediction_batch_rows": 8192,
+    "duckdb_memory_limit_mb": 512,
+    "trial_first": true,
+    "checkpoint_input": "CONTINUE",
+    "keep_awake": "not enabled; separate authorization required"
+  },
+  "trial_approval": {
+    "status": "approved",
+    "source": "Explicit user authorization of exactly one full-data RF_FIXED seed42 Resource Trial only; formal five-seed execution remains unauthorized",
+    "approved_at": "2026-11-02",
+    "payload_sha256": "481fbd6ea3e33f1b80d375aed56d7ae2a7ad63ec3fe0996c2c76baad198b2865"
+  },
+  "execution_approval": {
+    "status": "approved",
+    "source": "Explicit user authorization: exactly RF_FIXED seeds42-46, fixed parameters and limits; CONTINUE after each seed; no Test, GBDT retraining, bootstrap, threshold calibration or automatic retries",
+    "approved_at": "2026-11-02",
+    "payload_sha256": "acc13e8d900d998f4537ed80079117665e9000ac25d1f5f57b0dc0e11449f4e5"
+  },
+  "resource_trial_code_compatibility": {
+    "path": "methods/m1/rf_per_seed_compatibility.v1.json",
+    "sha256": "90a7f94a35e5d6c0f6aa91c61c2adac2bcf0de059cc7e53f08e03ea936cb9c1f"
+  }
+}

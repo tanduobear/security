@@ -26,3 +26,7 @@ results/m1_gbdt_search/
 # Raw resource-trial evidence stays local; reviewed reports are in docs/.
 results/m1_resource_trials/
 docs/p4_acceptance/sandbox_test_failure.txt
+
+# RF-only formal and resource-trial models, complete predictions and mapped data.
+results/m1_rf_runs/
+results/m1_rf_trials/

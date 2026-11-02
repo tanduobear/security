@@ -15,3 +15,18 @@ Thumbs.db
 # 工作目录和 Office 临时锁文件
 .tmp/
 ~$*
+
+# Derived resource-trial arrays and private DuckDB/Matplotlib scratch files.
+results/m1_resource_trials/**/cache/
+results/m1_resource_trials/**/worker/
+
+# Local formal-search models, predictions, mapped caches and monitoring archives.
+results/m1_gbdt_search/
+
+# Raw resource-trial evidence stays local; reviewed reports are in docs/.
+results/m1_resource_trials/
+docs/p4_acceptance/sandbox_test_failure.txt
+
+# RF-only formal and resource-trial models, complete predictions and mapped data.
+results/m1_rf_runs/
+results/m1_rf_trials/

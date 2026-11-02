@@ -1,0 +1,46 @@
+{
+  "executable_sha256": "6f8c9878450765686ace476d2170b970761d68ace63f16092489c4c8bd5d7018",
+  "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+  "environment": {
+    "python": "3.13.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16,
+    "packages": {
+      "attrs": "26.1.0",
+      "cloudpickle": "3.1.2",
+      "contourpy": "1.4.0",
+      "cycler": "0.12.1",
+      "duckdb": "2.0.0",
+      "fonttools": "4.68.0",
+      "joblib": "1.6.0",
+      "jsonschema": "4.26.0",
+      "jsonschema-specifications": "2025.9.1",
+      "kiwisolver": "1.5.1",
+      "matplotlib": "3.10.7",
+      "numpy": "2.3.5",
+      "packaging": "26.3",
+      "pandas": "2.3.3",
+      "pillow": "13.0.0",
+      "pip": "24.2",
+      "pyparsing": "3.3.3",
+      "python-dateutil": "3.0.0",
+      "pytz": "2026.6",
+      "referencing": "0.37.0",
+      "rpds-py": "2026.9.1",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.16.3",
+      "six": "1.17.0",
+      "threadpoolctl": "3.7.0",
+      "tzdata": "2026.6"
+    }
+  },
+  "imported_versions": {
+    "duckdb": "2.0.0",
+    "sklearn": "1.8.0",
+    "numpy": "2.3.5"
+  },
+  "executable_repository_relative": ".venv/Scripts/python.exe",
+  "public_copy_policy": "Absolute executable path removed only from this public derivative; original local archive remains unchanged.",
+  "original_environment_record_sha256": "e20d9f31f3d1f574b828650400aae09bce805e297baacd5770ccc2f1b00546f7"
+}

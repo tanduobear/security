@@ -1,0 +1,4 @@
+Demo result: schema validation passed
+Saved: eval/examples/synthetic_input.json
+Saved: eval/examples/result_demo.json
+SYNTHETIC DEMO ONLY - not experimental findings

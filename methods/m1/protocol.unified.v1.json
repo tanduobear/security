@@ -1,0 +1,87 @@
+{
+  "name": "NIDS Unified Experimental Protocol",
+  "version": "1.0",
+  "approval": {
+    "status": "approved",
+    "roles": [
+      "P4",
+      "P5",
+      "P6",
+      "P7"
+    ],
+    "source": "Explicit collective approval reported by the user in this conversation",
+    "date": "2026-11-01"
+  },
+  "main_methods": [
+    "GBDT",
+    "1D-CNN",
+    "Autoencoder"
+  ],
+  "auxiliary_methods": [
+    "RF",
+    "Isolation Forest",
+    "OCSVM"
+  ],
+  "dataset": {
+    "version": "original",
+    "protocol": "stratified",
+    "variant": "main",
+    "features": 140,
+    "owner": "P2",
+    "refit_preprocessor": false
+  },
+  "search": {
+    "configurations_per_main_method": 8,
+    "seeds_per_configuration": 5,
+    "predefined": true
+  },
+  "model_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "selection": {
+    "supervised": "mean_full_validation_AP",
+    "autoencoder": "benign_unlabeled_validation"
+  },
+  "stopping": {
+    "algorithm_specific": true,
+    "rules_fixed_before_training": true,
+    "early_stopping_allowed": true,
+    "test_information_forbidden": true
+  },
+  "thresholds": {
+    "source_split": "val",
+    "fpr_targets": [
+      0.01,
+      0.05
+    ],
+    "ae_benign_quantiles": [
+      0.95,
+      0.99
+    ]
+  },
+  "inference": {
+    "device": "cpu",
+    "batch_size": 512,
+    "warmup": 5,
+    "repeats": 30,
+    "shared_row_ids": true,
+    "interface_owner": "P3"
+  },
+  "extension_order": [
+    "main",
+    "temporal_and_port_ablation",
+    "corrected"
+  ],
+  "statistics": {
+    "report_five_seed_mean": true,
+    "std_ddof": 1,
+    "paired_bootstrap": true,
+    "preserve_per_sample_predictions": true,
+    "sha256": true
+  },
+  "sha256": "e6e6d8880a5540419f56dbea5b5270b7fd0bf9392b1114b8b56ebf943ef92360"
+}

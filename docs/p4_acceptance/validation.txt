@@ -1,0 +1,1 @@
+Result structure and numerical consistency: OK

@@ -1,0 +1,50 @@
+{
+  "status": "gbdt_validation_selection_only",
+  "selected_candidate_id": "G05",
+  "candidates": [
+    {
+      "candidate_id": "G01",
+      "mean_validation_ap": 0.9994333650743112,
+      "sample_std_ap": 9.99582006077397e-05
+    },
+    {
+      "candidate_id": "G02",
+      "mean_validation_ap": 0.9996984655843588,
+      "sample_std_ap": 3.4308869480034965e-05
+    },
+    {
+      "candidate_id": "G03",
+      "mean_validation_ap": 0.9996826917340771,
+      "sample_std_ap": 2.651124239238907e-05
+    },
+    {
+      "candidate_id": "G04",
+      "mean_validation_ap": 0.9996468389153842,
+      "sample_std_ap": 2.1197918581754586e-05
+    },
+    {
+      "candidate_id": "G05",
+      "mean_validation_ap": 0.9997917266981542,
+      "sample_std_ap": 1.5763210785395074e-05
+    },
+    {
+      "candidate_id": "G06",
+      "mean_validation_ap": 0.9994511163060553,
+      "sample_std_ap": 6.49479066689202e-05
+    },
+    {
+      "candidate_id": "G07",
+      "mean_validation_ap": 0.9994614212470474,
+      "sample_std_ap": 6.664915744577086e-05
+    },
+    {
+      "candidate_id": "G08",
+      "mean_validation_ap": 0.999436374387011,
+      "sample_std_ap": 9.07453106305253e-05
+    }
+  ],
+  "binding_sha256": "3e837a01927b27e0c9e2a54e13f54367c4b70e247c24efbcd16d2e93ed663966",
+  "test_accessed": false,
+  "rf_fits": 0,
+  "thresholds_calibrated": false
+}

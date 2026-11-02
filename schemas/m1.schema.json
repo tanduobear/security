@@ -1,0 +1,926 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M1 Validation-only public summary; separate from P3 final metrics",
+  "description": "Schema checks structure and ranges. tools/aggregate_m1.py additionally validates source hashes, exact per-seed identities, means and sample standard deviations (ddof=1).",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "artifact_type": {
+      "const": "m1_validation_summary"
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "evaluation_split": {
+          "const": "validation"
+        },
+        "validation_only": {
+          "const": true
+        },
+        "is_final_test_evaluation": {
+          "const": false
+        },
+        "test_accessed": {
+          "const": false
+        },
+        "models_retrained_in_this_step": {
+          "const": false
+        },
+        "predictions_read_in_this_step": {
+          "const": false
+        },
+        "prediction_AP_recomputed_in_this_step": {
+          "const": false
+        },
+        "bootstrap_run": {
+          "const": false
+        },
+        "thresholds_calibrated": {
+          "const": false
+        },
+        "full_local_archives_reverified_in_this_step": {
+          "const": false
+        },
+        "available_metrics": {
+          "const": [
+            "average_precision",
+            "fit_wall_seconds"
+          ]
+        }
+      },
+      "required": [
+        "evaluation_split",
+        "validation_only",
+        "is_final_test_evaluation",
+        "test_accessed",
+        "models_retrained_in_this_step",
+        "predictions_read_in_this_step",
+        "prediction_AP_recomputed_in_this_step",
+        "bootstrap_run",
+        "thresholds_calibrated",
+        "full_local_archives_reverified_in_this_step",
+        "available_metrics"
+      ],
+      "additionalProperties": false
+    },
+    "dataset": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "original"
+        },
+        "protocol": {
+          "const": "stratified"
+        },
+        "variant": {
+          "const": "main"
+        },
+        "features": {
+          "const": 140
+        },
+        "train_rows": {
+          "const": 1764265
+        },
+        "validation_rows": {
+          "const": 367036
+        },
+        "input_file_sha256": {
+          "type": "object",
+          "properties": {
+            "train.parquet": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "val.parquet": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "preprocessor.json": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "preprocess_manifest.json": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "train.parquet",
+            "val.parquet",
+            "preprocessor.json",
+            "preprocess_manifest.json"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "protocol",
+        "variant",
+        "features",
+        "train_rows",
+        "validation_rows",
+        "input_file_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "seeds": {
+      "const": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    "std_ddof": {
+      "const": 1
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "sources": {
+          "type": "object",
+          "properties": {
+            "gbdt_summary": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "results/m1_gbdt_summary/summary.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "gbdt_selection": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "results/m1_gbdt_summary/selection.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "gbdt_manifest": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "results/m1_gbdt_summary/MANIFEST.local-archive.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "rf_summary": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "results/m1_rf_summary/summary.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "rf_receipt": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "results/m1_rf_summary/acceptance_receipt.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "rf_manifest": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "results/m1_rf_summary/MANIFEST.local-archive.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "rf_verification": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "results/m1_rf_summary/verification.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "rf_environment": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "results/m1_rf_summary/environment.public.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "gbdt_execution": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "methods/m1/execution.gbdt-search.v1.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "rf_execution": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "methods/m1/execution.rf-only.proposed.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "rf_trial_compatibility": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "methods/m1/rf_per_seed_compatibility.v1.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "unified_protocol": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "methods/m1/protocol.unified.v1.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "gbdt_summary",
+            "gbdt_selection",
+            "gbdt_manifest",
+            "rf_summary",
+            "rf_receipt",
+            "rf_manifest",
+            "rf_verification",
+            "rf_environment",
+            "gbdt_execution",
+            "rf_execution",
+            "rf_trial_compatibility",
+            "unified_protocol"
+          ],
+          "additionalProperties": false
+        },
+        "generator": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "const": "tools/aggregate_m1.py"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "bytes"
+          ],
+          "additionalProperties": false
+        },
+        "schema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "const": "schemas/m1.schema.json"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "bytes"
+          ],
+          "additionalProperties": false
+        },
+        "integrity_scope": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "sources",
+        "generator",
+        "schema",
+        "integrity_scope"
+      ],
+      "additionalProperties": false
+    },
+    "unified_protocol": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "gbdt": {
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "const": "HistGradientBoostingClassifier"
+        },
+        "role": {
+          "const": "primary"
+        },
+        "fit_count": {
+          "const": 40
+        },
+        "execution_config": {
+          "type": "object",
+          "minProperties": 1
+        },
+        "selection_rule": {
+          "const": {
+            "metric": "mean_full_validation_AP",
+            "ap_tolerance": 1e-06,
+            "tie_rule": "lowest_candidate_id",
+            "std_ddof": 1
+          }
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          },
+          "minItems": 8,
+          "maxItems": 8
+        },
+        "selected_candidate_id": {
+          "const": "G05"
+        },
+        "selected_candidate": {
+          "$ref": "#/$defs/candidate"
+        },
+        "historical_AP_recheck": {
+          "type": "object",
+          "minProperties": 1
+        },
+        "archive": {
+          "type": "object",
+          "minProperties": 1
+        }
+      },
+      "required": [
+        "algorithm",
+        "role",
+        "fit_count",
+        "execution_config",
+        "selection_rule",
+        "candidates",
+        "selected_candidate_id",
+        "selected_candidate",
+        "historical_AP_recheck",
+        "archive"
+      ],
+      "additionalProperties": false
+    },
+    "rf": {
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "const": "RandomForestClassifier"
+        },
+        "role": {
+          "const": "auxiliary"
+        },
+        "fit_count": {
+          "const": 5
+        },
+        "eligible_for_gbdt_selection": {
+          "const": false
+        },
+        "execution_config": {
+          "type": "object",
+          "minProperties": 1
+        },
+        "validation_results": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "rf_validation_acceptance_complete"
+            },
+            "tasks": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/rf_task"
+              },
+              "minItems": 5,
+              "maxItems": 5
+            },
+            "mean_validation_ap": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "sample_std_ap": {
+              "type": "number",
+              "minimum": 0
+            },
+            "mean_fit_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "sample_std_fit_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "eligible_for_gbdt_selection": {
+              "const": false
+            },
+            "binding_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "paired_reference": {
+              "type": "object",
+              "minProperties": 1
+            },
+            "test_accessed": {
+              "const": false
+            },
+            "bootstrap": {
+              "const": false
+            },
+            "thresholds_calibrated": {
+              "const": false
+            }
+          },
+          "required": [
+            "status",
+            "tasks",
+            "mean_validation_ap",
+            "sample_std_ap",
+            "mean_fit_seconds",
+            "sample_std_fit_seconds",
+            "eligible_for_gbdt_selection",
+            "binding_sha256",
+            "paired_reference",
+            "test_accessed",
+            "bootstrap",
+            "thresholds_calibrated"
+          ],
+          "additionalProperties": false
+        },
+        "historical_acceptance_receipt": {
+          "type": "object",
+          "minProperties": 1
+        },
+        "historical_verification": {
+          "type": "object",
+          "minProperties": 1
+        },
+        "environment": {
+          "type": "object",
+          "minProperties": 1
+        }
+      },
+      "required": [
+        "algorithm",
+        "role",
+        "fit_count",
+        "eligible_for_gbdt_selection",
+        "execution_config",
+        "validation_results",
+        "historical_acceptance_receipt",
+        "historical_verification",
+        "environment"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "scope",
+    "dataset",
+    "seeds",
+    "std_ddof",
+    "provenance",
+    "unified_protocol",
+    "gbdt",
+    "rf"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "candidate": {
+      "type": "object",
+      "properties": {
+        "candidate_id": {
+          "enum": [
+            "G01",
+            "G02",
+            "G03",
+            "G04",
+            "G05",
+            "G06",
+            "G07",
+            "G08"
+          ]
+        },
+        "mean_validation_ap": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "sample_std_ap": {
+          "type": "number",
+          "minimum": 0
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "max_iter": {
+              "enum": [
+                200,
+                400
+              ]
+            },
+            "learning_rate": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "max_leaf_nodes": {
+              "type": "integer",
+              "minimum": 2
+            },
+            "min_samples_leaf": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "l2_regularization": {
+              "type": "number",
+              "minimum": 0
+            },
+            "max_bins": {
+              "const": 255
+            },
+            "early_stopping": {
+              "const": false
+            },
+            "class_weight": {
+              "const": null
+            }
+          },
+          "required": [
+            "max_iter",
+            "learning_rate",
+            "max_leaf_nodes",
+            "min_samples_leaf",
+            "l2_regularization",
+            "max_bins",
+            "early_stopping",
+            "class_weight"
+          ],
+          "additionalProperties": false
+        },
+        "mean_fit_seconds_raw": {
+          "type": "number",
+          "minimum": 0
+        },
+        "sample_std_fit_seconds_raw": {
+          "type": "number",
+          "minimum": 0
+        },
+        "tasks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/gbdt_task"
+          },
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "timing_note": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "candidate_id",
+        "mean_validation_ap",
+        "sample_std_ap",
+        "parameters",
+        "mean_fit_seconds_raw",
+        "sample_std_fit_seconds_raw",
+        "tasks",
+        "timing_note"
+      ],
+      "additionalProperties": false
+    },
+    "gbdt_task": {
+      "type": "object",
+      "properties": {
+        "seed": {
+          "enum": [
+            42,
+            43,
+            44,
+            45,
+            46
+          ]
+        },
+        "validation_ap": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "fit_seconds_raw": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "seed",
+        "validation_ap",
+        "fit_seconds_raw"
+      ],
+      "additionalProperties": false
+    },
+    "rf_task": {
+      "type": "object",
+      "properties": {
+        "seed": {
+          "enum": [
+            42,
+            43,
+            44,
+            45,
+            46
+          ]
+        },
+        "validation_ap": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "fit_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "sampled_task_peak_rss_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "resource_sampling_scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "monitor_attempt_interrupted": {
+          "const": false
+        },
+        "completed_record_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "model_prediction_hashes": {
+          "type": "object",
+          "properties": {
+            "model.joblib": {
+              "type": "object",
+              "properties": {
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "task.json": {
+              "type": "object",
+              "properties": {
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "validation.npz": {
+              "type": "object",
+              "properties": {
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "sha256",
+                "bytes"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "model.joblib",
+            "task.json",
+            "validation.npz"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "seed",
+        "validation_ap",
+        "fit_seconds",
+        "sampled_task_peak_rss_bytes",
+        "resource_sampling_scope",
+        "monitor_attempt_interrupted",
+        "completed_record_sha256",
+        "model_prediction_hashes"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

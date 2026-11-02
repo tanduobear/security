@@ -1,0 +1,74 @@
+{
+  "schema_version": "1",
+  "approval": {
+    "status": "pending",
+    "reviewers": {
+      "P4": null,
+      "P5": null,
+      "P6": null
+    },
+    "approved_at": null,
+    "protocol_sha256": null,
+    "scope": "execution_details_only; unified terms are approved in protocol.unified.v1.json"
+  },
+  "dataset": {
+    "version": "original",
+    "protocol": "stratified",
+    "variant": "main"
+  },
+  "search": {
+    "configurations_per_algorithm": null,
+    "budget_scope": "8 per main method; RF is a fixed auxiliary, excluded from main selection",
+    "strategy": "predefined",
+    "seed": null,
+    "configurations": null,
+    "configurations_per_main_method": 8
+  },
+  "model_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "selection": {
+    "metric": "average_precision",
+    "aggregation": "five_seed_mean_full_validation",
+    "tie_rule": null
+  },
+  "early_stopping": {
+    "rule": null,
+    "algorithm_specific_allowed": true,
+    "must_be_fixed_before_training": true
+  },
+  "threshold_policy": {
+    "source_split": "val",
+    "fpr_targets": [
+      0.01,
+      0.05
+    ],
+    "rule": null
+  },
+  "inference": {
+    "row_ids_path": null,
+    "population_identity": null,
+    "batch_size": 512,
+    "warmup": 5,
+    "repeats": 30,
+    "threads": null
+  },
+  "expected_attack_families": null,
+  "resources": {
+    "fit_threads": null,
+    "duckdb_memory_limit_mb": null
+  },
+  "unified_protocol": {
+    "path": "methods/m1/protocol.unified.v1.json",
+    "sha256": "e6e6d8880a5540419f56dbea5b5270b7fd0bf9392b1114b8b56ebf943ef92360",
+    "status": "approved"
+  },
+  "execution_details": {
+    "path": "methods/m1/execution.proposed.json",
+    "status": "pending"
+  }
+}

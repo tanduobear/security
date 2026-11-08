@@ -1,0 +1,16 @@
+experiment_name: "M2_CNN1D"
+seed: 42
+epochs: 40
+batch_size: 256
+learning_rate: 0.001
+device: "cpu"
+
+data:
+  version: "original"
+  protocol: "stratified"
+  variant: "main"
+
+output:
+  model_dir: "results/preds_m2"
+  metrics_file: "results/m2.json"
+  figure_file: "figures/fig_m2_training.png"

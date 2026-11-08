@@ -1,0 +1,39 @@
+{
+    "experiment_name": "M2_CNN1D",
+    "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+    ],
+    "pos_weight": 4.9298640100563995,
+    "device": "cuda",
+    "results": [
+        {
+            "seed": 42,
+            "training_seconds": 1887.1913497447968,
+            "model_path": "results\\preds_m2_corrected\\model_seed42.pth"
+        },
+        {
+            "seed": 43,
+            "training_seconds": 2060.5128622055054,
+            "model_path": "results\\preds_m2_corrected\\model_seed43.pth"
+        },
+        {
+            "seed": 44,
+            "training_seconds": 1893.7856132984161,
+            "model_path": "results\\preds_m2_corrected\\model_seed44.pth"
+        },
+        {
+            "seed": 45,
+            "training_seconds": 1900.6442651748657,
+            "model_path": "results\\preds_m2_corrected\\model_seed45.pth"
+        },
+        {
+            "seed": 46,
+            "training_seconds": 1903.3454456329346,
+            "model_path": "results\\preds_m2_corrected\\model_seed46.pth"
+        }
+    ]
+}

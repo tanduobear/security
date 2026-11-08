@@ -2,17 +2,20 @@
 
 ## Methods §3.4: M2 - 1D-CNN
 
-For the deep learning method, we use One-Dimensional Convolutional Neural Network (1D-CNN). The model treats the 140 numerical flow features as a 1D sequence. It uses convolutional layers to find local patterns between the features. Then, it uses pooling layers and fully connected layers to output a single attack score. 
-To ensure a fair comparison, the training setup follows the same rules as M1. We run the model for a fixed number of epochs without early stopping. Because the dataset is imbalanced, we apply the positive class weights provided by the P2 preprocessor. We use the Adam optimizer to update the model. 
-The complexity of M2 is much higher than M1. The CNN requires a lot of computing power and time to train. In this experiment, the CNN was trained on a CPU, which was very slow. In a real network defense system, this high training cost is a big problem.
-However, this model has a clear limitation. Network flow features are tabular data. There is no natural spatial relationship between these features. Therefore, the local filters of a CNN cannot learn useful information from the data. We expected that the deep learning model would not easily beat the tree-based model on this specific dataset.
+For the deep learning method, we implemented a One-Dimensional Convolutional Neural Network (1D-CNN). The model treats the 140 numerical network flow features as a one-dimensional sequence. It uses two convolutional layers with 32 and 64 filters to learn local patterns between features. Batch normalisation and ReLU activation are applied after each convolutional layer. Adaptive average pooling is then used to reduce the feature dimensions. Finally, a fully connected layer produces one attack score for each network flow.
+
+To support a fair comparison with M1, we used the same dataset split and class imbalance handling. The model was trained for 40 epochs using the Adam optimiser, with a learning rate of 0.001 and a batch size of 256. We used a positive class weight of 4.9299 to reduce the effect of class imbalance. Five random seeds (42–46) were used to measure the consistency of the results. Mixed precision training was also enabled to improve GPU efficiency.
+
+The experiments were performed on an NVIDIA GeForce RTX 4060 Laptop GPU. The average training time was approximately 1,929 seconds per seed. This shows that M2 required more training time and computing resources than a lightweight traditional model. We also measured CPU inference performance to understand its potential running cost. These measurements provide evidence for comparing both model performance and computational cost.
 
 ## Results §4.2: M2 Results and Comparison
 
-In the same test setting, M2 (1D-CNN) performed much worse than M1. The test AP of M2 is only 0.699. As a direct comparison, M1 (GBDT) reached a very high AP of 0.9997. 
+M2 achieved a mean ROC-AUC of 0.9809 ± 0.0040 and a mean Average Precision (AP) of 0.9172 ± 0.0233 across five random seeds. Its mean accuracy was 0.9211 ± 0.0126, while its mean Macro-F1 was 0.8478 ± 0.0292. At a false positive rate (FPR) of 1%, the mean true positive rate (TPR) was 0.6115 ± 0.0700. At an FPR of 5%, it increased to 0.7951 ± 0.0986.
 
-![M2 Training Loss Curve](../figures/fig_m2_training.png)
-*Figure X: The training loss curve of M2. The loss drops sharply and stays flat, showing a collapsed local optimum.*
-Figure X shows the training loss curve of M2. The loss dropped sharply in the first epoch and then stayed flat. This means the model got stuck in a local optimum. It learned to predict almost all traffic as normal. Because of this, M2 failed to find a valid threshold for the 1% FPR target. The TPR at 1% FPR is 0.0, which means the model missed all attacks at this strict operating point.
-There may be two main reasons for this result. First, CNN is not suitable for tabular data. Flow features do not have spatial continuity. The tree-based model (M1) splits the data by axis-aligned cuts, which works much better here. Second, the training cost is unbalanced. M1 only needed a few hundred seconds to train on a CPU. But M2 took dozens of hours and still failed to converge. 
-This result shows that on extracted flow features, deep learning is not always the best choice. The traditional tree model is still more powerful, stable, and cheaper for network intrusion detection.
+Figure X: Training loss curve of M2.
+
+The training loss curve shows how the model's loss changed during training. The evaluation results also show that performance varied between random seeds, especially at low false positive rates. This suggests that the model's detection performance at strict operating points was less consistent than its overall ranking performance.
+
+Compared with M1 (GBDT), which achieved an AP of 0.9997, M2 had a lower AP of 0.9172. This indicates that M1 was better at identifying attack traffic in this dataset. One possible reason is that network flow features are tabular data and do not have a natural order or spatial relationship. Therefore, the local filters used by a CNN may not always capture the most useful patterns. In contrast, tree-based models can split features based on their values and may be more suitable for this type of data.
+
+In terms of computational cost, M2 required an average of approximately 32.15 minutes to train each seed. Its CPU inference throughput was approximately 23,666 flows per second. Overall, M2 achieved good detection performance, but it did not outperform M1. This suggests that a deep learning model is not always the best choice for network intrusion detection, especially when the input consists of structured flow features.

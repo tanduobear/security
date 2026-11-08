@@ -1,9 +1,20 @@
 experiment_name: "M2_CNN1D"
-seed: 42
+
+# 五个随机种子
+seeds: [42, 43, 44, 45, 46]
+
 epochs: 40
 batch_size: 256
 learning_rate: 0.001
-device: "cpu"
+
+# 使用 NVIDIA GPU
+device: "cuda"
+
+# 开启混合精度，加快 GPU 训练
+use_amp: true
+
+# Windows 下先使用 0，避免多进程加载数据导致内存问题
+num_workers: 0
 
 data:
   version: "original"
@@ -11,6 +22,6 @@ data:
   variant: "main"
 
 output:
-  model_dir: "results/preds_m2"
-  metrics_file: "results/m2.json"
-  figure_file: "figures/fig_m2_training.png"
+  # 新目录，不覆盖之前训练错误的模型
+  model_dir: "results/preds_m2_corrected"
+  figure_file: "figures/fig_m2_training_corrected.png"

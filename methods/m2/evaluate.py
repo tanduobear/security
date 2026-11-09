@@ -2,12 +2,14 @@
 import os
 import sys
 import json
+import hashlib
 from pathlib import Path
 
 import yaml
 import numpy as np
 import torch
 from torch.utils.data import DataLoader
+from sklearn.metrics import average_precision_score
 
 # ============================================================
 # 1. Project paths
@@ -37,6 +39,7 @@ from eval.metrics import (
 
 def to_builtin(obj):
     """Convert NumPy values and nested structures to JSON-safe values."""
+
     if isinstance(obj, dict):
         return {str(k): to_builtin(v) for k, v in obj.items()}
 
@@ -64,18 +67,21 @@ def to_builtin(obj):
 
 def get_metric_value(data, possible_names, description):
     """Read a metric using one of several supported field names."""
+
     for name in possible_names:
         if isinstance(data, dict) and name in data:
             return data[name]
 
     raise KeyError(
         f"Cannot find {description}. "
-        f"Available fields: {list(data.keys()) if isinstance(data, dict) else type(data)}"
+        f"Available fields: "
+        f"{list(data.keys()) if isinstance(data, dict) else type(data)}"
     )
 
 
 def get_operating_point(result, target_fpr):
     """Find an empirical ROC operating point."""
+
     if result.get("status") != "ok":
         raise ValueError(
             f"Cannot calculate operating point: {result.get('status')}"
@@ -92,6 +98,7 @@ def get_operating_point(result, target_fpr):
 
 def numeric_summary(values):
     """Calculate mean and sample standard deviation."""
+
     valid = [
         float(v)
         for v in values
@@ -107,12 +114,134 @@ def numeric_summary(values):
     }
 
 
+def calculate_row_id_hash(row_ids):
+    """Calculate SHA256 from ordered row IDs."""
+
+    content = "\n".join(row_ids.tolist()).encode("utf-8")
+
+    return hashlib.sha256(content).hexdigest()
+
+
+def save_test_predictions(
+    seed,
+    test_ds,
+    test_y,
+    test_scores,
+    test_pred,
+    threshold,
+    prediction_dir,
+):
+    """
+    Save aligned per-sample test predictions.
+
+    The original row_id from the dataset metadata is preserved.
+    No synthetic row IDs are generated.
+    """
+
+    required_columns = {"row_id", "attack_family"}
+
+    missing_columns = required_columns - set(test_ds.meta.columns)
+
+    if missing_columns:
+        raise ValueError(
+            f"Missing required metadata columns: {missing_columns}"
+        )
+
+    row_ids = (
+        test_ds.meta["row_id"]
+        .astype(str)
+        .to_numpy()
+    )
+
+    attack_families = (
+        test_ds.meta["attack_family"]
+        .fillna("unknown")
+        .astype(str)
+        .to_numpy()
+    )
+
+    # --------------------------------------------------------
+    # Alignment checks
+    # --------------------------------------------------------
+
+    n = len(test_y)
+
+    if not (
+        len(row_ids)
+        == len(test_scores)
+        == len(test_pred)
+        == len(attack_families)
+        == n
+    ):
+        raise ValueError(
+            f"Prediction alignment error for seed {seed}."
+        )
+
+    if len(np.unique(row_ids)) != n:
+        raise ValueError(
+            f"Duplicate row_id detected for seed {seed}."
+        )
+
+    if not np.isfinite(test_scores).all():
+        raise ValueError(
+            f"Non-finite prediction scores for seed {seed}."
+        )
+
+    # --------------------------------------------------------
+    # Hash
+    # --------------------------------------------------------
+
+    row_ids_sha256 = calculate_row_id_hash(row_ids)
+
+    # --------------------------------------------------------
+    # Save
+    # --------------------------------------------------------
+
+    prediction_dir.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    prediction_path = (
+        prediction_dir / f"seed_{seed}_test_predictions.npz"
+    )
+
+    np.savez_compressed(
+        prediction_path,
+
+        row_ids=row_ids,
+
+        y_true=test_y.astype(np.int8),
+
+        y_score=test_scores.astype(np.float32),
+
+        y_pred=test_pred.astype(np.int8),
+
+        attack_family=attack_families,
+
+        threshold=np.asarray(threshold, dtype=np.float64),
+
+        row_ids_sha256=np.asarray(row_ids_sha256),
+    )
+
+    print("Saved predictions:", prediction_path)
+    print("Prediction samples:", n)
+    print("row_id SHA256:", row_ids_sha256)
+
+    return {
+        "prediction_path": str(prediction_path),
+        "row_ids_sha256": row_ids_sha256,
+        "prediction_samples": int(n),
+    }
+
+
 # ============================================================
 # 3. Prediction
 # ============================================================
 
 def predict_scores(model, dataset, device, batch_size=4096):
     """Predict sigmoid probabilities in batches."""
+
     loader = DataLoader(
         dataset,
         batch_size=batch_size,
@@ -125,7 +254,9 @@ def predict_scores(model, dataset, device, batch_size=4096):
     outputs = []
 
     with torch.inference_mode():
+
         for X, _, _ in loader:
+
             X = X.to(
                 device,
                 dtype=torch.float32,
@@ -146,23 +277,21 @@ def predict_scores(model, dataset, device, batch_size=4096):
 def predict_cpu(model, X):
     """CPU prediction function used for latency measurement."""
 
-    # measure_inference passes NumPy arrays
     if isinstance(X, np.ndarray):
         X = torch.from_numpy(X)
 
-    # Ensure CPU float32 tensor
     X = X.to(
         device="cpu",
-        dtype=torch.float32
+        dtype=torch.float32,
     )
 
     model.eval()
 
     with torch.inference_mode():
+
         logits = model(X)
         scores = torch.sigmoid(logits)
 
-    # Return NumPy array for the benchmark
     return scores.cpu().numpy().reshape(-1)
 
 
@@ -177,7 +306,9 @@ def evaluate_one_seed(
     val_ds,
     test_ds,
     device,
+    prediction_dir,
 ):
+
     print("\n" + "=" * 65)
     print(f"Evaluating Seed {seed}")
     print("=" * 65)
@@ -209,7 +340,6 @@ def evaluate_one_seed(
 
     # --------------------------------------------------------
     # Validation predictions
-    # Threshold is selected ONLY on validation data
     # --------------------------------------------------------
 
     print(f"\nSeed {seed}: predicting validation set...")
@@ -221,6 +351,18 @@ def evaluate_one_seed(
     )
 
     val_y = val_ds.y.cpu().numpy().astype(int)
+
+    if len(val_scores) != len(val_y):
+        raise ValueError(
+            "Validation prediction and label lengths do not match."
+        )
+
+    # Full validation Average Precision.
+    # This is used for model selection, not test AP.
+
+    validation_ap = float(
+        average_precision_score(val_y, val_scores)
+    )
 
     val_operating = tpr_at_fpr(
         val_y,
@@ -235,7 +377,6 @@ def evaluate_one_seed(
 
     threshold = threshold_info["threshold"]
 
-    # None means the selected ROC point is above the maximum score.
     if threshold is None:
         threshold = float(
             np.nextafter(np.max(val_scores), np.inf)
@@ -243,6 +384,7 @@ def evaluate_one_seed(
 
     threshold = float(threshold)
 
+    print("Validation AP:", validation_ap)
     print(f"Validation-selected threshold: {threshold:.10f}")
 
     # --------------------------------------------------------
@@ -260,9 +402,25 @@ def evaluate_one_seed(
     test_y = test_ds.y.cpu().numpy().astype(int)
 
     if len(test_scores) != len(test_y):
-        raise ValueError("Test prediction and label lengths do not match.")
+        raise ValueError(
+            "Test prediction and label lengths do not match."
+        )
 
     test_pred = (test_scores >= threshold).astype(int)
+
+    # --------------------------------------------------------
+    # Save per-sample predictions
+    # --------------------------------------------------------
+
+    prediction_info = save_test_predictions(
+        seed=seed,
+        test_ds=test_ds,
+        test_y=test_y,
+        test_scores=test_scores,
+        test_pred=test_pred,
+        threshold=threshold,
+        prediction_dir=prediction_dir,
+    )
 
     # --------------------------------------------------------
     # ROC-AUC and Average Precision
@@ -378,25 +536,43 @@ def evaluate_one_seed(
     # --------------------------------------------------------
 
     result = {
+
         "seed": int(seed),
 
         "model_path": str(model_path),
 
+        "validation": {
+            "average_precision": validation_ap,
+        },
+
+        "prediction_path": prediction_info["prediction_path"],
+
+        "row_ids_sha256": prediction_info["row_ids_sha256"],
+
+        "prediction_samples": prediction_info["prediction_samples"],
+
         "threshold": threshold,
+
         "threshold_source": "validation",
+
         "validation_operating_point_1pct": threshold_info,
 
         "test": {
+
             "roc_auc": roc_auc,
+
             "average_precision": average_precision,
 
             "tpr_at_fpr_1pct": test_point_1["tpr"],
+
             "actual_fpr_at_1pct": test_point_1["actual_fpr"],
 
             "tpr_at_fpr_5pct": test_point_5["tpr"],
+
             "actual_fpr_at_5pct": test_point_5["actual_fpr"],
 
             "classification": cls_metrics,
+
             "per_class_recall": family_recall,
         },
 
@@ -410,8 +586,9 @@ def evaluate_one_seed(
     print("\nSeed evaluation results")
     print("-----------------------")
     print("Seed:", seed)
-    print("ROC-AUC:", roc_auc)
-    print("Average Precision:", average_precision)
+    print("Validation AP:", validation_ap)
+    print("Test ROC-AUC:", roc_auc)
+    print("Test Average Precision:", average_precision)
     print("TPR@1% FPR:", test_point_1["tpr"])
     print("TPR@5% FPR:", test_point_5["tpr"])
     print("Training time:", round(training_seconds, 2), "seconds")
@@ -441,6 +618,7 @@ def main():
         cfg = yaml.safe_load(f)
 
     model_dir = Path(cfg["output"]["model_dir"])
+
     summary_path = model_dir / "training_summary.json"
 
     if not summary_path.exists():
@@ -470,6 +648,17 @@ def main():
 
     if device.type == "cuda":
         print("GPU:", torch.cuda.get_device_name(0))
+
+    # --------------------------------------------------------
+    # Prediction output directory
+    # --------------------------------------------------------
+
+    prediction_dir = model_dir / "predictions"
+
+    prediction_dir.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     # --------------------------------------------------------
     # Load validation and test datasets
@@ -513,6 +702,33 @@ def main():
         )
 
     # --------------------------------------------------------
+    # Verify test row IDs before evaluation
+    # --------------------------------------------------------
+
+    if "row_id" not in test_ds.meta.columns:
+        raise ValueError(
+            "Test dataset metadata does not contain row_id."
+        )
+
+    all_row_ids = (
+        test_ds.meta["row_id"]
+        .astype(str)
+        .to_numpy()
+    )
+
+    if len(np.unique(all_row_ids)) != len(all_row_ids):
+        raise ValueError(
+            "Test dataset contains duplicate row_id values."
+        )
+
+    shared_row_ids_sha256 = calculate_row_id_hash(all_row_ids)
+
+    print(
+        "\nShared test row_id SHA256:",
+        shared_row_ids_sha256,
+    )
+
+    # --------------------------------------------------------
     # Evaluate all seeds
     # --------------------------------------------------------
 
@@ -527,7 +743,13 @@ def main():
             val_ds=val_ds,
             test_ds=test_ds,
             device=device,
+            prediction_dir=prediction_dir,
         )
+
+        if result["row_ids_sha256"] != shared_row_ids_sha256:
+            raise ValueError(
+                f"Seed {seed}: row_id order differs from shared test order."
+            )
 
         all_results.append(result)
 
@@ -536,6 +758,11 @@ def main():
     # --------------------------------------------------------
 
     metric_getters = {
+
+        "validation_average_precision": lambda r: (
+            r["validation"]["average_precision"]
+        ),
+
         "roc_auc": lambda r: r["test"]["roc_auc"],
 
         "average_precision": lambda r: (
@@ -591,13 +818,10 @@ def main():
 
     for metric_name, getter in metric_getters.items():
 
-        values = []
-
-        for result in all_results:
-            try:
-                values.append(getter(result))
-            except KeyError:
-                raise
+        values = [
+            getter(result)
+            for result in all_results
+        ]
 
         aggregate[metric_name] = numeric_summary(values)
 
@@ -606,42 +830,88 @@ def main():
     # --------------------------------------------------------
 
     output = {
+
         "experiment_name": "M2_CNN1D",
+
         "schema_version": 1,
+
         "model": "CNN1D",
 
         "seeds": seeds,
 
         "training_config": {
-            "epochs": 40,
-            "batch_size": 256,
-            "learning_rate": 0.001,
+
+            "epochs": int(cfg["epochs"]),
+
+            "batch_size": int(cfg["batch_size"]),
+
+            "learning_rate": float(cfg["learning_rate"]),
+
             "pos_weight": train_summary["pos_weight"],
+
             "device": train_summary["device"],
-            "use_amp": True,
+
+            "use_amp": bool(cfg.get("use_amp", False)),
         },
 
         "hardware": {
-            "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+
+            "gpu": torch.cuda.get_device_name(0)
+            if torch.cuda.is_available()
+            else "CPU",
         },
 
         "evaluation_config": {
+
             "evaluation_device": str(device),
+
             "threshold_selection": "validation",
+
+            "validation_model_selection_metric": "average_precision",
+
             "latency_device": "CPU",
+
             "latency_threads": 1,
+
             "latency_batch_size": 512,
+
             "latency_warmup": 5,
+
             "latency_repeats": 30,
         },
 
         "dataset": {
+
             "version": data_cfg["version"],
+
             "protocol": data_cfg["protocol"],
+
             "variant": data_cfg["variant"],
+
             "validation_samples": len(val_ds),
+
             "test_samples": len(test_ds),
+
             "input_features": int(val_ds.X.shape[1]),
+
+            "shared_test_row_ids_sha256": shared_row_ids_sha256,
+        },
+
+        "prediction_files": {
+
+            "directory": str(prediction_dir),
+
+            "format": "npz",
+
+            "fields": [
+                "row_ids",
+                "y_true",
+                "y_score",
+                "y_pred",
+                "attack_family",
+                "threshold",
+                "row_ids_sha256",
+            ],
         },
 
         "runs": all_results,
@@ -656,12 +926,14 @@ def main():
     # --------------------------------------------------------
 
     output_path = Path("results/m2.json")
+
     output_path.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
     with open(output_path, "w", encoding="utf-8") as f:
+
         json.dump(
             output,
             f,
@@ -681,10 +953,13 @@ def main():
     print("\nMean ± Std across seeds")
 
     for name, stats in aggregate.items():
+
         print(
             f"{name}: "
             f"{stats['mean']} ± {stats['std']}"
         )
+
+    print("\nPrediction directory:", prediction_dir.resolve())
 
     print("\nOutput file:", output_path.resolve())
 

@@ -1,0 +1,105 @@
+{
+  "scope": "static delivery audit only; no model rerun; no dataset opened",
+  "m2_sha256": "c39318c0f1d3067b331cd2dae2f53c4080698c611f961376c5930f7589d6b62f",
+  "dataset_declared": {
+    "version": "original",
+    "protocol": "stratified",
+    "variant": "main",
+    "validation_samples": 367036,
+    "test_samples": 346544,
+    "input_features": 140
+  },
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "seed_policy_matches": true,
+  "checkpoint_presence": {
+    "results/preds_m2_corrected/model_seed42.pth": true,
+    "results/preds_m2_corrected/model_seed43.pth": true,
+    "results/preds_m2_corrected/model_seed44.pth": true,
+    "results/preds_m2_corrected/model_seed45.pth": true,
+    "results/preds_m2_corrected/model_seed46.pth": true
+  },
+  "p3_schema_passed": false,
+  "p3_schema_errors": [
+    {
+      "path": "",
+      "message": "Additional properties are not allowed ('evaluation_config', 'experiment_name', 'hardware', 'model', 'runs', 'seeds', 'summary', 'training_config' were unexpected)"
+    },
+    {
+      "path": "",
+      "message": "'is_demo' is a required property"
+    },
+    {
+      "path": "",
+      "message": "'method' is a required property"
+    },
+    {
+      "path": "",
+      "message": "'seed' is a required property"
+    },
+    {
+      "path": "",
+      "message": "'config' is a required property"
+    },
+    {
+      "path": "",
+      "message": "'decision_rule' is a required property"
+    },
+    {
+      "path": "",
+      "message": "'metrics' is a required property"
+    },
+    {
+      "path": "",
+      "message": "'cost' is a required property"
+    },
+    {
+      "path": "",
+      "message": "'daily_alerts' is a required property"
+    },
+    {
+      "path": "",
+      "message": "'comparisons' is a required property"
+    },
+    {
+      "path": "",
+      "message": "'provenance' is a required property"
+    },
+    {
+      "path": "schema_version",
+      "message": "'1.0' was expected"
+    },
+    {
+      "path": "dataset",
+      "message": "Additional properties are not allowed ('input_features', 'test_samples', 'validation_samples' were unexpected)"
+    },
+    {
+      "path": "dataset",
+      "message": "'split' is a required property"
+    },
+    {
+      "path": "dataset",
+      "message": "'path' is a required property"
+    },
+    {
+      "path": "dataset",
+      "message": "'sha256' is a required property"
+    },
+    {
+      "path": "dataset",
+      "message": "'n_samples' is a required property"
+    }
+  ],
+  "acceptance": "pending_actual_rerun_and_protocol_reconciliation",
+  "review_items": [
+    "Published M2 files show one configuration; request eight-configuration search evidence or a team-approved budget amendment.",
+    "Keep multi-seed summary but also export per-seed P3 records with full curves and provenance.",
+    "P5 prose compares M1 validation AP against M2 test AP; align populations before comparison.",
+    "Verify test execution agreement; M1 pending execution details apply to M1 and do not alone prove an M2 violation."
+  ]
+}

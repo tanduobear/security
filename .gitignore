@@ -27,6 +27,12 @@ results/m1_gbdt_search/
 results/m1_resource_trials/
 docs/p4_acceptance/sandbox_test_failure.txt
 
+# P6 local environments and full experiment archives.
+.venv-p6/
+results/m3_runs/
+results/m3_smoke/
+docs/p6_acceptance/m2_replay_*/predictions_*.parquet
+
 # RF-only formal and resource-trial models, complete predictions and mapped data.
 results/m1_rf_runs/
 results/m1_rf_trials/

@@ -1,0 +1,795 @@
+{
+  "created_at": "2026-11-09T10:19:41.538106+00:00",
+  "scope": "Saved-artifact audit; no fit, model loading or inference.",
+  "checks": [
+    {
+      "name": "40 unique candidate/seed runs",
+      "passed": true
+    },
+    {
+      "name": "formal search and frozen config",
+      "passed": true
+    },
+    {
+      "name": "train dataset hash",
+      "passed": true
+    },
+    {
+      "name": "val dataset hash",
+      "passed": true
+    },
+    {
+      "name": "A01/42 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A01/42 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A01/43 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A01/43 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A01/44 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A01/44 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A01/45 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A01/45 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A01/46 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A01/46 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A02/42 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A02/42 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A02/43 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A02/43 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A02/44 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A02/44 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A02/45 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A02/45 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A02/46 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A02/46 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A03/42 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A03/42 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A03/43 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A03/43 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A03/44 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A03/44 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A03/45 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A03/45 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A03/46 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A03/46 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A04/42 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A04/42 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A04/43 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A04/43 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A04/44 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A04/44 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A04/45 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A04/45 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A04/46 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A04/46 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A05/42 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A05/42 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A05/43 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A05/43 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A05/44 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A05/44 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A05/45 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A05/45 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A05/46 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A05/46 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A06/42 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A06/42 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A06/43 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A06/43 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A06/44 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A06/44 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A06/45 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A06/45 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A06/46 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A06/46 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A07/42 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A07/42 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A07/43 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A07/43 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A07/44 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A07/44 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A07/45 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A07/45 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A07/46 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A07/46 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A08/42 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A08/42 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A08/43 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A08/43 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A08/44 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A08/44 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A08/45 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A08/45 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "A08/46 saved metadata",
+      "passed": true
+    },
+    {
+      "name": "A08/46 checkpoint hash",
+      "passed": true
+    },
+    {
+      "name": "winner recomputed from benign validation only",
+      "passed": true
+    },
+    {
+      "name": "published main index matches local index",
+      "passed": true
+    },
+    {
+      "name": "10 AE + 4 auxiliary record references",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder/42 real test row identity and labels",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q95.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q95.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q95.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q95.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q95.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q95.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q95.json frozen validation threshold",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q99.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q99.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q99.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q99.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q99.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q99.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed42_q99.json frozen validation threshold",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder/43 real test row identity and labels",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q95.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q95.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q95.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q95.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q95.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q95.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q95.json frozen validation threshold",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q99.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q99.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q99.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q99.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q99.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q99.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed43_q99.json frozen validation threshold",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder/44 real test row identity and labels",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q95.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q95.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q95.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q95.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q95.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q95.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q95.json frozen validation threshold",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q99.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q99.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q99.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q99.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q99.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q99.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed44_q99.json frozen validation threshold",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder/45 real test row identity and labels",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q95.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q95.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q95.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q95.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q95.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q95.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q95.json frozen validation threshold",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q99.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q99.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q99.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q99.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q99.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q99.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed45_q99.json frozen validation threshold",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder/46 real test row identity and labels",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q95.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q95.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q95.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q95.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q95.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q95.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q95.json frozen validation threshold",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q99.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q99.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q99.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q99.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q99.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q99.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "Autoencoder_seed46_q99.json frozen validation threshold",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest/42 real test row identity and labels",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest_seed42_q95.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest_seed42_q95.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest_seed42_q95.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest_seed42_q95.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest_seed42_q95.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest_seed42_q95.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest_seed42_q99.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest_seed42_q99.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest_seed42_q99.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest_seed42_q99.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest_seed42_q99.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "IsolationForest_seed42_q99.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM/42 real test row identity and labels",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM_seed42_q95.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM_seed42_q95.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM_seed42_q95.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM_seed42_q95.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM_seed42_q95.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM_seed42_q95.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM_seed42_q99.json P3 schema and numerical consistency",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM_seed42_q99.json recorded file identities",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM_seed42_q99.json AP/AUC recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM_seed42_q99.json confusion matrix recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM_seed42_q99.json family recall recomputed from saved scores",
+      "passed": true
+    },
+    {
+      "name": "OneClassSVM_seed42_q99.json index values match detailed record",
+      "passed": true
+    },
+    {
+      "name": "published threshold record copy",
+      "passed": true
+    },
+    {
+      "name": "deliverable exists: docs/p6_text.md",
+      "passed": true
+    },
+    {
+      "name": "deliverable exists: methods/m3/README.md",
+      "passed": true
+    },
+    {
+      "name": "deliverable exists: figures/fig_m3_error_dist.png",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "audit_environment": {
+    "python": "3.11.13",
+    "interpreter": "C:\\Users\\Administrator\\Desktop\\Security\\repo\\.venv-p6\\Scripts\\python.exe",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.3.5",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "duckdb": "2.0.0",
+      "pyarrow": "26.0.1",
+      "jsonschema": "4.26.0",
+      "threadpoolctl": "3.7.0",
+      "matplotlib": "3.11.2",
+      "joblib": "1.6.0"
+    }
+  },
+  "selected_candidate": "A06",
+  "statistical_scope": "Cross-method paired bootstrap remains for P7 integration.",
+  "calibration_limit": "Thresholds agree with saved calibration records; independent reconstruction of validation quantiles requires model replay.",
+  "status": "passed"
+}

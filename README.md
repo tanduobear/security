@@ -109,5 +109,21 @@ GBDT八配置×五种子共40次正式搜索已完成，选优配置为G05；固
 | 全部277项测试的统一命令及历史216/241项记录 | [测试说明](docs/testing.md) |
 
 正式图为单面板局部范围：Recall 0.98–1.00、Precision 0.99–1.00；图注已声明坐标范围。图例AP由每种子的完整真实Validation预测独立复算，不是局部区间积分。绘图脚本为[plot_pr_curve_enlarged.py](methods/m1/plot_pr_curve_enlarged.py)。
-
 完整模型、逐样本预测、缓存和运行日志仅保存在本地被忽略的实验目录中，GitHub公开摘要不是完整归档备份。统一协议保持approved；原execution.proposed.json仍pending。基础Test和Bootstrap分别使用独立获批的execution.final-test.v1.json、execution.bootstrap.v1.json；扩展实验不随其自动启动。
+
+## P6 交付导航
+
+M3 自编码器八配置×五种子共40次搜索及原版分层主实验 Test 评估已完成，获选 A06。q95、q99 阈值分别由验证集负类重建误差标定；两个辅助方法各拟合一次，不进入主模型五种子统计。
+
+| 交付项 | 位置 |
+|---|---|
+| M3代码、固定配置与运行说明 | [methods/m3/](methods/m3/README.md) |
+| 主模型结果索引与归档说明 | [results/m3.json](results/m3.json) |
+| 公开数值摘要、辅助结果及40次搜索记录 | [results/m3_summary/](results/m3_summary/README.md) |
+| 完整模型、14份P3结果与逐样本预测 | [P6交付包（Git LFS）](submission/P6_handoff.zip)、[SHA256](submission/P6_handoff.sha256.txt) |
+| 阈值及标定范围 | [docs/m3_threshold.md](docs/m3_threshold.md) |
+| 重建误差分布图 | [完整与局部视图](figures/fig_m3_error_dist_v2.png) |
+| Methods §3.5和Results §4.3正文 | [docs/p6_text.md](docs/p6_text.md) |
+| 最终校验证据与环境版本 | [docs/p6_acceptance/final_audit.json](docs/p6_acceptance/final_audit.json) |
+
+完整记录位于LFS交付包中；按公开摘要README解压后，索引中的原始相对路径保持有效。跨方法配对bootstrap、修正版复跑和P7独立验收仍需在下游完成；此交付不代签P7验收，也不修改其他成员的方法或实验结果。

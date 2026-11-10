@@ -1,0 +1,349 @@
+{
+  "status": "test_evaluation_complete",
+  "selected_candidate": "A06",
+  "dataset": {
+    "version": "original",
+    "protocol": "stratified",
+    "variant": "main"
+  },
+  "records": [
+    {
+      "record": "results/m3_runs/records/Autoencoder_seed42_q95.json",
+      "method": "Autoencoder",
+      "seed": 42,
+      "quantile": 0.95,
+      "ap": 0.7423723145772673,
+      "roc_auc": 0.9049634345541775,
+      "classification": {
+        "status": "ok",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "accuracy": 0.8863665220000924,
+        "macro_f1": 0.798474580538729,
+        "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+        "both_true_classes_present": true,
+        "confusion_matrix": {
+          "tn": 268012,
+          "fp": 14494,
+          "fn": 24885,
+          "tp": 39153
+        },
+        "tpr": 0.6114026047034573,
+        "fpr": 0.051305105024318065,
+        "precision": 0.7298264581430463,
+        "attempted": {
+          "status": "no_samples",
+          "support": 0,
+          "false_positives": 0,
+          "fpr": null
+        }
+      }
+    },
+    {
+      "record": "results/m3_runs/records/Autoencoder_seed42_q99.json",
+      "method": "Autoencoder",
+      "seed": 42,
+      "quantile": 0.99,
+      "ap": 0.7423723145772673,
+      "roc_auc": 0.9049634345541775,
+      "classification": {
+        "status": "ok",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "accuracy": 0.9037495960108962,
+        "macro_f1": 0.8023399940819469,
+        "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+        "both_true_classes_present": true,
+        "confusion_matrix": {
+          "tn": 280705,
+          "fp": 1801,
+          "fn": 31554,
+          "tp": 32484
+        },
+        "tpr": 0.5072613135950529,
+        "fpr": 0.006375085838884837,
+        "precision": 0.9474697389528949,
+        "attempted": {
+          "status": "no_samples",
+          "support": 0,
+          "false_positives": 0,
+          "fpr": null
+        }
+      }
+    },
+    {
+      "record": "results/m3_runs/records/Autoencoder_seed43_q95.json",
+      "method": "Autoencoder",
+      "seed": 43,
+      "quantile": 0.95,
+      "ap": 0.7475547183935679,
+      "roc_auc": 0.9090580954795972,
+      "classification": {
+        "status": "ok",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "accuracy": 0.890995082875479,
+        "macro_f1": 0.806026906626099,
+        "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+        "both_true_classes_present": true,
+        "confusion_matrix": {
+          "tn": 269064,
+          "fp": 13442,
+          "fn": 24333,
+          "tp": 39705
+        },
+        "tpr": 0.6200224866485524,
+        "fpr": 0.04758129030887839,
+        "precision": 0.7470788567557906,
+        "attempted": {
+          "status": "no_samples",
+          "support": 0,
+          "false_positives": 0,
+          "fpr": null
+        }
+      }
+    },
+    {
+      "record": "results/m3_runs/records/Autoencoder_seed43_q99.json",
+      "method": "Autoencoder",
+      "seed": 43,
+      "quantile": 0.99,
+      "ap": 0.7475547183935679,
+      "roc_auc": 0.9090580954795972,
+      "classification": {
+        "status": "ok",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "accuracy": 0.9039111916524308,
+        "macro_f1": 0.8055730435871684,
+        "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+        "both_true_classes_present": true,
+        "confusion_matrix": {
+          "tn": 279851,
+          "fp": 2655,
+          "fn": 30644,
+          "tp": 33394
+        },
+        "tpr": 0.5214716262219308,
+        "fpr": 0.009398030484308298,
+        "precision": 0.9263502454991817,
+        "attempted": {
+          "status": "no_samples",
+          "support": 0,
+          "false_positives": 0,
+          "fpr": null
+        }
+      }
+    },
+    {
+      "record": "results/m3_runs/records/Autoencoder_seed44_q95.json",
+      "method": "Autoencoder",
+      "seed": 44,
+      "quantile": 0.95,
+      "ap": 0.7395178995454674,
+      "roc_auc": 0.9017280055703583,
+      "classification": {
+        "status": "ok",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "accuracy": 0.8909633408744633,
+        "macro_f1": 0.8066229737184732,
+        "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+        "both_true_classes_present": true,
+        "confusion_matrix": {
+          "tn": 268810,
+          "fp": 13696,
+          "fn": 24090,
+          "tp": 39948
+        },
+        "tpr": 0.6238171085917736,
+        "fpr": 0.04848038625728303,
+        "precision": 0.7446871970770264,
+        "attempted": {
+          "status": "no_samples",
+          "support": 0,
+          "false_positives": 0,
+          "fpr": null
+        }
+      }
+    },
+    {
+      "record": "results/m3_runs/records/Autoencoder_seed44_q99.json",
+      "method": "Autoencoder",
+      "seed": 44,
+      "quantile": 0.99,
+      "ap": 0.7395178995454674,
+      "roc_auc": 0.9017280055703583,
+      "classification": {
+        "status": "ok",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "accuracy": 0.9076682903181126,
+        "macro_f1": 0.8149506580014794,
+        "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+        "both_true_classes_present": true,
+        "confusion_matrix": {
+          "tn": 279923,
+          "fp": 2583,
+          "fn": 29414,
+          "tp": 34624
+        },
+        "tpr": 0.5406789718604579,
+        "fpr": 0.00914316864066604,
+        "precision": 0.9305775794877308,
+        "attempted": {
+          "status": "no_samples",
+          "support": 0,
+          "false_positives": 0,
+          "fpr": null
+        }
+      }
+    },
+    {
+      "record": "results/m3_runs/records/Autoencoder_seed45_q95.json",
+      "method": "Autoencoder",
+      "seed": 45,
+      "quantile": 0.95,
+      "ap": 0.7343834013074005,
+      "roc_auc": 0.9020806312382122,
+      "classification": {
+        "status": "ok",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "accuracy": 0.886288609815781,
+        "macro_f1": 0.795045909643876,
+        "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+        "both_true_classes_present": true,
+        "confusion_matrix": {
+          "tn": 269180,
+          "fp": 13326,
+          "fn": 26080,
+          "tp": 37958
+        },
+        "tpr": 0.5927418095505793,
+        "fpr": 0.04717067956078809,
+        "precision": 0.7401528741907808,
+        "attempted": {
+          "status": "no_samples",
+          "support": 0,
+          "false_positives": 0,
+          "fpr": null
+        }
+      }
+    },
+    {
+      "record": "results/m3_runs/records/Autoencoder_seed45_q99.json",
+      "method": "Autoencoder",
+      "seed": 45,
+      "quantile": 0.99,
+      "ap": 0.7343834013074005,
+      "roc_auc": 0.9020806312382122,
+      "classification": {
+        "status": "ok",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "accuracy": 0.9022346368715084,
+        "macro_f1": 0.7991828396052189,
+        "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+        "both_true_classes_present": true,
+        "confusion_matrix": {
+          "tn": 280456,
+          "fp": 2050,
+          "fn": 31830,
+          "tp": 32208
+        },
+        "tpr": 0.5029513726225053,
+        "fpr": 0.00725648304814765,
+        "precision": 0.9401599626364645,
+        "attempted": {
+          "status": "no_samples",
+          "support": 0,
+          "false_positives": 0,
+          "fpr": null
+        }
+      }
+    },
+    {
+      "record": "results/m3_runs/records/Autoencoder_seed46_q95.json",
+      "method": "Autoencoder",
+      "seed": 46,
+      "quantile": 0.95,
+      "ap": 0.7497215851232111,
+      "roc_auc": 0.9021842310473993,
+      "classification": {
+        "status": "ok",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "accuracy": 0.8917684334456808,
+        "macro_f1": 0.8077191918093691,
+        "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+        "both_true_classes_present": true,
+        "confusion_matrix": {
+          "tn": 269077,
+          "fp": 13429,
+          "fn": 24078,
+          "tp": 39960
+        },
+        "tpr": 0.6240044973297105,
+        "fpr": 0.047535273587109655,
+        "precision": 0.7484687857049205,
+        "attempted": {
+          "status": "no_samples",
+          "support": 0,
+          "false_positives": 0,
+          "fpr": null
+        }
+      }
+    },
+    {
+      "record": "results/m3_runs/records/Autoencoder_seed46_q99.json",
+      "method": "Autoencoder",
+      "seed": 46,
+      "quantile": 0.99,
+      "ap": 0.7497215851232111,
+      "roc_auc": 0.9021842310473993,
+      "classification": {
+        "status": "ok",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "accuracy": 0.9075413223140496,
+        "macro_f1": 0.8148356383892754,
+        "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+        "both_true_classes_present": true,
+        "confusion_matrix": {
+          "tn": 279855,
+          "fp": 2651,
+          "fn": 29390,
+          "tp": 34648
+        },
+        "tpr": 0.5410537493363315,
+        "fpr": 0.00938387149299484,
+        "precision": 0.9289257084640339,
+        "attempted": {
+          "status": "no_samples",
+          "support": 0,
+          "false_positives": 0,
+          "fpr": null
+        }
+      }
+    }
+  ],
+  "note": "Index only; validate the individual records with eval.validate.",
+  "archive": {
+    "path": "submission/P6_handoff.zip",
+    "storage": "git-lfs",
+    "extract_to": "repository root; original relative paths are preserved",
+    "public_summary": "results/m3_summary/summary.json",
+    "auxiliary_index_after_extraction": "results/m3_runs/auxiliary.json"
+  }
+}

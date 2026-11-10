@@ -1,6 +1,14 @@
 # M1 树模型工程与 Validation 交付
 
-RF-only辅助对照的五种子正式训练、完整Validation独立AP验收及归档封存已完成。五次AP复算与训练记录严格一致，均值0.9996364875511452、样本标准差0.0000505703708643；原始归档157/157文件SHA256验证通过。详见 [RF结果摘要](../../results/m1_rf_summary/README.md) 和 [RF验收封存审计](../../docs/m1_rf_validation_seal_audit.md)。资源试运行与正式执行均有分别记录的批准，不将RF用于GBDT主模型选优；未读取真实Test、运行实验Bootstrap或标定阈值。工程准备时166项、逐种子检查点调整后174项均为历史测试记录，本次交付回归结果单独记录在审计报告中。
+**当前阶段：GBDT/RF 训练、Validation、基础 Test 评估及20项正式Bootstrap均已完成并验收封存。** 原results/m1.json及PR曲线保持Validation-only；Test结果见 [Test摘要](../../results/m1_test_summary/README.md)，Bootstrap见 [正式摘要](../../results/m1_bootstrap/bootstrap_summary.json) 和 [报告](../../docs/m1_bootstrap_report.md)。未自动commit或push。
+
+Bootstrap使用独立批准的 [execution.bootstrap.v1.json](execution.bootstrap.v1.json) 及 [bootstrap.py](bootstrap.py)，严格保留五种子×四指标、每项2000次、95% percentile/linear、Bootstrap seed=2026。P4逐次记录适配在 [bootstrap_stats.py](bootstrap_stats.py)，独立验收及发布在 [bootstrap_delivery.py](bootstrap_delivery.py)，P2/P3不修改。资源试跑与正式结果分开保存；正式CSV共40,000行，20项CI/SE均独立复算，并重放全部RNG检查点及复核60个配对样本指标。公开MANIFEST覆盖9个交付文件，本地正式归档1000个文件和试跑归档26个文件也分别通过完整性校验。旧bootstrap草案保持历史pending状态。
+
+Bootstrap字段约定：CSV的`seed`和`bootstrap_summary.comparisons[i].task.seed`是模型种子42–46；P3结果对象的`seed`是重采样种子2026。`confidence_intervals.comparisons[i]`沿用P3结果字段，其模型身份按同位置的`bootstrap_summary.comparisons[i].task`确定；两份JSON使用相同的固定20任务顺序。不要把两类种子混为一谈，也不要按P3结果的`seed=2026`将五个模型种子合并。
+
+最终评估使用独立入口 [final_stage.py](final_stage.py) 和 [final_stage_core.py](final_stage_core.py)，从既有G05/RF两个封存归档复用十个模型，零次重训。[execution.final-test.v1.json](execution.final-test.v1.json) 已独立获批并执行，20个Validation阈值先封存，随后完成346,544行Test评估。共同计时名单为 [m1_shared_timing_rows.v1.json](../../docs/m1_shared_timing_rows.v1.json)。原 [execution.final-test.proposed.json](execution.final-test.proposed.json) 保持pending历史草案；不要将plan或旧入口视为重新运行授权。工程准备历史见 [准备记录](../../docs/m1_final_evaluation_preparation.md)。
+
+RF-only辅助对照的五种子正式训练、完整Validation独立AP验收及归档封存已完成。五次AP复算与训练记录严格一致，均值0.9996364875511452、样本标准差0.0000505703708643；原始归档157/157文件SHA256验证通过。详见 [RF结果摘要](../../results/m1_rf_summary/README.md) 和 [RF验收封存审计](../../docs/m1_rf_validation_seal_audit.md)。资源试运行与正式执行均有分别记录的批准，不将RF用于GBDT主模型选优；该训练与Validation阶段未读取真实Test、运行实验Bootstrap或标定阈值，后续Test属于独立阶段。工程准备时166项、逐种子检查点调整后174项均为历史测试记录，本次交付回归结果单独记录在审计报告中。
 
 GBDT阶段记录（2026-11-02）：GBDT-only 的八配置 × 五种子共40次拟合、完整Validation独立AP复算、选优及总归档封存已完成，获选配置为G05。该阶段未读取真实Test、训练RF、运行Bootstrap或标定阈值。公开的 [GBDT结果摘要](../../results/m1_gbdt_summary/README.md) 包含小型汇总和原始MANIFEST副本；模型、完整预测和缓存仅保存在本地，GitHub不包含完整归档。封存细节见 [补封存验收](../../docs/m1_manifest_seal_repair.md)。该次完整回归131项通过（59.831秒）。RF交付未修改已封存GBDT结果。
 
@@ -8,15 +16,15 @@ GBDT-only 入口说明：本阶段获批配置独立保存为 `execution.gbdt-se
 
 资源试运行历史记录：前次中止后，经用户再次确认，修复的整进程树监控下 G01/42 已成功跑满200轮；fit实测308.18秒，工作进程OS峰值RSS3.64 GiB，所有保存与哈希检查通过。该任务不计入正式搜索、没有计算AP或读取test。详见 [成功记录](../../docs/m1_resource_trial_success.md)，前次中止证据仍保留在 [历史记录](../../docs/m1_resource_trial.md)。后续完整评估执行细则仍为pending，GBDT-only搜索细则已独立批准。
 
-协议范围：NIDS Unified Experimental Protocol v1.0已批准冻结。GBDT-only候选、停止规则、AP平分及资源细则已独立获批并执行；RF固定参数、资源限制及逐种子检查点也已另行获批，五次正式训练及独立验收封存完成。原execution.proposed.json和protocol.pending.json仍表示后续完整评估细则pending，不撤销GBDT/RF独立批准，也不授权真实Test、实验Bootstrap或阈值标定。见 [历史正式运行前验收](../../docs/m1_formal_preflight.md)。
+协议范围：NIDS Unified Experimental Protocol v1.0已批准冻结。GBDT-only候选、停止规则、AP平分及资源细则已独立获批并执行；RF固定参数、资源限制及逐种子检查点也已另行获批，五次正式训练及独立验收封存完成。原execution.proposed.json和protocol.pending.json继续pending；基础Test及Validation阈值标定的独立批准以execution.final-test.v1.json为准，后续Bootstrap独立批准以execution.bootstrap.v1.json为准。见 [历史正式运行前验收](../../docs/m1_formal_preflight.md)。
 
-正式交付为[results/m1.json](../../results/m1.json)、[PR PNG](../../figures/fig_m1_pr.png)及[PR PDF](../../figures/fig_m1_pr.pdf)。绘图脚本[plot_pr_curve_enlarged.py](plot_pr_curve_enlarged.py)输出统一文件名，使用真实G05五种子Validation预测；来源与SHA256见[PR验收报告](../../docs/m1_pr_curve_enlarged_report.md)。图为Enlarged View，Recall 0.98–1.00、Precision 0.99–1.00，无inset或双面板。
+Validation阶段交付为[results/m1.json](../../results/m1.json)、[PR PNG](../../figures/fig_m1_pr.png)及[PR PDF](../../figures/fig_m1_pr.pdf)。绘图脚本[plot_pr_curve_enlarged.py](plot_pr_curve_enlarged.py)输出统一文件名，使用真实G05五种子Validation预测；来源与SHA256见[PR验收报告](../../docs/m1_pr_curve_enlarged_report.md)。图为Enlarged View，Recall 0.98–1.00、Precision 0.99–1.00，无inset或双面板。
 
 ## 环境与短时测试
 
 使用 Python 3.13。依赖入口仍为 `requirements-m1.txt`，新增 `requirements-lock.txt` 记录本机实际安装的完整依赖版本。锁文件是当前环境快照，不表示已在新机器完成重装验收。
 
-全部216项测试分三套运行：核心174项、工具34项、恢复封存8项。必须全部执行；单独discover tests只覆盖174项。统一说明及本次执行结果见[测试说明](../../docs/testing.md)。在仓库根目录运行：
+全部277项测试分三套运行：核心235项、工具34项、恢复封存8项。必须全部执行；单独discover tests只覆盖235项。历史216/241项记录和最新执行结果见[测试说明](../../docs/testing.md)。在仓库根目录运行：
 
 ```powershell
 .\.venv\Scripts\python.exe -B -X utf8 -m unittest discover -s tests -p 'test_*.py' -v
@@ -97,12 +105,12 @@ Smoke 有独立验证格式，复用 P3 指标 Schema 片段，并补充混淆�
 
 `materialize_preparation()` 限定 train/val 文件，通过 P2 加载器核验来源后，一次预分配磁盘映射 X.npy/y.npy，分块写入元数据 JSONL。`DiskDataset.model_input()` 可用作上下文管理器，显式释放 Windows 映射句柄。`assert_disk_isolated()` 用指定 DuckDB 内存上限检查行 ID 唯一性和跨折交集。
 
-该接口最初通过100行合成数据验收，后来已用于获批GBDT/RF完整Train/Validation实验；实测资源记录见各自正式与资源试运行报告。它避免装载层反复拼接，不承诺sklearn内部完全无复制。后续扩展及Test评估仍需独立授权，不能因历史全量缓存存在就自动执行。
+该接口最初通过100行合成数据验收，后来已用于获批GBDT/RF完整Train/Validation实验及独立获批的基础Test评估；实测资源记录见各阶段报告。它避免装载层反复拼接，不承诺sklearn内部完全无复制。后续扩展或重复Test评估仍需独立授权，不能因历史全量缓存存在就自动执行。
 
 ## 后续完整评估仍待确认的细则
 
 - GBDT八组候选、固定轮数/early_stopping=false、AP平分容差1e-6及最小配置ID规则，以及RF固定参数均已获批并执行，不再列为待批。
 - 若未来更改停止规则或参数，须另行审批和版本化，不能改写现有封存记录。
-- 验证 FPR 并列分数边界处理、Bootstrap 次数/置信度/种子及对比范围。
-- 后续P3统一计时名单的生成和交接细则；GBDT/RF搜索阶段已批准使用的资源参数保持原记录，不再列为未批准。
+- Validation FPR的nextafter并列边界规则已独立获批并执行；Bootstrap次数/置信度/种子及20项范围已通过execution.bootstrap.v1.json独立获批，执行状态见本文顶部。
+- 共同计时名单已按独立批准冻结，供P5/P6/P7复用；GBDT/RF搜索阶段资源参数保持原记录，不再列为未批准。
 - 后续扩展具体排期。已有的主数据、8 个主配置、五个种子、监督 AP 选优、1%/5% 阈值和扩展顺序不再列为未批准。

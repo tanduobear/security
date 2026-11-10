@@ -1,0 +1,1045 @@
+{
+  "status": "complete",
+  "comparisons": [
+    {
+      "task": {
+        "id": "seed42_ap",
+        "seed": 42,
+        "metric": "ap",
+        "target": null,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "5fbda25b0966aef8aa2d9cbf6e1c545a8209bb8632065d316831d3b7d53c4b5e",
+      "result": {
+        "status": "ok",
+        "metric": "ap",
+        "target_fpr": null,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9995211773199413,
+        "value_b": 0.9990793012858298,
+        "difference": 0.0004418760341114991,
+        "ci_lower": 0.00037809321623194226,
+        "ci_upper": 0.0005083917919369379,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 3.350510552094663e-05,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T13:32:43.498151+00:00",
+      "ended_at": "2026-11-09T13:37:44.873680+00:00",
+      "compute_seconds": 300.4758432999952,
+      "checkpoint_chain_sha256": "5d98799826cba81ff9e0f56c31748fd390534bad3c9599bd798924831c06060a",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed42_tpr_0.001",
+        "seed": 42,
+        "metric": "tpr_at_fpr",
+        "target": 0.001,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "d9b6bced37858f19d9c1a6a3296c818bfdfec07a982c4b66f6982529c3454a3f",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.001,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9481401667759768,
+        "value_b": 0.875745651019707,
+        "difference": 0.07239451575626976,
+        "ci_lower": 0.043535478934382664,
+        "ci_upper": 0.07515889003404234,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 0.00838694387324397,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T13:37:52.437196+00:00",
+      "ended_at": "2026-11-09T13:42:30.057095+00:00",
+      "compute_seconds": 277.212987599778,
+      "checkpoint_chain_sha256": "f4b4a120c5488febfb28acdbc35cabf4602027b7993575c05d9450c525382150",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed42_tpr_0.01",
+        "seed": 42,
+        "metric": "tpr_at_fpr",
+        "target": 0.01,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "15335e613d0a2a472429c7a2440d7f2e70af0a47687700138dd304554fd9833e",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.01,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9999687685436772,
+        "value_b": 0.999921921359193,
+        "difference": 4.6847184484222204e-05,
+        "ci_lower": -1.561572816144441e-05,
+        "ci_upper": 0.00010931009712988882,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 3.3820491589274324e-05,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T13:42:37.303335+00:00",
+      "ended_at": "2026-11-09T13:47:11.688254+00:00",
+      "compute_seconds": 273.8926605002489,
+      "checkpoint_chain_sha256": "c561079952549acf9b7758527c308226183f08a385de3e6a1418962ca2d31d42",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed42_tpr_0.05",
+        "seed": 42,
+        "metric": "tpr_at_fpr",
+        "target": 0.05,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "004c3bc40ca19a11e6e919077f1cc69a5481940c45b94bea81a30f008ca79b2e",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.05,
+        "difference_definition": "A_minus_B",
+        "value_a": 1.0,
+        "value_b": 1.0,
+        "difference": 0.0,
+        "ci_lower": 0.0,
+        "ci_upper": 0.0,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 0.0,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T13:47:19.097041+00:00",
+      "ended_at": "2026-11-09T13:51:56.615440+00:00",
+      "compute_seconds": 276.99769349989947,
+      "checkpoint_chain_sha256": "be9d2858dda6caba91f80e7e39b81aebe2258215d193a05f25deb433f20c11ea",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed43_ap",
+        "seed": 43,
+        "metric": "ap",
+        "target": null,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "c1b8d07111c83e1927218a503779e929c8e7cffea4334a4333db9cb8a3d94285",
+      "result": {
+        "status": "ok",
+        "metric": "ap",
+        "target_fpr": null,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9995045813989475,
+        "value_b": 0.9993558971238685,
+        "difference": 0.00014868427507896964,
+        "ci_lower": 9.887734386665182e-05,
+        "ci_upper": 0.00019609560907893063,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 2.448002362792095e-05,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T13:52:03.935905+00:00",
+      "ended_at": "2026-11-09T13:57:09.263839+00:00",
+      "compute_seconds": 304.85185170010664,
+      "checkpoint_chain_sha256": "d6ede6d2609c2959a6dd32039fe7d8f55292dde8ba4fabc8dc97bacd04be5925",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed43_tpr_0.001",
+        "seed": 43,
+        "metric": "tpr_at_fpr",
+        "target": 0.001,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "9378b74a35630540ff471a2d2343aa83e293d7c48f7536e58029011f3b909daa",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.001,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9340235485180673,
+        "value_b": 0.944595396483338,
+        "difference": -0.010571847965270664,
+        "ci_lower": -0.01289898185452381,
+        "ci_upper": 0.020676004872107172,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 0.008053766715871326,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T13:57:16.042173+00:00",
+      "ended_at": "2026-11-09T14:01:56.414417+00:00",
+      "compute_seconds": 279.45050779986195,
+      "checkpoint_chain_sha256": "84c71bc5abeea403b1017e04b8b12d4df271d27db8dc648b86d77e9aa7bda171",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed43_tpr_0.01",
+        "seed": 43,
+        "metric": "tpr_at_fpr",
+        "target": 0.01,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "dc2fab3cf2e7e3c6ab4aa0b22b95cc711ecd1ab0ea8f279ca312bdf30d33d724",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.01,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9999687685436772,
+        "value_b": 0.999921921359193,
+        "difference": 4.6847184484222204e-05,
+        "ci_lower": -1.561572816144441e-05,
+        "ci_upper": 0.0001249258252912222,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 3.421014980255073e-05,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:02:04.243783+00:00",
+      "ended_at": "2026-11-09T14:06:45.115951+00:00",
+      "compute_seconds": 280.2077106999932,
+      "checkpoint_chain_sha256": "da8fa6f2159002ff1d211b95251a46b5e1747a1905261904f3c061cd2f80c215",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed43_tpr_0.05",
+        "seed": 43,
+        "metric": "tpr_at_fpr",
+        "target": 0.05,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "03710d5bcc5aec3c24ffbde1bba28a99d0227b9083641e4861852899d8e3feca",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.05,
+        "difference_definition": "A_minus_B",
+        "value_a": 1.0,
+        "value_b": 1.0,
+        "difference": 0.0,
+        "ci_lower": 0.0,
+        "ci_upper": 0.0,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 0.0,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:06:51.748775+00:00",
+      "ended_at": "2026-11-09T14:11:31.865502+00:00",
+      "compute_seconds": 279.78157570015173,
+      "checkpoint_chain_sha256": "c76eac5130a2e1f662856be1ffe8439b200dc04ba377f549a3de9dd59a35bf4a",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed44_ap",
+        "seed": 44,
+        "metric": "ap",
+        "target": null,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "7b2c613942635fc0aa77ec36798f3f9bc724a1db7d61511c7905ad79d1b1b3bc",
+      "result": {
+        "status": "ok",
+        "metric": "ap",
+        "target_fpr": null,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9993695477488194,
+        "value_b": 0.9993129414604113,
+        "difference": 5.660628840808979e-05,
+        "ci_lower": 2.3082465742924052e-05,
+        "ci_upper": 9.066032854338209e-05,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 1.7155397413758475e-05,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:11:38.734304+00:00",
+      "ended_at": "2026-11-09T14:16:36.239318+00:00",
+      "compute_seconds": 296.93485569988843,
+      "checkpoint_chain_sha256": "f64f62796ec722868c209bb825c230f695639c122b9efebd5bca725b28525b64",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed44_tpr_0.001",
+        "seed": 44,
+        "metric": "tpr_at_fpr",
+        "target": 0.001,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "dccc310e1bac79aac31b51be8d0963888abb6551d9e85f26faec29a2552cab10",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.001,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.8878790718011181,
+        "value_b": 0.9094287766638558,
+        "difference": -0.021549704862737662,
+        "ci_lower": -0.02457915612605011,
+        "ci_upper": 0.05173646897154823,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 0.024103545263610453,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:16:43.843739+00:00",
+      "ended_at": "2026-11-09T14:21:20.278641+00:00",
+      "compute_seconds": 275.90162949985825,
+      "checkpoint_chain_sha256": "b7fdef6902037ba09277eeaf09eff328976f1f1439f1092269089aae8ceea816",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed44_tpr_0.01",
+        "seed": 44,
+        "metric": "tpr_at_fpr",
+        "target": 0.01,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "253c006bebd4ca42d0658042b887534af8eb9a47757a1a865922dd16e301f0cb",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.01,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9999687685436772,
+        "value_b": 0.999921921359193,
+        "difference": 4.6847184484222204e-05,
+        "ci_lower": -1.561572816144441e-05,
+        "ci_upper": 0.0001249258252912222,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 3.421014980255073e-05,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:21:27.514548+00:00",
+      "ended_at": "2026-11-09T14:26:04.538010+00:00",
+      "compute_seconds": 276.3366736002499,
+      "checkpoint_chain_sha256": "a122040bdf2a4d232325373c322c073ea956e38eb10111883a3278ef59b67975",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed44_tpr_0.05",
+        "seed": 44,
+        "metric": "tpr_at_fpr",
+        "target": 0.05,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "9e5ced319755bc799fd662e5be9241523bf1de947849cd06f8294a8129d22bc3",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.05,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9999843842718386,
+        "value_b": 1.0,
+        "difference": -1.561572816144441e-05,
+        "ci_lower": -4.6847184484222204e-05,
+        "ci_upper": 0.0,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 1.4090944030802715e-05,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:26:11.602994+00:00",
+      "ended_at": "2026-11-09T14:30:48.078421+00:00",
+      "compute_seconds": 275.95408120006323,
+      "checkpoint_chain_sha256": "e20c12da41720904c0bff0300b75fda8db00e6490e58b93a7687a2088151f8af",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed45_ap",
+        "seed": 45,
+        "metric": "ap",
+        "target": null,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "808422f8faecd07b5a37ff62e6c276b72d3b37268009ff18f1e54c7b1809cbd7",
+      "result": {
+        "status": "ok",
+        "metric": "ap",
+        "target_fpr": null,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.999561454443372,
+        "value_b": 0.9993612548400047,
+        "difference": 0.00020019960336725706,
+        "ci_lower": 0.00015527464308293936,
+        "ci_upper": 0.0002418229972559249,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 2.1995226340495092e-05,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:30:55.396086+00:00",
+      "ended_at": "2026-11-09T14:35:54.798482+00:00",
+      "compute_seconds": 299.0051710999105,
+      "checkpoint_chain_sha256": "a8ee6d161fd8237869ba20b492f104bcbcd3073fbe1a624e5cb5208f54aea6c4",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed45_tpr_0.001",
+        "seed": 45,
+        "metric": "tpr_at_fpr",
+        "target": 0.001,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "61dd71d393d04d44d342ab5053359f957471e814f2c4e995800ae1bae1d1a203",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.001,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.950388831631219,
+        "value_b": 0.9334769980324182,
+        "difference": 0.016911833598800774,
+        "ci_lower": 0.013850370092757374,
+        "ci_upper": 0.0294219838221056,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 0.003593993082631545,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:36:01.528608+00:00",
+      "ended_at": "2026-11-09T14:40:33.932175+00:00",
+      "compute_seconds": 271.84462100011297,
+      "checkpoint_chain_sha256": "a62181f3a556c6b18af8f211fd3dfe8a9ccc32d7b2c73d5d3f9bef9138cd0cb8",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed45_tpr_0.01",
+        "seed": 45,
+        "metric": "tpr_at_fpr",
+        "target": 0.01,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "ac11ec84f27d26c2bbc46bc949b8d385c941812d160a3614e82f5b893f324a07",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.01,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9999687685436772,
+        "value_b": 0.9999375370873543,
+        "difference": 3.123145632288882e-05,
+        "ci_lower": -3.1231456322777795e-05,
+        "ci_upper": 9.369436896844441e-05,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 3.0381978054745292e-05,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:40:41.151696+00:00",
+      "ended_at": "2026-11-09T14:45:07.712326+00:00",
+      "compute_seconds": 266.1240475001978,
+      "checkpoint_chain_sha256": "9473d0414331f5d9aad8bdac2d794f9efcd5b14e31f41c5a95431b22b3d8670d",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed45_tpr_0.05",
+        "seed": 45,
+        "metric": "tpr_at_fpr",
+        "target": 0.05,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "a23b42bb1460dc22ff70c4f263e9334f67dd7b668472895811569fb6fb2bdb44",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.05,
+        "difference_definition": "A_minus_B",
+        "value_a": 1.0,
+        "value_b": 1.0,
+        "difference": 0.0,
+        "ci_lower": 0.0,
+        "ci_upper": 0.0,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 0.0,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:45:14.753800+00:00",
+      "ended_at": "2026-11-09T14:49:45.925085+00:00",
+      "compute_seconds": 270.47111750009935,
+      "checkpoint_chain_sha256": "9db1962839e93af6775863e8ca6fb7460edec2cb5984b29096d74b24637b9559",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed46_ap",
+        "seed": 46,
+        "metric": "ap",
+        "target": null,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "7e7c49a611eb71e3deb0a54c98d9c7b60207ed8a6db862a90fc6065c05c6eb5f",
+      "result": {
+        "status": "ok",
+        "metric": "ap",
+        "target_fpr": null,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9995189193477053,
+        "value_b": 0.999023268828929,
+        "difference": 0.0004956505187763138,
+        "ci_lower": 0.00042901138760405023,
+        "ci_upper": 0.0005609660167420871,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 3.4299240721329485e-05,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:49:52.634969+00:00",
+      "ended_at": "2026-11-09T14:54:47.177293+00:00",
+      "compute_seconds": 294.00053960003424,
+      "checkpoint_chain_sha256": "be2e344f1069691a376522a49e68d7b34d226cec0b961bcee80f7744f34c18de",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed46_tpr_0.001",
+        "seed": 46,
+        "metric": "tpr_at_fpr",
+        "target": 0.001,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "3b486046c59943c8b733683a6021d1c94357530d86268098f5d85628a7cd7931",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.001,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9416127924045098,
+        "value_b": 0.8736062962615947,
+        "difference": 0.0680064961429151,
+        "ci_lower": 0.06508635497673254,
+        "ci_upper": 0.09982041912614383,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 0.007384501007091627,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:54:53.882996+00:00",
+      "ended_at": "2026-11-09T14:59:24.222262+00:00",
+      "compute_seconds": 269.76611719990615,
+      "checkpoint_chain_sha256": "ab7a7076a8b677ae782dd9c02375015b7470ab529624fcaf3aa39d4565e033fb",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed46_tpr_0.01",
+        "seed": 46,
+        "metric": "tpr_at_fpr",
+        "target": 0.01,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "635ec63c71d97c5ff97ddc4c79ad1d83775e0c3fcdedd6c1a22673e81c27e7f5",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.01,
+        "difference_definition": "A_minus_B",
+        "value_a": 0.9999531528155158,
+        "value_b": 0.9999063056310316,
+        "difference": 4.6847184484222204e-05,
+        "ci_lower": -1.561572816144441e-05,
+        "ci_upper": 0.00010970049033392002,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 3.434934636237603e-05,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T14:59:31.395399+00:00",
+      "ended_at": "2026-11-09T15:04:02.017706+00:00",
+      "compute_seconds": 269.8662366995122,
+      "checkpoint_chain_sha256": "c4cb9745b293c5f4d810ec861ebeec4086830dd8889aec86fa8731a0791b29dc",
+      "resumed_replicates": 0
+    },
+    {
+      "task": {
+        "id": "seed46_tpr_0.05",
+        "seed": 46,
+        "metric": "tpr_at_fpr",
+        "target": 0.05,
+        "count": 2000,
+        "trial": false
+      },
+      "binding": "5ce9df25ff3a2debcd436e24a4fed24d6bad97a1abac9d2198607adf0d835caf",
+      "result": {
+        "status": "ok",
+        "metric": "tpr_at_fpr",
+        "target_fpr": 0.05,
+        "difference_definition": "A_minus_B",
+        "value_a": 1.0,
+        "value_b": 1.0,
+        "difference": 0.0,
+        "ci_lower": 0.0,
+        "ci_upper": 0.0,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 2026,
+        "resampling": "paired_class_stratified_rows",
+        "interval_method": "percentile",
+        "n_samples": 346544,
+        "n_negative": 282506,
+        "n_positive": 64038,
+        "quantile_method": "linear",
+        "bootstrap_standard_error": 0.0,
+        "valid_replicates": 2000,
+        "standard_error_note": "Bootstrap distribution sample SD, not SD/sqrt(B)."
+      },
+      "started_at": "2026-11-09T15:04:09.296345+00:00",
+      "ended_at": "2026-11-09T15:08:37.782067+00:00",
+      "compute_seconds": 268.1004645997891,
+      "checkpoint_chain_sha256": "474178d8ac471892534581f57021767331dfa8fc072fc461ef80fd6c53c25ef7",
+      "resumed_replicates": 0
+    }
+  ],
+  "task_count": 20,
+  "row_count": 40000,
+  "mean_differences_descriptive_only": [
+    {
+      "metric": "ap",
+      "fpr_target": null,
+      "mean_delta": 0.0002686033439484259
+    },
+    {
+      "metric": "tpr_at_fpr",
+      "fpr_target": 0.001,
+      "mean_delta": 0.02503825853399546
+    },
+    {
+      "metric": "tpr_at_fpr",
+      "fpr_target": 0.01,
+      "mean_delta": 4.3724038851955524e-05
+    },
+    {
+      "metric": "tpr_at_fpr",
+      "fpr_target": 0.05,
+      "mean_delta": -3.1231456322888816e-06
+    }
+  ],
+  "independent_verification": {
+    "status": "passed",
+    "tasks": [
+      {
+        "task_id": "seed42_ap",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "6dc5fedf5ff6c3015a42b8fc03c7e935e373d838134c0973194ea16c27d1eb9e",
+        "completed_record_sha256": "6dfdc69675b1dba2dcb67d674c57e0e79d41f12305fc437dacbbd93339edcec2"
+      },
+      {
+        "task_id": "seed42_tpr_0.001",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "d437943bcf3a92d8a542eada4f8658dff57bba04a0767cacd0000ee2859a2ccc",
+        "completed_record_sha256": "657090d9b7e0c187bb45de3d43177d07e163728a1c0ab163ae196b26bb6aa7f6"
+      },
+      {
+        "task_id": "seed42_tpr_0.01",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "660b2454fa876e118e68b3ec3a550f2019030692f2516eca2f12ea50d7ad86cd",
+        "completed_record_sha256": "1ddf53e2730e218e7f29d5e5a2426552a9fa82f198fb25cda4182f4f821e03f5"
+      },
+      {
+        "task_id": "seed42_tpr_0.05",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "4b0489082ae832c1ef06b48b73d0a6d7292d79ddaa19c39058d2de5a5501cf70",
+        "completed_record_sha256": "47d2f5aae620db78c7572527f6076a189973534273130e8e4186712157565148"
+      },
+      {
+        "task_id": "seed43_ap",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "e978a7e82a99c6c16df011c9c610d3dcb3ae97a50350cac6473cd39ab7a18cd7",
+        "completed_record_sha256": "d015707901e4e43293e06c20335bc4951bcb7e52624535d670ca41311366bd8e"
+      },
+      {
+        "task_id": "seed43_tpr_0.001",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "1b65b176092341fc11d4f4226768d3d26c720d67c03b2765cbab0f83cef93687",
+        "completed_record_sha256": "0502833a196938020b51ab3d41102c61956a200f992835b448c22ba951408c6a"
+      },
+      {
+        "task_id": "seed43_tpr_0.01",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "bc65a8821bead2ff907ce176e659537621c4b2ad6b6c528908a787bbd1b03076",
+        "completed_record_sha256": "26d62e1f487b4558829ba5dc94c060e2eee0c8149c00a7672ad7742f68782b75"
+      },
+      {
+        "task_id": "seed43_tpr_0.05",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "90fb6c81295002b09a99dd89a0df38856f271f1e9999d2edbeadfe46e962c082",
+        "completed_record_sha256": "72ec4b893985c69c981edde0d5762b8864e9255811d24125c79c1942a9ea4193"
+      },
+      {
+        "task_id": "seed44_ap",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "47e61d4cb44bbdf100f9bd3f54b2d34bac228e2ffec5c280420118916e38b3d6",
+        "completed_record_sha256": "654d522a14b00a54c47e8ed0f18e50b5f160bd645835cd88de4a18bac3a1f80e"
+      },
+      {
+        "task_id": "seed44_tpr_0.001",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "50029831adfa472bcd55d7ca24deb70cc469cf1cb80c80d8548ebab3b937dc59",
+        "completed_record_sha256": "bec3ad0a136b47169f4c1877f6979cc96194f3b144377d101c964ad07851f981"
+      },
+      {
+        "task_id": "seed44_tpr_0.01",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "18f731aed449ca9162c43d4a9e187f143927c99c9a4ce34b55d23a7ea0a1c109",
+        "completed_record_sha256": "0708c2264bb247d9ef9dd03507917351d6e7fadca379fb4119fd8d2f82545641"
+      },
+      {
+        "task_id": "seed44_tpr_0.05",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "23ca2d392602e3cf17e645577f4c34ce1073b61d38f4c68becff217c542d5417",
+        "completed_record_sha256": "3d1126b80966ec1fd670ecad2f516fa106b30cb8530bfa5c1663934ddea80a17"
+      },
+      {
+        "task_id": "seed45_ap",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "7b2c05d958299d24df974e9b3ca780036fea9b052c351cec419b5a5bd8e22f6c",
+        "completed_record_sha256": "4c807773d17a98508168dd34d189077c702b95d8442df53bee6ed46b6b98463e"
+      },
+      {
+        "task_id": "seed45_tpr_0.001",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "773d5d9ab7aaf7c0e585249e5c6e24b35a5a860ef3524b534c1cf11fadab0257",
+        "completed_record_sha256": "92fb67653d215516339f6249b915ce00f4c4d246c8c5ed564aff908d6cfe1907"
+      },
+      {
+        "task_id": "seed45_tpr_0.01",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "eaba062f65b807bacf3c95553a59c6553a4f981e8642a1ebc9796e034e658277",
+        "completed_record_sha256": "a26355e05f355856dc2f3915cf76573132d7a4ad7d072f9751a515c930a67aff"
+      },
+      {
+        "task_id": "seed45_tpr_0.05",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "b744bd41e4ef5b781072a43535e19b63777ee31a3d2fc6832e7f4d575356a74c",
+        "completed_record_sha256": "17969d80adab35d69b3dc344671791bbae45cf3b3624bb4f09178353de721999"
+      },
+      {
+        "task_id": "seed46_ap",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "c8a24d46e745c11c510b3c9c403faabd9ab02fb7f2d026ae972d3f5f0c41734f",
+        "completed_record_sha256": "e354d4a75866ec014cb8fe04b364a0319ba24333f4fc98ce5f6a0c580ae2c8c3"
+      },
+      {
+        "task_id": "seed46_tpr_0.001",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "0378c0363a5910f1abfd908dfc6d0b77275559f79b75aa4f7194e7865a174904",
+        "completed_record_sha256": "7d7b0d9a50cc221bba255ac01f69f93832ce275b678895bb28cbb5563e74875f"
+      },
+      {
+        "task_id": "seed46_tpr_0.01",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "b8946391b0ff1aee41620402a2edfe0ae214df04376828b1a39a8bb42070e65b",
+        "completed_record_sha256": "b7ad2cb275036dd155398380de937a22d07d15cdd919ba6df38db61de8c5f167"
+      },
+      {
+        "task_id": "seed46_tpr_0.05",
+        "rows": 2000,
+        "independent_metric_iterations": [
+          1,
+          1000,
+          2000
+        ],
+        "result_sha256": "660175bb391a839ee62fa7fcb0df7dbbbd4f0a6c5d267c69bee2ace3932a5755",
+        "completed_record_sha256": "5249c162c758bf1d66cc91804791e32484327891ec7cd17bf78c7a511b456704"
+      }
+    ],
+    "task_count": 20,
+    "row_count": 40000,
+    "config_sha256": "3ce76ef6015427f1cd80c93d13a6224bc45a8fdbb0660d8553924438e63f72d7",
+    "p3_equivalence": "Synthetic strict field equivalence in engineering tests; production CSV independently verified.",
+    "rng": "All 40000 index draws regenerated from seed 2026; every chunk-end state matched.",
+    "metric_rechecks": 60,
+    "all_CIs_and_SE_recomputed": true,
+    "created_at": "2026-11-09T15:12:07.703339+00:00",
+    "training_fits": 0
+  },
+  "joint_five_seed_CI": null,
+  "familywise_significance_claim": false
+}

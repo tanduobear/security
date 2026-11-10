@@ -2,3 +2,6 @@
 # 保留可复现校验所需的 Python 和 JSON 原始字节
 *.py -text
 *.json -text
+# Preserve the exact bytes covered by the public Bootstrap MANIFEST on checkout.
+results/m1_bootstrap/* -text
+docs/m1_bootstrap_report.md -text

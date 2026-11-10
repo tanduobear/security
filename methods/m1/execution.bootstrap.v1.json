@@ -1,0 +1,121 @@
+{
+  "schema_version": "1",
+  "stage": "p4_formal_paired_bootstrap",
+  "statistics": {
+    "models": [
+      "G05",
+      "RF_FIXED"
+    ],
+    "model_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "repetitions": 2000,
+    "confidence": 0.95,
+    "bootstrap_seed": 2026,
+    "difference": "GBDT_minus_RF",
+    "resampling": "paired_class_stratified_rows",
+    "interval": "percentile",
+    "quantile_method": "linear",
+    "metrics": [
+      {
+        "metric": "ap",
+        "fpr_target": null
+      },
+      {
+        "metric": "tpr_at_fpr",
+        "fpr_target": 0.001
+      },
+      {
+        "metric": "tpr_at_fpr",
+        "fpr_target": 0.01
+      },
+      {
+        "metric": "tpr_at_fpr",
+        "fpr_target": 0.05
+      }
+    ]
+  },
+  "input": {
+    "archive": ".tmp/m1_final_runs/evaluate-20261109T122704-2bf90cbb95e04ceea7c40993a6ec5012",
+    "manifest_sha256": "34a1503cd829290714d87dc6c84165295d92323dd1d44839ecbf5cbb49430c4f",
+    "public_summary": "results/m1_test_summary/summary.json",
+    "public_summary_sha256": "cb2a95db154792d5dc0d3fb5f2710aba3ed6cc04f12a964e958cf26f371c23e3",
+    "rows": 346544,
+    "negative": 282506,
+    "positive": 64038,
+    "row_ids_sha256": "33455428ecd6ebe255c60819f77958321e643a2f9104a8fcc2cc2ae9685422c3",
+    "labels_sha256": "7096835d7bca2b55d6dc5743f68046466cea0e6153a36eb20d8836b9bf0286c8"
+  },
+  "resources": {
+    "outer_parallel_jobs": 1,
+    "metric_threads": 1,
+    "job_commit_limit_bytes": 8589934592,
+    "logical_cpu_limit": 4,
+    "min_start_free_bytes": 15032385536,
+    "min_running_free_bytes": 6442450944,
+    "rss_abort_bytes": 8589934592,
+    "min_disk_free_bytes": 21474836480
+  },
+  "trial": {
+    "model_seed": 42,
+    "metric": "ap",
+    "repetitions": 20,
+    "counts_as_formal": false
+  },
+  "checkpoint_replicates": 100,
+  "automatic_retries": 0,
+  "independent_verification": {
+    "recompute_all_CIs_and_SE": true,
+    "regenerate_all_rng_checkpoints": true,
+    "recheck_metric_iterations": [
+      1,
+      1000,
+      2000
+    ]
+  },
+  "implementation": "P4 replicate-recording adapter, exact P3 RNG and sklearn definitions; no P3 edits",
+  "p3_sha256": "aa593a22c51ad4d657c2c09716b103fe921c3c7f5c51cb597bd866094fefcd97",
+  "unified_file_sha256": "245618b00d9290d765f8cd185da1c1d3281e4310727c6bdd205297b386aae997",
+  "code": {
+    "methods/m1/bootstrap.py": "4bd23f8076ba3ad42c7f0711890e940312b9d129d407bf2003ede6aceac5b00d",
+    "methods/m1/bootstrap_stats.py": "3a7e4ab6bcbf9d7e7f6fcb830556f8cab6b2e641ff9d56c54a8a69af91538df1",
+    "methods/m1/bootstrap_delivery.py": "be9ed349842bec66b2e6ff2c3298c0f5f7bfb83a587984e65f49c1e49796b661",
+    "tests/test_m1_bootstrap.py": "4c88ad831f139d35b050000bae1a20859e6601ad04afb98d48f88e73a78e7624",
+    "methods/m1/resource_trial.py": "9e10e91b75c3449d74b5180e9ff77605d147ed7352d04730dc296ac4aa784e13",
+    "methods/m1/search_gbdt.py": "8ec73cc2573cc3eab2c033f6202c53c54773f75e2636575edcfb7d92224e6c9d",
+    "methods/m1/seal_gbdt.py": "4c48c51f6067037ef471b195660e0d51e1c78d57c5529208b9548a9df64e5cd4",
+    "eval/metrics.py": "aa593a22c51ad4d657c2c09716b103fe921c3c7f5c51cb597bd866094fefcd97",
+    "eval/schema.json": "51348909a1c43741c25d4381ab7cd384c076f27df89570ef144c70f5ba6ae28c",
+    "methods/m1/requirements-lock.txt": "6b8b3534b1894e2903aaa5658f143475db67d08489d1d28da9837e8a0a8d966e"
+  },
+  "delivery": {
+    "directory": "results/m1_bootstrap",
+    "report": "docs/m1_bootstrap_report.md",
+    "figures": [
+      "figures/fig_m1_bootstrap_ap.png",
+      "figures/fig_m1_bootstrap_tpr.png",
+      "figures/fig_m1_bootstrap_distribution.png"
+    ],
+    "csv_columns": [
+      "seed",
+      "metric",
+      "fpr_target",
+      "bootstrap_iteration",
+      "gbdt_value",
+      "rf_value",
+      "delta"
+    ],
+    "csv_rows": 40000,
+    "overwrite": false
+  },
+  "approval": {
+    "status": "approved",
+    "source": "Explicit user authorization: P4 Formal Paired Bootstrap End-to-End Execution, sections A-J; engineering, trial, formal, verification and publication.",
+    "approved_at": "2026-11-09",
+    "payload_sha256": "179b513a46cd717102aa719608d19409e04742cc4efd9d0424bd7ba1e8b0c987"
+  }
+}

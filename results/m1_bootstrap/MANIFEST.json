@@ -1,0 +1,52 @@
+{
+  "schema_version": "1",
+  "status": "complete",
+  "path_root": "repository_root",
+  "files": {
+    "results/m1_bootstrap/bootstrap_config.json": {
+      "bytes": 4152,
+      "sha256": "3ce76ef6015427f1cd80c93d13a6224bc45a8fdbb0660d8553924438e63f72d7"
+    },
+    "results/m1_bootstrap/bootstrap_results.csv": {
+      "bytes": 2722287,
+      "sha256": "1bcfcc3a1262c49abcd2b7a7c4bef8d114b1cf6e67d8d6fb61fa7df8b24d2529"
+    },
+    "results/m1_bootstrap/bootstrap_summary.json": {
+      "bytes": 36144,
+      "sha256": "5b00059c2cbb578bde4abd4d23ec7c49879c7740d03e11f78303eec1d1d0e9dc"
+    },
+    "results/m1_bootstrap/confidence_intervals.json": {
+      "bytes": 15456,
+      "sha256": "d7b9980e3a5d333e734e66cedd1fe42474e0b38c6f3c5bacb3c96f44baaff7d8"
+    },
+    "results/m1_bootstrap/execution_log.csv": {
+      "bytes": 5318,
+      "sha256": "fa47d4d3934dfbdf3247965418aa337a6695db80e6c480e665e6d07817265653"
+    },
+    "docs/m1_bootstrap_report.md": {
+      "bytes": 6442,
+      "sha256": "7c2ae3ffed2a378f32de6eeb5a21c3c3bcbfe5c164fdeb6436945cb897b222dc"
+    },
+    "figures/fig_m1_bootstrap_ap.png": {
+      "bytes": 55702,
+      "sha256": "19aa6d3ce6aaf057776d2840329927e4c307deec8a5c2145bb5489b87b3f6346"
+    },
+    "figures/fig_m1_bootstrap_tpr.png": {
+      "bytes": 124499,
+      "sha256": "e51229d2344fbc33019669d8305c60f0e87ef868550ae612cf00aec9d9828bf6"
+    },
+    "figures/fig_m1_bootstrap_distribution.png": {
+      "bytes": 223892,
+      "sha256": "4ecd4d1499a4447266ce4462df88c7aff7a8871d4fd70bca6181e801ac4ea8cd"
+    }
+  },
+  "input_manifest_sha256": "34a1503cd829290714d87dc6c84165295d92323dd1d44839ecbf5cbb49430c4f",
+  "config_payload_sha256": "179b513a46cd717102aa719608d19409e04742cc4efd9d0424bd7ba1e8b0c987",
+  "local_run": ".tmp/m1_bootstrap_runs/20261109T133238-f486774d88e6430c86d8f6a20ee54181",
+  "task_count": 20,
+  "replicate_rows": 40000,
+  "runtime_files_excluded": {
+    "RUN.lock": "Runtime coordination only; raw logs and checkpoints are in the separate local run archive."
+  },
+  "self_hash_policy": "MANIFEST excluded from itself; pin externally in local PUBLISHED.json."
+}

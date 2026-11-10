@@ -24,6 +24,8 @@
 
 ## 收尾状态
 
+11月10日复核补充：P5在m2-delivery（d27d501）补交五种子记录及预测，并删除正文跨评估集比较；结构检查通过，但P3完整校验仍失败，八配置证据未补。详见[最新复核报告](p6_review_20261110.md)。三张Word表已据此以e7d13b1更新main，未合并P5分支。
+
 1. 已完成：docs/p6_acceptance/final_audit.json中status=passed、failures为空，覆盖14份P3记录及保存分数的数值复核；未重新训练或执行模型推理。
 2. 已完成：核查报告保存Python、Torch、NumPy、sklearn、DuckDB、pyarrow等当前环境版本；这是审计环境记录，不倒推证明所有历史环境完全相同。
 3. 已完成：完整档案已打包并上传Git LFS，ZIP CRC检查通过，附带SHA256和逐文件清单；结果索引保留原始相对路径并新增归档说明。

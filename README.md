@@ -88,22 +88,28 @@ python -m unittest discover -s tests -p 'test_*.py' -v
 
 ## P4 交付导航
 
-GBDT八配置×五种子共40次正式搜索已完成，选优配置为G05；固定参数RF辅助对照五种子、独立Validation验收和归档封存也已完成。RF不参与GBDT主模型选优。尚未读取真实Test、开展实验Bootstrap或阈值标定。
+**当前阶段：GBDT/RF 训练、Validation、基础 Test 评估及20项正式配对Bootstrap均已完成并通过验收封存；Git交付尚未执行。**
+
+GBDT八配置×五种子共40次正式搜索已完成，选优配置为G05；固定参数RF辅助对照五种子、独立Validation验收和归档封存也已完成。RF不参与GBDT主模型选优。后续获批的Test评估复用十个原模型，仅用Validation标定阈值，不重训、不在Test上调参。原results/m1.json及PR图仍属于Validation阶段；Test结果独立交付如下。
 
 | 交付项 | 位置 |
 |---|---|
 | 模型代码、正式执行配置及使用说明 | [methods/m1/](methods/m1/README.md) |
 | 统一Validation结果（八组GBDT、G05及RF五种子） | [results/m1.json](results/m1.json) |
+| G05/RF五种子基础Test结果及原始清单副本 | [results/m1_test_summary/](results/m1_test_summary/README.md) |
+| Test评估方法、结果及SHA256验收 | [Test报告](docs/m1_final_test_report.md) |
+| 正式Bootstrap逐次结果、区间、执行日志及清单 | [results/m1_bootstrap/](results/m1_bootstrap/bootstrap_summary.json) |
+| 20项比较、资源、统计解释及Results §4.1摘要 | [Bootstrap报告](docs/m1_bootstrap_report.md) |
+| Bootstrap正式图（300 DPI） | [AP](figures/fig_m1_bootstrap_ap.png)、[TPR](figures/fig_m1_bootstrap_tpr.png)、[分布](figures/fig_m1_bootstrap_distribution.png) |
 | GBDT公开摘要与本地归档清单副本 | [results/m1_gbdt_summary/](results/m1_gbdt_summary/README.md) |
 | RF公开摘要与本地归档清单副本 | [results/m1_rf_summary/](results/m1_rf_summary/README.md) |
 | 正式G05 Validation PR图，Enlarged View | [PNG](figures/fig_m1_pr.png)、[PDF](figures/fig_m1_pr.pdf) |
 | 绘图来源、逐种子AP及SHA256验收 | [PR曲线报告](docs/m1_pr_curve_enlarged_report.md) |
 | 统一汇总来源、Schema和使用方法 | [公开汇总说明](docs/m1_public_aggregation.md) |
-| 全部216项测试的统一命令 | [测试说明](docs/testing.md) |
+| 全部277项测试的统一命令及历史216/241项记录 | [测试说明](docs/testing.md) |
 
 正式图为单面板局部范围：Recall 0.98–1.00、Precision 0.99–1.00；图注已声明坐标范围。图例AP由每种子的完整真实Validation预测独立复算，不是局部区间积分。绘图脚本为[plot_pr_curve_enlarged.py](methods/m1/plot_pr_curve_enlarged.py)。
-
-完整模型、逐样本预测、缓存和运行日志仅保存在本地被忽略的实验目录中，GitHub公开摘要不是完整归档备份。统一协议保持approved；后续完整评估草案execution.proposed.json仍pending，P4搜索完成不代表获准运行最终Test评估。
+完整模型、逐样本预测、缓存和运行日志仅保存在本地被忽略的实验目录中，GitHub公开摘要不是完整归档备份。统一协议保持approved；原execution.proposed.json仍pending。基础Test和Bootstrap分别使用独立获批的execution.final-test.v1.json、execution.bootstrap.v1.json；扩展实验不随其自动启动。
 
 ## P6 交付导航
 

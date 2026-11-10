@@ -1,0 +1,87 @@
+{
+  "schema_version": "1",
+  "stage": "p4_final_evaluation",
+  "unified_protocol_sha256": "e6e6d8880a5540419f56dbea5b5270b7fd0bf9392b1114b8b56ebf943ef92360",
+  "m1_summary_sha256": "a4b06bc1de785aefba7ab542697d04de21990eb85de30e903ebbc6afb3f2539f",
+  "models": [
+    "G05",
+    "RF_FIXED"
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "dataset": {
+    "version": "original",
+    "protocol": "stratified",
+    "variant": "main",
+    "features": 140
+  },
+  "reuse_trained_models": true,
+  "training_fits": 0,
+  "archives": {
+    "GBDT": {
+      "path": "results/m1_gbdt_search/20261101T115824-90de9307e77448aba412cc9ec08a5cbd",
+      "manifest_sha256": "00128ffea5088c939a2375502372be4ba6b95cc13bcdee4f68e6c1638d2b1d6d",
+      "selection_sha256": "859a883fe6ecc12246fb2f08c5ab3e2707530a6906f52c1c2863d9b12ba0d2c9"
+    },
+    "RF": {
+      "path": "results/m1_rf_runs/20261102T103826-3bdbabff97db4e2f99ff8a8a6b0b7767",
+      "manifest_sha256": "21ac71053cb0142de61d10dbcfa90d86e0f7f51f38bcaceacd0ae4efe75f5690"
+    }
+  },
+  "thresholds": {
+    "source_split": "val",
+    "fpr_targets": [
+      0.01,
+      0.05
+    ],
+    "boundary_rule": "strict_nextafter_benign_boundary",
+    "per_model_per_seed": true
+  },
+  "timing": {
+    "source_split": "val",
+    "device": "cpu",
+    "batch_size": 512,
+    "warmup": 5,
+    "repeats": 30,
+    "threads": 1,
+    "selection": "shared_explicit_row_ids",
+    "row_ids_path": "docs/m1_shared_timing_rows.v1.json",
+    "row_ids_sha256": "3894b1d222acfe4e62fe4265037ab1ce1a858840854eece3b8f4b778ed959b1d"
+  },
+  "attack_families_source": "docs/label_split_policy.json",
+  "bootstrap": "deferred_separate_stage",
+  "resources": {
+    "outer_parallel_jobs": 1,
+    "inference_threads": 1,
+    "prediction_batch_rows": 8192,
+    "job_commit_limit_bytes": 8589934592,
+    "logical_cpu_limit": 4,
+    "min_start_free_bytes": 15032385536,
+    "min_running_free_bytes": 6442450944,
+    "rss_abort_bytes": 8589934592,
+    "duckdb_memory_limit_mb": 512,
+    "min_disk_free_bytes": 21474836480
+  },
+  "automatic_retries": 0,
+  "approvals": {
+    "calibrate": {
+      "status": "approved",
+      "source": "Explicit user approval of final-stage confirmation in this conversation; receipt SHA256=96092b04bfafb88d12f4572c198e07d863fba78dc9af0bbb9580c6bb10d7f5a6",
+      "approved_at": "2026-11-09",
+      "payload_sha256": "de38e94eb9ff7b4665e5883262fab33a043bc44ee6374510d210612848b5f7c3",
+      "code_sha256": "8f87b54af699ea668b404107af497014faef40b6e3257e7f452a1fac2063d1b5"
+    },
+    "evaluate": {
+      "status": "approved",
+      "source": "Explicit user approval of final-stage confirmation in this conversation; receipt SHA256=96092b04bfafb88d12f4572c198e07d863fba78dc9af0bbb9580c6bb10d7f5a6",
+      "approved_at": "2026-11-09",
+      "payload_sha256": "de38e94eb9ff7b4665e5883262fab33a043bc44ee6374510d210612848b5f7c3",
+      "code_sha256": "8f87b54af699ea668b404107af497014faef40b6e3257e7f452a1fac2063d1b5"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "1",
+  "stage": "p4_paired_bootstrap",
+  "approval": {"status": "pending", "source": null, "approved_at": null},
+  "trial_approval": {"status": "pending", "source": null, "approved_at": null},
+  "formal_execution_approval": {"status": "pending", "source": null, "approved_at": null},
+  "input": {
+    "source": "sealed_test_predictions_only",
+    "archive": ".tmp/m1_final_runs/evaluate-20261109T122704-2bf90cbb95e04ceea7c40993a6ec5012",
+    "manifest_sha256": "34a1503cd829290714d87dc6c84165295d92323dd1d44839ecbf5cbb49430c4f",
+    "public_summary": "results/m1_test_summary/summary.json",
+    "public_summary_sha256": "cb2a95db154792d5dc0d3fb5f2710aba3ed6cc04f12a964e958cf26f371c23e3",
+    "dataset": {"version": "original", "protocol": "stratified", "variant": "main", "split": "test", "rows": 346544},
+    "parquet_access": false,
+    "model_loading": false,
+    "training_fits": 0,
+    "recalibrate_thresholds": false
+  },
+  "comparison": {
+    "method_a": "G05",
+    "method_b": "RF_FIXED",
+    "definition": "A_minus_B",
+    "paired_model_seeds": [42, 43, 44, 45, 46],
+    "primary_metric": "ap",
+    "secondary_metric": "tpr_at_fpr",
+    "secondary_fpr_targets": [0.001, 0.01, 0.05],
+    "formal_task_count": 20,
+    "pool_seed_predictions": false,
+    "average_confidence_interval_endpoints": false
+  },
+  "resampling": {
+    "repetitions": 2000,
+    "confidence": 0.95,
+    "seed": 2026,
+    "method": "paired_class_stratified_rows",
+    "interval_method": "percentile",
+    "quantile_method": "linear",
+    "includes_training_variation": false,
+    "accounts_for_traffic_group_dependence": false,
+    "familywise_significance_claim": false
+  },
+  "trial": {"model_seed": 42, "metric": "ap", "repetitions": 20, "counts_as_formal": false},
+  "resources": {
+    "outer_parallel_jobs": 1,
+    "metric_threads": 1,
+    "job_commit_limit_bytes": 8589934592,
+    "logical_cpu_limit": 4,
+    "min_start_free_bytes": 15032385536,
+    "min_running_free_bytes": 6442450944,
+    "rss_abort_bytes": 8589934592,
+    "min_disk_free_bytes": 21474836480,
+    "automatic_retries": 0
+  },
+  "samples_csv": {
+    "mode": null,
+    "pending_choice": ["replicate_metric_differences", "comparison_summary_only"],
+    "raw_resampled_row_indices": false,
+    "p3_interface_note": "paired_bootstrap returns interval summaries, not per-replicate values. Replicate export requires separately reviewed P4 adaptation, with synthetic equivalence checks and no P3 modifications."
+  },
+  "delivery": {
+    "configuration": "results/m1_bootstrap/bootstrap_config.json",
+    "results": "results/m1_bootstrap/bootstrap_results.json",
+    "confidence_intervals": "results/m1_bootstrap/confidence_intervals.json",
+    "samples_csv": "results/m1_bootstrap/bootstrap_samples.csv",
+    "manifest": "results/m1_bootstrap/MANIFEST.json",
+    "report": "docs/m1_bootstrap_report.md",
+    "figure": "figures/fig_m1_bootstrap_comparison.png",
+    "publish_only_after_successful_formal_acceptance": true,
+    "overwrite_existing": false,
+    "trial_outputs": "local_trial_archive_only"
+  }
+}

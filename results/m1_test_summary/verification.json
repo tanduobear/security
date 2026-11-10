@@ -1,0 +1,12 @@
+{
+  "formal_records": 20,
+  "prediction_files": 10,
+  "evaluation_files_verified": 82,
+  "calibration_files_verified": 47,
+  "manifest_sha256": "34a1503cd829290714d87dc6c84165295d92323dd1d44839ecbf5cbb49430c4f",
+  "summary_sha256": "cb2a95db154792d5dc0d3fb5f2710aba3ed6cc04f12a964e958cf26f371c23e3",
+  "raw_P3_schema_validation_completed": true,
+  "five_seed_statistics_independently_crosschecked": true,
+  "training_fits": 0,
+  "bootstrap_run": false
+}

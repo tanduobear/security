@@ -36,3 +36,7 @@ docs/p6_acceptance/m2_replay_*/predictions_*.parquet
 # RF-only formal and resource-trial models, complete predictions and mapped data.
 results/m1_rf_runs/
 results/m1_rf_trials/
+
+# P7 corrected rerun local models, predictions, smoke outputs and caches.
+results/p7_corrected/
+venv_p7/

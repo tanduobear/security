@@ -1,4 +1,6 @@
 
+import argparse
+import hashlib
 import os
 import sys
 import json
@@ -327,9 +329,9 @@ def plot_training_curves(all_results, figure_file):
 # 5. 主程序
 # ============================================================
 
-def train():
+def train(config_path=Path("methods/m2/config.yaml")):
 
-    config_path = Path("methods/m2/config.yaml")
+    config_path = Path(config_path)
 
     with open(config_path, "r", encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
@@ -385,13 +387,13 @@ def train():
         f"{actual_pos_weight}"
     )
 
-    if not np.isclose(
-        actual_pos_weight,
-        4.9298640100563995,
-        rtol=1e-6
-    ):
+    expected_pos_weight = float(
+        cfg.get("expected_scale_pos_weight", 4.9298640100563995)
+    )
+
+    if not np.isclose(actual_pos_weight, expected_pos_weight, rtol=1e-6):
         raise ValueError(
-            "当前读取的 pos_weight 与刚才验证的数值不一致，"
+            "当前读取的 pos_weight 与配置固定的数值不一致，"
             "请先检查数据版本和预处理文件。"
         )
 
@@ -424,6 +426,9 @@ def train():
 
     summary = {
         "experiment_name": cfg["experiment_name"],
+        "dataset": data_cfg,
+        "config_path": config_path.as_posix(),
+        "config_sha256": hashlib.sha256(config_path.read_bytes()).hexdigest(),
         "seeds": [int(s) for s in seeds],
         "pos_weight": actual_pos_weight,
         "device": str(device),
@@ -468,4 +473,6 @@ def train():
 
 
 if __name__ == "__main__":
-    train()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", type=Path, default=Path("methods/m2/config.yaml"))
+    train(parser.parse_args().config)

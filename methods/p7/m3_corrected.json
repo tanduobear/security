@@ -1,0 +1,31 @@
+{
+  "dataset": {"version": "corrected", "protocol": "stratified", "variant": "main"},
+  "seeds": [42, 43, 44, 45, 46],
+  "device": "auto",
+  "threads": 4,
+  "batch_size": 512,
+  "epochs": 40,
+  "patience": 5,
+  "min_delta": 0.000001,
+  "quantiles": [0.95, 0.99],
+  "selection": "lowest_mean_benign_validation_mse_then_candidate_id",
+  "quantile_method": "linear",
+  "candidates": [
+    {"id": "A01", "hidden": [64, 16], "learning_rate": 0.001, "weight_decay": 0.0},
+    {"id": "A02", "hidden": [64, 16], "learning_rate": 0.0003, "weight_decay": 0.0},
+    {"id": "A03", "hidden": [64, 16], "learning_rate": 0.001, "weight_decay": 0.0001},
+    {"id": "A04", "hidden": [64, 16], "learning_rate": 0.0003, "weight_decay": 0.0001},
+    {"id": "A05", "hidden": [128, 32], "learning_rate": 0.001, "weight_decay": 0.0},
+    {"id": "A06", "hidden": [128, 32], "learning_rate": 0.0003, "weight_decay": 0.0},
+    {"id": "A07", "hidden": [128, 32], "learning_rate": 0.001, "weight_decay": 0.0001},
+    {"id": "A08", "hidden": [128, 32], "learning_rate": 0.0003, "weight_decay": 0.0001}
+  ],
+  "auxiliary": {
+    "seed": 42,
+    "max_benign_train_rows": 10000,
+    "isolation_forest": {"n_estimators": 200, "max_samples": 256, "contamination": "auto", "n_jobs": 1},
+    "ocsvm": {"kernel": "rbf", "gamma": "scale", "nu": 0.05, "cache_size": 512}
+  },
+  "inference": {"batch_size": 512, "warmup": 5, "repeats": 30, "threads": 1}
+}
+

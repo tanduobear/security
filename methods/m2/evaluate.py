@@ -1,4 +1,5 @@
 
+import argparse
 import os
 import sys
 import json
@@ -429,13 +430,18 @@ def evaluate_one_seed(
 # 5. Main evaluation
 # ============================================================
 
-def main():
+def main(argv=None):
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", type=Path, default=Path("methods/m2/config.yaml"))
+    parser.add_argument("--output", type=Path, default=None)
+    args = parser.parse_args(argv)
 
     # --------------------------------------------------------
     # Load config
     # --------------------------------------------------------
 
-    config_path = Path("methods/m2/config.yaml")
+    config_path = args.config
 
     with open(config_path, "r", encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
@@ -622,7 +628,7 @@ def main():
         },
 
         "hardware": {
-            "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "gpu": torch.cuda.get_device_name(0) if torch.cuda.is_available() else None,
         },
 
         "evaluation_config": {
@@ -655,7 +661,7 @@ def main():
     # Save JSON
     # --------------------------------------------------------
 
-    output_path = Path("results/m2.json")
+    output_path = args.output or Path(cfg["output"].get("metrics_file", "results/m2.json"))
     output_path.parent.mkdir(
         parents=True,
         exist_ok=True,

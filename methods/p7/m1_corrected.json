@@ -1,0 +1,50 @@
+{
+  "schema_version": "1",
+  "purpose": "p7_corrected_sensitivity_rerun",
+  "status": "prepared_not_executed",
+  "dataset": {
+    "version": "corrected",
+    "protocol": "stratified",
+    "variant": "main",
+    "features": 140
+  },
+  "seeds": [42, 43, 44, 45, 46],
+  "models": {
+    "G05": {
+      "algorithm": "HistGradientBoostingClassifier",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      }
+    },
+    "RF_FIXED": {
+      "algorithm": "RandomForestClassifier",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      }
+    }
+  },
+  "selection": "reuse_original_selected_models_without_new_hyperparameter_search",
+  "thresholds": {
+    "source_split": "val",
+    "fpr_targets": [0.01, 0.05],
+    "boundary_rule": "strict_nextafter_benign_boundary"
+  },
+  "output_root": "results/p7_corrected/m1",
+  "historical_rf_approval_reused": false,
+  "training_authorized": false
+}
+

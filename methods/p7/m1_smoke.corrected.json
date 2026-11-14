@@ -1,0 +1,19 @@
+{
+  "purpose": "development_smoke_only",
+  "dataset_directory": "data/split/corrected/stratified",
+  "seed": 42,
+  "sampling_seeds": {"train": 42, "validation": 43},
+  "bootstrap_seed": 42,
+  "timing_seed": 42,
+  "train_sample_rows": 20000,
+  "validation_sample_rows": 8000,
+  "threshold": 0.5,
+  "fit_threads": 2,
+  "inference": {"batch_size": 512, "warmup": 5, "repeats": 30, "threads": 1},
+  "bootstrap_repetitions": 200,
+  "models": {
+    "random_forest": {"n_estimators": 80, "max_depth": 16, "min_samples_leaf": 2, "max_features": "sqrt", "n_jobs": 1},
+    "hist_gradient_boosting": {"max_iter": 60, "learning_rate": 0.1, "max_leaf_nodes": 15, "min_samples_leaf": 20, "l2_regularization": 1.0, "early_stopping": false}
+  }
+}
+

@@ -1,0 +1,23 @@
+experiment_name: "P7_M2_CNN1D_corrected"
+
+seeds: [42, 43, 44, 45, 46]
+epochs: 40
+batch_size: 256
+learning_rate: 0.001
+device: "cuda"
+use_amp: true
+num_workers: 0
+
+data:
+  version: "corrected"
+  protocol: "stratified"
+  variant: "main"
+
+# This is data-derived from corrected/stratified/preprocessor.json, not a new hyperparameter.
+expected_scale_pos_weight: 3.187073753027049
+
+output:
+  model_dir: "results/p7_corrected/m2/models"
+  figure_file: "results/p7_corrected/m2/fig_m2_training_corrected.png"
+  metrics_file: "results/p7_corrected/m2_corrected.json"
+

@@ -1,5 +1,17 @@
 # P7 corrected rerun preparation
 
+## Current local workflow
+
+The frozen training checkout is `../p7-run-3632afa` at commit `3632afa`.
+The integration checkout is this `p7-delivery` worktree. Follow
+[the step-by-step run instructions](../../docs/p7_run_instructions.md).
+`run_formal.ps1` records versioned stage receipts without editing the approved runner.
+
+The collector now reads actual corrected formal outputs. Missing, incomplete,
+duplicate-seed or mismatched-version outputs stop export rather than generating
+blank corrected rows or treating smoke evidence as a completed rerun.
+`--preview-original` writes only to ignored `results/p7_preview/`.
+
 ## Cross-method deliverables
 
 After the formal result files are present, regenerate P7's auditable summary and figures with:
@@ -8,7 +20,7 @@ After the formal result files are present, regenerate P7's auditable summary and
 python methods/p7/build_deliverables.py
 ```
 
-This writes `results/summary.csv`, `results/p7_figure_data.json`, and four PNG/PDF figure pairs under `figures/`. Corrected full-run metric cells remain blank until those exported files are synchronized into this checkout; the script never infers or fabricates missing deltas.
+This writes `results/summary.csv`, `results/p7_figure_data.json`, and an acceptance report only after formal corrected artifacts pass the collection checks. Use `--run-root` to identify the frozen training checkout and `--m1-run` if multiple M1 runs exist.
 
 For the compact paper-style figures and the tidy values table used to draw them, run:
 
@@ -16,7 +28,7 @@ For the compact paper-style figures and the tidy values table used to draw them,
 python methods/p7/build_paper_figures.py
 ```
 
-This writes `results/p7_plot_values.csv` and the four `fig_p7_*` PNG/PDF pairs. These use the same DejaVu Sans typography, light grid, colour-blind-safe palette, 300-DPI PNG export, and vector PDF export as the team's M1 figure style.
+This writes `results/p7_plot_values.csv` and four PNG/PDF pairs comparing original and corrected: overall performance, empirical TPR at FPR, family recall, and version deltas. Absent families remain undefined and deltas are not paired confidence intervals.
 
 This directory isolates P7's corrected-dataset rerun from the completed P4/P5/P6 experiments.
 Nothing here reuses or rewrites the historical RF approval records.
@@ -50,7 +62,7 @@ python methods/p7/run.py m1-full-plan
 ```
 
 Before approval it must report `blocked_pending_approval`. After the content-addressed
-`execution.m1-corrected.v1.json` record has been explicitly approved and committed, the
+`execution.m1-corrected.v2.json` record has been explicitly approved and committed, the
 same command reports `approved_ready`. Only then may the teammate start M1 with:
 
 ```powershell

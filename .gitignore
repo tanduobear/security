@@ -40,3 +40,4 @@ results/m1_rf_trials/
 # P7 corrected rerun local models, predictions, smoke outputs and caches.
 results/p7_corrected/
 venv_p7/
+results/p7_preview/

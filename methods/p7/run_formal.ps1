@@ -73,19 +73,19 @@ function Invoke-Python([string[]]$Arguments) {
 Save-Receipt
 try {
     if ($Stage -eq 'Check') {
-        Invoke-Python @('-c','import sys,torch; print(sys.version); print(torch.__version__); print(torch.cuda.is_available()); assert sys.version_info >= (3,11); assert torch.cuda.is_available(); print(torch.cuda.get_device_name(0))')
-        Invoke-Python @('methods/p7/run.py','preflight')
-        Invoke-Python @('methods/p7/run_m1_full.py','plan')
+        Invoke-Python -Arguments @('-c','import sys,torch; print(sys.version); print(torch.__version__); print(torch.cuda.is_available()); assert sys.version_info >= (3,11); assert torch.cuda.is_available(); print(torch.cuda.get_device_name(0))')
+        Invoke-Python -Arguments @('methods/p7/run.py','preflight')
+        Invoke-Python -Arguments @('methods/p7/run_m1_full.py','plan')
     } elseif ($Stage -eq 'M1') {
-        Invoke-Python @('methods/p7/run_m1_full.py','run','--confirm-start')
+        Invoke-Python -Arguments @('methods/p7/run_m1_full.py','run','--confirm-start')
     } elseif ($Stage -eq 'M2Train') {
-        Invoke-Python @('methods/m2/train.py','--config','methods/p7/m2_corrected.yaml')
+        Invoke-Python -Arguments @('methods/m2/train.py','--config','methods/p7/m2_corrected.yaml')
     } elseif ($Stage -eq 'M2Evaluate') {
-        Invoke-Python @('methods/m2/evaluate.py','--config','methods/p7/m2_corrected.yaml')
+        Invoke-Python -Arguments @('methods/m2/evaluate.py','--config','methods/p7/m2_corrected.yaml')
     } elseif ($Stage -eq 'M3Search') {
-        Invoke-Python @('methods/m3/run.py','search','--config','methods/p7/m3_corrected.json','--output','results/p7_corrected/m3')
+        Invoke-Python -Arguments @('methods/m3/run.py','search','--config','methods/p7/m3_corrected.json','--output','results/p7_corrected/m3')
     } elseif ($Stage -eq 'M3Evaluate') {
-        Invoke-Python @('methods/m3/run.py','evaluate','--config','methods/p7/m3_corrected.json','--output','results/p7_corrected/m3')
+        Invoke-Python -Arguments @('methods/m3/run.py','evaluate','--config','methods/p7/m3_corrected.json','--output','results/p7_corrected/m3')
     }
     $receipt['status'] = 'complete'
 } catch {

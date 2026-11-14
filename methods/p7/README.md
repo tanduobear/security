@@ -1,4 +1,10 @@
-# P7 corrected rerun preparation
+# P7 corrected rerun and final deliverables
+
+The formal corrected runs completed on 2026-11-14 at training commit `3632afa`.
+M1 completed ten G05/RF fits and twenty threshold records, M2 completed five CUDA
+fits and evaluation, and M3 completed forty CUDA search runs and ten final records,
+selecting A05. File/provenance acceptance passed with the limitations documented in
+[the handover](../../docs/p7_results_and_handover.md).
 
 ## Current local workflow
 
@@ -20,7 +26,7 @@ After the formal result files are present, regenerate P7's auditable summary and
 python methods/p7/build_deliverables.py
 ```
 
-This writes `results/summary.csv`, `results/p7_figure_data.json`, and an acceptance report only after formal corrected artifacts pass the collection checks. Use `--run-root` to identify the frozen training checkout and `--m1-run` if multiple M1 runs exist.
+This writes `results/summary.csv`, `results/p7_figure_data.json`, and an acceptance report after formal corrected artifacts pass the collection checks. It also exports compact `results/{m1,m2,m3}_corrected.json` and receipts, source hashes and the complete M3 search record in `results/p7_corrected_summary/`. Use `--run-root` to identify the frozen training checkout and `--m1-run` if multiple M1 runs exist.
 
 For the compact paper-style figures and the tidy values table used to draw them, run:
 

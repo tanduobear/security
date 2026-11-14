@@ -93,22 +93,22 @@ def original(root):
     records = [r for r in m1['per_seed_threshold_records']
                if r['method'] == 'M1_GBDT' and r['config']['target_validation_fpr'] == 0.01]
     five(records, 'original M1')
-    all_rows += [row('M1', 'original', r, r['metrics'], 'G05', m1_path) for r in records]
+    all_rows += [row('M1', 'original', r, r['metrics'], 'G05', m1_path.relative_to(root)) for r in records]
     rf = [r for r in m1['per_seed_threshold_records']
           if r['method'] == 'M1_RF_auxiliary' and r['config']['target_validation_fpr'] == 0.01]
     five(rf, 'original RF auxiliary')
-    all_rows += [row('RF_auxiliary', 'original', r, r['metrics'], 'RF_FIXED', m1_path) for r in rf]
+    all_rows += [row('RF_auxiliary', 'original', r, r['metrics'], 'RF_FIXED', m1_path.relative_to(root)) for r in rf]
     m2_path = root / 'results/m2.json'
     m2 = load(m2_path)
     require(m2['dataset']['version'] == 'original', 'Wrong original M2 population')
     five(m2['runs'], 'original M2')
-    all_rows += [row('M2', 'original', r, r['test'], 'CNN1D_fixed', m2_path) for r in m2['runs']]
+    all_rows += [row('M2', 'original', r, r['test'], 'CNN1D_fixed', m2_path.relative_to(root)) for r in m2['runs']]
     m3_path = root / 'results/m3_summary/summary.json'
     m3 = load(m3_path)
     records = [r for r in m3['records']
                if r['method'] == 'Autoencoder' and r['config']['benign_quantile'] == 0.99]
     five(records, 'original M3')
-    all_rows += [row('M3', 'original', r, r['metrics'], r['config']['id'], m3_path) for r in records]
+    all_rows += [row('M3', 'original', r, r['metrics'], r['config']['id'], m3_path.relative_to(root)) for r in records]
     return all_rows
 
 
@@ -179,7 +179,8 @@ def corrected(run_root, m1_run=None):
         require(key not in keys, 'Duplicate M1 model/seed/threshold record')
         keys.add(key)
         method = 'M1' if value['model_id'] == 'G05' else 'RF_auxiliary'
-        normalized = row(method, 'corrected', value, value['metrics'], value['model_id'], path)
+        normalized = row(method, 'corrected', value, value['metrics'], value['model_id'],
+                         'run-root/' + path.relative_to(run_root).as_posix())
         if value['threshold_calibration']['target_fpr'] == 0.01:
             all_rows.append(normalized)
     require(len(index['records']) == 20 and keys ==
@@ -195,7 +196,8 @@ def corrected(run_root, m1_run=None):
     require(m2['training_config']['device'] == 'cuda' and m2['evaluation_config']['evaluation_device'] == 'cuda',
             'M2 was expected to use CUDA; do not silently accept a CPU fallback')
     five(m2['runs'], 'corrected M2')
-    all_rows += [row('M2', 'corrected', r, r['test'], 'CNN1D_fixed', m2_path) for r in m2['runs']]
+    all_rows += [row('M2', 'corrected', r, r['test'], 'CNN1D_fixed',
+                     'run-root/' + m2_path.relative_to(run_root).as_posix()) for r in m2['runs']]
     for stage in ['M2Train', 'M2Evaluate', 'M3Search', 'M3Evaluate']:
         receipt = load(run_root / 'results/p7_corrected/receipts' / (stage + '.json'))
         require(receipt['status'] == 'complete' and receipt['git_commit'] == expected_commit,
@@ -241,13 +243,14 @@ def corrected(run_root, m1_run=None):
         prediction = m3_dir / 'predictions' / f'Autoencoder_seed{record["seed"]}.parquet'
         require(sha(prediction) == notes['prediction_sha256'], 'M3 prediction hash mismatch')
         if q == 0.99:
-            chosen.append(row('M3', 'corrected', record, record['metrics'], search['selected_candidate'], path))
+            chosen.append(row('M3', 'corrected', record, record['metrics'], search['selected_candidate'],
+                              'run-root/' + path.relative_to(run_root).as_posix()))
     five(chosen, 'corrected M3 q99')
     all_rows += chosen
     counts = {r['n_samples'] for r in all_rows}
     require(len(counts) == 1, 'Corrected methods used different Test sample counts')
     audit = {'status': 'passed', 'required_training_commit': expected_commit,
-             'm1_run': str(directory), 'm1_approval_hash': APPROVAL_HASH,
+             'm1_run': directory.relative_to(run_root).as_posix(), 'm1_approval_hash': APPROVAL_HASH,
              'corrected_test_rows': next(iter(counts)),
              'limitations': ['M2 base evaluator does not export per-row scores; row-order identity is not independently checked here.',
                             'This is file/provenance verification, not an independent replay of models.',
@@ -284,7 +287,7 @@ def write(root, rows, audit, preview=False):
     payload = {'status': 'preview_original_only' if preview else 'formal_corrected_integration',
                'audit': audit, 'groups': groups, 'per_seed': rows,
                'version_delta_note': 'Difference of means across independent populations; not a paired confidence interval.'}
-    (out / 'p7_figure_data.json').write_text(json.dumps(payload, indent=2, ensure_ascii=False, allow_nan=False) + '\n', encoding='utf-8')
+    (out / 'p7_figure_data.json').write_text(json.dumps(payload, indent=2, ensure_ascii=False, allow_nan=False) + '\n', encoding='utf-8', newline='\n')
     csv_rows = []
     for group in groups:
         entry = {k: group[k] for k in ['method', 'dataset_version', 'configuration', 'evaluation_split', 'seed_count']}
@@ -297,7 +300,7 @@ def write(root, rows, audit, preview=False):
         writer = csv.DictWriter(stream, fieldnames=list(csv_rows[0]))
         writer.writeheader()
         writer.writerows(csv_rows)
-    (out / 'p7_acceptance.json').write_text(json.dumps(audit, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+    (out / 'p7_acceptance.json').write_text(json.dumps(audit, indent=2, ensure_ascii=False) + '\n', encoding='utf-8', newline='\n')
     print('Saved:', out / 'summary.csv', 'and p7_figure_data.json', flush=True)
 
 
@@ -313,6 +316,8 @@ def main():
     formal, audit = corrected(args.run_root.resolve(), args.m1_run)
     rows.extend(formal)
     write(ROOT, rows, audit)
+    from export_corrected_summary import export
+    export(ROOT, args.run_root.resolve(), audit)
 
 
 if __name__ == '__main__':

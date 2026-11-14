@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "required_training_commit": "3632afa39a6d07442c5c7a16054dbb6aa0fd0b9b",
+  "m1_run": "results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0",
+  "m1_approval_hash": "8cea962ee3c6a221bb7307799d53dcf016779440b4dbebdeeea281e399917718",
+  "corrected_test_rows": 314577,
+  "limitations": [
+    "M2 base evaluator does not export per-row scores; row-order identity is not independently checked here.",
+    "This is file/provenance verification, not an independent replay of models.",
+    "CPU timings from different machines are not a controlled speed comparison."
+  ]
+}

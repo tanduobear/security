@@ -1,6 +1,6 @@
 # P7 正式复跑与结果接入说明
 
-当前完成的是运行准备和结果接入代码；正式corrected训练尚未开始，最终数值、4.4、Discussion和项目登记表不能提前填成已完成。
+2026年11月14日正式corrected训练与评估已完成，结果文件验收通过。汇总、四图、4.4、Discussion及三份登记文档已使用实际结果更新。运行收据与交付索引见[结果与交接](p7_results_and_handover.md)，以下命令保留供复现。
 
 ## 三个工作目录
 
@@ -10,7 +10,7 @@
 | C:\Users\Administrator\Desktop\Security\p7-run-3632afa | 固定在3632afa的正式训练目录；corrected数据和全部训练输出在这里 |
 | C:\Users\Administrator\Desktop\Security\p7-delivery | P7验收、汇总、作图与最终文书的独立分支，不修改冻结训练源码 |
 
-已确认原环境为Python 3.11.13、PyTorch 2.11.0+cu128且CUDA可用。无需重新安装。原版训练数据是真实文件；corrected目前只有Git LFS指针，需要下载实际文件。P6完整归档已从本地复制到固定运行目录供预检使用，不用重复下载。
+运行环境为Python 3.11.13、PyTorch 2.11.0+cu128，CUDA可用。corrected实际train/val/test文件已下载至固定运行目录并通过预检。P6完整归档也已就绪。首次M2启动缺少tqdm，补装后五种子训练与评估成功。
 
 ## 第一步 下载修正版数据并检查
 
@@ -86,7 +86,7 @@ cd C:\Users\Administrator\Desktop\Security\p7-delivery
 
 如果存在多个完成的M1运行，第一条命令会停止。检查后加--m1-run并指定要验收的formal子目录；不会擅自选择最新目录。验收失败时不会用冒烟数值或空白corrected行替代正式结果。
 
-输出：results/summary.csv、results/p7_figure_data.json、results/p7_plot_values.csv和results/p7_acceptance.json；四张最终PNG/PDF为fig_p7_overall_performance、fig_p7_tpr_at_fpr、fig_p7_family_recall和fig_p7_version_delta。旧fig_p7_threshold_metrics及旧fig1–fig4图是历史产物，不应自动当作本次最终四图。
+输出包括results/summary.csv、results/p7_figure_data.json、results/p7_plot_values.csv和results/p7_acceptance.json，并导出results/{m1,m2,m3}_corrected.json紧凑结果及results/p7_corrected_summary/来源证据。四张最终PNG/PDF为fig_p7_overall_performance、fig_p7_tpr_at_fpr、fig_p7_family_recall和fig_p7_version_delta。旧fig_p7_threshold_metrics及旧fig1–fig4图是历史产物，不应自动当作本次最终四图。
 
 汇总以M1的验证1%阈值、M2验证所选阈值和M3 q99作为分类工作点；TPR@FPR另外使用经验Test ROC指标，不混写。M3图例使用实际获选配置，不固定假定corrected仍为A06。RF辅助结果单列，不纳入三种主模型排名。
 
@@ -100,8 +100,8 @@ cd C:\Users\Administrator\Desktop\Security\p7-delivery
 
 ## 最后定稿与GitHub交付
 
-真实结果验收通过后，再据此核定§4.4和Discussion的具体数字、敏感性排序及限制，更新三张Word登记表、执行人员/机器/日期及输出位置。当前旧文字和图不能提前宣称已覆盖corrected正式结果。
+真实结果已接入§4.4和Discussion，三张Word登记表已填写执行日期与交付位置。M3获选A05，主模型排序保持，1%工作点下降已披露。P8仍需核对数字溯源、图号和全文衔接。
 
-届时仅提交紧凑汇总、验收证据、定稿PNG/PDF、文书和代码。大型模型、缓存、逐样本预测保留在隔离运行目录，不执行git add .盲目上传。先检查git diff --cached --stat再发布最终提交。
+最终提交包含紧凑汇总、验收证据、定稿PNG/PDF、文书和代码。大型模型、缓存、逐样本预测保留在隔离运行目录。发布前检查git diff --cached --stat。
 
 开发用--preview-original只写results/p7_preview/，与正式结果隔离。验收逻辑的9项单元测试已通过，它们不是corrected真实训练验收。

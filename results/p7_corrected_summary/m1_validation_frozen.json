@@ -1,0 +1,486 @@
+{
+  "jobs": [
+    {
+      "task_id": "G05_seed_42",
+      "model_id": "G05",
+      "seed": 42,
+      "algorithm": "HistGradientBoostingClassifier",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "training_seconds": 212.15810660000716,
+      "model_path": "models/G05_seed_42.joblib",
+      "model_sha256": "6de951531606f626f129e2a2092df34c323280291c21c94d11f0fddbebf0fa63",
+      "validation_scores_path": "validation_scores/G05_seed_42.npy",
+      "validation_scores_sha256": "ae863527a1b6a6df143e5cf3ac9dfbac16f3586cac0028fc1bd1fd484b7f06e7",
+      "validation_row_ids_sha256": "f6df6f0726f7441082a73e482f3ebc544300d1d913e0d892e111fbe013f88167",
+      "thresholds": [
+        {
+          "target_fpr": 0.01,
+          "threshold": 0.0013908209417744881,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 2379,
+          "validation_false_positives": 2080,
+          "actual_validation_fpr": 0.008742287453136295
+        },
+        {
+          "target_fpr": 0.05,
+          "threshold": 3.745171066518764e-05,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 11896,
+          "validation_false_positives": 11625,
+          "actual_validation_fpr": 0.048860140212841074
+        }
+      ]
+    },
+    {
+      "task_id": "G05_seed_43",
+      "model_id": "G05",
+      "seed": 43,
+      "algorithm": "HistGradientBoostingClassifier",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "training_seconds": 207.795182700007,
+      "model_path": "models/G05_seed_43.joblib",
+      "model_sha256": "7f9aa6735dcc7fc5bf036b9cb3e77a36681a1755f34b2e1be83faf603c279151",
+      "validation_scores_path": "validation_scores/G05_seed_43.npy",
+      "validation_scores_sha256": "e678b84837bc75f38cd251ec35c1a9e3a6889100174430856c9e9be5ba559d8d",
+      "validation_row_ids_sha256": "f6df6f0726f7441082a73e482f3ebc544300d1d913e0d892e111fbe013f88167",
+      "thresholds": [
+        {
+          "target_fpr": 0.01,
+          "threshold": 0.001441991050185959,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 2379,
+          "validation_false_positives": 2373,
+          "actual_validation_fpr": 0.009973773137640592
+        },
+        {
+          "target_fpr": 0.05,
+          "threshold": 3.320081979032711e-05,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 11896,
+          "validation_false_positives": 11183,
+          "actual_validation_fpr": 0.047002404129049616
+        }
+      ]
+    },
+    {
+      "task_id": "G05_seed_44",
+      "model_id": "G05",
+      "seed": 44,
+      "algorithm": "HistGradientBoostingClassifier",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "training_seconds": 206.51062079999247,
+      "model_path": "models/G05_seed_44.joblib",
+      "model_sha256": "36c42ee4e8f0f8020b50fd0395d4530b42bcabd142f5b70e029c42dc42dc7f25",
+      "validation_scores_path": "validation_scores/G05_seed_44.npy",
+      "validation_scores_sha256": "131e00d3dbed82399fcae27fea5497e93b7a9f9fa4c805dc2b7598152361713a",
+      "validation_row_ids_sha256": "f6df6f0726f7441082a73e482f3ebc544300d1d913e0d892e111fbe013f88167",
+      "thresholds": [
+        {
+          "target_fpr": 0.01,
+          "threshold": 0.0018610951851506209,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 2379,
+          "validation_false_positives": 2137,
+          "actual_validation_fpr": 0.008981859753534742
+        },
+        {
+          "target_fpr": 0.05,
+          "threshold": 3.0442843354302505e-05,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 11896,
+          "validation_false_positives": 11890,
+          "actual_validation_fpr": 0.04997394125855315
+        }
+      ]
+    },
+    {
+      "task_id": "G05_seed_45",
+      "model_id": "G05",
+      "seed": 45,
+      "algorithm": "HistGradientBoostingClassifier",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "training_seconds": 205.46150840001064,
+      "model_path": "models/G05_seed_45.joblib",
+      "model_sha256": "dbfd8f6cf2ede83e756cc9765548dc807e468886ea58b7bd60a6d47de8c7f17c",
+      "validation_scores_path": "validation_scores/G05_seed_45.npy",
+      "validation_scores_sha256": "ff025c35367c978446fcbaecbead2990e821b05f6afe2418df9c2c9c95423b68",
+      "validation_row_ids_sha256": "f6df6f0726f7441082a73e482f3ebc544300d1d913e0d892e111fbe013f88167",
+      "thresholds": [
+        {
+          "target_fpr": 0.01,
+          "threshold": 0.0015393879563836788,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 2379,
+          "validation_false_positives": 2375,
+          "actual_validation_fpr": 0.009982179183268608
+        },
+        {
+          "target_fpr": 0.05,
+          "threshold": 3.086991211194493e-05,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 11896,
+          "validation_false_positives": 11560,
+          "actual_validation_fpr": 0.04858694372993057
+        }
+      ]
+    },
+    {
+      "task_id": "G05_seed_46",
+      "model_id": "G05",
+      "seed": 46,
+      "algorithm": "HistGradientBoostingClassifier",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "training_seconds": 215.9291857999924,
+      "model_path": "models/G05_seed_46.joblib",
+      "model_sha256": "30f542e065e7767d53e86dcd9ad0a094b766de72318432593a0a20383120abe5",
+      "validation_scores_path": "validation_scores/G05_seed_46.npy",
+      "validation_scores_sha256": "0d30ba7c0b5603475a6045f58d517e78c103139281fbb4050190811f02c404df",
+      "validation_row_ids_sha256": "f6df6f0726f7441082a73e482f3ebc544300d1d913e0d892e111fbe013f88167",
+      "thresholds": [
+        {
+          "target_fpr": 0.01,
+          "threshold": 0.0015475615097400406,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 2379,
+          "validation_false_positives": 2214,
+          "actual_validation_fpr": 0.009305492510213346
+        },
+        {
+          "target_fpr": 0.05,
+          "threshold": 2.87970975282776e-05,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 11896,
+          "validation_false_positives": 11709,
+          "actual_validation_fpr": 0.049213194129217736
+        }
+      ]
+    },
+    {
+      "task_id": "RF_FIXED_seed_42",
+      "model_id": "RF_FIXED",
+      "seed": 42,
+      "algorithm": "RandomForestClassifier",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "training_seconds": 304.018129899996,
+      "model_path": "models/RF_FIXED_seed_42.joblib",
+      "model_sha256": "5e3febf5cb78972c5bb547f980783ab3ea99a867a8a5bb9a7df197971b3d4ec1",
+      "validation_scores_path": "validation_scores/RF_FIXED_seed_42.npy",
+      "validation_scores_sha256": "bdd548f3bbf4b7934b9fecb0d21742aca8eb60f73d4b8531e8f8fc8cb5d654f6",
+      "validation_row_ids_sha256": "f6df6f0726f7441082a73e482f3ebc544300d1d913e0d892e111fbe013f88167",
+      "thresholds": [
+        {
+          "target_fpr": 0.01,
+          "threshold": 0.17614620420763383,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 2379,
+          "validation_false_positives": 2368,
+          "actual_validation_fpr": 0.009952758023570553
+        },
+        {
+          "target_fpr": 0.05,
+          "threshold": 0.00046377519949770865,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 11896,
+          "validation_false_positives": 11842,
+          "actual_validation_fpr": 0.049772196163480775
+        }
+      ]
+    },
+    {
+      "task_id": "RF_FIXED_seed_43",
+      "model_id": "RF_FIXED",
+      "seed": 43,
+      "algorithm": "RandomForestClassifier",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "training_seconds": 344.24865360000695,
+      "model_path": "models/RF_FIXED_seed_43.joblib",
+      "model_sha256": "379e22d8e888bdfe66ed5b2e78a75d7a7f634d026d87d697610fa38645e6c2b7",
+      "validation_scores_path": "validation_scores/RF_FIXED_seed_43.npy",
+      "validation_scores_sha256": "725d80866461fee1c8fc7a997dcde0883e8fcd37d8c8d5e85f326845f95c9ebc",
+      "validation_row_ids_sha256": "f6df6f0726f7441082a73e482f3ebc544300d1d913e0d892e111fbe013f88167",
+      "thresholds": [
+        {
+          "target_fpr": 0.01,
+          "threshold": 0.14127806807382384,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 2379,
+          "validation_false_positives": 2335,
+          "actual_validation_fpr": 0.009814058270708293
+        },
+        {
+          "target_fpr": 0.05,
+          "threshold": 0.0004396266019092544,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 11896,
+          "validation_false_positives": 11662,
+          "actual_validation_fpr": 0.04901565205695937
+        }
+      ]
+    },
+    {
+      "task_id": "RF_FIXED_seed_44",
+      "model_id": "RF_FIXED",
+      "seed": 44,
+      "algorithm": "RandomForestClassifier",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "training_seconds": 325.53065990000323,
+      "model_path": "models/RF_FIXED_seed_44.joblib",
+      "model_sha256": "62ef28ca979492263802308417f4b2a5052219a8793ceee46f6f87ed82fc22c9",
+      "validation_scores_path": "validation_scores/RF_FIXED_seed_44.npy",
+      "validation_scores_sha256": "075f5da2c2c1fb028166045e511a6a635f49ef1c9f58f3f00eb46615cbd2f5e8",
+      "validation_row_ids_sha256": "f6df6f0726f7441082a73e482f3ebc544300d1d913e0d892e111fbe013f88167",
+      "thresholds": [
+        {
+          "target_fpr": 0.01,
+          "threshold": 0.1725267270988798,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 2379,
+          "validation_false_positives": 2373,
+          "actual_validation_fpr": 0.009973773137640592
+        },
+        {
+          "target_fpr": 0.05,
+          "threshold": 0.0005687131226379074,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 11896,
+          "validation_false_positives": 11894,
+          "actual_validation_fpr": 0.04999075334980918
+        }
+      ]
+    },
+    {
+      "task_id": "RF_FIXED_seed_45",
+      "model_id": "RF_FIXED",
+      "seed": 45,
+      "algorithm": "RandomForestClassifier",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "training_seconds": 318.9239820000075,
+      "model_path": "models/RF_FIXED_seed_45.joblib",
+      "model_sha256": "0f2d438e65494659634c21e7411bc3d78bf42451a2a8ec6defc39db34605814e",
+      "validation_scores_path": "validation_scores/RF_FIXED_seed_45.npy",
+      "validation_scores_sha256": "ce811ff3cf4f113da39499e5e11755383525d10175de6f9b1fb5228f45c0bb70",
+      "validation_row_ids_sha256": "f6df6f0726f7441082a73e482f3ebc544300d1d913e0d892e111fbe013f88167",
+      "thresholds": [
+        {
+          "target_fpr": 0.01,
+          "threshold": 0.1498054531757771,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 2379,
+          "validation_false_positives": 2375,
+          "actual_validation_fpr": 0.009982179183268608
+        },
+        {
+          "target_fpr": 0.05,
+          "threshold": 0.00045852984793743603,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 11896,
+          "validation_false_positives": 11893,
+          "actual_validation_fpr": 0.04998655032699517
+        }
+      ]
+    },
+    {
+      "task_id": "RF_FIXED_seed_46",
+      "model_id": "RF_FIXED",
+      "seed": 46,
+      "algorithm": "RandomForestClassifier",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "training_seconds": 306.1216451999935,
+      "model_path": "models/RF_FIXED_seed_46.joblib",
+      "model_sha256": "eec72b8e3fb73a8bbd0e4699f03aede8f16e00fa2e871a6f24e7566b3c553e5d",
+      "validation_scores_path": "validation_scores/RF_FIXED_seed_46.npy",
+      "validation_scores_sha256": "1a4000fae580b605a28b77a4422552375e2c4eebf4c29c4a487850769a66db5f",
+      "validation_row_ids_sha256": "f6df6f0726f7441082a73e482f3ebc544300d1d913e0d892e111fbe013f88167",
+      "thresholds": [
+        {
+          "target_fpr": 0.01,
+          "threshold": 0.19704449443542457,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 2379,
+          "validation_false_positives": 2363,
+          "actual_validation_fpr": 0.009931742909500513
+        },
+        {
+          "target_fpr": 0.05,
+          "threshold": 0.0007056531126173602,
+          "operator": ">=",
+          "source": "validation_benign_quantile",
+          "boundary_rule": "strict_nextafter_benign_boundary",
+          "validation_benign_support": 237924,
+          "allowed_false_positives": 11896,
+          "validation_false_positives": 11866,
+          "actual_validation_fpr": 0.04987306871101696
+        }
+      ]
+    }
+  ],
+  "test_accessed": false,
+  "validation_rows": 315344,
+  "validation_row_ids_sha256": "f6df6f0726f7441082a73e482f3ebc544300d1d913e0d892e111fbe013f88167",
+  "validation_coverage": {
+    "supports": {
+      "botnet": 110,
+      "ddos": 14270,
+      "dos goldeneye": 1135,
+      "dos hulk": 23764,
+      "dos slowhttptest": 261,
+      "dos slowloris": 579,
+      "ftp-patator": 596,
+      "heartbleed": 2,
+      "infiltration": 5,
+      "portscan": 36238,
+      "ssh-patator": 444,
+      "web attack - brute force": 11,
+      "web attack - sql injection": 2,
+      "web attack - xss": 3
+    },
+    "missing": []
+  }
+}

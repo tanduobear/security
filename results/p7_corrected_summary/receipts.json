@@ -1,0 +1,104 @@
+[
+  {
+    "stage": "Check",
+    "status": "complete",
+    "git_commit": "3632afa39a6d07442c5c7a16054dbb6aa0fd0b9b",
+    "python": "C:\\Users\\Administrator\\Desktop\\Security\\repo\\.venv-p6\\Scripts\\python.exe",
+    "started_at": "2026-11-14T14:41:29.4150863+08:00",
+    "output_root": "results/p7_corrected",
+    "driver_sha256": "d851ab38ec9537c9aab21bb8a7bc91f8057b7c9e1592e3b6643ae651f8d567d2",
+    "log": "results/p7_corrected/logs/Check_20261114T144129.log",
+    "config_hashes": {
+      "methods/p7/m2_corrected.yaml": "f9277c2a46d1a056bedb839ba04021217e8d35eb3f16c6bf7ad6d12655cf5071",
+      "methods/p7/m3_corrected.json": "25acd150da81dcbfac7c7c70e1473ddb827f95f79a66e7b24c7884980ec42b01",
+      "methods/p7/execution.m1-corrected.v2.json": "2109fc33b0c105e8cf7e2aff40d18ca29d2cf7c9076a4e9f769f6da401bf4fe6",
+      "methods/p7/m1_corrected.json": "7e56d50d5665f9a40d2e0a9cf308b127a3f16669bc9094520a0f2ab6482302ac"
+    },
+    "completed_at": "2026-11-14T14:41:34.6332016+08:00"
+  },
+  {
+    "stage": "M1",
+    "status": "complete",
+    "git_commit": "3632afa39a6d07442c5c7a16054dbb6aa0fd0b9b",
+    "python": "C:\\Users\\Administrator\\Desktop\\Security\\repo\\.venv-p6\\Scripts\\python.exe",
+    "started_at": "2026-11-14T14:42:58.0164094+08:00",
+    "output_root": "results/p7_corrected",
+    "driver_sha256": "d851ab38ec9537c9aab21bb8a7bc91f8057b7c9e1592e3b6643ae651f8d567d2",
+    "log": "results/p7_corrected/logs/M1_20261114T144258.log",
+    "config_hashes": {
+      "methods/p7/m2_corrected.yaml": "f9277c2a46d1a056bedb839ba04021217e8d35eb3f16c6bf7ad6d12655cf5071",
+      "methods/p7/m3_corrected.json": "25acd150da81dcbfac7c7c70e1473ddb827f95f79a66e7b24c7884980ec42b01",
+      "methods/p7/execution.m1-corrected.v2.json": "2109fc33b0c105e8cf7e2aff40d18ca29d2cf7c9076a4e9f769f6da401bf4fe6",
+      "methods/p7/m1_corrected.json": "7e56d50d5665f9a40d2e0a9cf308b127a3f16669bc9094520a0f2ab6482302ac"
+    },
+    "completed_at": "2026-11-14T15:35:25.4682159+08:00"
+  },
+  {
+    "stage": "M2Train",
+    "status": "complete",
+    "git_commit": "3632afa39a6d07442c5c7a16054dbb6aa0fd0b9b",
+    "python": "C:\\Users\\Administrator\\Desktop\\Security\\repo\\.venv-p6\\Scripts\\python.exe",
+    "started_at": "2026-11-14T16:04:02.3629673+08:00",
+    "output_root": "results/p7_corrected",
+    "driver_sha256": "d851ab38ec9537c9aab21bb8a7bc91f8057b7c9e1592e3b6643ae651f8d567d2",
+    "log": "results/p7_corrected/logs/M2Train_20261114T160402.log",
+    "config_hashes": {
+      "methods/p7/m2_corrected.yaml": "f9277c2a46d1a056bedb839ba04021217e8d35eb3f16c6bf7ad6d12655cf5071",
+      "methods/p7/m3_corrected.json": "25acd150da81dcbfac7c7c70e1473ddb827f95f79a66e7b24c7884980ec42b01",
+      "methods/p7/execution.m1-corrected.v2.json": "2109fc33b0c105e8cf7e2aff40d18ca29d2cf7c9076a4e9f769f6da401bf4fe6",
+      "methods/p7/m1_corrected.json": "7e56d50d5665f9a40d2e0a9cf308b127a3f16669bc9094520a0f2ab6482302ac"
+    },
+    "completed_at": "2026-11-14T18:54:34.4000107+08:00"
+  },
+  {
+    "stage": "M2Evaluate",
+    "status": "complete",
+    "git_commit": "3632afa39a6d07442c5c7a16054dbb6aa0fd0b9b",
+    "python": "C:\\Users\\Administrator\\Desktop\\Security\\repo\\.venv-p6\\Scripts\\python.exe",
+    "started_at": "2026-11-14T18:57:48.1880412+08:00",
+    "output_root": "results/p7_corrected",
+    "driver_sha256": "d851ab38ec9537c9aab21bb8a7bc91f8057b7c9e1592e3b6643ae651f8d567d2",
+    "log": "results/p7_corrected/logs/M2Evaluate_20261114T185748.log",
+    "config_hashes": {
+      "methods/p7/m2_corrected.yaml": "f9277c2a46d1a056bedb839ba04021217e8d35eb3f16c6bf7ad6d12655cf5071",
+      "methods/p7/m3_corrected.json": "25acd150da81dcbfac7c7c70e1473ddb827f95f79a66e7b24c7884980ec42b01",
+      "methods/p7/execution.m1-corrected.v2.json": "2109fc33b0c105e8cf7e2aff40d18ca29d2cf7c9076a4e9f769f6da401bf4fe6",
+      "methods/p7/m1_corrected.json": "7e56d50d5665f9a40d2e0a9cf308b127a3f16669bc9094520a0f2ab6482302ac"
+    },
+    "completed_at": "2026-11-14T18:58:42.2075840+08:00"
+  },
+  {
+    "stage": "M3Search",
+    "status": "complete",
+    "git_commit": "3632afa39a6d07442c5c7a16054dbb6aa0fd0b9b",
+    "python": "C:\\Users\\Administrator\\Desktop\\Security\\repo\\.venv-p6\\Scripts\\python.exe",
+    "started_at": "2026-11-14T19:01:29.2560695+08:00",
+    "output_root": "results/p7_corrected",
+    "driver_sha256": "d851ab38ec9537c9aab21bb8a7bc91f8057b7c9e1592e3b6643ae651f8d567d2",
+    "log": "results/p7_corrected/logs/M3Search_20261114T190129.log",
+    "config_hashes": {
+      "methods/p7/m2_corrected.yaml": "f9277c2a46d1a056bedb839ba04021217e8d35eb3f16c6bf7ad6d12655cf5071",
+      "methods/p7/m3_corrected.json": "25acd150da81dcbfac7c7c70e1473ddb827f95f79a66e7b24c7884980ec42b01",
+      "methods/p7/execution.m1-corrected.v2.json": "2109fc33b0c105e8cf7e2aff40d18ca29d2cf7c9076a4e9f769f6da401bf4fe6",
+      "methods/p7/m1_corrected.json": "7e56d50d5665f9a40d2e0a9cf308b127a3f16669bc9094520a0f2ab6482302ac"
+    },
+    "completed_at": "2026-11-14T23:02:46.6298994+08:00"
+  },
+  {
+    "stage": "M3Evaluate",
+    "status": "complete",
+    "git_commit": "3632afa39a6d07442c5c7a16054dbb6aa0fd0b9b",
+    "python": "C:\\Users\\Administrator\\Desktop\\Security\\repo\\.venv-p6\\Scripts\\python.exe",
+    "started_at": "2026-11-14T23:05:09.1066685+08:00",
+    "output_root": "results/p7_corrected",
+    "driver_sha256": "d851ab38ec9537c9aab21bb8a7bc91f8057b7c9e1592e3b6643ae651f8d567d2",
+    "log": "results/p7_corrected/logs/M3Evaluate_20261114T230509.log",
+    "config_hashes": {
+      "methods/p7/m2_corrected.yaml": "f9277c2a46d1a056bedb839ba04021217e8d35eb3f16c6bf7ad6d12655cf5071",
+      "methods/p7/m3_corrected.json": "25acd150da81dcbfac7c7c70e1473ddb827f95f79a66e7b24c7884980ec42b01",
+      "methods/p7/execution.m1-corrected.v2.json": "2109fc33b0c105e8cf7e2aff40d18ca29d2cf7c9076a4e9f769f6da401bf4fe6",
+      "methods/p7/m1_corrected.json": "7e56d50d5665f9a40d2e0a9cf308b127a3f16669bc9094520a0f2ab6482302ac"
+    },
+    "completed_at": "2026-11-14T23:08:35.3945725+08:00"
+  }
+]

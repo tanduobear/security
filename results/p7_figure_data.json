@@ -1,197 +1,4284 @@
 {
-  "scope": "original/stratified/main Test, five seeds",
-  "methods": [
+  "status": "formal_corrected_integration",
+  "audit": {
+    "status": "passed",
+    "required_training_commit": "3632afa39a6d07442c5c7a16054dbb6aa0fd0b9b",
+    "m1_run": "results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0",
+    "m1_approval_hash": "8cea962ee3c6a221bb7307799d53dcf016779440b4dbebdeeea281e399917718",
+    "corrected_test_rows": 314577,
+    "limitations": [
+      "M2 base evaluator does not export per-row scores; row-order identity is not independently checked here.",
+      "This is file/provenance verification, not an independent replay of models.",
+      "CPU timings from different machines are not a controlled speed comparison."
+    ]
+  },
+  "groups": [
     {
-      "method": "GBDT G05",
-      "role": "main_supervised_tree",
-      "dataset_version": "original",
-      "protocol": "stratified",
-      "variant": "main",
-      "evaluation_split": "test",
-      "seed_count": 5,
+      "method": "M1",
+      "dataset_version": "corrected",
       "configuration": "G05",
-      "threshold_policy": "validation benign quantile; 1% target for classification columns",
-      "average_precision_mean": 0.9994951360517572,
-      "average_precision_std": 7.332045809238854e-05,
-      "roc_auc_mean": 0.9999065491704137,
-      "roc_auc_std": 1.0868787547261024e-05,
-      "tpr_at_empirical_fpr_1pct_mean": 0.9999656453980449,
-      "tpr_at_empirical_fpr_1pct_std": 6.9835659374295015e-06,
-      "tpr_at_empirical_fpr_5pct_mean": 0.9999968768543677,
-      "tpr_at_empirical_fpr_5pct_std": 6.9835659374295015e-06,
-      "fixed_threshold_test_fpr_mean": 0.009169362774595938,
-      "fixed_threshold_test_fpr_std": 0.0024355685017834364,
-      "fixed_threshold_test_tpr_mean": 0.999965645398045,
-      "fixed_threshold_test_tpr_std": 6.9835659374295015e-06,
-      "accuracy_mean": 0.9925186989242347,
-      "accuracy_std": 0.0019851926797289127,
-      "macro_f1_mean": 0.9877844971685287,
-      "macro_f1_std": 0.0031776869668226596,
-      "training_seconds_mean": 500.09699590000093,
-      "training_seconds_std": 15.019681765565693,
-      "cpu_latency_ms_per_flow_mean": "",
-      "cpu_latency_ms_per_flow_std": "",
-      "run_status": "formal_complete",
-      "source_file": "results/m1_test_summary/summary.json",
-      "notes": "Continuous-score AP/AUC and empirical ROC points use full Test; classification uses frozen Validation threshold."
-    },
-    {
-      "method": "1D-CNN",
-      "role": "main_supervised_deep",
-      "dataset_version": "original",
-      "protocol": "stratified",
-      "variant": "main",
       "evaluation_split": "test",
       "seed_count": 5,
-      "configuration": "delivered fixed CNN1D configuration",
-      "threshold_policy": "validation-selected 1% FPR threshold",
-      "average_precision_mean": 0.9171579858667075,
-      "average_precision_std": 0.023259602082069463,
-      "roc_auc_mean": 0.9808876823626889,
-      "roc_auc_std": 0.003971070784736027,
-      "tpr_at_empirical_fpr_1pct_mean": 0.6114775601986321,
-      "tpr_at_empirical_fpr_1pct_std": 0.06998797541529252,
-      "tpr_at_empirical_fpr_5pct_mean": 0.795074799337893,
-      "tpr_at_empirical_fpr_5pct_std": 0.09863805255991973,
-      "fixed_threshold_test_fpr_mean": "",
-      "fixed_threshold_test_fpr_std": "",
-      "fixed_threshold_test_tpr_mean": "",
-      "fixed_threshold_test_tpr_std": "",
-      "accuracy_mean": 0.9210830370746571,
-      "accuracy_std": 0.012573962171911666,
-      "macro_f1_mean": 0.8478406416679188,
-      "macro_f1_std": 0.029152904627490803,
-      "training_seconds_mean": 1929.0959072113037,
-      "training_seconds_std": 73.73229797499698,
-      "cpu_latency_ms_per_flow_mean": 0.04237294921875,
-      "cpu_latency_ms_per_flow_std": 0.0025147274780888047,
-      "run_status": "formal_complete",
-      "source_file": "results/m2.json",
-      "notes": "M2 operating points follow its delivered evaluator; P6 recorded unresolved P3 tie-handling differences."
+      "family": {
+        "botnet": {
+          "support": 110,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ddos": {
+          "support": 14269,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos hulk": {
+          "support": 23764,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos slowloris": {
+          "support": 579,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ftp-patator": {
+          "support": 596,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "heartbleed": {
+          "support": 2,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "infiltration": {
+          "support": 5,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "portscan": {
+          "support": 36241,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ssh-patator": {
+          "support": 444,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - xss": {
+          "support": 3,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        }
+      },
+      "ap": {
+        "mean": 0.9999998485216862,
+        "sample_std": 1.8835025911339703e-08,
+        "n": 5
+      },
+      "roc_auc": {
+        "mean": 0.9999999570993202,
+        "sample_std": 6.1615875198613245e-09,
+        "n": 5
+      },
+      "tpr_at_fpr_1pct": {
+        "mean": 1.0,
+        "sample_std": 0.0,
+        "n": 5
+      },
+      "tpr_at_fpr_5pct": {
+        "mean": 1.0,
+        "sample_std": 0.0,
+        "n": 5
+      },
+      "accuracy": {
+        "mean": 0.9924024960502515,
+        "sample_std": 0.0003609174790128782,
+        "n": 5
+      },
+      "macro_f1": {
+        "mean": 0.9898678359092177,
+        "sample_std": 0.0004764705741335422,
+        "n": 5
+      },
+      "fpr": {
+        "mean": 0.010077797221226625,
+        "sample_std": 0.0004787431755410548,
+        "n": 5
+      },
+      "tpr": {
+        "mean": 1.0,
+        "sample_std": 0.0,
+        "n": 5
+      },
+      "precision": {
+        "mean": 0.9700561989568509,
+        "sample_std": 0.001380078067746261,
+        "n": 5
+      },
+      "training_seconds": {
+        "mean": 209.57092086000193,
+        "sample_std": 4.373986063560512,
+        "n": 5
+      },
+      "cpu_latency_ms_per_flow": {
+        "mean": null,
+        "sample_std": null,
+        "n": 5
+      }
     },
     {
-      "method": "Autoencoder A06",
-      "role": "main_unsupervised",
+      "method": "M1",
       "dataset_version": "original",
-      "protocol": "stratified",
-      "variant": "main",
+      "configuration": "G05",
       "evaluation_split": "test",
       "seed_count": 5,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ddos": {
+          "support": 19202,
+          "mean": 0.9999479220914488,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos hulk": {
+          "support": 25901,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos slowloris": {
+          "support": 802,
+          "mean": 0.9987531172069826,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ftp-patator": {
+          "support": 890,
+          "mean": 0.9997752808988764,
+          "sample_std": 0.00050248718595503,
+          "n": 5
+        },
+        "heartbleed": {
+          "support": 2,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "infiltration": {
+          "support": 5,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "portscan": {
+          "support": 13854,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ssh-patator": {
+          "support": 483,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - xss": {
+          "support": 98,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        }
+      },
+      "ap": {
+        "mean": 0.9994951360517571,
+        "sample_std": 7.332045809238855e-05,
+        "n": 5
+      },
+      "roc_auc": {
+        "mean": 0.9999065491704138,
+        "sample_std": 1.0868787547261024e-05,
+        "n": 5
+      },
+      "tpr_at_fpr_1pct": {
+        "mean": 0.9999656453980449,
+        "sample_std": 6.9835659374295015e-06,
+        "n": 5
+      },
+      "tpr_at_fpr_5pct": {
+        "mean": 0.9999968768543677,
+        "sample_std": 6.9835659374295015e-06,
+        "n": 5
+      },
+      "accuracy": {
+        "mean": 0.9925186989242347,
+        "sample_std": 0.0019851926797289127,
+        "n": 5
+      },
+      "macro_f1": {
+        "mean": 0.9877844971685287,
+        "sample_std": 0.0031776869668226596,
+        "n": 5
+      },
+      "fpr": {
+        "mean": 0.009169362774595938,
+        "sample_std": 0.002435568501783436,
+        "n": 5
+      },
+      "tpr": {
+        "mean": 0.9999656453980449,
+        "sample_std": 6.9835659374295015e-06,
+        "n": 5
+      },
+      "precision": {
+        "mean": 0.9612013028767268,
+        "sample_std": 0.009790923050222724,
+        "n": 5
+      },
+      "training_seconds": {
+        "mean": 500.09699590000093,
+        "sample_std": 15.019681765565693,
+        "n": 5
+      },
+      "cpu_latency_ms_per_flow": {
+        "mean": 0.10995210937500001,
+        "sample_std": 0.0029402237123569933,
+        "n": 5
+      }
+    },
+    {
+      "method": "M2",
+      "dataset_version": "corrected",
+      "configuration": "CNN1D_fixed",
+      "evaluation_split": "test",
+      "seed_count": 5,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "mean": 0.5672727272727273,
+          "sample_std": 0.48141492558759785,
+          "n": 5
+        },
+        "ddos": {
+          "support": 14269,
+          "mean": 0.9973509005536478,
+          "sample_std": 0.0056101502273805046,
+          "n": 5
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "mean": 0.9349779735682819,
+          "sample_std": 0.09717107081851654,
+          "n": 5
+        },
+        "dos hulk": {
+          "support": 23764,
+          "mean": 0.9884952028278068,
+          "sample_std": 0.025232096595452353,
+          "n": 5
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "mean": 0.8444444444444444,
+          "sample_std": 0.11099875413094845,
+          "n": 5
+        },
+        "dos slowloris": {
+          "support": 579,
+          "mean": 0.5447322970639032,
+          "sample_std": 0.017167217464302838,
+          "n": 5
+        },
+        "ftp-patator": {
+          "support": 596,
+          "mean": 0.8,
+          "sample_std": 0.4472135954999579,
+          "n": 5
+        },
+        "heartbleed": {
+          "support": 2,
+          "mean": 0.8,
+          "sample_std": 0.4472135954999579,
+          "n": 5
+        },
+        "infiltration": {
+          "support": 5,
+          "mean": 0.24000000000000002,
+          "sample_std": 0.3286335345030997,
+          "n": 5
+        },
+        "portscan": {
+          "support": 36241,
+          "mean": 0.8844678678844403,
+          "sample_std": 0.2579830726335899,
+          "n": 5
+        },
+        "ssh-patator": {
+          "support": 444,
+          "mean": 0.7927927927927928,
+          "sample_std": 0.4431846441891475,
+          "n": 5
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "mean": 0.7636363636363637,
+          "sample_std": 0.3613564893518507,
+          "n": 5
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "mean": 0.1,
+          "sample_std": 0.22360679774997896,
+          "n": 5
+        },
+        "web attack - xss": {
+          "support": 3,
+          "mean": 0.3333333333333333,
+          "sample_std": 0.4714045207910317,
+          "n": 5
+        }
+      },
+      "ap": {
+        "mean": 0.9862493435911205,
+        "sample_std": 0.0182314342147072,
+        "n": 5
+      },
+      "roc_auc": {
+        "mean": 0.9977914896315361,
+        "sample_std": 0.002374315622410614,
+        "n": 5
+      },
+      "tpr_at_fpr_1pct": {
+        "mean": 0.9419493167316784,
+        "sample_std": 0.10980410776113883,
+        "n": 5
+      },
+      "tpr_at_fpr_5pct": {
+        "mean": 0.9998605047660871,
+        "sample_std": 1.0806489454346969e-05,
+        "n": 5
+      },
+      "accuracy": {
+        "mean": 0.9760650015735416,
+        "sample_std": 0.03243966493621761,
+        "n": 5
+      },
+      "macro_f1": {
+        "mean": 0.9652435491433797,
+        "sample_std": 0.04958538853410142,
+        "n": 5
+      },
+      "fpr": {
+        "mean": 0.010051653981573233,
+        "sample_std": 0.003026685641440451,
+        "n": 5
+      },
+      "tpr": {
+        "mean": 0.9335382707757485,
+        "sample_std": 0.1377282334522916,
+        "n": 5
+      },
+      "precision": {
+        "mean": 0.9683470463765178,
+        "sample_std": 0.006903360495117047,
+        "n": 5
+      },
+      "training_seconds": {
+        "mean": 2043.3753955841064,
+        "sample_std": 288.80898375134205,
+        "n": 5
+      },
+      "cpu_latency_ms_per_flow": {
+        "mean": 0.0632723046875,
+        "sample_std": 0.008833938602859423,
+        "n": 5
+      }
+    },
+    {
+      "method": "M2",
+      "dataset_version": "original",
+      "configuration": "CNN1D_fixed",
+      "evaluation_split": "test",
+      "seed_count": 5,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "mean": 0.0047619047619047615,
+          "sample_std": 0.0043470044246441755,
+          "n": 5
+        },
+        "ddos": {
+          "support": 19202,
+          "mean": 0.6883449640662431,
+          "sample_std": 0.11672722487407906,
+          "n": 5
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "mean": 0.5271076523994812,
+          "sample_std": 0.16668268935381936,
+          "n": 5
+        },
+        "dos hulk": {
+          "support": 25901,
+          "mean": 0.8495502104165862,
+          "sample_std": 0.06311631727943508,
+          "n": 5
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "mean": 0.22525510204081634,
+          "sample_std": 0.20515819365347565,
+          "n": 5
+        },
+        "dos slowloris": {
+          "support": 802,
+          "mean": 0.24937655860349128,
+          "sample_std": 0.23592623829912,
+          "n": 5
+        },
+        "ftp-patator": {
+          "support": 890,
+          "mean": 0.6191011235955056,
+          "sample_std": 0.08099245524018023,
+          "n": 5
+        },
+        "heartbleed": {
+          "support": 2,
+          "mean": 0.8,
+          "sample_std": 0.4472135954999579,
+          "n": 5
+        },
+        "infiltration": {
+          "support": 5,
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "portscan": {
+          "support": 13854,
+          "mean": 0.19373466146961166,
+          "sample_std": 0.08869511481436079,
+          "n": 5
+        },
+        "ssh-patator": {
+          "support": 483,
+          "mean": 0.1217391304347826,
+          "sample_std": 0.26759944495610577,
+          "n": 5
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "mean": 0.0009090909090909091,
+          "sample_std": 0.0020327890704543543,
+          "n": 5
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - xss": {
+          "support": 98,
+          "mean": 0.002040816326530612,
+          "sample_std": 0.004563404035713856,
+          "n": 5
+        }
+      },
+      "ap": {
+        "mean": 0.9171579858667075,
+        "sample_std": 0.023259602082069463,
+        "n": 5
+      },
+      "roc_auc": {
+        "mean": 0.980887682362689,
+        "sample_std": 0.003971070784736026,
+        "n": 5
+      },
+      "tpr_at_fpr_1pct": {
+        "mean": 0.6114775601986321,
+        "sample_std": 0.06998797541529252,
+        "n": 5
+      },
+      "tpr_at_fpr_5pct": {
+        "mean": 0.7950747993378932,
+        "sample_std": 0.09863805255991973,
+        "n": 5
+      },
+      "accuracy": {
+        "mean": 0.9210830370746571,
+        "sample_std": 0.012573962171911668,
+        "n": 5
+      },
+      "macro_f1": {
+        "mean": 0.847840641667919,
+        "sample_std": 0.029152904627490803,
+        "n": 5
+      },
+      "fpr": {
+        "mean": 0.010684374845136032,
+        "sample_std": 0.0012198645871446846,
+        "n": 5
+      },
+      "tpr": {
+        "mean": 0.620072456978669,
+        "sample_std": 0.06594254777019853,
+        "n": 5
+      },
+      "precision": {
+        "mean": 0.9285967686157879,
+        "sample_std": 0.012885814735549847,
+        "n": 5
+      },
+      "training_seconds": {
+        "mean": 1929.0959072113037,
+        "sample_std": 73.732297974997,
+        "n": 5
+      },
+      "cpu_latency_ms_per_flow": {
+        "mean": 0.04237294921875,
+        "sample_std": 0.0025147274780888047,
+        "n": 5
+      }
+    },
+    {
+      "method": "M3",
+      "dataset_version": "corrected",
+      "configuration": "A05",
+      "evaluation_split": "test",
+      "seed_count": 5,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "mean": 0.05454545454545454,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ddos": {
+          "support": 14269,
+          "mean": 0.6406195248440676,
+          "sample_std": 0.07677465861877114,
+          "n": 5
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "mean": 0.46819383259911895,
+          "sample_std": 0.020270062391859314,
+          "n": 5
+        },
+        "dos hulk": {
+          "support": 23764,
+          "mean": 0.24378892442349773,
+          "sample_std": 0.027872301837877023,
+          "n": 5
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "mean": 0.43601532567049806,
+          "sample_std": 0.04742298374487603,
+          "n": 5
+        },
+        "dos slowloris": {
+          "support": 579,
+          "mean": 0.5136442141623488,
+          "sample_std": 0.024956672702160187,
+          "n": 5
+        },
+        "ftp-patator": {
+          "support": 596,
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "heartbleed": {
+          "support": 2,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "infiltration": {
+          "support": 5,
+          "mean": 0.8,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "portscan": {
+          "support": 36241,
+          "mean": 0.11877155707623963,
+          "sample_std": 0.18995268931846285,
+          "n": 5
+        },
+        "ssh-patator": {
+          "support": 444,
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "mean": 0.2,
+          "sample_std": 0.4472135954999579,
+          "n": 5
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - xss": {
+          "support": 3,
+          "mean": 0.2,
+          "sample_std": 0.4472135954999579,
+          "n": 5
+        }
+      },
+      "ap": {
+        "mean": 0.8664154419578226,
+        "sample_std": 0.01313418892904172,
+        "n": 5
+      },
+      "roc_auc": {
+        "mean": 0.979056524982053,
+        "sample_std": 0.0025341191000660796,
+        "n": 5
+      },
+      "tpr_at_fpr_1pct": {
+        "mean": 0.18395288160987833,
+        "sample_std": 0.023429854799020204,
+        "n": 5
+      },
+      "tpr_at_fpr_5pct": {
+        "mean": 0.9535093384309369,
+        "sample_std": 0.03043736473838892,
+        "n": 5
+      },
+      "accuracy": {
+        "mean": 0.8094730383975942,
+        "sample_std": 0.026045786224940574,
+        "n": 5
+      },
+      "macro_f1": {
+        "mean": 0.6408244220047569,
+        "sample_std": 0.06669168313602186,
+        "n": 5
+      },
+      "fpr": {
+        "mean": 0.011425439058843372,
+        "sample_std": 0.00018225985543933915,
+        "n": 5
+      },
+      "tpr": {
+        "mean": 0.26085867066208573,
+        "sample_std": 0.10579542113848046,
+        "n": 5
+      },
+      "precision": {
+        "mean": 0.8724952195590993,
+        "sample_std": 0.03243629187889391,
+        "n": 5
+      },
+      "training_seconds": {
+        "mean": 309.0288165199978,
+        "sample_std": 84.78806255515632,
+        "n": 5
+      },
+      "cpu_latency_ms_per_flow": {
+        "mean": 0.00172619140625,
+        "sample_std": 0.00017428548449918807,
+        "n": 5
+      }
+    },
+    {
+      "method": "M3",
+      "dataset_version": "original",
       "configuration": "A06",
-      "threshold_policy": "99th percentile benign Validation reconstruction error",
-      "average_precision_mean": 0.7427099837893828,
-      "average_precision_std": 0.006169874488104447,
-      "roc_auc_mean": 0.9040028795779489,
-      "roc_auc_std": 0.00310867522356135,
-      "tpr_at_empirical_fpr_1pct_mean": 0.5272275836222243,
-      "tpr_at_empirical_fpr_1pct_std": 0.016424304119053428,
-      "tpr_at_empirical_fpr_5pct_mean": 0.6177207283175614,
-      "tpr_at_empirical_fpr_5pct_std": 0.013817972171981887,
-      "fixed_threshold_test_fpr_mean": 0.008311327901000334,
-      "fixed_threshold_test_fpr_std": 0.0014040087485624277,
-      "fixed_threshold_test_tpr_mean": 0.5226834067272557,
-      "fixed_threshold_test_tpr_std": 0.01795809281717162,
-      "accuracy_mean": 0.9050210074333995,
-      "accuracy_std": 0.0024480672351088213,
-      "macro_f1_mean": 0.8073764347330178,
-      "macro_f1_std": 0.007224291184625135,
-      "training_seconds_mean": 347.54356447999965,
-      "training_seconds_std": 36.62228798917592,
-      "cpu_latency_ms_per_flow_mean": 0.001746328125,
-      "cpu_latency_ms_per_flow_std": 0.0002736173951341232,
-      "run_status": "formal_complete",
-      "source_file": "results/m3_summary/summary.json",
-      "notes": "AP/AUC and empirical ROC points use continuous scores; classification columns use q99 frozen Validation threshold."
+      "evaluation_split": "test",
+      "seed_count": 5,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "mean": 0.01984126984126984,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ddos": {
+          "support": 19202,
+          "mean": 0.5358087699198,
+          "sample_std": 0.04821118677631611,
+          "n": 5
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "mean": 0.41802853437094684,
+          "sample_std": 0.02892812860626859,
+          "n": 5
+        },
+        "dos hulk": {
+          "support": 25901,
+          "mean": 0.8435581637774603,
+          "sample_std": 0.004709214229052222,
+          "n": 5
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "mean": 0.28494897959183674,
+          "sample_std": 0.10327537611221935,
+          "n": 5
+        },
+        "dos slowloris": {
+          "support": 802,
+          "mean": 0.5703241895261846,
+          "sample_std": 0.0060829480886037054,
+          "n": 5
+        },
+        "ftp-patator": {
+          "support": 890,
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "heartbleed": {
+          "support": 2,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "infiltration": {
+          "support": 5,
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "portscan": {
+          "support": 13854,
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ssh-patator": {
+          "support": 483,
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "mean": 0.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - xss": {
+          "support": 98,
+          "mean": 0.016326530612244896,
+          "sample_std": 0.01853663482100505,
+          "n": 5
+        }
+      },
+      "ap": {
+        "mean": 0.7427099837893828,
+        "sample_std": 0.006169874488104446,
+        "n": 5
+      },
+      "roc_auc": {
+        "mean": 0.9040028795779489,
+        "sample_std": 0.00310867522356135,
+        "n": 5
+      },
+      "tpr_at_fpr_1pct": {
+        "mean": 0.5272275836222243,
+        "sample_std": 0.016424304119053428,
+        "n": 5
+      },
+      "tpr_at_fpr_5pct": {
+        "mean": 0.6177207283175614,
+        "sample_std": 0.013817972171981887,
+        "n": 5
+      },
+      "accuracy": {
+        "mean": 0.9050210074333995,
+        "sample_std": 0.0024480672351088213,
+        "n": 5
+      },
+      "macro_f1": {
+        "mean": 0.8073764347330178,
+        "sample_std": 0.007224291184625135,
+        "n": 5
+      },
+      "fpr": {
+        "mean": 0.008311327901000334,
+        "sample_std": 0.0014040087485624277,
+        "n": 5
+      },
+      "tpr": {
+        "mean": 0.5226834067272557,
+        "sample_std": 0.01795809281717162,
+        "n": 5
+      },
+      "precision": {
+        "mean": 0.9346966470080611,
+        "sample_std": 0.008844950007633433,
+        "n": 5
+      },
+      "training_seconds": {
+        "mean": 347.54356447999965,
+        "sample_std": 36.62228798917592,
+        "n": 5
+      },
+      "cpu_latency_ms_per_flow": {
+        "mean": 0.001746328125,
+        "sample_std": 0.0002736173951341232,
+        "n": 5
+      }
+    },
+    {
+      "method": "RF_auxiliary",
+      "dataset_version": "corrected",
+      "configuration": "RF_FIXED",
+      "evaluation_split": "test",
+      "seed_count": 5,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ddos": {
+          "support": 14269,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos hulk": {
+          "support": 23764,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "mean": 0.9923371647509579,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos slowloris": {
+          "support": 579,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ftp-patator": {
+          "support": 596,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "heartbleed": {
+          "support": 2,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "infiltration": {
+          "support": 5,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "portscan": {
+          "support": 36241,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ssh-patator": {
+          "support": 444,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - xss": {
+          "support": 3,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        }
+      },
+      "ap": {
+        "mean": 0.9999954420616941,
+        "sample_std": 5.178603627657951e-07,
+        "n": 5
+      },
+      "roc_auc": {
+        "mean": 0.9999984871805347,
+        "sample_std": 1.7093953756893036e-07,
+        "n": 5
+      },
+      "tpr_at_fpr_1pct": {
+        "mean": 0.9999741675492754,
+        "sample_std": 0.0,
+        "n": 5
+      },
+      "tpr_at_fpr_5pct": {
+        "mean": 1.0,
+        "sample_std": 0.0,
+        "n": 5
+      },
+      "accuracy": {
+        "mean": 0.9920083159290094,
+        "sample_std": 0.00033334985677348466,
+        "n": 5
+      },
+      "macro_f1": {
+        "mean": 0.9893475328858476,
+        "sample_std": 0.0004394881881495508,
+        "n": 5
+      },
+      "fpr": {
+        "mean": 0.010592228711180452,
+        "sample_std": 0.0004421757833241086,
+        "n": 5
+      },
+      "tpr": {
+        "mean": 0.9999741675492754,
+        "sample_std": 0.0,
+        "n": 5
+      },
+      "precision": {
+        "mean": 0.968574619810509,
+        "sample_std": 0.0012696268386181793,
+        "n": 5
+      },
+      "training_seconds": {
+        "mean": 319.7686141200014,
+        "sample_std": 16.33634308681026,
+        "n": 5
+      },
+      "cpu_latency_ms_per_flow": {
+        "mean": null,
+        "sample_std": null,
+        "n": 5
+      }
+    },
+    {
+      "method": "RF_auxiliary",
+      "dataset_version": "original",
+      "configuration": "RF_FIXED",
+      "evaluation_split": "test",
+      "seed_count": 5,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ddos": {
+          "support": 19202,
+          "mean": 0.9998333506926362,
+          "sample_std": 2.3289948729308192e-05,
+          "n": 5
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos hulk": {
+          "support": 25901,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "dos slowloris": {
+          "support": 802,
+          "mean": 0.9987531172069826,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ftp-patator": {
+          "support": 890,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "heartbleed": {
+          "support": 2,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "infiltration": {
+          "support": 5,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "portscan": {
+          "support": 13854,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "ssh-patator": {
+          "support": 483,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "mean": 1.0,
+          "sample_std": 0.0,
+          "n": 5
+        },
+        "web attack - xss": {
+          "support": 98,
+          "mean": 0.9959183673469387,
+          "sample_std": 0.005589005688828232,
+          "n": 5
+        }
+      },
+      "ap": {
+        "mean": 0.9992265327078087,
+        "sample_std": 0.0001622844521568733,
+        "n": 5
+      },
+      "roc_auc": {
+        "mean": 0.9998424462265668,
+        "sample_std": 3.177994537332572e-05,
+        "n": 5
+      },
+      "tpr_at_fpr_1pct": {
+        "mean": 0.999921921359193,
+        "sample_std": 1.1041987276083828e-05,
+        "n": 5
+      },
+      "tpr_at_fpr_5pct": {
+        "mean": 1.0,
+        "sample_std": 0.0,
+        "n": 5
+      },
+      "accuracy": {
+        "mean": 0.9905708943164504,
+        "sample_std": 0.0002533253552773802,
+        "n": 5
+      },
+      "macro_f1": {
+        "mean": 0.9846517701725128,
+        "sample_std": 0.00040437385037025335,
+        "n": 5
+      },
+      "fpr": {
+        "mean": 0.01155019716395404,
+        "sample_std": 0.0003096723053774202,
+        "n": 5
+      },
+      "tpr": {
+        "mean": 0.9999281676504576,
+        "sample_std": 8.553086565830968e-06,
+        "n": 5
+      },
+      "precision": {
+        "mean": 0.9515142888829442,
+        "sample_std": 0.001235796030658859,
+        "n": 5
+      },
+      "training_seconds": {
+        "mean": 923.18909787999,
+        "sample_std": 47.95349332916437,
+        "n": 5
+      },
+      "cpu_latency_ms_per_flow": {
+        "mean": 0.0644937109375,
+        "sample_std": 0.0015591668069874379,
+        "n": 5
+      }
     }
   ],
-  "tpr_at_empirical_fpr": {
-    "GBDT G05": {
-      "0.01": [
-        0.9999656453980449,
-        6.9835659374295015e-06
-      ],
-      "0.05": [
-        0.9999968768543677,
-        6.9835659374295015e-06
-      ]
+  "per_seed": [
+    {
+      "method": "M1",
+      "version": "original",
+      "seed": 42,
+      "configuration": "G05",
+      "source": "results\\m1_test_summary\\summary.json",
+      "training_seconds": 502.128430700046,
+      "cpu_latency_ms_per_flow": 0.10762626953125001,
+      "ap": 0.9995211773199413,
+      "roc_auc": 0.9999097292168927,
+      "accuracy": 0.988968211828801,
+      "macro_f1": 0.9821012746285298,
+      "fpr": 0.013525376452181546,
+      "tpr": 0.9999687685436772,
+      "precision": 0.9436904077692795,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.9999479220914488
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.9987531172069826
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9999687685436772,
+      "tpr_at_fpr_5pct": 1.0
     },
-    "1D-CNN": {
-      "0.01": [
-        0.6114775601986321,
-        0.06998797541529252
-      ],
-      "0.05": [
-        0.795074799337893,
-        0.09863805255991973
-      ]
+    {
+      "method": "M1",
+      "version": "original",
+      "seed": 43,
+      "configuration": "G05",
+      "source": "results\\m1_test_summary\\summary.json",
+      "training_seconds": 479.8656454999582,
+      "cpu_latency_ms_per_flow": 0.1117828125,
+      "ap": 0.9995045813989475,
+      "roc_auc": 0.9999063805572969,
+      "accuracy": 0.9934582621543008,
+      "macro_f1": 0.9892892276814147,
+      "fpr": 0.008017528831246063,
+      "tpr": 0.9999687685436772,
+      "precision": 0.9658376193420913,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.9999479220914488
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.9987531172069826
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9999687685436772,
+      "tpr_at_fpr_5pct": 1.0
     },
-    "Autoencoder A06": {
-      "0.01": [
-        0.5272275836222243,
-        0.016424304119053428
-      ],
-      "0.05": [
-        0.6177207283175614,
-        0.013817972171981887
-      ]
+    {
+      "method": "M1",
+      "version": "original",
+      "seed": 44,
+      "configuration": "G05",
+      "source": "results\\m1_test_summary\\summary.json",
+      "training_seconds": 514.72159500001,
+      "cpu_latency_ms_per_flow": 0.1142591796875,
+      "ap": 0.9993695477488194,
+      "roc_auc": 0.9998888423665415,
+      "accuracy": 0.9934322914261969,
+      "macro_f1": 0.9892472763718958,
+      "fpr": 0.008049386561701344,
+      "tpr": 0.9999687685436772,
+      "precision": 0.965706529935153,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.9999479220914488
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.9987531172069826
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9999687685436772,
+      "tpr_at_fpr_5pct": 0.9999843842718386
+    },
+    {
+      "method": "M1",
+      "version": "original",
+      "seed": 45,
+      "configuration": "G05",
+      "source": "results\\m1_test_summary\\summary.json",
+      "training_seconds": 490.29459909995785,
+      "cpu_latency_ms_per_flow": 0.10801162109375001,
+      "ap": 0.999561454443372,
+      "roc_auc": 0.9999184175405955,
+      "accuracy": 0.9933745786970775,
+      "macro_f1": 0.989154067088965,
+      "fpr": 0.008120181518268639,
+      "tpr": 0.9999687685436772,
+      "precision": 0.9654153475048998,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.9999479220914488
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.9987531172069826
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9999687685436772,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "M1",
+      "version": "original",
+      "seed": 46,
+      "configuration": "G05",
+      "source": "results\\m1_test_summary\\summary.json",
+      "training_seconds": 513.4747092000325,
+      "cpu_latency_ms_per_flow": 0.1080806640625,
+      "ap": 0.9995189193477053,
+      "roc_auc": 0.9999093761707423,
+      "accuracy": 0.9933601505147975,
+      "macro_f1": 0.9891306400718378,
+      "fpr": 0.008134340509582097,
+      "tpr": 0.9999531528155158,
+      "precision": 0.9653566098322102,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.9999479220914488
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.9987531172069826
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 0.998876404494382
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9999531528155158,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "RF_auxiliary",
+      "version": "original",
+      "seed": 42,
+      "configuration": "RF_FIXED",
+      "source": "results\\m1_test_summary\\summary.json",
+      "training_seconds": 982.3194612999796,
+      "cpu_latency_ms_per_flow": 0.06301591796875,
+      "ap": 0.9990793012858298,
+      "roc_auc": 0.9998135844743767,
+      "accuracy": 0.99082656170645,
+      "macro_f1": 0.9850601547758311,
+      "fpr": 0.011238699355057946,
+      "tpr": 0.9999375370873543,
+      "precision": 0.9527593030695294,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.9998437662743465
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.9987531172069826
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.999921921359193,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "RF_auxiliary",
+      "version": "original",
+      "seed": 43,
+      "configuration": "RF_FIXED",
+      "source": "results\\m1_test_summary\\summary.json",
+      "training_seconds": 921.4580291999737,
+      "cpu_latency_ms_per_flow": 0.064168359375,
+      "ap": 0.9993558971238685,
+      "roc_auc": 0.9998671014507339,
+      "accuracy": 0.9906822798836511,
+      "macro_f1": 0.9848294293303033,
+      "fpr": 0.011412146998647817,
+      "tpr": 0.999921921359193,
+      "precision": 0.9520644691258903,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.9998437662743465
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.9987531172069826
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 0.9897959183673469
+        }
+      },
+      "tpr_at_fpr_1pct": 0.999921921359193,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "RF_auxiliary",
+      "version": "original",
+      "seed": 44,
+      "configuration": "RF_FIXED",
+      "source": "results\\m1_test_summary\\summary.json",
+      "training_seconds": 848.9390259999782,
+      "cpu_latency_ms_per_flow": 0.06530488281249999,
+      "ap": 0.9993129414604113,
+      "roc_auc": 0.999859517370486,
+      "accuracy": 0.990569740061868,
+      "macro_f1": 0.9846496922564708,
+      "fpr": 0.01155019716395404,
+      "tpr": 0.999921921359193,
+      "precision": 0.9515127199239182,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.9998437662743465
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.9987531172069826
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 0.9897959183673469
+        }
+      },
+      "tpr_at_fpr_1pct": 0.999921921359193,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "RF_auxiliary",
+      "version": "original",
+      "seed": 45,
+      "configuration": "RF_FIXED",
+      "source": "results\\m1_test_summary\\summary.json",
+      "training_seconds": 936.2892107000225,
+      "cpu_latency_ms_per_flow": 0.0667623046875,
+      "ap": 0.9993612548400047,
+      "roc_auc": 0.999869366622915,
+      "accuracy": 0.9906245671545316,
+      "macro_f1": 0.9847374244509024,
+      "fpr": 0.011486481703043476,
+      "tpr": 0.9999375370873543,
+      "precision": 0.9517680108206127,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.9998437662743465
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.9987531172069826
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9999375370873543,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "RF_auxiliary",
+      "version": "original",
+      "seed": 46,
+      "configuration": "RF_FIXED",
+      "source": "results\\m1_test_summary\\summary.json",
+      "training_seconds": 926.939762199996,
+      "cpu_latency_ms_per_flow": 0.06321708984375,
+      "ap": 0.999023268828929,
+      "roc_auc": 0.9998026612143227,
+      "accuracy": 0.9901513227757515,
+      "macro_f1": 0.9839821500490568,
+      "fpr": 0.012063460599066923,
+      "tpr": 0.999921921359193,
+      "precision": 0.9494669414747705,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.9997916883657952
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.9987531172069826
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9999063056310316,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "M2",
+      "version": "original",
+      "seed": 42,
+      "configuration": "CNN1D_fixed",
+      "source": "results\\m2.json",
+      "training_seconds": 1887.1913497447968,
+      "cpu_latency_ms_per_flow": 0.039719140624999996,
+      "ap": 0.927594002020411,
+      "roc_auc": 0.9825180555711275,
+      "accuracy": 0.9260584514520522,
+      "macro_f1": 0.8595830426958903,
+      "fpr": 0.010003327362958662,
+      "tpr": 0.6439926293763079,
+      "precision": 0.9358689238868969,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 0.0
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.6923237162795542
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 0.6141374837872893
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 0.8919732828848307
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 0.18239795918367346
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.3516209476309227
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 0.6247191011235955
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 0.21019200230980223
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 0.002070393374741201
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.6424310565601674,
+      "tpr_at_fpr_5pct": 0.7712764296199132
+    },
+    {
+      "method": "M2",
+      "version": "original",
+      "seed": 43,
+      "configuration": "CNN1D_fixed",
+      "source": "results\\m2.json",
+      "training_seconds": 2060.5128622055054,
+      "cpu_latency_ms_per_flow": 0.040310253906249996,
+      "ap": 0.8850964114992903,
+      "roc_auc": 0.9756469463858204,
+      "accuracy": 0.9030426150791818,
+      "macro_f1": 0.8058563713445048,
+      "fpr": 0.012176732529574593,
+      "tpr": 0.5290296386520503,
+      "precision": 0.9078192829197707,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 0.0
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.495937923133007
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 0.38715953307393
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 0.7499324350411181
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 0.0012755102040816326
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.0024937655860349127
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 0.47752808988764045
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 0.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 0.2819402338674751
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.5114619444704707,
+      "tpr_at_fpr_5pct": 0.6632155907429963
+    },
+    {
+      "method": "M2",
+      "version": "original",
+      "seed": 44,
+      "configuration": "CNN1D_fixed",
+      "source": "results\\m2.json",
+      "training_seconds": 1893.7856132984161,
+      "cpu_latency_ms_per_flow": 0.04228974609375,
+      "ap": 0.9027832085682735,
+      "roc_auc": 0.9784009838155714,
+      "accuracy": 0.9140368899764532,
+      "macro_f1": 0.8317975070501225,
+      "fpr": 0.010516590798071546,
+      "tpr": 0.5812017864393016,
+      "precision": 0.9260761383428714,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 0.007936507936507936
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.7038329340693678
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 0.3099870298313878
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 0.8231728504690938
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 0.5599489795918368
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.0012468827930174563
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 0.6651685393258427
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 0.06243684134545979
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 0.006211180124223602
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 0.004545454545454545
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.5700521565320591,
+      "tpr_at_fpr_5pct": 0.9334926137605797
+    },
+    {
+      "method": "M2",
+      "version": "original",
+      "seed": 45,
+      "configuration": "CNN1D_fixed",
+      "source": "results\\m2.json",
+      "training_seconds": 1900.6442651748657,
+      "cpu_latency_ms_per_flow": 0.04588466796875,
+      "ap": 0.9258701217776087,
+      "roc_auc": 0.9819134136823566,
+      "accuracy": 0.9272444480354587,
+      "macro_f1": 0.8617508228329378,
+      "fpr": 0.009132549397180945,
+      "tpr": 0.6465692245229395,
+      "precision": 0.9413436398772309,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 0.007936507936507936
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.7411207165920216
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 0.6757457846952011
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 0.887919385351917
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 0.15943877551020408
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.36658354114713215
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 0.6629213483146067
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 0.15309657860545692
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.6465692245229395,
+      "tpr_at_fpr_5pct": 0.7749148942815204
+    },
+    {
+      "method": "M2",
+      "version": "original",
+      "seed": 46,
+      "configuration": "CNN1D_fixed",
+      "source": "results\\m2.json",
+      "training_seconds": 1903.3454456329346,
+      "cpu_latency_ms_per_flow": 0.0436609375,
+      "ap": 0.944446185467954,
+      "roc_auc": 0.9859590123585691,
+      "accuracy": 0.9350327808301399,
+      "macro_f1": 0.8802154644161395,
+      "fpr": 0.011592674137894417,
+      "tpr": 0.6995690059027453,
+      "precision": 0.9318758580521695,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 0.007936507936507936
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.8085095302572649
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 0.648508430609598
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 0.8947530983359716
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 0.22321428571428573
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.5249376558603491
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 0.6651685393258427
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 0.2610076512198643
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 0.6004140786749482
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 0.01020408163265306
+        }
+      },
+      "tpr_at_fpr_1pct": 0.6868734189075236,
+      "tpr_at_fpr_5pct": 0.8324744682844561
+    },
+    {
+      "method": "M3",
+      "version": "original",
+      "seed": 42,
+      "configuration": "A06",
+      "source": "results\\m3_summary\\summary.json",
+      "training_seconds": 369.7442162999996,
+      "cpu_latency_ms_per_flow": 0.0015865234375,
+      "ap": 0.7423723145772673,
+      "roc_auc": 0.9049634345541775,
+      "accuracy": 0.9037495960108962,
+      "macro_f1": 0.8023399940819469,
+      "fpr": 0.006375085838884837,
+      "tpr": 0.5072613135950529,
+      "precision": 0.9474697389528949,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 0.01984126984126984
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.49203207999166754
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 0.40077821011673154
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 0.8390409636693564
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 0.28188775510204084
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.571072319201995
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 0.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 0.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.5223929541834536,
+      "tpr_at_fpr_5pct": 0.6082169961585309
+    },
+    {
+      "method": "M3",
+      "version": "original",
+      "seed": 43,
+      "configuration": "A06",
+      "source": "results\\m3_summary\\summary.json",
+      "training_seconds": 312.87967599999865,
+      "cpu_latency_ms_per_flow": 0.00142568359375,
+      "ap": 0.7475547183935679,
+      "roc_auc": 0.9090580954795972,
+      "accuracy": 0.9039111916524308,
+      "macro_f1": 0.8055730435871684,
+      "fpr": 0.009398030484308298,
+      "tpr": 0.5214716262219308,
+      "precision": 0.9263502454991817,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 0.01984126984126984
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.5298406415998334
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 0.39883268482490275
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 0.8441759005443805
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 0.34183673469387754
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.5760598503740648
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 0.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 0.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 0.030612244897959183
+        }
+      },
+      "tpr_at_fpr_1pct": 0.5247040819513414,
+      "tpr_at_fpr_5pct": 0.6218182953871139
+    },
+    {
+      "method": "M3",
+      "version": "original",
+      "seed": 44,
+      "configuration": "A06",
+      "source": "results\\m3_summary\\summary.json",
+      "training_seconds": 306.7898187999999,
+      "cpu_latency_ms_per_flow": 0.0017654296874999999,
+      "ap": 0.7395178995454674,
+      "roc_auc": 0.9017280055703583,
+      "accuracy": 0.9076682903181126,
+      "macro_f1": 0.8149506580014794,
+      "fpr": 0.00914316864066604,
+      "tpr": 0.5406789718604579,
+      "precision": 0.9305775794877308,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 0.01984126984126984
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.5856160816581606
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 0.4578469520103761
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 0.8468012818037913
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 0.35459183673469385
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.5660847880299252
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 0.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 0.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 0.01020408163265306
+        }
+      },
+      "tpr_at_fpr_1pct": 0.5439895062306755,
+      "tpr_at_fpr_5pct": 0.6244729691745526
+    },
+    {
+      "method": "M3",
+      "version": "original",
+      "seed": 45,
+      "configuration": "A06",
+      "source": "results\\m3_summary\\summary.json",
+      "training_seconds": 391.3773627999999,
+      "cpu_latency_ms_per_flow": 0.00179765625,
+      "ap": 0.7343834013074005,
+      "roc_auc": 0.9020806312382122,
+      "accuracy": 0.9022346368715084,
+      "macro_f1": 0.7991828396052189,
+      "fpr": 0.00725648304814765,
+      "tpr": 0.5029513726225053,
+      "precision": 0.9401599626364645,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 0.01984126984126984
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.48645974377668993
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 0.39299610894941633
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 0.8385390525462337
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 0.10714285714285714
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.5623441396508728
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 0.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 0.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.5034979231081546,
+      "tpr_at_fpr_5pct": 0.5995814984852744
+    },
+    {
+      "method": "M3",
+      "version": "original",
+      "seed": 46,
+      "configuration": "A06",
+      "source": "results\\m3_summary\\summary.json",
+      "training_seconds": 356.92674850000003,
+      "cpu_latency_ms_per_flow": 0.00215634765625,
+      "ap": 0.7497215851232111,
+      "roc_auc": 0.9021842310473993,
+      "accuracy": 0.9075413223140496,
+      "macro_f1": 0.8148356383892754,
+      "fpr": 0.00938387149299484,
+      "tpr": 0.5410537493363315,
+      "precision": 0.9289257084640339,
+      "n_samples": 346544,
+      "family": {
+        "botnet": {
+          "support": 252,
+          "recall": 0.01984126984126984
+        },
+        "ddos": {
+          "support": 19202,
+          "recall": 0.5850953025726486
+        },
+        "dos goldeneye": {
+          "support": 1542,
+          "recall": 0.4396887159533074
+        },
+        "dos hulk": {
+          "support": 25901,
+          "recall": 0.8492336203235397
+        },
+        "dos slowhttptest": {
+          "support": 784,
+          "recall": 0.3392857142857143
+        },
+        "dos slowloris": {
+          "support": 802,
+          "recall": 0.5760598503740648
+        },
+        "ftp-patator": {
+          "support": 890,
+          "recall": 0.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.0
+        },
+        "portscan": {
+          "support": 13854,
+          "recall": 0.0
+        },
+        "ssh-patator": {
+          "support": 483,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 220,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 3,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 98,
+          "recall": 0.04081632653061224
+        }
+      },
+      "tpr_at_fpr_1pct": 0.5415534526374964,
+      "tpr_at_fpr_5pct": 0.6345138823823355
+    },
+    {
+      "method": "M1",
+      "version": "corrected",
+      "seed": 42,
+      "configuration": "G05",
+      "source": "run-root/results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0/records/G05_seed_42_fpr_0.01.json",
+      "training_seconds": 212.15810660000716,
+      "cpu_latency_ms_per_flow": null,
+      "ap": 0.9999998647522581,
+      "roc_auc": 0.9999999624203769,
+      "accuracy": 0.9928729690981858,
+      "macro_f1": 0.990489123734535,
+      "fpr": 0.009453732790790833,
+      "tpr": 1.0,
+      "precision": 0.9718567985539265,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 1.0
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 1.0
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 1.0,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "M1",
+      "version": "corrected",
+      "seed": 43,
+      "configuration": "G05",
+      "source": "run-root/results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0/records/G05_seed_43_fpr_0.01.json",
+      "training_seconds": 207.795182700007,
+      "cpu_latency_ms_per_flow": null,
+      "ap": 0.9999998198931765,
+      "roc_auc": 0.9999999477425386,
+      "accuracy": 0.9919828849534454,
+      "macro_f1": 0.9893140225730517,
+      "fpr": 0.010634395226750437,
+      "tpr": 1.0,
+      "precision": 0.9684529170419294,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 1.0
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 1.0
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 1.0,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "M1",
+      "version": "corrected",
+      "seed": 44,
+      "configuration": "G05",
+      "source": "run-root/results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0/records/G05_seed_44_fpr_0.01.json",
+      "training_seconds": 206.51062079999247,
+      "cpu_latency_ms_per_flow": null,
+      "ap": 0.9999998409331382,
+      "roc_auc": 0.9999999546049045,
+      "accuracy": 0.9925900494950362,
+      "macro_f1": 0.9901153090564565,
+      "fpr": 0.009829014779363708,
+      "tpr": 1.0,
+      "precision": 0.9707722593507454,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 1.0
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 1.0
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 1.0,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "M1",
+      "version": "corrected",
+      "seed": 45,
+      "configuration": "G05",
+      "source": "run-root/results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0/records/G05_seed_45_fpr_0.01.json",
+      "training_seconds": 205.46150840001064,
+      "cpu_latency_ms_per_flow": null,
+      "ap": 0.9999998522422144,
+      "roc_auc": 0.9999999583084038,
+      "accuracy": 0.9921100398312654,
+      "macro_f1": 0.9894817247215709,
+      "fpr": 0.010465729164470495,
+      "tpr": 1.0,
+      "precision": 0.9689377252703244,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 1.0
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 1.0
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 1.0,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "M1",
+      "version": "corrected",
+      "seed": 46,
+      "configuration": "G05",
+      "source": "run-root/results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0/records/G05_seed_46_fpr_0.01.json",
+      "training_seconds": 215.9291857999924,
+      "cpu_latency_ms_per_flow": null,
+      "ap": 0.999999864787644,
+      "roc_auc": 0.9999999624203769,
+      "accuracy": 0.9924565368733251,
+      "macro_f1": 0.9899389994604743,
+      "fpr": 0.010006114144757649,
+      "tpr": 1.0,
+      "precision": 0.9702612945673288,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 1.0
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 1.0
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 1.0
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 1.0,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "RF_auxiliary",
+      "version": "corrected",
+      "seed": 42,
+      "configuration": "RF_FIXED",
+      "source": "run-root/results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0/records/RF_FIXED_seed_42_fpr_0.01.json",
+      "training_seconds": 304.018129899996,
+      "cpu_latency_ms_per_flow": null,
+      "ap": 0.9999951323291689,
+      "roc_auc": 0.9999983850837793,
+      "accuracy": 0.9918271202281158,
+      "macro_f1": 0.9891084798175105,
+      "fpr": 0.010832577849929371,
+      "tpr": 0.9999741675492754,
+      "precision": 0.9678830839240395,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 1.0
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.9923371647509579
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 1.0
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9999741675492754,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "RF_auxiliary",
+      "version": "corrected",
+      "seed": 43,
+      "configuration": "RF_FIXED",
+      "source": "run-root/results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0/records/RF_FIXED_seed_43_fpr_0.01.json",
+      "training_seconds": 344.24865360000695,
+      "cpu_latency_ms_per_flow": null,
+      "ap": 0.9999947069544682,
+      "roc_auc": 0.999998244568667,
+      "accuracy": 0.992278520044377,
+      "macro_f1": 0.9897038423554181,
+      "fpr": 0.010233813328835571,
+      "tpr": 0.9999741675492754,
+      "precision": 0.9696043683544779,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 1.0
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.9923371647509579
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 1.0
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9999741675492754,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "RF_auxiliary",
+      "version": "corrected",
+      "seed": 44,
+      "configuration": "RF_FIXED",
+      "source": "run-root/results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0/records/RF_FIXED_seed_44_fpr_0.01.json",
+      "training_seconds": 325.53065990000323,
+      "cpu_latency_ms_per_flow": null,
+      "ap": 0.9999959844188624,
+      "roc_auc": 0.99999866791129,
+      "accuracy": 0.9922371947090856,
+      "macro_f1": 0.9896493077756707,
+      "fpr": 0.010288629799076554,
+      "tpr": 0.9999741675492754,
+      "precision": 0.9694465314300025,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 1.0
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.9923371647509579
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 1.0
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9999741675492754,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "RF_auxiliary",
+      "version": "corrected",
+      "seed": 45,
+      "configuration": "RF_FIXED",
+      "source": "run-root/results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0/records/RF_FIXED_seed_45_fpr_0.01.json",
+      "training_seconds": 318.9239820000075,
+      "cpu_latency_ms_per_flow": null,
+      "ap": 0.9999956038466284,
+      "roc_auc": 0.9999985418833949,
+      "accuracy": 0.9921926905018486,
+      "macro_f1": 0.9895905848965518,
+      "fpr": 0.010347662920874533,
+      "tpr": 0.9999741675492754,
+      "precision": 0.9692766106617923,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 1.0
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.9923371647509579
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 1.0
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9999741675492754,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "RF_auxiliary",
+      "version": "corrected",
+      "seed": 46,
+      "configuration": "RF_FIXED",
+      "source": "run-root/results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0/records/RF_FIXED_seed_46_fpr_0.01.json",
+      "training_seconds": 306.1216451999935,
+      "cpu_latency_ms_per_flow": null,
+      "ap": 0.9999957827593425,
+      "roc_auc": 0.9999985964555428,
+      "accuracy": 0.9915060541616202,
+      "macro_f1": 0.9886854495840873,
+      "fpr": 0.01125845965718623,
+      "tpr": 0.9999741675492754,
+      "precision": 0.9666625046822325,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 1.0
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 1.0
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 1.0
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 1.0
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.9923371647509579
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 1.0
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 1.0
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 1.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9999741675492754,
+      "tpr_at_fpr_5pct": 1.0
+    },
+    {
+      "method": "M2",
+      "version": "corrected",
+      "seed": 42,
+      "configuration": "CNN1D_fixed",
+      "source": "run-root/results/p7_corrected/m2_corrected.json",
+      "training_seconds": 2183.883403301239,
+      "cpu_latency_ms_per_flow": 0.05881591796875,
+      "ap": 0.9963203121638626,
+      "roc_auc": 0.9991129724024872,
+      "accuracy": 0.9896178042259923,
+      "macro_f1": 0.9861696961898525,
+      "fpr": 0.012493938563386814,
+      "tpr": 0.9960863837152231,
+      "precision": 0.963000424564821,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 0.9
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 0.9998598360081296
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 0.9982378854625551
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 0.9999579195421646
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.9348659003831418
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 0.5578583765112263
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.2
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 0.990990990990991
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 0.6363636363636364
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 0.5
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 0.6666666666666666
+        }
+      },
+      "tpr_at_fpr_1pct": 0.99354188731885,
+      "tpr_at_fpr_5pct": 0.9998579215210147
+    },
+    {
+      "method": "M2",
+      "version": "corrected",
+      "seed": 43,
+      "configuration": "CNN1D_fixed",
+      "source": "run-root/results/p7_corrected/m2_corrected.json",
+      "training_seconds": 2208.1477427482605,
+      "cpu_latency_ms_per_flow": 0.05871630859375,
+      "ap": 0.9544475126355015,
+      "roc_auc": 0.9935973127696053,
+      "accuracy": 0.9181217952997199,
+      "macro_f1": 0.8766416202716749,
+      "fpr": 0.006480993443106829,
+      "tpr": 0.6871690217250911,
+      "precision": 0.9719212992564716,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 0.05454545454545454
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 0.9873151587357208
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 0.7647577092511013
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 0.9433597037535768
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.6666666666666666
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 0.5164075993091537
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 0.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.8
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 0.4229739797466957
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.745744103743122,
+      "tpr_at_fpr_5pct": 0.999870837746377
+    },
+    {
+      "method": "M2",
+      "version": "corrected",
+      "seed": 44,
+      "configuration": "CNN1D_fixed",
+      "source": "run-root/results/p7_corrected/m2_corrected.json",
+      "training_seconds": 1717.308890581131,
+      "cpu_latency_ms_per_flow": 0.0580166015625,
+      "ap": 0.9954442304593223,
+      "roc_auc": 0.9986125848533659,
+      "accuracy": 0.9936168251334332,
+      "macro_f1": 0.9914482683226418,
+      "fpr": 0.007020724842402648,
+      "tpr": 0.9955697347007311,
+      "precision": 0.9788555318500457,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 0.9636363636363636
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 0.9998598360081296
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 0.9938325991189427
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 0.9998316781686585
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.8888888888888888
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 0.5544041450777202
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 0.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.0
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 0.9993653596755057
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 0.990990990990991
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9956730645036295,
+      "tpr_at_fpr_5pct": 0.999870837746377
+    },
+    {
+      "method": "M2",
+      "version": "corrected",
+      "seed": 45,
+      "configuration": "CNN1D_fixed",
+      "source": "run-root/results/p7_corrected/m2_corrected.json",
+      "training_seconds": 1753.5896139144897,
+      "cpu_latency_ms_per_flow": 0.061976464843749995,
+      "ap": 0.9873385946102866,
+      "roc_auc": 0.998351812905091,
+      "accuracy": 0.9894048198056438,
+      "macro_f1": 0.9858655715306337,
+      "fpr": 0.011916257300078009,
+      "tpr": 0.9934514737413138,
+      "precision": 0.9645602638542281,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 0.02727272727272727
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 0.9998598360081296
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 0.9497797356828194
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 0.9994950345059754
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.8084291187739464
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 0.540587219343696
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.2
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 0.990990990990991
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9822531063521996,
+      "tpr_at_fpr_5pct": 0.9998450052956523
+    },
+    {
+      "method": "M2",
+      "version": "corrected",
+      "seed": 46,
+      "configuration": "CNN1D_fixed",
+      "source": "run-root/results/p7_corrected/m2_corrected.json",
+      "training_seconds": 2353.947327375412,
+      "cpu_latency_ms_per_flow": 0.07883623046874999,
+      "ap": 0.9976960680866291,
+      "roc_auc": 0.999282765227131,
+      "accuracy": 0.9895637634029189,
+      "macro_f1": 0.9860925894020957,
+      "fpr": 0.012346355758891864,
+      "tpr": 0.9954147399963834,
+      "precision": 0.9633977123570223,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 0.8909090909090909
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 0.9998598360081296
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 0.9682819383259912
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 0.9998316781686585
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.9233716475095786
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 0.5544041450777202
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 1.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.0
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 1.0
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 0.990990990990991
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 0.18181818181818182
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.9925344217405905,
+      "tpr_at_fpr_5pct": 0.9998579215210147
+    },
+    {
+      "method": "M3",
+      "version": "corrected",
+      "seed": 42,
+      "configuration": "A05",
+      "source": "run-root/results/p7_corrected/m3/records/Autoencoder_seed42_q99.json",
+      "training_seconds": 399.81765019999875,
+      "cpu_latency_ms_per_flow": 0.0018831054687500001,
+      "ap": 0.8626766495145414,
+      "roc_auc": 0.9780520302145985,
+      "accuracy": 0.7931825912256777,
+      "macro_f1": 0.5969230498827083,
+      "fpr": 0.011144610065147267,
+      "tpr": 0.19380796156131333,
+      "precision": 0.8502379873073436,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 0.05454545454545454
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 0.5612867054453711
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 0.43788546255506605
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 0.22437300117825282
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.4444444444444444
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 0.47150259067357514
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 0.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.8
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 0.021136282111420768
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.17696520368887397,
+      "tpr_at_fpr_5pct": 0.9601146960812172
+    },
+    {
+      "method": "M3",
+      "version": "corrected",
+      "seed": 43,
+      "configuration": "A05",
+      "source": "run-root/results/p7_corrected/m3/records/Autoencoder_seed43_q99.json",
+      "training_seconds": 202.08838560000004,
+      "cpu_latency_ms_per_flow": 0.001697265625,
+      "ap": 0.8465274647340879,
+      "roc_auc": 0.9758212869623253,
+      "accuracy": 0.7938279022306144,
+      "macro_f1": 0.5994713498318395,
+      "fpr": 0.011503025447492146,
+      "tpr": 0.19752783446565575,
+      "precision": 0.8486210532156928,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 0.05454545454545454
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 0.5558903917583573
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 0.46079295154185024
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 0.2143157717555967
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.45977011494252873
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 0.5146804835924007
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 0.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.8
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 0.036284870726525205
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.14795536152514788,
+      "tpr_at_fpr_5pct": 0.9048332515305727
+    },
+    {
+      "method": "M3",
+      "version": "corrected",
+      "seed": 44,
+      "configuration": "A05",
+      "source": "run-root/results/p7_corrected/m3/records/Autoencoder_seed44_q99.json",
+      "training_seconds": 251.1816775000043,
+      "cpu_latency_ms_per_flow": 0.00181962890625,
+      "ap": 0.8775666335622657,
+      "roc_auc": 0.9820325635537693,
+      "accuracy": 0.8054371425755856,
+      "macro_f1": 0.6336143613525506,
+      "fpr": 0.011621091691088107,
+      "tpr": 0.2450595437989202,
+      "precision": 0.8731648948409959,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 0.05454545454545454
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 0.7006797953605719
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 0.49162995594713654
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 0.24903214946978622
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.4674329501915709
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 0.5181347150259067
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 0.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.8
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 0.05659336111034464
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 1.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 1.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.19039807806566608,
+      "tpr_at_fpr_5pct": 0.9730696701196042
+    },
+    {
+      "method": "M3",
+      "version": "corrected",
+      "seed": 45,
+      "configuration": "A05",
+      "source": "run-root/results/p7_corrected/m3/records/Autoencoder_seed45_q99.json",
+      "training_seconds": 384.7127819999878,
+      "cpu_latency_ms_per_flow": 0.0014382812499999999,
+      "ap": 0.8789121594162699,
+      "roc_auc": 0.9811976759948526,
+      "accuracy": 0.8552087406263014,
+      "macro_f1": 0.7571526373918865,
+      "fpr": 0.011359659294554195,
+      "tpr": 0.4464880783239906,
+      "precision": 0.9277011432558638,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 0.05454545454545454
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 0.7159576704744551
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 0.47841409691629955
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 0.2866099983167817
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.3524904214559387
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 0.5354058721934369
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 0.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.8
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 0.4576032670180183
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.2106507194337527,
+      "tpr_at_fpr_5pct": 0.9828860013949523
+    },
+    {
+      "method": "M3",
+      "version": "corrected",
+      "seed": 46,
+      "configuration": "A05",
+      "source": "run-root/results/p7_corrected/m3/records/Autoencoder_seed46_q99.json",
+      "training_seconds": 307.34358729999803,
+      "cpu_latency_ms_per_flow": 0.00179267578125,
+      "ap": 0.8663943025619479,
+      "roc_auc": 0.9781790681847191,
+      "accuracy": 0.7997088153297921,
+      "macro_f1": 0.6169607115647993,
+      "fpr": 0.011498808795935149,
+      "tpr": 0.2214099351605487,
+      "precision": 0.8627510191756002,
+      "n_samples": 314577,
+      "family": {
+        "botnet": {
+          "support": 110,
+          "recall": 0.05454545454545454
+        },
+        "ddos": {
+          "support": 14269,
+          "recall": 0.6692830611815824
+        },
+        "dos goldeneye": {
+          "support": 1135,
+          "recall": 0.4722466960352423
+        },
+        "dos hulk": {
+          "support": 23764,
+          "recall": 0.2446137013970712
+        },
+        "dos slowhttptest": {
+          "support": 261,
+          "recall": 0.4559386973180077
+        },
+        "dos slowloris": {
+          "support": 579,
+          "recall": 0.5284974093264249
+        },
+        "ftp-patator": {
+          "support": 596,
+          "recall": 0.0
+        },
+        "heartbleed": {
+          "support": 2,
+          "recall": 1.0
+        },
+        "infiltration": {
+          "support": 5,
+          "recall": 0.8
+        },
+        "portscan": {
+          "support": 36241,
+          "recall": 0.022240004414889214
+        },
+        "ssh-patator": {
+          "support": 444,
+          "recall": 0.0
+        },
+        "web attack - brute force": {
+          "support": 11,
+          "recall": 0.0
+        },
+        "web attack - sql injection": {
+          "support": 2,
+          "recall": 0.0
+        },
+        "web attack - xss": {
+          "support": 3,
+          "recall": 0.0
+        }
+      },
+      "tpr_at_fpr_1pct": 0.19379504533595102,
+      "tpr_at_fpr_5pct": 0.9466430730283382
     }
-  },
-  "per_class_recall_mean": {
-    "GBDT G05": {
-      "botnet": 1.0,
-      "ddos": 0.9999479220914488,
-      "dos goldeneye": 1.0,
-      "dos hulk": 1.0,
-      "dos slowhttptest": 1.0,
-      "dos slowloris": 0.9987531172069826,
-      "ftp-patator": 0.9997752808988764,
-      "heartbleed": 1.0,
-      "infiltration": 1.0,
-      "portscan": 1.0,
-      "ssh-patator": 1.0,
-      "web attack - brute force": 1.0,
-      "web attack - sql injection": 1.0,
-      "web attack - xss": 1.0
-    },
-    "1D-CNN": {
-      "botnet": 0.0047619047619047615,
-      "ddos": 0.6883449640662431,
-      "dos goldeneye": 0.5271076523994812,
-      "dos hulk": 0.8495502104165862,
-      "dos slowhttptest": 0.22525510204081634,
-      "dos slowloris": 0.24937655860349128,
-      "ftp-patator": 0.6191011235955056,
-      "heartbleed": 0.8,
-      "infiltration": 0.0,
-      "portscan": 0.19373466146961166,
-      "ssh-patator": 0.1217391304347826,
-      "web attack - brute force": 0.0009090909090909091,
-      "web attack - sql injection": 0.0,
-      "web attack - xss": 0.002040816326530612
-    },
-    "Autoencoder A06": {
-      "botnet": 0.01984126984126984,
-      "ddos": 0.5358087699198,
-      "dos goldeneye": 0.41802853437094684,
-      "dos hulk": 0.8435581637774603,
-      "dos slowhttptest": 0.28494897959183674,
-      "dos slowloris": 0.5703241895261846,
-      "ftp-patator": 0.0,
-      "heartbleed": 1.0,
-      "infiltration": 0.0,
-      "portscan": 0.0,
-      "ssh-patator": 0.0,
-      "web attack - brute force": 0.0,
-      "web attack - sql injection": 0.0,
-      "web attack - xss": 0.016326530612244896
-    }
-  },
-  "corrected_full_rerun": {
-    "status": "reported_success_external_metrics_not_synced",
-    "local_smoke_evidence": {
-      "GBDT G05": "results/p7_corrected/m1/smoke/20261114T040513-420a234bebdf4cc287083b0b631d17a9/metrics.json",
-      "1D-CNN": "results/p7_corrected/m2_smoke/summary.json",
-      "Autoencoder A06": "results/p7_corrected/m3_smoke/search.json"
-    }
-  }
+  ],
+  "version_delta_note": "Difference of means across independent populations; not a paired confidence interval."
 }

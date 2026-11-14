@@ -57,7 +57,9 @@ def main():
                     'configuration': groups[method, version]['configuration'], 'metric': key,
                     'attack_family': '', 'support': '', 'mean': metric['mean'],
                     'sample_std': metric['sample_std']})
-            ax.set(xlabel=label, xlim=(0, 1.025))
+            upper = max(1.025, max(groups[m, v][key]['mean'] +
+                                  groups[m, v][key]['sample_std'] for m, v in order) + .025)
+            ax.set(xlabel=label, xlim=(0, upper))
             clean(ax)
         axes[0].set_yticks(range(len(order)), labels)
         axes[0].invert_yaxis()

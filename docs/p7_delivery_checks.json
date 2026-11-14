@@ -1,0 +1,226 @@
+{
+  "checked_at": "2026-11-14T15:23:33.003408+00:00",
+  "status": "passed",
+  "scope": "Final-file checks and rendered-artifact review. No training or model inference.",
+  "summary_groups": 8,
+  "scalar_seed_rows": 40,
+  "version_delta_points": 12,
+  "corrected_records": {
+    "M1": 20,
+    "M2": 5,
+    "M3": 10
+  },
+  "aggregation": "Five seeds 42-46, sample standard deviation ddof=1",
+  "collection_unit_tests": {
+    "passed": 9,
+    "failed": 0
+  },
+  "paper_section_words_including_headings": [
+    397,
+    404
+  ],
+  "figure_pairs_reviewed": 4,
+  "png_dpi": 300,
+  "docx_rendered_pages_reviewed": {
+    "交付登记表": 3,
+    "进度看板": 2,
+    "问题记录": 4
+  },
+  "table_cell_changes": {
+    "交付登记表": {
+      "changed_existing_cells": [
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          4
+        ]
+      ],
+      "new_rows": 0
+    },
+    "进度看板": {
+      "changed_existing_cells": [
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          3
+        ]
+      ],
+      "new_rows": 0
+    },
+    "问题记录": {
+      "changed_existing_cells": [
+        [
+          15,
+          5
+        ],
+        [
+          16,
+          5
+        ],
+        [
+          18,
+          5
+        ]
+      ],
+      "new_rows": 5
+    }
+  },
+  "pending_review": [
+    "P8 acceptance and whole-paper figure numbering",
+    "M2 eight-configuration evidence and original P3 export issues",
+    "AP/ROC-AUC replacement for the originally planned PR-curve figure"
+  ],
+  "limitations_reference": "results/p7_acceptance.json",
+  "files": {
+    "results/summary.csv": {
+      "bytes": 3978,
+      "sha256": "45f008ab42673bc4b24b0ce2d76778237ea62c829157cdee0a7039d6668c7c03",
+      "hash_scope": "LF-normalized text"
+    },
+    "results/p7_figure_data.json": {
+      "bytes": 108224,
+      "sha256": "873e4ceec9df9fe7d975f9afeacfc711e7bce81559f6805c7824787dac5a4a52",
+      "hash_scope": "raw bytes"
+    },
+    "results/p7_plot_values.csv": {
+      "bytes": 11390,
+      "sha256": "93721ad5dfd8ce458493d886e35ecfe94f80d15385450ad057e9c3f5a5427368",
+      "hash_scope": "LF-normalized text"
+    },
+    "docs/p7_text.md": {
+      "bytes": 6955,
+      "sha256": "81ea2e490f0c240b940eb4576400cbd818089cd36f2db4e8e464279f92b805bc",
+      "hash_scope": "LF-normalized text"
+    },
+    "docs/p7_results_and_handover.md": {
+      "bytes": 5543,
+      "sha256": "7dea015205481c9a7f238b49b71fd6feaac1628cdb8fe5b978a91d17835f391a",
+      "hash_scope": "LF-normalized text"
+    },
+    "figures/fig_p7_overall_performance.png": {
+      "bytes": 144944,
+      "sha256": "32b57511832a1d625c70d785e1087fb69925183ea5b09d1d259a40257d01911f",
+      "hash_scope": "raw bytes"
+    },
+    "figures/fig_p7_overall_performance.pdf": {
+      "bytes": 20472,
+      "sha256": "c4c4b04ad516070441f2188338449f1829fdac959f1bd495c3274e6c9e8a696f",
+      "hash_scope": "raw bytes"
+    },
+    "figures/fig_p7_tpr_at_fpr.png": {
+      "bytes": 153598,
+      "sha256": "04aa1cd5d2bc0cc4b6e7b443ea9dc7363f2c989fd0648ad908a0bb395786de6a",
+      "hash_scope": "raw bytes"
+    },
+    "figures/fig_p7_tpr_at_fpr.pdf": {
+      "bytes": 20540,
+      "sha256": "769c495ae071a5ec5d2bba466ed3c48cb60377c4c16e054b74559ef191ffdb8b",
+      "hash_scope": "raw bytes"
+    },
+    "figures/fig_p7_family_recall.png": {
+      "bytes": 549872,
+      "sha256": "a40108cec91916edf65d0026bcd9a35827cdc69a85cd496bcf67938e1c7236ab",
+      "hash_scope": "raw bytes"
+    },
+    "figures/fig_p7_family_recall.pdf": {
+      "bytes": 27176,
+      "sha256": "93f2ab68e9c7368fcc1c5bc705c101bb802cd7a090515c69b51ce5d2ac1bc08f",
+      "hash_scope": "raw bytes"
+    },
+    "figures/fig_p7_version_delta.png": {
+      "bytes": 150850,
+      "sha256": "2ef730358d948dfc772daaaba7b1a9ec24405ce6352388a19c21cef4d35c1431",
+      "hash_scope": "raw bytes"
+    },
+    "figures/fig_p7_version_delta.pdf": {
+      "bytes": 17055,
+      "sha256": "d39fed202a6923cdb9e3a258737c0e03c1ef25ea6c7e40c541bbc30cdf845a70",
+      "hash_scope": "raw bytes"
+    },
+    "交付登记表.docx": {
+      "bytes": 34813,
+      "sha256": "8bc0f80a87b073cb4a3f5d9cfeee8f7dbad4fd176a2a9035590cf9cb33371933",
+      "hash_scope": "raw bytes"
+    },
+    "进度看板.docx": {
+      "bytes": 31190,
+      "sha256": "821879aef6450947f50d3649ed759605bff7a307f97e01dcfd1c849cc7c65aa4",
+      "hash_scope": "raw bytes"
+    },
+    "问题记录.docx": {
+      "bytes": 43742,
+      "sha256": "2fdc3b34ee7438fd8604f3a9ca6ab719b908917212028efc546bc2611e5306ec",
+      "hash_scope": "raw bytes"
+    },
+    "results/m1_corrected.json": {
+      "bytes": 111090,
+      "sha256": "e6640b8359deda3ddea3da407a5a51e5ecf8b7fd1a34cc0d6d09dc83d328cbdf",
+      "hash_scope": "raw bytes"
+    },
+    "results/m2_corrected.json": {
+      "bytes": 27097,
+      "sha256": "2eca3249f22d7aa623ed45fae76e748d5f968110d77345c89d13cb8001987a9c",
+      "hash_scope": "raw bytes"
+    },
+    "results/m3_corrected.json": {
+      "bytes": 112283,
+      "sha256": "b6eced7fe88c5a92b76293c0e9b26c1b83cdcbb61db22c495c071a0fc98f31c1",
+      "hash_scope": "raw bytes"
+    },
+    "results/p7_corrected_summary/m1_execution_approval.json": {
+      "bytes": 2386,
+      "sha256": "7365edb24ba0b2779289484556c216f891fe76b150713c638a3185927c0eeb52",
+      "hash_scope": "raw bytes"
+    },
+    "results/p7_corrected_summary/m1_validation_frozen.json": {
+      "bytes": 18174,
+      "sha256": "b604eb3e6fa24127153f311280526f188b9b30c4e695185ca71d5ecd270130f4",
+      "hash_scope": "raw bytes"
+    },
+    "results/p7_corrected_summary/m3_search.json": {
+      "bytes": 226877,
+      "sha256": "218d0e483ce22f169e88390a5d1deca6a4778cd6d96735b3557d61d54100863b",
+      "hash_scope": "raw bytes"
+    },
+    "results/p7_corrected_summary/receipts.json": {
+      "bytes": 5979,
+      "sha256": "8ecb95797d34bd5cdb9bddd016cc47fb90b87ba39dd1c0f49abd3610f4e07cb0",
+      "hash_scope": "raw bytes"
+    },
+    "results/p7_corrected_summary/source_manifest.json": {
+      "bytes": 8979,
+      "sha256": "1f7c80c7b5a3a8ad0ed18f8e8890b7825a4ff9a4f76fd9af093318002870403f",
+      "hash_scope": "raw bytes"
+    }
+  }
+}

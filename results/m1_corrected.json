@@ -1,0 +1,3737 @@
+{
+  "summary_kind": "compact_formal_test_records",
+  "audit": {
+    "status": "passed",
+    "required_training_commit": "3632afa39a6d07442c5c7a16054dbb6aa0fd0b9b",
+    "m1_run": "results/p7_corrected/m1/formal/20261114T064300-b39a90da491044399022989efb1a4dc0",
+    "m1_approval_hash": "8cea962ee3c6a221bb7307799d53dcf016779440b4dbebdeeea281e399917718",
+    "corrected_test_rows": 314577,
+    "limitations": [
+      "M2 base evaluator does not export per-row scores; row-order identity is not independently checked here.",
+      "This is file/provenance verification, not an independent replay of models.",
+      "CPU timings from different machines are not a controlled speed comparison."
+    ]
+  },
+  "records": [
+    {
+      "schema_version": "1",
+      "method": "M1_GBDT",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 42,
+      "model_id": "G05",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.01,
+        "threshold": 0.0013908209417744881,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 2379,
+        "validation_false_positives": 2080,
+        "actual_validation_fpr": 0.008742287453136295
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999998647522581,
+          "roc_auc": 0.9999999624203769
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9928729690981858,
+          "macro_f1": 0.990489123734535,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 234913,
+            "fp": 2242,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.009453732790790833,
+          "precision": 0.9718567985539265,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 124,
+            "fpr": 0.04936305732484077
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 0.0003415487761168856,
+              "tpr": 1.0,
+              "threshold": 0.40025648178791956,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.0003415487761168856,
+              "tpr": 1.0,
+              "threshold": 0.40025648178791956,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.0003415487761168856,
+              "tpr": 1.0,
+              "threshold": 0.40025648178791956,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 212.15810660000716,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "6de951531606f626f129e2a2092df34c323280291c21c94d11f0fddbebf0fa63",
+      "test_scores_sha256": "e7ca6971ddd973f4217eb7bc9f181f2d9730cac67fa9a08730c85cec048ebfc0"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_GBDT",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 42,
+      "model_id": "G05",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.05,
+        "threshold": 3.745171066518764e-05,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 11896,
+        "validation_false_positives": 11625,
+        "actual_validation_fpr": 0.048860140212841074
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999998647522581,
+          "roc_auc": 0.9999999624203769
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9662753475301754,
+          "macro_f1": 0.9565000520661879,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 226546,
+            "fp": 10609,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.04473445636819801,
+          "precision": 0.8794856357419545,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 1989,
+            "fpr": 0.7917993630573248
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 0.0003415487761168856,
+              "tpr": 1.0,
+              "threshold": 0.40025648178791956,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.0003415487761168856,
+              "tpr": 1.0,
+              "threshold": 0.40025648178791956,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.0003415487761168856,
+              "tpr": 1.0,
+              "threshold": 0.40025648178791956,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 212.15810660000716,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "6de951531606f626f129e2a2092df34c323280291c21c94d11f0fddbebf0fa63",
+      "test_scores_sha256": "e7ca6971ddd973f4217eb7bc9f181f2d9730cac67fa9a08730c85cec048ebfc0"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_GBDT",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 43,
+      "model_id": "G05",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.01,
+        "threshold": 0.001441991050185959,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 2379,
+        "validation_false_positives": 2373,
+        "actual_validation_fpr": 0.009973773137640592
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999998198931765,
+          "roc_auc": 0.9999999477425386
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9919828849534454,
+          "macro_f1": 0.9893140225730517,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 234633,
+            "fp": 2522,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.010634395226750437,
+          "precision": 0.9684529170419294,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 405,
+            "fpr": 0.16122611464968153
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 0.00038371529168687146,
+              "tpr": 1.0,
+              "threshold": 0.3473657737763987,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.00038371529168687146,
+              "tpr": 1.0,
+              "threshold": 0.3473657737763987,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.00038371529168687146,
+              "tpr": 1.0,
+              "threshold": 0.3473657737763987,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 207.795182700007,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "7f9aa6735dcc7fc5bf036b9cb3e77a36681a1755f34b2e1be83faf603c279151",
+      "test_scores_sha256": "a2829e4ae29245e385e5ca5272b03876ee9e672293fab965dfb06966d6c9bba8"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_GBDT",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 43,
+      "model_id": "G05",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.05,
+        "threshold": 3.320081979032711e-05,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 11896,
+        "validation_false_positives": 11183,
+        "actual_validation_fpr": 0.047002404129049616
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999998198931765,
+          "roc_auc": 0.9999999477425386
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9677185553934331,
+          "macro_f1": 0.9582878525635958,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 227000,
+            "fp": 10155,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.04282009656132066,
+          "precision": 0.8840448976329401,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 2194,
+            "fpr": 0.8734076433121019
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 0.00038371529168687146,
+              "tpr": 1.0,
+              "threshold": 0.3473657737763987,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.00038371529168687146,
+              "tpr": 1.0,
+              "threshold": 0.3473657737763987,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.00038371529168687146,
+              "tpr": 1.0,
+              "threshold": 0.3473657737763987,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 207.795182700007,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "7f9aa6735dcc7fc5bf036b9cb3e77a36681a1755f34b2e1be83faf603c279151",
+      "test_scores_sha256": "a2829e4ae29245e385e5ca5272b03876ee9e672293fab965dfb06966d6c9bba8"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_GBDT",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 44,
+      "model_id": "G05",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.01,
+        "threshold": 0.0018610951851506209,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 2379,
+        "validation_false_positives": 2137,
+        "actual_validation_fpr": 0.008981859753534742
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999998409331382,
+          "roc_auc": 0.9999999546049045
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9925900494950362,
+          "macro_f1": 0.9901153090564565,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 234824,
+            "fp": 2331,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.009829014779363708,
+          "precision": 0.9707722593507454,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 252,
+            "fpr": 0.10031847133757962
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 0.0003415487761168856,
+              "tpr": 1.0,
+              "threshold": 0.37616318281457045,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.0003415487761168856,
+              "tpr": 1.0,
+              "threshold": 0.37616318281457045,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.0003415487761168856,
+              "tpr": 1.0,
+              "threshold": 0.37616318281457045,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 206.51062079999247,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "36c42ee4e8f0f8020b50fd0395d4530b42bcabd142f5b70e029c42dc42dc7f25",
+      "test_scores_sha256": "452d58508e6cc4664f468183271091fb0cf082c7628b8a59f9e2a66a6077f79b"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_GBDT",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 44,
+      "model_id": "G05",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.05,
+        "threshold": 3.0442843354302505e-05,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 11896,
+        "validation_false_positives": 11890,
+        "actual_validation_fpr": 0.04997394125855315
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999998409331382,
+          "roc_auc": 0.9999999546049045
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9653916211293261,
+          "macro_f1": 0.9554083180092561,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 226268,
+            "fp": 10887,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.04590668550104362,
+          "precision": 0.8767169824140235,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 2164,
+            "fpr": 0.8614649681528662
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 0.0003415487761168856,
+              "tpr": 1.0,
+              "threshold": 0.37616318281457045,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.0003415487761168856,
+              "tpr": 1.0,
+              "threshold": 0.37616318281457045,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.0003415487761168856,
+              "tpr": 1.0,
+              "threshold": 0.37616318281457045,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 206.51062079999247,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "36c42ee4e8f0f8020b50fd0395d4530b42bcabd142f5b70e029c42dc42dc7f25",
+      "test_scores_sha256": "452d58508e6cc4664f468183271091fb0cf082c7628b8a59f9e2a66a6077f79b"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_GBDT",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 45,
+      "model_id": "G05",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.01,
+        "threshold": 0.0015393879563836788,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 2379,
+        "validation_false_positives": 2375,
+        "actual_validation_fpr": 0.009982179183268608
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999998522422144,
+          "roc_auc": 0.9999999583084038
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9921100398312654,
+          "macro_f1": 0.9894817247215709,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 234673,
+            "fp": 2482,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.010465729164470495,
+          "precision": 0.9689377252703244,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 381,
+            "fpr": 0.151671974522293
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 0.00038793194324387005,
+              "tpr": 1.0,
+              "threshold": 0.3126974312906465,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.00038793194324387005,
+              "tpr": 1.0,
+              "threshold": 0.3126974312906465,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.00038793194324387005,
+              "tpr": 1.0,
+              "threshold": 0.3126974312906465,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 205.46150840001064,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "dbfd8f6cf2ede83e756cc9765548dc807e468886ea58b7bd60a6d47de8c7f17c",
+      "test_scores_sha256": "a3725a0d4cd1a46a5fc825526f407344725dc5248feb95be778619f6ea643e1c"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_GBDT",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 45,
+      "model_id": "G05",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.05,
+        "threshold": 3.086991211194493e-05,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 11896,
+        "validation_false_positives": 11560,
+        "actual_validation_fpr": 0.04858694372993057
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999998522422144,
+          "roc_auc": 0.9999999583084038
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9666186657002896,
+          "macro_f1": 0.9569247916499565,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 226654,
+            "fp": 10501,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.044279058000042164,
+          "precision": 0.880565949751487,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 1996,
+            "fpr": 0.7945859872611465
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 0.00038793194324387005,
+              "tpr": 1.0,
+              "threshold": 0.3126974312906465,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.00038793194324387005,
+              "tpr": 1.0,
+              "threshold": 0.3126974312906465,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.00038793194324387005,
+              "tpr": 1.0,
+              "threshold": 0.3126974312906465,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 205.46150840001064,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "dbfd8f6cf2ede83e756cc9765548dc807e468886ea58b7bd60a6d47de8c7f17c",
+      "test_scores_sha256": "a3725a0d4cd1a46a5fc825526f407344725dc5248feb95be778619f6ea643e1c"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_GBDT",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 46,
+      "model_id": "G05",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.01,
+        "threshold": 0.0015475615097400406,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 2379,
+        "validation_false_positives": 2214,
+        "actual_validation_fpr": 0.009305492510213346
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.999999864787644,
+          "roc_auc": 0.9999999624203769
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9924565368733251,
+          "macro_f1": 0.9899389994604743,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 234782,
+            "fp": 2373,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.010006114144757649,
+          "precision": 0.9702612945673288,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 279,
+            "fpr": 0.11106687898089172
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 0.0003246821698888912,
+              "tpr": 1.0,
+              "threshold": 0.47002196866113033,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.0003246821698888912,
+              "tpr": 1.0,
+              "threshold": 0.47002196866113033,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.0003246821698888912,
+              "tpr": 1.0,
+              "threshold": 0.47002196866113033,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 215.9291857999924,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "30f542e065e7767d53e86dcd9ad0a094b766de72318432593a0a20383120abe5",
+      "test_scores_sha256": "7b36995da70405cc177f4382be5dad919cbdf0a539ed3f4ba92636db8f5cfda8"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_GBDT",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 46,
+      "model_id": "G05",
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "max_bins": 255,
+        "early_stopping": false,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.05,
+        "threshold": 2.87970975282776e-05,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 11896,
+        "validation_false_positives": 11709,
+        "actual_validation_fpr": 0.049213194129217736
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.999999864787644,
+          "roc_auc": 0.9999999624203769
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9649052537216644,
+          "macro_f1": 0.9548084368834377,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 226115,
+            "fp": 11040,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.046551833189264404,
+          "precision": 0.8752006511270376,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 2167,
+            "fpr": 0.8626592356687898
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 0.0003246821698888912,
+              "tpr": 1.0,
+              "threshold": 0.47002196866113033,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.0003246821698888912,
+              "tpr": 1.0,
+              "threshold": 0.47002196866113033,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.0003246821698888912,
+              "tpr": 1.0,
+              "threshold": 0.47002196866113033,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 215.9291857999924,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "30f542e065e7767d53e86dcd9ad0a094b766de72318432593a0a20383120abe5",
+      "test_scores_sha256": "7b36995da70405cc177f4382be5dad919cbdf0a539ed3f4ba92636db8f5cfda8"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_RF_auxiliary",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 42,
+      "model_id": "RF_FIXED",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.01,
+        "threshold": 0.17614620420763383,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 2379,
+        "validation_false_positives": 2368,
+        "actual_validation_fpr": 0.009952758023570553
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999951323291689,
+          "roc_auc": 0.9999983850837793
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9918271202281158,
+          "macro_f1": 0.9891084798175105,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 234586,
+            "fp": 2569,
+            "fn": 2,
+            "tp": 77420
+          },
+          "tpr": 0.9999741675492754,
+          "fpr": 0.010832577849929371,
+          "precision": 0.9678830839240395,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 782,
+            "fpr": 0.31130573248407645
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 2.9516560898990113e-05,
+              "tpr": 0.9997933403942032,
+              "threshold": 0.5668345958025098,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.006793025658324724,
+              "tpr": 0.9999741675492754,
+              "threshold": 0.3072146743331024,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.012662604625666757,
+              "tpr": 1.0,
+              "threshold": 0.10356114041335979,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 259,
+              "recall": 0.9923371647509579
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 304.018129899996,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "5e3febf5cb78972c5bb547f980783ab3ea99a867a8a5bb9a7df197971b3d4ec1",
+      "test_scores_sha256": "f04ec271e8f01bc2eeb811498f6957b432d4ab91cbb1463a67c73ab69c00ff4f"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_RF_auxiliary",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 42,
+      "model_id": "RF_FIXED",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.05,
+        "threshold": 0.00046377519949770865,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 11896,
+        "validation_false_positives": 11842,
+        "actual_validation_fpr": 0.049772196163480775
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999951323291689,
+          "roc_auc": 0.9999983850837793
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9653407591781981,
+          "macro_f1": 0.9553455533241058,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 226252,
+            "fp": 10903,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.0459741519259556,
+          "precision": 0.8765581658647043,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 1927,
+            "fpr": 0.7671178343949044
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 2.9516560898990113e-05,
+              "tpr": 0.9997933403942032,
+              "threshold": 0.5668345958025098,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.006793025658324724,
+              "tpr": 0.9999741675492754,
+              "threshold": 0.3072146743331024,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.012662604625666757,
+              "tpr": 1.0,
+              "threshold": 0.10356114041335979,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 304.018129899996,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "5e3febf5cb78972c5bb547f980783ab3ea99a867a8a5bb9a7df197971b3d4ec1",
+      "test_scores_sha256": "f04ec271e8f01bc2eeb811498f6957b432d4ab91cbb1463a67c73ab69c00ff4f"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_RF_auxiliary",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 43,
+      "model_id": "RF_FIXED",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.01,
+        "threshold": 0.14127806807382384,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 2379,
+        "validation_false_positives": 2335,
+        "actual_validation_fpr": 0.009814058270708293
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999947069544682,
+          "roc_auc": 0.999998244568667
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.992278520044377,
+          "macro_f1": 0.9897038423554181,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 234728,
+            "fp": 2427,
+            "fn": 2,
+            "tp": 77420
+          },
+          "tpr": 0.9999741675492754,
+          "fpr": 0.010233813328835571,
+          "precision": 0.9696043683544779,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 602,
+            "fpr": 0.23964968152866242
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 2.1083257784992938e-05,
+              "tpr": 0.9997804241688409,
+              "threshold": 0.5878662523613004,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.006881575341021694,
+              "tpr": 0.9999741675492754,
+              "threshold": 0.2825026288326782,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.012607788155425776,
+              "tpr": 1.0,
+              "threshold": 0.09571956154120738,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 259,
+              "recall": 0.9923371647509579
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 344.24865360000695,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "379e22d8e888bdfe66ed5b2e78a75d7a7f634d026d87d697610fa38645e6c2b7",
+      "test_scores_sha256": "685b54549ded9d81a0c7a4ef771d9d154394808350a78a2d7d47e1bd2f7f600a"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_RF_auxiliary",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 43,
+      "model_id": "RF_FIXED",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.05,
+        "threshold": 0.0004396266019092544,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 11896,
+        "validation_false_positives": 11662,
+        "actual_validation_fpr": 0.04901565205695937
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999947069544682,
+          "roc_auc": 0.999998244568667
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9651150592700675,
+          "macro_f1": 0.9550671253046499,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 226181,
+            "fp": 10974,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.0462735341865025,
+          "precision": 0.8758541110457487,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 1859,
+            "fpr": 0.740047770700637
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 2.1083257784992938e-05,
+              "tpr": 0.9997804241688409,
+              "threshold": 0.5878662523613004,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.006881575341021694,
+              "tpr": 0.9999741675492754,
+              "threshold": 0.2825026288326782,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.012607788155425776,
+              "tpr": 1.0,
+              "threshold": 0.09571956154120738,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 344.24865360000695,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "379e22d8e888bdfe66ed5b2e78a75d7a7f634d026d87d697610fa38645e6c2b7",
+      "test_scores_sha256": "685b54549ded9d81a0c7a4ef771d9d154394808350a78a2d7d47e1bd2f7f600a"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_RF_auxiliary",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 44,
+      "model_id": "RF_FIXED",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.01,
+        "threshold": 0.1725267270988798,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 2379,
+        "validation_false_positives": 2373,
+        "actual_validation_fpr": 0.009973773137640592
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999959844188624,
+          "roc_auc": 0.99999866791129
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9922371947090856,
+          "macro_f1": 0.9896493077756707,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 234715,
+            "fp": 2440,
+            "fn": 2,
+            "tp": 77420
+          },
+          "tpr": 0.9999741675492754,
+          "fpr": 0.010288629799076554,
+          "precision": 0.9694465314300025,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 707,
+            "fpr": 0.28144904458598724
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 2.9516560898990113e-05,
+              "tpr": 0.9998320890702901,
+              "threshold": 0.5414789378565736,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.006843625477008708,
+              "tpr": 0.9999741675492754,
+              "threshold": 0.29514254525201467,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.013122219645379605,
+              "tpr": 1.0,
+              "threshold": 0.11015108449957582,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 259,
+              "recall": 0.9923371647509579
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 325.53065990000323,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "62ef28ca979492263802308417f4b2a5052219a8793ceee46f6f87ed82fc22c9",
+      "test_scores_sha256": "f542ea10f8bcaf245e98e8d9167be484c68117ffcfb1fa646985566d1f5cea56"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_RF_auxiliary",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 44,
+      "model_id": "RF_FIXED",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.05,
+        "threshold": 0.0005687131226379074,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 11896,
+        "validation_false_positives": 11894,
+        "actual_validation_fpr": 0.04999075334980918
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999959844188624,
+          "roc_auc": 0.99999866791129
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.965143669117577,
+          "macro_f1": 0.9551024108473105,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 226190,
+            "fp": 10965,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.04623558432248951,
+          "precision": 0.875943294828425,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 1861,
+            "fpr": 0.740843949044586
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 2.9516560898990113e-05,
+              "tpr": 0.9998320890702901,
+              "threshold": 0.5414789378565736,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.006843625477008708,
+              "tpr": 0.9999741675492754,
+              "threshold": 0.29514254525201467,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.013122219645379605,
+              "tpr": 1.0,
+              "threshold": 0.11015108449957582,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 325.53065990000323,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "62ef28ca979492263802308417f4b2a5052219a8793ceee46f6f87ed82fc22c9",
+      "test_scores_sha256": "f542ea10f8bcaf245e98e8d9167be484c68117ffcfb1fa646985566d1f5cea56"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_RF_auxiliary",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 45,
+      "model_id": "RF_FIXED",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.01,
+        "threshold": 0.1498054531757771,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 2379,
+        "validation_false_positives": 2375,
+        "actual_validation_fpr": 0.009982179183268608
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999956038466284,
+          "roc_auc": 0.9999985418833949
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9921926905018486,
+          "macro_f1": 0.9895905848965518,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 234701,
+            "fp": 2454,
+            "fn": 2,
+            "tp": 77420
+          },
+          "tpr": 0.9999741675492754,
+          "fpr": 0.010347662920874533,
+          "precision": 0.9692766106617923,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 644,
+            "fpr": 0.25636942675159236
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 3.794986401298729e-05,
+              "tpr": 0.9998320890702901,
+              "threshold": 0.5116186823042304,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.0068520587801227046,
+              "tpr": 0.9999741675492754,
+              "threshold": 0.2838907571278482,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.01375893403048639,
+              "tpr": 1.0,
+              "threshold": 0.08814830441860495,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 259,
+              "recall": 0.9923371647509579
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 318.9239820000075,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "0f2d438e65494659634c21e7411bc3d78bf42451a2a8ec6defc39db34605814e",
+      "test_scores_sha256": "e8c8f9261e85c1f9814e04ebc2228c596acaeb4d1b93ebcaa7fd3d8ac738a319"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_RF_auxiliary",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 45,
+      "model_id": "RF_FIXED",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.05,
+        "threshold": 0.00045852984793743603,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 11896,
+        "validation_false_positives": 11893,
+        "actual_validation_fpr": 0.04998655032699517
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999956038466284,
+          "roc_auc": 0.9999985418833949
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9655410281107646,
+          "macro_f1": 0.9555927325867903,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 226315,
+            "fp": 10840,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.04570850287786469,
+          "precision": 0.8771838390247219,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 1894,
+            "fpr": 0.7539808917197452
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 3.794986401298729e-05,
+              "tpr": 0.9998320890702901,
+              "threshold": 0.5116186823042304,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.0068520587801227046,
+              "tpr": 0.9999741675492754,
+              "threshold": 0.2838907571278482,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.01375893403048639,
+              "tpr": 1.0,
+              "threshold": 0.08814830441860495,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 318.9239820000075,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "0f2d438e65494659634c21e7411bc3d78bf42451a2a8ec6defc39db34605814e",
+      "test_scores_sha256": "e8c8f9261e85c1f9814e04ebc2228c596acaeb4d1b93ebcaa7fd3d8ac738a319"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_RF_auxiliary",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 46,
+      "model_id": "RF_FIXED",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.01,
+        "threshold": 0.19704449443542457,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 2379,
+        "validation_false_positives": 2363,
+        "actual_validation_fpr": 0.009931742909500513
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999957827593425,
+          "roc_auc": 0.9999985964555428
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9915060541616202,
+          "macro_f1": 0.9886854495840873,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 234485,
+            "fp": 2670,
+            "fn": 2,
+            "tp": 77420
+          },
+          "tpr": 0.9999741675492754,
+          "fpr": 0.01125845965718623,
+          "precision": 0.9666625046822325,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 1041,
+            "fpr": 0.4144108280254777
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 2.5299909341991524e-05,
+              "tpr": 0.9998450052956523,
+              "threshold": 0.542136345357659,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.007261073981151568,
+              "tpr": 0.9999741675492754,
+              "threshold": 0.2731744402720804,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.016347958086483524,
+              "tpr": 1.0,
+              "threshold": 0.08922981638948649,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 259,
+              "recall": 0.9923371647509579
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 306.1216451999935,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "eec72b8e3fb73a8bbd0e4699f03aede8f16e00fa2e871a6f24e7566b3c553e5d",
+      "test_scores_sha256": "70fa443cbfd4395c37715f959e8a92d7df0cf4874f765d9816d90f6ae01b92c3"
+    },
+    {
+      "schema_version": "1",
+      "method": "M1_RF_auxiliary",
+      "dataset": {
+        "version": "corrected",
+        "protocol": "stratified",
+        "variant": "main",
+        "features": 140,
+        "split": "test",
+        "rows": 314577
+      },
+      "seed": 46,
+      "model_id": "RF_FIXED",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "max_leaf_nodes": 4096,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "n_jobs": 4,
+        "class_weight": null
+      },
+      "threshold_calibration": {
+        "target_fpr": 0.05,
+        "threshold": 0.0007056531126173602,
+        "operator": ">=",
+        "source": "validation_benign_quantile",
+        "boundary_rule": "strict_nextafter_benign_boundary",
+        "validation_benign_support": 237924,
+        "allowed_false_positives": 11896,
+        "validation_false_positives": 11866,
+        "actual_validation_fpr": 0.04987306871101696
+      },
+      "metrics": {
+        "curves": {
+          "average_precision": 0.9999957827593425,
+          "roc_auc": 0.9999985964555428
+        },
+        "classification": {
+          "status": "ok",
+          "n_samples": 314577,
+          "n_negative": 237155,
+          "n_positive": 77422,
+          "accuracy": 0.9656109632935657,
+          "macro_f1": 0.9556790765238672,
+          "macro_f1_convention": "fixed_labels_0_1_zero_division_0",
+          "both_true_classes_present": true,
+          "confusion_matrix": {
+            "tn": 226337,
+            "fp": 10818,
+            "fn": 0,
+            "tp": 77422
+          },
+          "tpr": 1.0,
+          "fpr": 0.045615736543610716,
+          "precision": 0.8774025385312784,
+          "attempted": {
+            "status": "ok",
+            "support": 2512,
+            "false_positives": 1935,
+            "fpr": 0.7703025477707006
+          }
+        },
+        "operating_points": {
+          "status": "ok",
+          "protocol": "empirical_roc",
+          "operating_points": [
+            {
+              "target_fpr": 0.001,
+              "actual_fpr": 2.5299909341991524e-05,
+              "tpr": 0.9998450052956523,
+              "threshold": 0.542136345357659,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.01,
+              "actual_fpr": 0.007261073981151568,
+              "tpr": 0.9999741675492754,
+              "threshold": 0.2731744402720804,
+              "threshold_kind": "finite"
+            },
+            {
+              "target_fpr": 0.05,
+              "actual_fpr": 0.016347958086483524,
+              "tpr": 1.0,
+              "threshold": 0.08922981638948649,
+              "threshold_kind": "finite"
+            }
+          ]
+        },
+        "per_class": {
+          "status": "ok",
+          "classes": [
+            {
+              "attack_family": "botnet",
+              "support": 110,
+              "detected": 110,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ddos",
+              "support": 14269,
+              "detected": 14269,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos goldeneye",
+              "support": 1135,
+              "detected": 1135,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos hulk",
+              "support": 23764,
+              "detected": 23764,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowhttptest",
+              "support": 261,
+              "detected": 261,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "dos slowloris",
+              "support": 579,
+              "detected": 579,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ftp-patator",
+              "support": 596,
+              "detected": 596,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "heartbleed",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "infiltration",
+              "support": 5,
+              "detected": 5,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "portscan",
+              "support": 36241,
+              "detected": 36241,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "ssh-patator",
+              "support": 444,
+              "detected": 444,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - brute force",
+              "support": 11,
+              "detected": 11,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - sql injection",
+              "support": 2,
+              "detected": 2,
+              "recall": 1.0
+            },
+            {
+              "attack_family": "web attack - xss",
+              "support": 3,
+              "detected": 3,
+              "recall": 1.0
+            }
+          ]
+        }
+      },
+      "training_seconds": 306.1216451999935,
+      "test_row_ids_sha256": "1cf2be7c92e78a68fc4a24a7bde58477fce1d72ec3aabc36c77d246bdb8466e4",
+      "model_sha256": "eec72b8e3fb73a8bbd0e4699f03aede8f16e00fa2e871a6f24e7566b3c553e5d",
+      "test_scores_sha256": "70fa443cbfd4395c37715f959e8a92d7df0cf4874f765d9816d90f6ae01b92c3"
+    }
+  ]
+}

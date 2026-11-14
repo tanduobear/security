@@ -111,6 +111,22 @@ GBDT八配置×五种子共40次正式搜索已完成，选优配置为G05；固
 正式图为单面板局部范围：Recall 0.98–1.00、Precision 0.99–1.00；图注已声明坐标范围。图例AP由每种子的完整真实Validation预测独立复算，不是局部区间积分。绘图脚本为[plot_pr_curve_enlarged.py](methods/m1/plot_pr_curve_enlarged.py)。
 完整模型、逐样本预测、缓存和运行日志仅保存在本地被忽略的实验目录中，GitHub公开摘要不是完整归档备份。统一协议保持approved；原execution.proposed.json仍pending。基础Test和Bootstrap分别使用独立获批的execution.final-test.v1.json、execution.bootstrap.v1.json；扩展实验不随其自动启动。
 
+## P7 交付导航
+
+2026年11月14日，训练提交3632afa上的M1–M3 corrected正式复跑完成。M3八配置五种子搜索获选A05，M1与M2分别沿用G05和固定CNN。结果文件验收、实际数值汇总、四张图及§4.4和Discussion已整理，P8终稿审阅待完成。
+
+| 交付项 | 位置 |
+|---|---|
+| 汇总及五种子标量 | [summary.csv](results/summary.csv)、[完整制图数据](results/p7_figure_data.json) |
+| corrected结果 | [M1](results/m1_corrected.json)、[M2](results/m2_corrected.json)、[M3](results/m3_corrected.json) |
+| 来源、审批、阶段收据与40次搜索 | [p7_corrected_summary](results/p7_corrected_summary/) |
+| 验收范围和限制 | [p7_acceptance.json](results/p7_acceptance.json) |
+| 四图、结论与交接 | [P7结果与交接](docs/p7_results_and_handover.md) |
+| Results 4.4和Discussion | [p7_text.md](docs/p7_text.md) |
+| 运行与重绘命令 | [运行说明](docs/p7_run_instructions.md) |
+
+M2八配置证据及原P3导出问题仍在问题记录中开放。图1采用AP/AUC对比，图2为TPR@FPR，图3为攻击族召回，图4为版本均值差。完整模型、曲线和预测保存在本机隔离运行目录。
+
 ## P6 交付导航
 
 M3 自编码器八配置×五种子共40次搜索及原版分层主实验 Test 评估已完成，获选 A06。q95、q99 阈值分别由验证集负类重建误差标定；两个辅助方法各拟合一次，不进入主模型五种子统计。

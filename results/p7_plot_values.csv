@@ -1,61 +1,121 @@
-﻿figure,method,metric,attack_family,support,mean,sample_std,scope
-Figure 1,GBDT G05,Average precision,,,0.9994951360517572,7.332045809238854e-05,original/stratified/main Test; seeds 42-46
-Figure 1,GBDT G05,ROC-AUC,,,0.9999065491704137,1.0868787547261024e-05,original/stratified/main Test; seeds 42-46
-Figure 1,1D-CNN,Average precision,,,0.9171579858667075,0.023259602082069463,original/stratified/main Test; seeds 42-46
-Figure 1,1D-CNN,ROC-AUC,,,0.9808876823626889,0.003971070784736027,original/stratified/main Test; seeds 42-46
-Figure 1,Autoencoder A06,Average precision,,,0.7427099837893828,0.006169874488104447,original/stratified/main Test; seeds 42-46
-Figure 1,Autoencoder A06,ROC-AUC,,,0.9040028795779489,0.00310867522356135,original/stratified/main Test; seeds 42-46
-Figure 2,GBDT G05,TPR at FPR 1%,,,0.9999656453980449,6.9835659374295015e-06,original/stratified/main Test; seeds 42-46
-Figure 2,GBDT G05,TPR at FPR 5%,,,0.9999968768543677,6.9835659374295015e-06,original/stratified/main Test; seeds 42-46
-Figure 2,1D-CNN,TPR at FPR 1%,,,0.6114775601986321,0.06998797541529252,original/stratified/main Test; seeds 42-46
-Figure 2,1D-CNN,TPR at FPR 5%,,,0.795074799337893,0.09863805255991973,original/stratified/main Test; seeds 42-46
-Figure 2,Autoencoder A06,TPR at FPR 1%,,,0.5272275836222243,0.016424304119053428,original/stratified/main Test; seeds 42-46
-Figure 2,Autoencoder A06,TPR at FPR 5%,,,0.6177207283175614,0.013817972171981887,original/stratified/main Test; seeds 42-46
-Figure 4,GBDT G05,Accuracy,,,0.9925186989242347,0.0019851926797289127,original/stratified/main Test; seeds 42-46
-Figure 4,GBDT G05,Macro-F1,,,0.9877844971685287,0.0031776869668226596,original/stratified/main Test; seeds 42-46
-Figure 4,1D-CNN,Accuracy,,,0.9210830370746571,0.012573962171911666,original/stratified/main Test; seeds 42-46
-Figure 4,1D-CNN,Macro-F1,,,0.8478406416679188,0.029152904627490803,original/stratified/main Test; seeds 42-46
-Figure 4,Autoencoder A06,Accuracy,,,0.9050210074333995,0.0024480672351088213,original/stratified/main Test; seeds 42-46
-Figure 4,Autoencoder A06,Macro-F1,,,0.8073764347330178,0.007224291184625135,original/stratified/main Test; seeds 42-46
-Figure 3,GBDT G05,Attack-family recall,Botnet,252,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,Botnet,252,0.0047619047619047615,0.0043470044246441755,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,Botnet,252,0.01984126984126984,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,DDoS,19202,0.9999479220914488,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,DDoS,19202,0.6883449640662431,0.11672722487407906,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,DDoS,19202,0.5358087699198,0.04821118677631611,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,DoS GoldenEye,1542,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,DoS GoldenEye,1542,0.5271076523994812,0.16668268935381936,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,DoS GoldenEye,1542,0.41802853437094684,0.02892812860626859,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,DoS Hulk,25901,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,DoS Hulk,25901,0.8495502104165862,0.06311631727943508,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,DoS Hulk,25901,0.8435581637774603,0.004709214229052222,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,DoS SlowHTTPTest,784,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,DoS SlowHTTPTest,784,0.22525510204081634,0.20515819365347565,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,DoS SlowHTTPTest,784,0.28494897959183674,0.10327537611221935,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,DoS Slowloris,802,0.9987531172069826,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,DoS Slowloris,802,0.24937655860349128,0.23592623829912,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,DoS Slowloris,802,0.5703241895261846,0.0060829480886037054,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,FTP-Patator,890,0.9997752808988764,0.00050248718595503,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,FTP-Patator,890,0.6191011235955056,0.08099245524018023,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,FTP-Patator,890,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,Heartbleed,2,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,Heartbleed,2,0.8,0.4472135954999579,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,Heartbleed,2,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,Infiltration,5,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,Infiltration,5,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,Infiltration,5,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,PortScan,13854,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,PortScan,13854,0.19373466146961166,0.08869511481436079,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,PortScan,13854,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,SSH-Patator,483,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,SSH-Patator,483,0.1217391304347826,0.26759944495610577,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,SSH-Patator,483,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,Web Brute Force,220,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,Web Brute Force,220,0.0009090909090909091,0.0020327890704543543,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,Web Brute Force,220,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,Web SQL Injection,3,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,Web SQL Injection,3,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,Web SQL Injection,3,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,GBDT G05,Attack-family recall,Web XSS,98,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,1D-CNN,Attack-family recall,Web XSS,98,0.002040816326530612,0.004563404035713856,low-FPR rule: GBDT 1%; CNN 1%; AE q99
-Figure 3,Autoencoder A06,Attack-family recall,Web XSS,98,0.016326530612244896,0.01853663482100505,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+﻿figure,method,version,configuration,metric,attack_family,support,mean,sample_std
+fig_p7_overall_performance,M1,original,G05,ap,,,0.9994951360517571,7.332045809238855e-05
+fig_p7_overall_performance,M1,corrected,G05,ap,,,0.9999998485216862,1.8835025911339703e-08
+fig_p7_overall_performance,M2,original,CNN1D_fixed,ap,,,0.9171579858667075,0.023259602082069463
+fig_p7_overall_performance,M2,corrected,CNN1D_fixed,ap,,,0.9862493435911205,0.0182314342147072
+fig_p7_overall_performance,M3,original,A06,ap,,,0.7427099837893828,0.006169874488104446
+fig_p7_overall_performance,M3,corrected,A05,ap,,,0.8664154419578226,0.01313418892904172
+fig_p7_overall_performance,M1,original,G05,roc_auc,,,0.9999065491704138,1.0868787547261024e-05
+fig_p7_overall_performance,M1,corrected,G05,roc_auc,,,0.9999999570993202,6.1615875198613245e-09
+fig_p7_overall_performance,M2,original,CNN1D_fixed,roc_auc,,,0.980887682362689,0.003971070784736026
+fig_p7_overall_performance,M2,corrected,CNN1D_fixed,roc_auc,,,0.9977914896315361,0.002374315622410614
+fig_p7_overall_performance,M3,original,A06,roc_auc,,,0.9040028795779489,0.00310867522356135
+fig_p7_overall_performance,M3,corrected,A05,roc_auc,,,0.979056524982053,0.0025341191000660796
+fig_p7_tpr_at_fpr,M1,original,G05,tpr_at_fpr_1pct,,,0.9999656453980449,6.9835659374295015e-06
+fig_p7_tpr_at_fpr,M1,corrected,G05,tpr_at_fpr_1pct,,,1.0,0.0
+fig_p7_tpr_at_fpr,M2,original,CNN1D_fixed,tpr_at_fpr_1pct,,,0.6114775601986321,0.06998797541529252
+fig_p7_tpr_at_fpr,M2,corrected,CNN1D_fixed,tpr_at_fpr_1pct,,,0.9419493167316784,0.10980410776113883
+fig_p7_tpr_at_fpr,M3,original,A06,tpr_at_fpr_1pct,,,0.5272275836222243,0.016424304119053428
+fig_p7_tpr_at_fpr,M3,corrected,A05,tpr_at_fpr_1pct,,,0.18395288160987833,0.023429854799020204
+fig_p7_tpr_at_fpr,M1,original,G05,tpr_at_fpr_5pct,,,0.9999968768543677,6.9835659374295015e-06
+fig_p7_tpr_at_fpr,M1,corrected,G05,tpr_at_fpr_5pct,,,1.0,0.0
+fig_p7_tpr_at_fpr,M2,original,CNN1D_fixed,tpr_at_fpr_5pct,,,0.7950747993378932,0.09863805255991973
+fig_p7_tpr_at_fpr,M2,corrected,CNN1D_fixed,tpr_at_fpr_5pct,,,0.9998605047660871,1.0806489454346969e-05
+fig_p7_tpr_at_fpr,M3,original,A06,tpr_at_fpr_5pct,,,0.6177207283175614,0.013817972171981887
+fig_p7_tpr_at_fpr,M3,corrected,A05,tpr_at_fpr_5pct,,,0.9535093384309369,0.03043736473838892
+fig_p7_family_recall,M1,original,G05,family_recall,botnet,252,1.0,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,botnet,110,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,botnet,252,0.0047619047619047615,0.0043470044246441755
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,botnet,110,0.5672727272727273,0.48141492558759785
+fig_p7_family_recall,M3,original,A06,family_recall,botnet,252,0.01984126984126984,0.0
+fig_p7_family_recall,M3,corrected,A05,family_recall,botnet,110,0.05454545454545454,0.0
+fig_p7_family_recall,M1,original,G05,family_recall,ddos,19202,0.9999479220914488,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,ddos,14269,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,ddos,19202,0.6883449640662431,0.11672722487407906
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,ddos,14269,0.9973509005536478,0.0056101502273805046
+fig_p7_family_recall,M3,original,A06,family_recall,ddos,19202,0.5358087699198,0.04821118677631611
+fig_p7_family_recall,M3,corrected,A05,family_recall,ddos,14269,0.6406195248440676,0.07677465861877114
+fig_p7_family_recall,M1,original,G05,family_recall,dos goldeneye,1542,1.0,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,dos goldeneye,1135,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,dos goldeneye,1542,0.5271076523994812,0.16668268935381936
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,dos goldeneye,1135,0.9349779735682819,0.09717107081851654
+fig_p7_family_recall,M3,original,A06,family_recall,dos goldeneye,1542,0.41802853437094684,0.02892812860626859
+fig_p7_family_recall,M3,corrected,A05,family_recall,dos goldeneye,1135,0.46819383259911895,0.020270062391859314
+fig_p7_family_recall,M1,original,G05,family_recall,dos hulk,25901,1.0,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,dos hulk,23764,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,dos hulk,25901,0.8495502104165862,0.06311631727943508
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,dos hulk,23764,0.9884952028278068,0.025232096595452353
+fig_p7_family_recall,M3,original,A06,family_recall,dos hulk,25901,0.8435581637774603,0.004709214229052222
+fig_p7_family_recall,M3,corrected,A05,family_recall,dos hulk,23764,0.24378892442349773,0.027872301837877023
+fig_p7_family_recall,M1,original,G05,family_recall,dos slowhttptest,784,1.0,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,dos slowhttptest,261,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,dos slowhttptest,784,0.22525510204081634,0.20515819365347565
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,dos slowhttptest,261,0.8444444444444444,0.11099875413094845
+fig_p7_family_recall,M3,original,A06,family_recall,dos slowhttptest,784,0.28494897959183674,0.10327537611221935
+fig_p7_family_recall,M3,corrected,A05,family_recall,dos slowhttptest,261,0.43601532567049806,0.04742298374487603
+fig_p7_family_recall,M1,original,G05,family_recall,dos slowloris,802,0.9987531172069826,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,dos slowloris,579,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,dos slowloris,802,0.24937655860349128,0.23592623829912
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,dos slowloris,579,0.5447322970639032,0.017167217464302838
+fig_p7_family_recall,M3,original,A06,family_recall,dos slowloris,802,0.5703241895261846,0.0060829480886037054
+fig_p7_family_recall,M3,corrected,A05,family_recall,dos slowloris,579,0.5136442141623488,0.024956672702160187
+fig_p7_family_recall,M1,original,G05,family_recall,ftp-patator,890,0.9997752808988764,0.00050248718595503
+fig_p7_family_recall,M1,corrected,G05,family_recall,ftp-patator,596,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,ftp-patator,890,0.6191011235955056,0.08099245524018023
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,ftp-patator,596,0.8,0.4472135954999579
+fig_p7_family_recall,M3,original,A06,family_recall,ftp-patator,890,0.0,0.0
+fig_p7_family_recall,M3,corrected,A05,family_recall,ftp-patator,596,0.0,0.0
+fig_p7_family_recall,M1,original,G05,family_recall,heartbleed,2,1.0,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,heartbleed,2,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,heartbleed,2,0.8,0.4472135954999579
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,heartbleed,2,0.8,0.4472135954999579
+fig_p7_family_recall,M3,original,A06,family_recall,heartbleed,2,1.0,0.0
+fig_p7_family_recall,M3,corrected,A05,family_recall,heartbleed,2,1.0,0.0
+fig_p7_family_recall,M1,original,G05,family_recall,infiltration,5,1.0,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,infiltration,5,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,infiltration,5,0.0,0.0
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,infiltration,5,0.24000000000000002,0.3286335345030997
+fig_p7_family_recall,M3,original,A06,family_recall,infiltration,5,0.0,0.0
+fig_p7_family_recall,M3,corrected,A05,family_recall,infiltration,5,0.8,0.0
+fig_p7_family_recall,M1,original,G05,family_recall,portscan,13854,1.0,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,portscan,36241,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,portscan,13854,0.19373466146961166,0.08869511481436079
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,portscan,36241,0.8844678678844403,0.2579830726335899
+fig_p7_family_recall,M3,original,A06,family_recall,portscan,13854,0.0,0.0
+fig_p7_family_recall,M3,corrected,A05,family_recall,portscan,36241,0.11877155707623963,0.18995268931846285
+fig_p7_family_recall,M1,original,G05,family_recall,ssh-patator,483,1.0,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,ssh-patator,444,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,ssh-patator,483,0.1217391304347826,0.26759944495610577
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,ssh-patator,444,0.7927927927927928,0.4431846441891475
+fig_p7_family_recall,M3,original,A06,family_recall,ssh-patator,483,0.0,0.0
+fig_p7_family_recall,M3,corrected,A05,family_recall,ssh-patator,444,0.0,0.0
+fig_p7_family_recall,M1,original,G05,family_recall,web attack - brute force,220,1.0,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,web attack - brute force,11,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,web attack - brute force,220,0.0009090909090909091,0.0020327890704543543
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,web attack - brute force,11,0.7636363636363637,0.3613564893518507
+fig_p7_family_recall,M3,original,A06,family_recall,web attack - brute force,220,0.0,0.0
+fig_p7_family_recall,M3,corrected,A05,family_recall,web attack - brute force,11,0.2,0.4472135954999579
+fig_p7_family_recall,M1,original,G05,family_recall,web attack - sql injection,3,1.0,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,web attack - sql injection,2,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,web attack - sql injection,3,0.0,0.0
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,web attack - sql injection,2,0.1,0.22360679774997896
+fig_p7_family_recall,M3,original,A06,family_recall,web attack - sql injection,3,0.0,0.0
+fig_p7_family_recall,M3,corrected,A05,family_recall,web attack - sql injection,2,0.0,0.0
+fig_p7_family_recall,M1,original,G05,family_recall,web attack - xss,98,1.0,0.0
+fig_p7_family_recall,M1,corrected,G05,family_recall,web attack - xss,3,1.0,0.0
+fig_p7_family_recall,M2,original,CNN1D_fixed,family_recall,web attack - xss,98,0.002040816326530612,0.004563404035713856
+fig_p7_family_recall,M2,corrected,CNN1D_fixed,family_recall,web attack - xss,3,0.3333333333333333,0.4714045207910317
+fig_p7_family_recall,M3,original,A06,family_recall,web attack - xss,98,0.016326530612244896,0.01853663482100505
+fig_p7_family_recall,M3,corrected,A05,family_recall,web attack - xss,3,0.2,0.4472135954999579
+fig_p7_version_delta,M1,corrected_minus_original,,ap,,,0.0005047124699291139,
+fig_p7_version_delta,M1,corrected_minus_original,,roc_auc,,,9.340792890644156e-05,
+fig_p7_version_delta,M1,corrected_minus_original,,tpr_at_fpr_1pct,,,3.4354601955111086e-05,
+fig_p7_version_delta,M1,corrected_minus_original,,tpr_at_fpr_5pct,,,3.1231456323332907e-06,
+fig_p7_version_delta,M2,corrected_minus_original,,ap,,,0.069091357724413,
+fig_p7_version_delta,M2,corrected_minus_original,,roc_auc,,,0.016903807268847104,
+fig_p7_version_delta,M2,corrected_minus_original,,tpr_at_fpr_1pct,,,0.3304717565330463,
+fig_p7_version_delta,M2,corrected_minus_original,,tpr_at_fpr_5pct,,,0.20478570542819396,
+fig_p7_version_delta,M3,corrected_minus_original,,ap,,,0.12370545816843981,
+fig_p7_version_delta,M3,corrected_minus_original,,roc_auc,,,0.07505364540410409,
+fig_p7_version_delta,M3,corrected_minus_original,,tpr_at_fpr_1pct,,,-0.343274702012346,
+fig_p7_version_delta,M3,corrected_minus_original,,tpr_at_fpr_5pct,,,0.33578861011337546,

@@ -66,6 +66,14 @@ M1原入口不支持中途断点续跑；失败后保留FAILED.json并先分析�
 
 全部输出位于p7-run-3632afa/results/p7_corrected/。M1应有20份阈值记录（2模型×5种子×2阈值）；M2应有五个模型和m2_corrected.json；M3应有40次搜索、10份获选AE阈值记录及预测文件。
 
+M1运行时保留原训练窗口，另开PowerShell查看每5秒刷新的进度：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File C:\Users\Administrator\Desktop\Security\p7-delivery\methods\p7\watch_m1_progress.ps1
+```
+
+显示当前日志、已完成训练及验证任务数（共10项）、Test记录数（共20份）和耗时。这里的进度条统计已完成任务，不表示单次GBDT/RF拟合内部的精确百分比；不修改已封存训练参数或审批哈希。Ctrl+C只退出监控窗口，不会停止另一个窗口中的训练。
+
 ## 第三步 验收并生成正式汇总
 
 结果齐全后，切换到交付工作区：

@@ -1,0 +1,61 @@
+﻿figure,method,metric,attack_family,support,mean,sample_std,scope
+Figure 1,GBDT G05,Average precision,,,0.9994951360517572,7.332045809238854e-05,original/stratified/main Test; seeds 42-46
+Figure 1,GBDT G05,ROC-AUC,,,0.9999065491704137,1.0868787547261024e-05,original/stratified/main Test; seeds 42-46
+Figure 1,1D-CNN,Average precision,,,0.9171579858667075,0.023259602082069463,original/stratified/main Test; seeds 42-46
+Figure 1,1D-CNN,ROC-AUC,,,0.9808876823626889,0.003971070784736027,original/stratified/main Test; seeds 42-46
+Figure 1,Autoencoder A06,Average precision,,,0.7427099837893828,0.006169874488104447,original/stratified/main Test; seeds 42-46
+Figure 1,Autoencoder A06,ROC-AUC,,,0.9040028795779489,0.00310867522356135,original/stratified/main Test; seeds 42-46
+Figure 2,GBDT G05,TPR at FPR 1%,,,0.9999656453980449,6.9835659374295015e-06,original/stratified/main Test; seeds 42-46
+Figure 2,GBDT G05,TPR at FPR 5%,,,0.9999968768543677,6.9835659374295015e-06,original/stratified/main Test; seeds 42-46
+Figure 2,1D-CNN,TPR at FPR 1%,,,0.6114775601986321,0.06998797541529252,original/stratified/main Test; seeds 42-46
+Figure 2,1D-CNN,TPR at FPR 5%,,,0.795074799337893,0.09863805255991973,original/stratified/main Test; seeds 42-46
+Figure 2,Autoencoder A06,TPR at FPR 1%,,,0.5272275836222243,0.016424304119053428,original/stratified/main Test; seeds 42-46
+Figure 2,Autoencoder A06,TPR at FPR 5%,,,0.6177207283175614,0.013817972171981887,original/stratified/main Test; seeds 42-46
+Figure 4,GBDT G05,Accuracy,,,0.9925186989242347,0.0019851926797289127,original/stratified/main Test; seeds 42-46
+Figure 4,GBDT G05,Macro-F1,,,0.9877844971685287,0.0031776869668226596,original/stratified/main Test; seeds 42-46
+Figure 4,1D-CNN,Accuracy,,,0.9210830370746571,0.012573962171911666,original/stratified/main Test; seeds 42-46
+Figure 4,1D-CNN,Macro-F1,,,0.8478406416679188,0.029152904627490803,original/stratified/main Test; seeds 42-46
+Figure 4,Autoencoder A06,Accuracy,,,0.9050210074333995,0.0024480672351088213,original/stratified/main Test; seeds 42-46
+Figure 4,Autoencoder A06,Macro-F1,,,0.8073764347330178,0.007224291184625135,original/stratified/main Test; seeds 42-46
+Figure 3,GBDT G05,Attack-family recall,Botnet,252,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,Botnet,252,0.0047619047619047615,0.0043470044246441755,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,Botnet,252,0.01984126984126984,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,DDoS,19202,0.9999479220914488,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,DDoS,19202,0.6883449640662431,0.11672722487407906,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,DDoS,19202,0.5358087699198,0.04821118677631611,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,DoS GoldenEye,1542,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,DoS GoldenEye,1542,0.5271076523994812,0.16668268935381936,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,DoS GoldenEye,1542,0.41802853437094684,0.02892812860626859,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,DoS Hulk,25901,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,DoS Hulk,25901,0.8495502104165862,0.06311631727943508,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,DoS Hulk,25901,0.8435581637774603,0.004709214229052222,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,DoS SlowHTTPTest,784,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,DoS SlowHTTPTest,784,0.22525510204081634,0.20515819365347565,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,DoS SlowHTTPTest,784,0.28494897959183674,0.10327537611221935,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,DoS Slowloris,802,0.9987531172069826,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,DoS Slowloris,802,0.24937655860349128,0.23592623829912,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,DoS Slowloris,802,0.5703241895261846,0.0060829480886037054,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,FTP-Patator,890,0.9997752808988764,0.00050248718595503,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,FTP-Patator,890,0.6191011235955056,0.08099245524018023,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,FTP-Patator,890,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,Heartbleed,2,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,Heartbleed,2,0.8,0.4472135954999579,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,Heartbleed,2,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,Infiltration,5,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,Infiltration,5,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,Infiltration,5,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,PortScan,13854,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,PortScan,13854,0.19373466146961166,0.08869511481436079,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,PortScan,13854,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,SSH-Patator,483,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,SSH-Patator,483,0.1217391304347826,0.26759944495610577,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,SSH-Patator,483,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,Web Brute Force,220,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,Web Brute Force,220,0.0009090909090909091,0.0020327890704543543,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,Web Brute Force,220,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,Web SQL Injection,3,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,Web SQL Injection,3,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,Web SQL Injection,3,0.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,GBDT G05,Attack-family recall,Web XSS,98,1.0,0.0,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,1D-CNN,Attack-family recall,Web XSS,98,0.002040816326530612,0.004563404035713856,low-FPR rule: GBDT 1%; CNN 1%; AE q99
+Figure 3,Autoencoder A06,Attack-family recall,Web XSS,98,0.016326530612244896,0.01853663482100505,low-FPR rule: GBDT 1%; CNN 1%; AE q99

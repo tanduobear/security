@@ -1,0 +1,197 @@
+{
+  "scope": "original/stratified/main Test, five seeds",
+  "methods": [
+    {
+      "method": "GBDT G05",
+      "role": "main_supervised_tree",
+      "dataset_version": "original",
+      "protocol": "stratified",
+      "variant": "main",
+      "evaluation_split": "test",
+      "seed_count": 5,
+      "configuration": "G05",
+      "threshold_policy": "validation benign quantile; 1% target for classification columns",
+      "average_precision_mean": 0.9994951360517572,
+      "average_precision_std": 7.332045809238854e-05,
+      "roc_auc_mean": 0.9999065491704137,
+      "roc_auc_std": 1.0868787547261024e-05,
+      "tpr_at_empirical_fpr_1pct_mean": 0.9999656453980449,
+      "tpr_at_empirical_fpr_1pct_std": 6.9835659374295015e-06,
+      "tpr_at_empirical_fpr_5pct_mean": 0.9999968768543677,
+      "tpr_at_empirical_fpr_5pct_std": 6.9835659374295015e-06,
+      "fixed_threshold_test_fpr_mean": 0.009169362774595938,
+      "fixed_threshold_test_fpr_std": 0.0024355685017834364,
+      "fixed_threshold_test_tpr_mean": 0.999965645398045,
+      "fixed_threshold_test_tpr_std": 6.9835659374295015e-06,
+      "accuracy_mean": 0.9925186989242347,
+      "accuracy_std": 0.0019851926797289127,
+      "macro_f1_mean": 0.9877844971685287,
+      "macro_f1_std": 0.0031776869668226596,
+      "training_seconds_mean": 500.09699590000093,
+      "training_seconds_std": 15.019681765565693,
+      "cpu_latency_ms_per_flow_mean": "",
+      "cpu_latency_ms_per_flow_std": "",
+      "run_status": "formal_complete",
+      "source_file": "results/m1_test_summary/summary.json",
+      "notes": "Continuous-score AP/AUC and empirical ROC points use full Test; classification uses frozen Validation threshold."
+    },
+    {
+      "method": "1D-CNN",
+      "role": "main_supervised_deep",
+      "dataset_version": "original",
+      "protocol": "stratified",
+      "variant": "main",
+      "evaluation_split": "test",
+      "seed_count": 5,
+      "configuration": "delivered fixed CNN1D configuration",
+      "threshold_policy": "validation-selected 1% FPR threshold",
+      "average_precision_mean": 0.9171579858667075,
+      "average_precision_std": 0.023259602082069463,
+      "roc_auc_mean": 0.9808876823626889,
+      "roc_auc_std": 0.003971070784736027,
+      "tpr_at_empirical_fpr_1pct_mean": 0.6114775601986321,
+      "tpr_at_empirical_fpr_1pct_std": 0.06998797541529252,
+      "tpr_at_empirical_fpr_5pct_mean": 0.795074799337893,
+      "tpr_at_empirical_fpr_5pct_std": 0.09863805255991973,
+      "fixed_threshold_test_fpr_mean": "",
+      "fixed_threshold_test_fpr_std": "",
+      "fixed_threshold_test_tpr_mean": "",
+      "fixed_threshold_test_tpr_std": "",
+      "accuracy_mean": 0.9210830370746571,
+      "accuracy_std": 0.012573962171911666,
+      "macro_f1_mean": 0.8478406416679188,
+      "macro_f1_std": 0.029152904627490803,
+      "training_seconds_mean": 1929.0959072113037,
+      "training_seconds_std": 73.73229797499698,
+      "cpu_latency_ms_per_flow_mean": 0.04237294921875,
+      "cpu_latency_ms_per_flow_std": 0.0025147274780888047,
+      "run_status": "formal_complete",
+      "source_file": "results/m2.json",
+      "notes": "M2 operating points follow its delivered evaluator; P6 recorded unresolved P3 tie-handling differences."
+    },
+    {
+      "method": "Autoencoder A06",
+      "role": "main_unsupervised",
+      "dataset_version": "original",
+      "protocol": "stratified",
+      "variant": "main",
+      "evaluation_split": "test",
+      "seed_count": 5,
+      "configuration": "A06",
+      "threshold_policy": "99th percentile benign Validation reconstruction error",
+      "average_precision_mean": 0.7427099837893828,
+      "average_precision_std": 0.006169874488104447,
+      "roc_auc_mean": 0.9040028795779489,
+      "roc_auc_std": 0.00310867522356135,
+      "tpr_at_empirical_fpr_1pct_mean": 0.5272275836222243,
+      "tpr_at_empirical_fpr_1pct_std": 0.016424304119053428,
+      "tpr_at_empirical_fpr_5pct_mean": 0.6177207283175614,
+      "tpr_at_empirical_fpr_5pct_std": 0.013817972171981887,
+      "fixed_threshold_test_fpr_mean": 0.008311327901000334,
+      "fixed_threshold_test_fpr_std": 0.0014040087485624277,
+      "fixed_threshold_test_tpr_mean": 0.5226834067272557,
+      "fixed_threshold_test_tpr_std": 0.01795809281717162,
+      "accuracy_mean": 0.9050210074333995,
+      "accuracy_std": 0.0024480672351088213,
+      "macro_f1_mean": 0.8073764347330178,
+      "macro_f1_std": 0.007224291184625135,
+      "training_seconds_mean": 347.54356447999965,
+      "training_seconds_std": 36.62228798917592,
+      "cpu_latency_ms_per_flow_mean": 0.001746328125,
+      "cpu_latency_ms_per_flow_std": 0.0002736173951341232,
+      "run_status": "formal_complete",
+      "source_file": "results/m3_summary/summary.json",
+      "notes": "AP/AUC and empirical ROC points use continuous scores; classification columns use q99 frozen Validation threshold."
+    }
+  ],
+  "tpr_at_empirical_fpr": {
+    "GBDT G05": {
+      "0.01": [
+        0.9999656453980449,
+        6.9835659374295015e-06
+      ],
+      "0.05": [
+        0.9999968768543677,
+        6.9835659374295015e-06
+      ]
+    },
+    "1D-CNN": {
+      "0.01": [
+        0.6114775601986321,
+        0.06998797541529252
+      ],
+      "0.05": [
+        0.795074799337893,
+        0.09863805255991973
+      ]
+    },
+    "Autoencoder A06": {
+      "0.01": [
+        0.5272275836222243,
+        0.016424304119053428
+      ],
+      "0.05": [
+        0.6177207283175614,
+        0.013817972171981887
+      ]
+    }
+  },
+  "per_class_recall_mean": {
+    "GBDT G05": {
+      "botnet": 1.0,
+      "ddos": 0.9999479220914488,
+      "dos goldeneye": 1.0,
+      "dos hulk": 1.0,
+      "dos slowhttptest": 1.0,
+      "dos slowloris": 0.9987531172069826,
+      "ftp-patator": 0.9997752808988764,
+      "heartbleed": 1.0,
+      "infiltration": 1.0,
+      "portscan": 1.0,
+      "ssh-patator": 1.0,
+      "web attack - brute force": 1.0,
+      "web attack - sql injection": 1.0,
+      "web attack - xss": 1.0
+    },
+    "1D-CNN": {
+      "botnet": 0.0047619047619047615,
+      "ddos": 0.6883449640662431,
+      "dos goldeneye": 0.5271076523994812,
+      "dos hulk": 0.8495502104165862,
+      "dos slowhttptest": 0.22525510204081634,
+      "dos slowloris": 0.24937655860349128,
+      "ftp-patator": 0.6191011235955056,
+      "heartbleed": 0.8,
+      "infiltration": 0.0,
+      "portscan": 0.19373466146961166,
+      "ssh-patator": 0.1217391304347826,
+      "web attack - brute force": 0.0009090909090909091,
+      "web attack - sql injection": 0.0,
+      "web attack - xss": 0.002040816326530612
+    },
+    "Autoencoder A06": {
+      "botnet": 0.01984126984126984,
+      "ddos": 0.5358087699198,
+      "dos goldeneye": 0.41802853437094684,
+      "dos hulk": 0.8435581637774603,
+      "dos slowhttptest": 0.28494897959183674,
+      "dos slowloris": 0.5703241895261846,
+      "ftp-patator": 0.0,
+      "heartbleed": 1.0,
+      "infiltration": 0.0,
+      "portscan": 0.0,
+      "ssh-patator": 0.0,
+      "web attack - brute force": 0.0,
+      "web attack - sql injection": 0.0,
+      "web attack - xss": 0.016326530612244896
+    }
+  },
+  "corrected_full_rerun": {
+    "status": "reported_success_external_metrics_not_synced",
+    "local_smoke_evidence": {
+      "GBDT G05": "results/p7_corrected/m1/smoke/20261114T040513-420a234bebdf4cc287083b0b631d17a9/metrics.json",
+      "1D-CNN": "results/p7_corrected/m2_smoke/summary.json",
+      "Autoencoder A06": "results/p7_corrected/m3_smoke/search.json"
+    }
+  }
+}
